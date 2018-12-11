@@ -1,0 +1,56 @@
+//- Includes
+include ../elements/_widget-rd-calendar
+include ../elements/_widget-event
+include ../elements/_widget-flickrfeed
+
+// Section Blog Events
+aside.text-left
+  .row
+    .col-md-6.col-lg-12.offset-md-top-41.offset-lg-top-0
+      // RD calendar
+      +widget-rd-calendar([
+        {
+          "date": "06/12/2018",
+          "time": "8:00 AM",
+          "title": "Pitae augue vitae matt",
+          "link": "#"
+        },
+        {
+          "date": "06/13/2018",
+          "time": "9:00 AM",
+          "title": "Pitae augue vitae matt",
+          "link": "#"
+        }
+      ])
+
+    // Recent Events
+    .col-md-6.col-lg-12.offset-top-41
+      h6.text-uppercase.text-spacing-60 Recent Events
+      div.text-subline
+      .offset-top-34
+        +widget-event("#", "05/14/2018", "9:00 PM", "Let’s Change the world", {
+          "w": 46,
+          "h": 46,
+          "src": "images/blog/post-thumb-01-46x46.jpg",
+          "alt": ""
+        })
+      .offset-top-30
+        +widget-event("#", "05/14/2018", "9:00 PM", "The meaning of Web De...", {
+          "w": 46,
+          "h": 46,
+          "src": "images/blog/post-thumb-02-46x46.jpg",
+          "alt": ""
+        })
+      .offset-top-30
+        +widget-event("#", "05/14/2018", "9:00 PM", "Get Started with Templa...", {
+          "w": 46,
+          "h": 46,
+          "src": "images/blog/post-thumb-03-46x46.jpg",
+          "alt": ""
+        })
+
+  // Flickr Feed
+  h6.offset-top-41.text-uppercase.text-spacing-60 Flickr Feed
+  div.text-subline
+  .offset-top-34
+    +widget-flickrfeed('tm58888_landscapes', {"data-image_q": "src"}, 9)

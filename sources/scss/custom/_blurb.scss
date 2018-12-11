@@ -1,0 +1,33 @@
+.blurb-mini {
+  text-align: center;
+
+  .img-wrap {
+    display: inline-flex;
+    width: 100px;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+  }
+  
+  .caption {
+    margin-top: 20px;
+  }
+}
+
+html .wrapper {
+  display: none;
+  margin: 0;
+
+  @include media-breakpoint-up(xxl) {
+    display: block;
+  }
+}
+
+.review-wrap {
+  display: inline-block;
+  
+  img {
+    max-width: 100%;
+  }
+}

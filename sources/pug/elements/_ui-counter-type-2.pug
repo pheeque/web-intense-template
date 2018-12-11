@@ -1,0 +1,18 @@
+//-
+  title - counter title
+  icon - icon class
+  counter - {counter} Object
+mixin counter-type-2( title, icon, counter )
+  // Counter type 2
+  .counter-type-2
+    span.icon.novi-icon( class= icon )&attributes( attributes )
+    div.offset-top-10
+      span.h1.font-weight-bold.counter(data-speed= counter.dataSpeed data-from="0" data-to= counter.dataTo)
+      if ( counter.preffix )
+        span.h1.font-weight-bold= counter.preffix
+
+    if ( counter.divider )
+      div: hr( class= counter.divider )
+
+    div.offset-xxl-top-10
+      div( class= title.titleStyle )= title.description

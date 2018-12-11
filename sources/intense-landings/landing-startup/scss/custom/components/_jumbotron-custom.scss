@@ -1,0 +1,340 @@
+//
+// Jumbotron custom
+// --------------------------------------------------
+.jumbotron-custom {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  padding-left: 15px;
+  padding-right: 15px;
+
+  .container {
+    width: 100%;
+  }
+
+  * + .h3-alternate {
+    margin-top: 5px;
+  }
+
+  &-inner > * {
+    pointer-events: auto;
+  }
+}
+
+.jumbotron-custom-variant-1 {
+  perspective: 1600px;
+
+  .mark {
+    padding: .2em .22em .12em;
+  }
+
+  * + .btn {
+    margin-top: 30px;
+  }
+
+  hr,
+  p {
+    display: none;
+  }
+
+  @include media-breakpoint-up(md) {
+    hr,
+    p {
+      display: block;
+    }
+
+    * + h1 {
+      margin-top: 30px;
+    }
+  }
+}
+
+.jumbotron-custom-variant-2 {
+  min-height: calc(40vw - 56px);
+  text-align: left;
+
+  .mark {
+    padding: .4em .6em .4em;
+  }
+  * + .btn {
+    margin-top: 25px;
+  }
+}
+
+.jumbotron-custom-variant-3 {
+  min-height: calc(44.27vw - 56px);
+  text-align: left;
+
+  .mark {
+    padding: .3em .8em .14em;
+  }
+
+  * + .rd-mailform {
+    margin-top: 5px;
+  }
+
+  * + [class*='group'] {
+    margin-top: 10px;
+  }
+}
+
+.ie-10,
+.ie-11 {
+  //.jumbotron-custom {
+  //  display: block;
+  //  vertical-align: middle;
+  //  white-space: nowrap;
+  //  text-align: center;
+  //  > * {
+  //    display: inline-block;
+  //    width: 100%;
+  //    vertical-align: middle;
+  //    white-space: normal;
+  //  }
+  //  &:after {
+  //    content: '';
+  //    display: inline-block;
+  //    vertical-align: middle;
+  //    min-height: inherit;
+  //    width: 0;
+  //  }
+  //}
+
+  .jumbotron-custom.jumbotron-custom-variant-1 {
+    min-height: 0;
+  }
+
+  .jumbotron-custom-variant-2,
+  .jumbotron-custom-variant-3 {
+    .container {
+      text-align: left;
+    }
+  }
+}
+
+.jumbotron-custom-variant-1 {
+  .jumbotron-custom-inner {
+    padding: 70px 0 85px;
+  }
+}
+
+.jumbotron-custom-variant-2 {
+  .jumbotron-custom-inner {
+    padding: 55px 0 70px;
+  }
+
+  #{headings()} {
+    color: $gray-dark;
+  }
+
+  .mark {
+    display: inline-block;
+    color: $white;
+  }
+}
+
+.jumbotron-custom-variant-3 {
+  .jumbotron-custom-inner {
+    padding: 50px 0 80px;
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .jumbotron-custom-variant-3 {
+    h1,
+    .h1 {
+      font-size: 40px;
+    }
+
+    .rd-mailform .select2-container--bootstrap .select2-selection {
+      min-width: 220px;
+    }
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .jumbotron-custom-variant-1 {
+
+
+    .jumbotron-custom-inner {
+      display: inline-block;
+      padding: 150px 0 160px;
+      text-align: left;
+    }
+  }
+
+  .jumbotron-custom-variant-2 {
+    .jumbotron-custom-inner {
+      padding: 90px 0 130px;
+    }
+  }
+
+  .jumbotron-custom-variant-3 {
+    .jumbotron-custom-inner {
+      padding: 170px 0 170px;
+    }
+
+    * + [class*='group'] {
+      margin-top: 25px;
+    }
+  }
+}
+
+.rd-navbar-sidebar-linked {
+  @include media-breakpoint-up(lg) {
+    .jumbotron-custom-variant-3 {
+      .jumbotron-custom-inner {
+        padding: 270px 0 170px;
+      }
+    }
+  }
+}
+
+.desktop {
+
+  @include media-breakpoint-up(lg) {
+    // Jumbotron 1
+    .jumbotron-custom-variant-1 {
+      min-height: 44.27vw;
+    }
+
+    .rd-navbar-absolute-linked.jumbotron-custom-variant-1 .jumbotron-custom-inner {
+      padding: 330px 0 220px;
+    }
+
+    // Jumbotron 2
+    .jumbotron-custom-variant-2 {
+      min-height: 40.27vw;
+    }
+
+    .jumbotron-custom-variant-2 .jumbotron-custom-inner {
+      padding: 140px 0 145px;
+    }
+
+    // Jumbotron 3
+    .jumbotron-custom-variant-3 {
+      min-height: 44.27vw;
+    }
+
+    .jumbotron-custom-variant-3 .jumbotron-custom-inner {
+      padding: 260px 0 220px;
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+    //1
+    .jumbotron-custom-variant-1 {
+      .jumbotron-custom-inner {
+        padding: 260px 0 180px;
+      }
+    }
+    // 2
+    .jumbotron-custom-variant-2 .jumbotron-custom-inner {
+      padding: 140px 0 150px;
+    }
+  }
+
+  @include media-breakpoint-up(xxl) {
+    // 1
+    .jumbotron-custom-variant-1 {
+      min-height: 100vh;
+    }
+
+    .rd-navbar-absolute-linked .jumbotron-custom-variant-1 .jumbotron-custom-inner {
+      padding: 280px 0 290px;
+    }
+
+    // 2
+    .jumbotron-custom-variant-2 {
+      min-height: 795px;
+    }
+
+    .jumbotron-custom-variant-2 .jumbotron-custom-inner {
+      padding: 100px 0 250px;
+    }
+
+    // 3
+    .jumbotron-custom-variant-3 .jumbotron-custom-inner {
+      padding: 200px 0 250px;
+    }
+  }
+
+}
+
+@include media-breakpoint-up(lg) {
+  .rd-navbar-static-linked {
+    .jumbotron-custom-variant-1 .jumbotron-custom-inner {
+      padding-top: 260px;
+      padding-bottom: 124px;
+    }
+
+    .jumbotron-custom-variant-2 .jumbotron-custom-inner {
+      padding-top: 200px;
+      padding-bottom: 140px;
+    }
+
+    .jumbotron-custom-variant-3 .jumbotron-custom-inner {
+      padding-top: 220px;
+      padding-bottom: 180px;
+    }
+  }
+
+  .rd-navbar-fullwidth-linked {
+    .jumbotron-custom-variant-1,
+    .jumbotron-custom-variant-3 {
+      min-height: 38vw;
+    }
+  }
+
+  .rd-navbar-sidebar-linked {
+    .jumbotron-custom-variant-2 {
+      .jumbotron-custom-inner {
+        padding: 220px 0 180px;
+      }
+    }
+  }
+}
+
+
+.swiper-jumbotron-mod {
+  // Large 992  ≤ 1200 Extra Large
+  @include media-breakpoint-between(lg, lg) {
+    .jumbotron-custom-variant-1 {
+      min-height: 34.27vw;
+    }
+    .jumbotron-custom {
+      justify-content: flex-end;
+    }
+  }
+  @media (min-height: 600px) and (max-height: 800px) {
+    .jumbotron-custom-variant-1 {
+      min-height: 34.27vw;
+    }
+    .jumbotron-custom {
+      justify-content: flex-end;
+    }
+  }
+}
+
+.jumbotron-custom-outside {
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  position:relative;
+  pointer-events: none;
+  z-index:9;
+
+  > * {
+    pointer-events: auto;
+  }
+
+  .marked-list > li {
+    color: $white;  
+  }
+  @include media-breakpoint-up(xl) {
+    height: 100vh;
+  }
+}

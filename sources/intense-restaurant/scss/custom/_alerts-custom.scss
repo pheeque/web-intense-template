@@ -1,0 +1,189 @@
+//
+// Custom Alert
+// --------------------------------------------------
+
+
+// Base styles
+// --------------------------------------------------
+
+.alert-classic, .snackbars, .alert {
+  margin-top: 10px;
+  text-align: left;
+}
+
+
+// Alert Classic
+// --------------------------------------------------
+
+.alert-classic {
+  padding: 17px 22px 17px;
+  border-left-width: 3px;
+  border-left-style: solid;
+  background-color: $gray-200;
+
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+  }
+}
+
+
+// Snackbars
+// --------------------------------------------------
+
+.snackbars {
+  max-width: 280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 9px 16px;
+  border-radius: 2px;
+  color: $white;
+  background-color: $gray-900;
+  box-shadow: $shadow-area-xs;
+
+  .icon-xxs {
+    font-size: 20px;
+  }
+
+  // padding on text
+  p span:last-child {
+    padding-left: 14px;
+  }
+
+  // snackbar icon on the left side
+  &-left {
+    display: inline-block;
+    margin-bottom: 0;
+  }
+
+  // snackbar link or button on the right side
+  &-right {
+    display: inline-block;
+    float: right;
+    text-transform: uppercase;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  @include media-breakpoint-up(sm) {
+    max-width: 370px;
+    padding: 14px 17px;
+  }
+
+
+}
+
+
+// Bootstrap Alert
+// --------------------------------------------------
+
+.alert {
+  padding: 12px 15px;
+  margin-bottom: 0;
+
+  // bootstrap close button
+  .close {
+    top: 0;
+    right: -9px;
+    opacity: 1;
+    text-shadow: none;
+    outline: none;
+
+    &:focus, &:hover {
+      color: $white;
+      opacity: 1;
+    }
+  }
+}
+
+// Sizes
+
+.alert-classic-lg {
+  border-left-width: 4px;
+  padding-top: 23px;
+  padding-bottom: 28px;
+
+  h4, .icon {
+    font-size: 21px;
+  }
+
+  .btn-sm {
+    padding: 7px 15px;
+    min-width: 80px;
+    border-width: 1px;
+  }
+
+  @include media-breakpoint-up(md) {
+    h4 {
+      font-size: $h4-font-size;
+    }
+
+    .icon {
+      font-size: 30px;
+    }
+  }
+}
+
+.alert-classic-sm {
+  border-left-width: 2px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
+
+
+// Alternate styles
+// --------------------------------------------------
+// Generate contextual modifier classes for colorizing the alert.
+
+// Alert Classic
+
+.alert-classic-danger {
+  border-left-color: $danger;
+
+  h1, h2, h3, h4, h5, h6 {
+    color: $ku-crimson;
+  }
+}
+
+.alert-classic-info {
+  border-left-color: $info;
+
+  h1, h2, h3, h4, h5, h6 {
+    color: $iceberg;
+  }
+}
+
+.alert-classic-success {
+  border-left-color: $success;
+
+  h1, h2, h3, h4, h5, h6 {
+    color: $dollar-bill;
+  }
+}
+
+.alert-classic-warning {
+  border-left-color: $warning;
+
+  h1, h2, h3, h4, h5, h6 {
+    color: $neon-carrot;
+  }
+}
+
+// Bootstrap
+
+.alert-success {
+  @include alert-variant($success, $success, $white);
+}
+
+.alert-info {
+  @include alert-variant($info, $info, $white);
+}
+
+.alert-warning {
+  @include alert-variant($warning, $warning, $white);
+}
+
+.alert-danger {
+  @include alert-variant($danger, $danger, $white);
+}

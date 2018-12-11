@@ -1,0 +1,62 @@
+header.section.page-header
+  // RD Navbar
+  .rd-navbar-wrap.novi-background
+    nav.rd-navbar.rd-navbar-top-panel-light(
+    data-layout=                'rd-navbar-fixed'
+    data-sm-layout=             'rd-navbar-fixed'
+    data-md-layout=             'rd-navbar-fixed'
+    data-md-device-layout=      'rd-navbar-fixed'
+    data-lg-layout=             'rd-navbar-fixed'
+    data-lg-device-layout=      'rd-navbar-fixed'
+    data-xl-layout=             'rd-navbar-fullwidth'
+    data-xl-device-layout=      'rd-navbar-fullwidth'
+    data-xxl-layout=            'rd-navbar-fullwidth'
+    data-xxl-device-layout=     'rd-navbar-fullwidth'
+    data-lg-stick-up-offset=    '90px'
+    data-xl-stick-up-offset=    '90px'
+    data-xxl-stick-up-offset=   '90px'
+    data-lg-stick-up=           'true'
+    data-xl-stick-up=           'true'
+    data-xxl-stick-up=          'true'
+    data-stick-up-clone='true'
+    )
+      .rd-navbar-inner
+        // RD Navbar Nav
+        .rd-navbar-nav-wrap
+          ul.rd-navbar-nav
+            li(class={active: activeIndex === 1})
+              a(href='#services') Services
+
+            li(class={active: activeIndex === 2})
+              a(href='#products') Products
+            
+            li(class={active: activeIndex === 3})
+              a(href='#about-us') About Us
+              
+            li(class={active: activeIndex === 4})
+              a(href='#testimonials') Testimonials
+              
+        // RD Navbar Panel
+        .rd-navbar-panel
+          button.rd-navbar-toggle(data-rd-navbar-toggle='.rd-navbar-nav-wrap')
+            span
+
+          // RD Navbar Brand
+          .rd-navbar-brand
+            a.brand-name(href='index.html')
+              +png(logoDefault)
+
+        // RD Navbar Top Panel
+        .rd-navbar-top-panel
+          .rd-navbar-top-panel-toggle(data-rd-navbar-toggle='.rd-navbar-top-panel')
+            span
+          .rd-navbar-top-panel-content 
+            ul.inline-list-xxs
+              li: a.icon.novi-icon.icon-xs.icon-gray-6.fa.fa-instagram(href='#')
+              li: a.icon.novi-icon.icon-xs.icon-gray-6.fa.fa-facebook(href='#')
+              li: a.icon.novi-icon.icon-xs.icon-gray-6.fa.fa-twitter(href='#')
+              li: a.icon.novi-icon.icon-xs.icon-gray-6.fa.fa-google-plus(href='#')
+
+            a.btn.btn-sm.btn-primary.btn-effect-ujarak(href=getTemplateLink) get template
+            
+            .rd-navbar-nav-wrap__shop: a.icon.novi-icon.fl-bigmug-line-shopping202.link-primary(href='#') (2)

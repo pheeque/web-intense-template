@@ -1,0 +1,30 @@
+//- Includes
+include ../elements/_ui-thumbnail-classic.pug
+include ../elements/_ui-isotope.pug
+
+// Our Works
+section.section.novi-background.section-98.section-md-124(id="home-section-childs")
+	.container-fluid
+		h2
+			span.big  Child themes
+		h3 Check out other themes based on
+			span.text-uppercase.text-ubold.text-mantis= " Intense"
+		.offset-top-41
+			+isotope(['All', 'Infrastructure', 'Portfolio', 'Blog', 'Agency', 'Creative'],{
+				"group": "gallery",
+				"layout": "fitRows",
+				"alignClass": "isotope-filters-horizontal"
+			}, "isotope-1")
+				// Isotope
+				.row.grid-group-sm
+					- for ( var key in cfg.themes )
+						.col-12.col-md-6.col-xl-4.isotope-item( data-filter=cfg.themes[key].category )
+							.shadow-variant-2
+								+thumbnail-classic({
+									type:        "thumbnail",
+									title:       cfg.themes[ key ].title,
+									description: cfg.themes[ key ].desc,
+									thumb:       cfg.themes[ key ].image,
+									target:      { href: cfg.themes[ key ].href },
+									targetBlank: true
+								})

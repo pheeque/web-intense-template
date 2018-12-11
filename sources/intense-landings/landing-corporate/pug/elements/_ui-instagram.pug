@@ -1,0 +1,14 @@
+mixin thumbnail-instafeed(obj)
+  - if (typeof(obj) === 'undefined') var obj = {};
+  .thumbnail-instafeed(class= obj.className)
+    a.instagram-link(data-lightgallery='item' href='#' data-images-standard_resolution-url='href')
+      img.instagram-image(src='images/_blank.png', alt='', data-images-standard_resolution-url='src')
+    .caption
+      ul.list-inline.inline-list-xxs
+        li
+          span.novi-icon.icon.mdi.mdi-heart
+          span(data-likes-count='text')
+
+        li
+          span.novi-icon.icon.mdi.mdi-comment
+          span(data-comments-count='text')

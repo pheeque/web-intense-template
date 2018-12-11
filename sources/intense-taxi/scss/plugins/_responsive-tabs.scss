@@ -1,0 +1,605 @@
+//
+// Easy Responsive Tabs
+// --------------------------------------------------
+
+// Classic Tabs
+// --------------------------------------------------
+
+.responsive-tabs {
+  text-align: left;
+
+  @media (min-width: $screen-md-min) {
+    text-align: center;
+  }
+
+  // Collapse Tab
+  .resp-accordion {
+    position: $accordion-arrow-icon-position;
+    padding: $accordion-accordion-inset;
+    overflow: hidden;
+    font-size: $accordion-size;
+    font-weight: $accordion-weight;
+    text-align: left;
+    font-family: $font-family-base;
+    text-overflow: ellipsis;
+    transition: all .35s ease;
+    border-top: 1px solid $brand-primary;
+    text-transform: uppercase;
+    background: $brand-primary;
+    color: $white;
+
+    .resp-arrow {
+      position: absolute;
+      top: 50%;
+      @include transform(translateY(-50%));
+      right: 5px;
+      width: $accordion-arrow-icon-width;
+      font-family: $accordion-arrow-icon-family;
+      font-size: 18px;
+      font-weight: $accordion-arrow-icon-weight;
+      color: $white;
+      text-align: center;
+      transition: all .35s ease;
+      &:before {
+        content: $accordion-arrow-icon;
+      }
+      @media (min-width: $screen-md-min) {
+        font-size: 20px;
+        right: 26px;
+      }
+    }
+
+    // Active tab accordion
+    &.resp-tab-active,
+    &:hover {
+      color: $white;
+      background: #cd9f14;
+      border-color: #cd9f14;
+      cursor: pointer;
+    }
+    &.resp-tab-active {
+      color: $white;
+      .resp-arrow {
+        &:before {
+          content: $accordion-arrow-icon-active;
+        }
+      }
+    }
+  }
+
+  // Accordion Content
+  .resp-tab-content {
+    padding: 0 30px 20px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  // Tabs List
+  .resp-tabs-list {
+    display: none;
+    padding: 0;
+    margin-bottom: 0;
+
+    li {
+      position: relative;
+      display: inline-block;
+      padding: $accordion-list-inset;
+      font-size: $accordion-list-size;
+      font-weight: $accordion-list-weight;
+      color: $accordion-list-color;
+      text-transform: uppercase;
+      list-style-type: none;
+      cursor: pointer;
+      transition: all .2s ease-in;
+
+      &.resp-tab-active,
+      &:hover {
+        color: $accordion-list-active-color;
+        background: transparent;
+      }
+    }
+  }
+  // Tab Content
+  .resp-tab-content {
+    display: none;
+  }
+
+  // Turn accordion to Horizontal Tabs
+  @media (min-width: $screen-md-min) {
+    &[data-type="horizontal"]:not(.tabs-lg-collapsed),
+    &[data-type="vertical"]:not(.tabs-lg-collapsed) {
+      border-bottom: $accordion-md-border-bottom;
+
+      .resp-tab-content + .resp-accordion {
+        border-top: $accordion-md-border-top;
+      }
+
+      .resp-accordion {
+        display: none;
+      }
+    }
+  }
+
+  // Style for vertical tabs
+  @media (min-width: $screen-lg-min) {
+    &[data-type="vertical"] {
+      @include display-flex();
+      @include flex(0 1 auto);
+      @include align-items(flex-start);
+
+
+      .resp-tabs-list {
+        text-align: left;
+        @include flex-basis(9%);
+
+        li {
+          display: block;
+        }
+
+        li + li {
+          margin-left: 0;
+        }
+      }
+
+      .resp-tabs-container {
+        @include flex-basis(91%);
+      }
+    }
+    &.tabs-lg-collapsed {
+      border-bottom: $accordion-md-border-bottom;
+
+      .resp-tab-content + .resp-accordion {
+        border-top: $accordion-md-border-top;
+      }
+
+      .resp-accordion {
+        display: none;
+      }
+
+      .resp-tabs-list {
+        display: block;
+      }
+    }
+  }
+}
+
+// Classic Tabs
+// --------------------------------------------------
+
+.responsive-tabs-classic {
+
+  @media (min-width: $screen-md-min) {
+    &[data-type="vertical"],
+    &[data-type="horizontal"] {
+      border-bottom: $accordion-tabs-list-border-bottom;
+
+      .resp-tab-content + .resp-accordion {
+        border-top: $accordion-tabs-list-border-top;
+        margin-top: 10px;
+      }
+
+      .resp-tabs-list {
+        font-size: 0;
+        text-align: left;
+        position: relative;
+        &:after {
+          width: 100%;
+          height: 1px;
+          content: "";
+          background: $brand-primary;
+          position: absolute;
+          left: 0;
+          top: 100%;
+          z-index: 0;
+          margin-top: -7px;
+        }
+        li {
+          text-transform: capitalize;
+          padding-top: 10px;
+          padding-bottom: 8px;
+          font-weight: 400;
+          font-size: 18px;
+          position: relative;
+          &:after {
+            position: absolute;
+            content: "";
+            width: 0;
+            height: 1px;
+            top: 100%;
+            left: 50%;
+            z-index: 2;
+            margin-top: -7px;
+            transition: 0.35s all ease-in;
+          }
+          &.resp-tab-active,
+          &:hover {
+            color: $gray-darker;
+            border-left-color: transparent;
+            &:after {
+              width: 100%;
+              left: 0;
+              background: $brand-primary;
+            }
+          }
+          & + li {
+            margin-left: 57px;
+          }
+        }
+      }
+
+      // Tab Content
+      .resp-tab-content {
+        padding: 26px 0 0 0;
+      }
+      .tabs-lg-collapsed{
+        // Tab Content
+        .resp-tab-content {
+          padding: 0 20px 20px;
+        }
+        .resp-tab-content + .resp-accordion {
+          border-top: 1px solid $gray-light;
+          margin-top: 0;
+        }
+      }
+      &.tabs-lg-collapsed{
+        border-bottom: 1px solid $gray-light;
+      }
+    }
+  }
+
+  // Turn Horizontal Tabs to Vertical Tabs
+  @media (min-width: $screen-lg-min) {
+
+    // Style for vertical tabs
+    &[data-type="vertical"] {
+      .resp-tabs-list {
+        text-align: right;
+
+        &:after {
+          margin-top: 3px;
+        }
+
+        li {
+          &.resp-tab-active {
+            &:after {
+              margin-top: 3px;
+            }
+          }
+        }
+
+        li + li {
+          margin-left: 0;
+          margin-top: 17px;
+        }
+        li {
+          padding: 0 18px 0 0;
+          &:after {
+            height: 0;
+            top: 50%;
+            left: 100%;
+            margin-left: -1px;
+          }
+          &.resp-tab-active,
+          &:hover {
+            &:after {
+              width: 1px;
+              left: 100%;
+              height: 100%;
+              top: 0;
+              background: $brand-primary;
+            }
+          }
+        }
+        &:after {
+          left: auto;
+          right: 0;
+          width: 1px;
+          height: 100%;
+          top: 0;
+        }
+      }
+      .resp-tab-content {
+        padding: 0;
+      }
+      .tabs-lg-collapsed{
+        // Tab Content
+        .resp-tab-content {
+          padding: 0;
+        }
+      }
+      &.tabs-lg-collapsed{
+        border-bottom: none;
+      }
+    }
+  }
+}
+
+// Boxed Tabs
+// --------------------------------------------------
+
+.responsive-tabs-boxed {
+  // Collapse Tab
+  .resp-accordion {
+    border-radius: $border-radius-small;
+    border: $accordion-tabs-boxed-border;
+    padding-left: $accordion-tabs-boxed-inset-left;
+    padding-right: $accordion-tabs-boxed-inset-right;
+
+    .resp-arrow {
+      right: $accordion-tabs-boxed-arrow-position-right;
+    }
+  }
+
+  // Accordion Content
+  .resp-tab-content {
+    padding: 35px 10px;
+
+    @media (min-width: $screen-md-min) {
+      padding-left: 25px;
+      padding-right: 25px;
+    }
+  }
+
+  .resp-tab-content + .resp-accordion {
+    margin-top: $accordion-tabs-boxed-content-offset-top;
+  }
+
+  // Turn accordion to Horizontal Tabs
+  @media (min-width: $screen-md-min) {
+    &[data-type="horizontal"],
+    &[data-type="vertical"] {
+      .resp-tabs-list {
+        display: inline-block;
+        text-align: left;
+        font-size: 0;
+        li {
+          position: relative;
+          padding: $accordion-tabs-boxed-list-inset;
+          text-align: center;
+          min-width: 130px;
+          margin-bottom: -1px;
+          letter-spacing: .02em;
+          font-size: $accordion-tabs-boxed-list-size;
+          font-weight: $accordion-tabs-boxed-list-weight;
+          color: $accordion-tabs-boxed-list-letter-color;
+          border: $accordion-tabs-boxed-list-md-li-border;
+          border-radius: 30px;
+          font-family: $font-family-sec;
+          background: $brand-primary;
+          text-transform: uppercase;
+          & + li {
+            margin-left: 5px;
+          }
+          &.resp-tab-active,
+          &:hover {
+            background: #cd9f14;
+            color: $white;
+            border-color: #cd9f14;
+          }
+        }
+      }
+      .resp-tab-content {
+        padding-bottom: 0;
+      }
+      .resp-tab-content + .resp-accordion {
+        margin-top: $accordion-tabs-boxed-list-md-offset-top;
+      }
+    }
+
+    // Turn Horizontal Tabs to Vertical Tabs
+    @media (min-width: $screen-lg-min) {
+      &[data-type="vertical"] {
+        display: flex!important;
+
+        .resp-tabs-list {
+          text-align: left;
+          display: block;
+          padding-right: 22px;
+          margin: $accordion-tabs-boxed-list-lg-offsets;
+          @include flex-basis(20%);
+
+          li {
+            text-align: left;
+
+            & + li {
+              margin-left: 0;
+              margin-top: 5px;
+            }
+
+            &.resp-tab-active {
+            }
+          }
+        }
+
+        .resp-tabs-container {
+          @include flex-basis(80%);
+          text-align: left;
+        }
+
+        .resp-tab-content {
+          padding-top: 0;
+          padding-bottom: 0;
+          padding-left: 8px;
+          padding-right: 108px;
+        }
+      }
+    }
+  }
+}
+
+.accordion-alternative .responsive-tabs {
+  @media (max-width: $screen-md-min - 1) {
+    .resp-tab-content {
+      padding: 25px 10px;
+    }
+
+    .resp-tab-content + .resp-accordion {
+      margin-top: 5px;
+    }
+  }
+
+  @media (min-width: $screen-md-min) {
+    text-align: center;
+
+    .resp-accordion {
+      pointer-events: none;
+      text-align: center;
+      text-transform: none;
+      color: $brand-mine-shaft;
+      background: transparent;
+      border: none;
+      font-size: 18px;
+      font-family: $font-family-sec;
+      letter-spacing: -.025em;
+      overflow: visible;
+      position: relative;
+
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: 70px;
+        left: 50%;
+        width: 135px;
+        height: 4px;
+        text-align: center;
+        background: url('../images/divider-01-135x4.png');
+        background-repeat: no-repeat;
+        @include transform(translateX(-50%));
+        opacity: .6;
+      }
+
+      &:first-child {
+        .resp-arrow {
+          @include transform(translateY(36px));
+        }
+
+        &:after {
+          display: none;
+        }
+      }
+
+      &:nth-child(3) {
+        padding-top: 88px;
+      }
+
+      &:nth-child(5),
+      &:nth-child(7),
+      &:nth-child(9),
+      &:nth-child(11),
+      &:nth-child(13) {
+        padding-top: 108px;
+
+        .resp-arrow {
+          @include transform(translateY(84px));
+        }
+      }
+
+      &:nth-child(3) {
+        padding-top: 88px;
+      }
+
+      > .resp-arrow {
+        pointer-events: all;
+      }
+
+      .resp-arrow {
+        left: 49%;
+        color: $brand-primary;
+        @include transform(translateY(76px));
+      }
+
+      &.resp-tab-active {
+        .resp-arrow {
+          @include transform(translateY(105px));
+        }
+
+        &:nth-child(3),
+        &:nth-child(5),
+        &:nth-child(7),
+        &:nth-child(9) {
+          .resp-arrow {
+            @include transform(translateY(145px));
+          }
+        }
+      }
+    }
+
+    .resp-tab-content {
+      padding-left: 65px;
+      padding-right: 65px;
+    }
+  }
+}
+
+.accordion-alternative.accordion-alternative-lg {
+  @media (min-width: $screen-md-min) {
+    .resp-accordion.resp-tab-active {
+      &:first-child {
+        .resp-arrow {
+          @include transform(translateY(155px));
+        }
+      }
+
+      &:nth-child(3) {
+        .resp-arrow {
+          @include transform(translateY(235px));
+        }
+      }
+
+      &:nth-child(5){
+        .resp-arrow {
+          @include transform(translateY(245px));
+        }
+      }
+
+      &:nth-child(7),
+      &:nth-child(9) {
+        .resp-arrow {
+          @include transform(translateY(205px));
+        }
+      }
+
+      &:nth-child(11) {
+        .resp-arrow {
+          @include transform(translateY(265px));
+        }
+      }
+    }
+  }
+}
+
+
+// Bootstrap Accordion Alternative
+// --------------------------------------------------
+
+.bootstrap-accordion-alternative {
+  .panel {
+    border: none;
+    box-shadow: none;
+  }
+
+  .icon-collapse {
+    &:after {
+      content: '+';
+      font: 400 36px/36px $font-family-sec;
+    }
+
+    &[aria-expanded='true'] {
+      &:after {
+        content: '-';
+        font: 400 48px/48px $font-family-sec;
+      }
+    }
+  }
+
+  .panel-collapse > div {
+    padding-top: 12px;
+  }
+
+  @media (min-width: $screen-md-min) {
+    .panel-collapse > div {
+      padding-right: 55px;
+      padding-left: 55px;
+    }
+  }
+}

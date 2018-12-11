@@ -1,0 +1,58 @@
+<section class="section novi-background section-98 section-sm-110">
+        <div class="container">
+          <h1>Make an Appointment</h1>
+          <hr class="divider bg-mantis">
+          <div class="row justify-content-sm-center">
+            <div class="col-md-8 col-lg-7 col-xl-8">
+              <!-- RD Mailform-->
+              <form class="rd-mailform text-left" data-form-output="form-output-global" data-form-type="contact" method="post" action="bat/rd-mailform.php">
+                <div class="row">
+                  <div class="col-xl-6">
+                    <div class="form-group">
+                      <label class="form-label form-label-outside" for="make-appointment-name">Name:</label>
+                      <input class="form-control" id="make-appointment-name" type="text" name="name" data-constraints="@Required">
+                    </div>
+                  </div>
+                  <div class="col-xl-6 offset-top-20 offset-xl-top-0">
+                    <div class="form-group">
+                      <label class="form-label form-label-outside" for="make-appointment-email">Email:</label>
+                      <input class="form-control" id="make-appointment-email" type="text" name="email" data-constraints="@Required @Email">
+                    </div>
+                  </div>
+                  <div class="col-xl-6 offset-top-20">
+                    <div class="form-group">
+                      <label class="form-label form-label-outside" for="make-appointment-date">Date:</label>
+                      <input class="form-control" id="make-appointment-date" type="text" name="date" data-constraints="@Required" data-time-picker="date">
+                    </div>
+                  </div>
+                  <div class="col-xl-6 offset-top-20">
+                    <div class="row offset-top-0">
+                      <div class="col-sm-6">
+                        <div class="form-group"> 
+                          <label class="form-label form-label-outside" for="make-appointment-time-start">Required Time Interval Start:</label>
+                          <input class="form-control" id="make-appointment-time-start" type="text" name="time-start" data-constraints="@Required" data-time-picker="time">
+                        </div>
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="form-group">
+                          <label class="form-label form-label-outside" for="make-appointment-time-end">Required Time Interval End:</label>
+                          <input class="form-control" id="make-appointment-time-end" type="text" name="tim-end" data-constraints="@Required" data-time-picker="time">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-12 offset-top-20">
+                    <div class="form-group">
+                      <label class="form-label form-label-outside" for="make-appointment-message">Message:</label>
+                      <textarea class="form-control" id="make-appointment-message" name="message" data-constraints="@Required" style="height: 150px"></textarea>
+                    </div>
+                  </div>
+                </div>
+                <div class="text-center text-xl-left offset-top-30">
+                  <button class="btn btn-primary" type="submit">Make an appointment</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>

@@ -1,0 +1,130 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-material-parallax
+
+//-Title
+block title
+  title Team Member
+
+//- Page
+block page
+
+  // Page Head
+  header.page-head
+    //- RD Navbar
+    +rd-navbar-top-panel(
+    'rd-navbar-light',
+    {
+      "data-lg-auto-height": "true",
+      "data-md-layout": 'rd-navbar-fixed',
+      "data-lg-layout": 'rd-navbar-static',
+      "data-lg-stick-up": 'true'
+    },
+    cfg.brand.logoInverse,
+    cfg.nav.services.submenu.link1,
+    cfg.nav
+    )
+
+    // Breadcrumbs
+    section.context-dark
+      +material-parallax({ img: 'images/background-03-1920x640.jpg' })
+        .bg-overlay-info
+          .container.section-34.section-md-85.text-lg-left
+            div.d-none.d-md-block.d-lg-inline-block
+              h1 Team Member Page
+            div.pull-md-right.offset-md-top-10.offset-lg-top-20
+              ul.p.list-inline.list-inline-dashed
+                li.list-inline-item
+                  a(href= cfg.nav.home.href) Home
+                li.list-inline-item
+                  a(href= cfg.nav.aboutUs.href) About Us
+                li.list-inline-item Team Member Page
+  // Page Contents
+  main.page-content
+
+    // Dr. Mark Hoffman
+    section.section-98.section-md-110
+      .container
+        .row.justify-content-sm-center
+          .col-sm-10.col-lg-12
+            .row.justify-content-sm-center
+              .col-lg-4
+                img.img-fluid.d-inline-block(src="images/user-mark-hoffman-370x370.jpg" alt="")
+              .col-lg-8.text-lg-left.offset-top-34.offset-lg-top-0.inset-lg-left-50
+                h3 Dr. Mark Hoffman
+                p
+                  span.small.text-dark MBBS, DCH, DRCOG, MRCGP
+                .offset-top-20.offset-lg-top-41
+                  p Our clinic's Chief Medical, Dr. Mark Hoffman has been working in this field of medical specialization since 2002. He obtains his chief position at our clinic since 2010. Most of all he loves to see you walk in with a concern and walk out with a bright wide smile!
+                  p Dr. Mark Hoffman graduated from Loma Linda Dental School, receiving his DDS and additionally attended a university residency at UIC, receiving a degree in Prosthodontics and Implant Technology.
+                  p His expertise covers many specialized dental services: both regular cleaning and deep cleaning. All of which help in maintaining healthy gums and teeth, surgical and routine extractions, and oral health treatment planning. Dr. Hoffman's main objective for all our patients is quite simple - learning about your dental health concerns! And of course providing all customers with remarkable dental care!
+
+    // Certification
+    section.section-98.section-md-110.bg-polar
+      .container
+        h1 Certification
+        hr.divider.bg-mantis
+        .row.text-lg-left.offset-top-50.offset-xl-top-66
+          // owl carousel
+          .owl-carousel.owl-carousel-default.owl-carousel-class-light(data-loop="false" data-items="1" data-sm-items="2" data-md-items="3" data-dots="true" data-mouse-drag="false" data-lg-items="4" data-xl-items="6" data-nav="false")
+            .text-center
+              img.img-fluid.d-inline-block(src="images/sertificate-01-170x230.jpg" width=170 height=230 alt="")
+            .text-center
+              img.img-fluid.d-inline-block(src="images/sertificate-01-170x230.jpg" width=170 height=230 alt="")
+            .text-center
+              img.img-fluid.d-inline-block(src="images/sertificate-01-170x230.jpg" width=170 height=230 alt="")
+            .text-center
+              img.img-fluid.d-inline-block(src="images/sertificate-01-170x230.jpg" width=170 height=230 alt="")
+            .text-center
+              img.img-fluid.d-inline-block(src="images/sertificate-01-170x230.jpg" width=170 height=230 alt="")
+            .text-center
+              img.img-fluid.d-inline-block(src="images/sertificate-01-170x230.jpg" width=170 height=230 alt="")
+            .text-center
+              img.img-fluid.d-inline-block(src="images/sertificate-01-170x230.jpg" width=170 height=230 alt="")
+            .text-center
+              img.img-fluid.d-inline-block(src="images/sertificate-01-170x230.jpg" width=170 height=230 alt="")
+            .text-center
+              img.img-fluid.d-inline-block(src="images/sertificate-01-170x230.jpg" width=170 height=230 alt="")
+            .text-center
+              img.img-fluid.d-inline-block(src="images/sertificate-01-170x230.jpg" width=170 height=230 alt="")
+            .text-center
+              img.img-fluid.d-inline-block(src="images/sertificate-01-170x230.jpg" width=170 height=230 alt="")
+            .text-center
+              img.img-fluid.d-inline-block(src="images/sertificate-01-170x230.jpg" width=170 height=230 alt="")
+
+    // Send Me a Message
+    section.section-98.section-md-top-110.section-md-bottom-124
+      .container
+        h1 Send Us a Message
+        hr.divider.bg-mantis
+        .row.justify-content-sm-center.offset-top-50.offset-xl-top-66
+          .col-sm-10.col-md-8
+            // RD Mailform
+            form.rd-mailform.text-left(data-form-output="form-output-global", data-form-type='contact', method='post', action='bat/rd-mailform.php')
+              .row
+                .col-xl-6
+                  .form-group
+                    label.form-label.form-label-outside(for="contact-me-name") First Name
+                    input#contact-me-name.form-control(type="text" name="name" data-constraints="@Required")
+                .col-xl-6.offset-top-20.offset-xl-top-0
+                  .form-group
+                    label.form-label.form-label-outside(for="contact-me-phone") Last Name
+                    input#contact-me-phone.form-control(type="text" name="phone" data-constraints="@Required")
+                .col-xl-12.offset-top-20.offset-xl-top-20
+                  .form-group
+                    label.form-label.form-label-outside(for="contact-me-email") E-mail
+                    input#contact-me-email.form-control(type="email" name="email" data-constraints="@Required @Email")
+                .col-xl-12.offset-top-20.offset-xl-top-20
+                  .form-group
+                    label.form-label.form-label-outside(for="contact-me-message") Message
+                    textarea#contact-me-message.form-control(name="message" data-constraints="@Required" style="height: 150px")
+              .row.justify-content-sm-center.offset-top-30
+                .col-sm-4.col-md-3
+                  button(type="submit").btn.btn-block.btn-primary send
+
+    .container.container-wide
+      hr.hr.bg-gray-lightest
+
+  // Page Footer
+  include ../sections/_section-footer

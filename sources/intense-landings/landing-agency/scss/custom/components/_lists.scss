@@ -1,0 +1,445 @@
+//
+// Lists
+// --------------------------------------------------
+
+// Mixins
+//
+@mixin inline-list($x, $y: $x) {
+  @include spacing($x, $y);
+  > * {
+    display: inline-block;
+  }
+}
+
+// Reset styles
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    display: block;
+  }
+}
+
+// Description Lists
+dl {
+  margin: 0;
+}
+
+dt {
+  font-weight: inherit;
+}
+
+// Default list
+.list-0 {
+  line-height: 1.25;
+
+  > li + li {
+    margin-top: 0;
+  }
+}
+
+.list {
+  > li + li {
+    margin-top: 5px;
+  }
+}
+
+.list-xxs {
+  li {
+    line-height: 1;
+  }
+
+  a {
+    line-height: 1.2;
+  }
+
+  > li + li {
+    margin-top: 6px;
+  }
+}
+
+.list-md {
+  > li + li {
+    margin-top: 25px;
+  }
+}
+
+.list-xl {
+  > li + li {
+    margin-top: 40px;
+  }
+}
+
+@include media-breakpoint-up(xl) {
+  .list-xl {
+    > li + li {
+      margin-top: 90px;
+    }
+  }
+}
+
+// Inline list
+//
+.inline-list-xxs {
+  @include inline-list(5px, 8px);
+}
+
+.inline-list-xs {
+  @include inline-list(15px, 18px);
+}
+
+.inline-list-sm {
+  @include inline-list(19px, 8px);
+}
+
+.inline-list-md {
+  @include inline-list(25px, 8px);
+}
+
+.inline-list-lg {
+  @include inline-list(32px, 8px);
+}
+
+// Terms list
+//
+
+.terms-list {
+  text-align: left;
+
+  dt {
+    @include header-base-styles;
+    @include header-h4;
+  }
+
+  dt + dd {
+    margin-top: 10px;
+  }
+
+  dd + dt {
+    margin-top: 30px;
+  }
+}
+
+@include media-breakpoint-up(xl) {
+  .terms-list {
+    dd + dt {
+      margin-top: 50px;
+    }
+  }
+}
+
+.terms-list-inline {
+  vertical-align: middle;
+
+  dt,
+  dd {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  dt {
+    &:after {
+      content: ':';
+    }
+  }
+}
+
+.terms-list-uppercase {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+
+  dt,
+  dd {
+    display: inline-block;
+  }
+
+  dt {
+    font-family: $font-family-sec;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: $manatee;
+    min-width: 100px;
+  }
+
+  dd {
+    color: $black;
+  }
+
+  @include media-breakpoint-up(md) {
+    dt {
+      min-width: 160px;
+    }
+  }
+}
+
+* + .contacts-list {
+  margin-top: 35px;
+}
+
+.terms-list-uppercase + .terms-list-uppercase {
+  margin-top: 10px;
+}
+
+@include media-breakpoint-up(md) {
+  .terms-list-uppercase {
+    dt {
+      font-size: 18px;
+    }
+  }
+  .terms-list-uppercase-2{
+    dt{
+      font-size: 13px;
+      font-weight: 700;
+    }
+    
+  }
+
+  .terms-list-uppercase + .terms-list-uppercase {
+    margin-top: 18px;
+  }
+}
+
+// Index list
+//
+
+.index-list {
+  counter-reset: li;
+
+  > li {
+    .list-index-counter {
+      &:before {
+        content: counter(li, decimal-leading-zero);
+        counter-increment: li;
+      }
+    }
+  }
+}
+
+// Marked list
+//
+
+.marked-list {
+  > li {
+    position: relative;
+    padding-left: 25px;
+    font: 400 14px/24px $font-family-base;
+    color: $gray-darker;
+    text-align: left;
+
+    &:before {
+      position: absolute;
+      top: -1px;
+      left: 0;
+      content: '\f105';
+      font: 400 16px/24px $fa;
+      color: $nobel;
+    }
+
+    a {
+      @include link(inherit, $primary);
+    }
+  }
+
+  > li + li {
+    margin-top: 10px;
+  }
+}
+
+.marked-list__marker-1 {
+  > li {
+    &:before {
+      color: $brand-success;
+      content: '\e005';
+      font: 400 13px/24px "fl-flat-icons-set-2";
+    }
+  }
+}
+
+.marked-list-custom {
+  > li + li {
+    margin-top: 10px;
+  }
+  .icon {
+    margin-right: 7px;
+  }
+  
+  * + & {
+    margin-top: 25px;
+  }
+}
+
+.marked-list-gray-darker {
+  > li {
+    color: $gray-dark;
+  }
+}
+
+// Ordered list
+//
+
+.ordered-list {
+  counter-reset: li;
+  li {
+    position: relative;
+    padding-left: 25px;
+    font: 400 14px/24px $font-family-base;
+    color: $gray-darker;
+
+    &:before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: inline-block;
+      width: 15px;
+      content: counter(li, decimal) '.';
+      counter-increment: li;
+      color: $nobel;
+    }
+  }
+
+  li + li {
+    margin-top: 10px;
+  }
+}
+
+// List bold
+//
+
+.list-bold {
+  > li {
+    font: 700 16px $font-family-sec;
+    color: $shark;
+    > a {
+      @include link(inherit, $primary);
+    }
+  }
+
+  > li + li {
+    margin-top: 15px;
+  }
+
+  @include media-breakpoint-up(md) {
+    > li {
+      font-size: 18px;
+    }
+
+    > li + li {
+      margin-top: 15px;
+    }
+  }
+}
+
+// List nav
+//
+
+.list-nav {
+  @include spacing(20px, 5px);
+
+  @include media-breakpoint-down(sm) {
+    max-width: 360px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  li {
+    display: inline-block;
+  }
+
+  a {
+    @include link(inherit, $white);
+  }
+
+  li.active {
+    pointer-events: none;
+    color: $white;
+  }
+
+  @include media-breakpoint-up(md) {
+    @include spacing(38px, 5px);
+  }
+}
+
+.list-nav-marked {
+  text-align: left;
+  > li {
+    position: relative;
+    padding-left: 15px;
+    font-size: 14px;
+    color: $body-color;
+
+    &:before {
+      content: '\f105';
+      font-family: $fa;
+      position: absolute;
+      top: 1px;
+      left: 0;
+      font-size: 16px;
+      line-height: 20px;
+      color: $primary;
+      transition: .22s;
+    }
+
+    a {
+      @include link(inherit, $primary);
+    }
+  }
+
+  > li:hover:before {
+    left: 5px;
+  }
+}
+
+// List bars
+//
+.list-bars {
+  text-align: left;
+
+  li {
+    display: block;
+  }
+
+  > li + li {
+    margin-top: 25px;
+  }
+
+  * + .progress {
+    margin-top: 19px;
+  }
+}
+
+.list-bars-item-header {
+  color: $gray;
+  text-transform: uppercase;
+}
+
+// List tags
+.list-tags {
+  @include spacing(8px, 10px);
+
+  > li {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  a {
+    display: inline-block;
+    padding: 10px 12px;
+    color: $gray;
+    background: transparent;
+    border: 1px solid $gray-lighter;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+
+    &:hover {
+      background-color: $primary;
+      color: $white;
+    }
+  }
+}

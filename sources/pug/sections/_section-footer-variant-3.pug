@@ -1,0 +1,64 @@
+//- Includes
+include ../elements/_widget-twitter
+include ../elements/_widget-form-contact
+include ../elements/_widget-list-social
+include ../elements/_widget-form-subscribe-type-2
+include ../elements/_widget-flickrfeed
+
+// Footer variant 3
+footer.section.novi-background.section-relative.section-top-66.section-bottom-34.page-footer.bg-black.context-dark
+  .container
+    .row.justify-content-sm-center.text-xl-left.grid-group-md
+      .col-sm-10.col-md-7.col-xl-3
+        // Footer brand
+        .footer-brand
+          a(href=cfg.nav.home.href)
+            !=cfg.brand.logoInverse
+        p.offset-top-20.text-xl-left.
+          Intense is exactly what you need.
+          Create your own unique site with Intense.
+        .offset-top-20.text-sm-center.text-xl-left
+          +widget-list-social([
+            {
+              "icon": "fa fa-facebook",
+              "href": "#"
+            },
+            {
+              "icon": "fa fa-twitter",
+              "href": "#"
+            },
+            {
+              "icon": "fa fa-google-plus",
+              "href": "#"
+            },
+            {
+              "icon": "fa fa-linkedin",
+              "href": "#"
+            }
+          ])
+        p.small.text-darker.offset-top-20
+          | #{cfg.brand.name} &copy; #[span.copyright-year] . #[a(href="privacy.html") Privacy Policy]
+          | . Design&nbsp;by&nbsp;#[a(href="https://zemez.io/") Zemez]
+
+      .col-sm-10.col-md-7.col-xl-3.text-left
+        // Twitter Feed
+        p.text-uppercase.text-spacing-60.font-weight-bold.text-center.text-xl-left Twitter Feed
+        .offset-top-20
+          +widget-twitter({
+            "dataTwitterUsername": "templatemonster"
+          }, true)
+
+      .col-sm-10.col-md-7.col-xl-2
+        // Flickr Feed
+        p.text-uppercase.text-spacing-60.font-weight-bold Flickr
+        .offset-top-24
+          +widget-flickrfeed("tm58888_landscapes", {"data-image_q": "src"}, 4)
+
+      .col-sm-10.col-md-7.col-xl-4
+        p.text-uppercase.text-spacing-60.font-weight-bold Subscribe
+        p.offset-top-20.text-left.
+          Keep up with our always upcoming  product
+          features and technologies. Enter your e-mail and
+          subscribe to our newsletter.
+        .offset-top-30
+          +widget-form-subscribe-type-2("Type your E-Mail", "form-output-global","icon", true)

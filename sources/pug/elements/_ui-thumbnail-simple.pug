@@ -1,0 +1,25 @@
+//-
+  Simple Thumbnail
+  @param {object}  thumbnail          storage object
+  @param {boolean} thumbnail.blank    open link in new tab
+  @param {string}  thumbnail.href     link href
+  @param {string}  thumbnail.src      image source
+  @param {string}  thumbnail.alt      image alternative text
+  @param {number}  thumbnail.width    image width
+  @param {number}  thumbnail.height   image height
+  @param {string}  thumbnail.caption
+mixin thumbnail-simple( thumbnail )
+  - thumbnail.blank = thumbnail.blank ? '_blank' : '_self';
+  - thumbnail.alt = thumbnail.alt || '';
+  a.thumbnail-simple( target= thumbnail.blank, href= thumbnail.href )&attributes( attributes )
+    .thumbnail-wrap
+      img( width= thumbnail.width, height= thumbnail.height, src= thumbnail.src, alt= thumbnail.alt )
+    if ( thumbnail.caption )
+      div.offset-top-14.offset-xxl-top-20
+        h4
+          span.caption.font-weight-bold.text-middle
+            = thumbnail.caption
+          if( thumbnail.label )
+            != thumbnail.label
+      div.offset-xxl-top-14.d-none.d-xxl-block
+        hr.divider.divider-xs.bg-mantis

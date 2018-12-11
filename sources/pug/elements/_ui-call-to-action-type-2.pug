@@ -1,0 +1,24 @@
+//- title - title of element
+//- btnClass - button class
+//- iconClass - class of icon inside button
+//- btnText - button text
+//- bgElement - background of element
+mixin call-to-action-type-2( title, btnHref, btnClass, iconClass, iconAlign, btnText, bgElement, desc, target )
+  // Call to action type 2
+  - var bgElement = bgElement || "bg-blue-gray"
+  - var btnText = btnText || "By intense now"
+
+  section.section.novi-background.section-66.context-dark( class= bgElement )
+    .container
+      .row.justify-content-sm-center.align-items-sm-center.no-gutters.grid-group-md
+        .col-lg-7.col-xxl-9.text-center.text-lg-left
+          h2: span.big= title
+          if ( desc )
+            p= desc
+        .col-lg-4.col-xl-3
+          if ( iconClass )
+            a.btn.btn-icon( href=btnHref, class= btnClass + " "+"btn-icon-"+ iconAlign, target= target )
+              span.icon.novi-icon( class= iconClass )
+              = btnText
+          else
+            a.btn( href=btnHref, class=btnClass, target= target )= btnText

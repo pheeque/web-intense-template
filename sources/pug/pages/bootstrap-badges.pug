@@ -1,0 +1,102 @@
+extends  ../_skeleton
+//- Includes
+include ../elements/_ui-breadcrumb-classic
+//-Title
+block title
+  title= cfg.nav.components.submenu.bootstrapcomponents.submenu.badges.title
+//- Page
+block page
+  // Page Header
+  header.page-head
+    //- RD Navbar
+    +rd-navbar-default(
+      'rd-navbar-default rd-navbar-light',
+      {
+        "data-lg-auto-height": "true",
+        "data-md-layout": 'rd-navbar-fixed',
+        "data-lg-layout": 'rd-navbar-static',
+        "data-lg-stick-up": 'true'
+      },
+      cfg.brand.logo,
+      cfg.nav.components,
+      cfg.nav
+      )
+  +breadcrumb-classic(
+    cfg.nav.components.submenu.bootstrapcomponents.submenu.badges.title,
+    "icon-lg " + cfg.nav.components.submenu.bootstrapcomponents.submenu.badges.icon,
+    {
+      0: {
+        "title": cfg.nav.home.title,
+        "href": cfg.nav.home.href
+      },
+      1: {
+        "title": cfg.nav.components.title,
+        "href": cfg.nav.components.href
+      },
+      2: {
+        "title": cfg.nav.components.submenu.bootstrapcomponents.submenu.badges.title,
+        "href": cfg.nav.components.submenu.bootstrapcomponents.submenu.badges.href
+      }
+    })
+
+  section.section.novi-background.section-98.section-sm-124
+    .container
+      h1 Badges
+      p Easily highlight new or unread items by adding a #[code &lt;span class=&quot;badge&quot;&gt;] to links, buttons, and more.
+      hr.divider.bg-mantis
+      .offset-top-66.group-sm.group-middle
+        a(href='#') Inbox #[span.badge.badge-dark 42]
+        button.btn.btn-primary(type='button') Messages #[span.badge 4]
+
+      h3.offset-top-66 Labels
+      p Add various labels to your content
+      .row.text-xl-left.justify-content-md-center.offset-top-41
+        .col-md-6.col-lg-4
+          h1 Heading 1 #[span.badge.badge-danger New]
+          h2 Heading 2 #[span.badge.badge-danger New]
+          h3 Heading 3 #[span.badge.badge-danger New]
+          h4 Heading 4 #[span.badge.badge-danger New]
+          h5 Heading 5 #[span.badge.badge-danger New]
+          h6 Heading 6 #[span.badge.badge-danger New]
+
+      h3.offset-top-66 Available variations
+      p Add any of the below mentioned modifier classes to change the appearance of a label.
+      .row.justify-content-md-center.offset-top-41
+        .col-md-6
+          .group-sm
+            span.badge.badge-dark Dark
+            span.badge.badge-primary Primary
+            span.badge.badge-deluge Deluge
+            span.badge.badge-success Success
+            span.badge.badge-warning Warning
+            span.badge.badge-danger Danger
+            span.badge.badge-info Info
+
+      h3.offset-top-66 Pill Badges
+      p Use the #[code .badge-pill] modifier class to make badges more rounded.
+      .row.justify-content-md-center.offset-top-41
+        .col-md-6
+          .group-sm
+            span.badge.badge-pill.badge-dark Dark
+            span.badge.badge-pill.badge-primary Primary
+            span.badge.badge-pill.badge-deluge Deluge
+            span.badge.badge-pill.badge-success Success
+            span.badge.badge-pill.badge-warning Warning
+            span.badge.badge-pill.badge-danger Danger
+            span.badge.badge-pill.badge-info Info
+
+      h3.offset-top-66 Links
+      p Using the contextual #[code .badge-*] classes on an #[code &lt;a&gt;] element quickly provide actionable badges with hover and focus states.
+      .row.justify-content-md-center.offset-top-41
+        .col-md-6
+          .group-sm
+            a( href='javascript:void(0)' ).badge.badge-dark Dark
+            a( href='javascript:void(0)' ).badge.badge-primary Primary
+            a( href='javascript:void(0)' ).badge.badge-deluge Deluge
+            a( href='javascript:void(0)' ).badge.badge-success Success
+            a( href='javascript:void(0)' ).badge.badge-warning Warning
+            a( href='javascript:void(0)' ).badge.badge-danger Danger
+            a( href='javascript:void(0)' ).badge.badge-info Info
+
+  // Page Footer
+  include ../sections/_section-footer-default

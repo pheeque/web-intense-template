@@ -1,0 +1,129 @@
+extends  ../_skeleton
+
+//- Includes
+include  ../elements/_ui-material-parallax
+include ../elements/_ui-thumbnail-classic
+include ../elements/_ui-isotope
+include ../elements/_ui-google-map
+//-Title
+block title
+  title= cfg.nav.gallery.title
+
+//- Page
+block page
+
+  // Page Head
+  header.section.page-head
+    //- RD Navbar
+    +rd-navbar-top-panel(
+    'rd-navbar-light',
+    {
+      "data-lg-auto-height": "true",
+      "data-md-layout": 'rd-navbar-fixed',
+      "data-lg-layout": 'rd-navbar-static',
+      "data-lg-stick-up": 'true'
+    },
+    cfg.brand.logo,
+    cfg.nav.gallery,
+    cfg.nav
+    )
+
+
+  // Breadcrumbs
+  +material-parallax({
+    img: 'images/bg-01-1920x718.jpg',
+    Class: 'section-34 section-md-66 text-lg-left context-dark bg-overlay-info'
+  }).section
+    .container
+      div.d-none.d-md-block.d-lg-inline-block
+        h1.font-weight-bold
+          span.big Gallery
+      div.pull-lg-right.offset-md-top-10.offset-lg-top-41
+        ul.p.list-inline.list-inline-dashed
+          li.list-inline-item.text-safety-orange
+            a(href= cfg.nav.home.href) Home
+          li.list-inline-item Gallery
+
+  // Gallery
+  section.section.novi-background.section-98.section-md-124
+    .container.text-xl-left
+      +isotope(['All', 'Classes', 'Birthday', 'Typical day', 'Events'],{
+        "group": "gallery",
+        "layout": "masonry",
+        "alignClass": "isotope-filters-vertical"
+      }, "isotope-1")
+        .row( data-lightgallery='group' )
+          .col-12.col-md-6.col-lg-4.isotope-item(data-filter="*")
+            +thumbnail-classic({
+              "type": "thumbnail",
+              "thumb": {"src": "images/gallery-01-270x270.jpg", "width": 270, "height": 270, "alt": ""},
+              "target": {"src": "images/home-10_original-1200x801.jpg", "width": 1200, "height": 801, "alt": ""}
+            })
+          .col-12.col-md-6.col-lg-4.isotope-item(data-filter="Classes")
+            +thumbnail-classic({
+              "type": "thumbnail",
+              "thumb": {"src": "images/gallery-02-270x420.jpg", "width": 270, "height": 420, "alt": ""},
+              "target": {"src": "images/gallery-02_original-1200x855.jpg", "width": 1200, "height": 855, "alt": ""}
+            })
+          .col-12.col-md-6.col-lg-4.isotope-item(data-filter="Birthday")
+            +thumbnail-classic({
+              "type": "thumbnail",
+              "thumb": {"src": "images/gallery-03-270x270.jpg", "width": 270, "height": 270, "alt": ""},
+              "target": {"src": "images/gallery-03_original-1200x872.jpg", "width": 1200, "height": 872, "alt": ""}
+            })
+          .col-12.col-md-6.col-lg-4.isotope-item(data-filter="Typical day")
+            +thumbnail-classic({
+              "type": "thumbnail",
+              "thumb": {"src": "images/gallery-04-270x420.jpg", "width": 270, "height": 420, "alt": ""},
+              "target": {"src": "images/home-07_original-1200x774.jpg", "width": 1200, "height": 774, "alt": ""}
+            })
+          .col-12.col-md-6.col-lg-4.isotope-item(data-filter="Classes")
+            +thumbnail-classic({
+              "type": "thumbnail",
+              "thumb": {"src": "images/gallery-06-270x286.jpg", "width": 270, "height": 286, "alt": ""},
+              "target": {"src": "images/home-08_original-1200x1126.jpg", "width": 1200, "height": 1126, "alt": ""}
+            })
+          .col-12.col-md-6.col-lg-4.isotope-item(data-filter="Birthday")
+            +thumbnail-classic({
+              "type": "thumbnail",
+              "thumb": {"src": "images/gallery-05-270x270.jpg", "width": 270, "height": 270, "alt": ""},
+              "target": {"src": "images/gallery-05_original-1200x808.jpg", "width": 1200, "height": 808, "alt": ""}
+            })
+          .col-12.col-md-6.col-lg-4.isotope-item(data-filter="Typical day")
+            +thumbnail-classic({
+              "type": "thumbnail",
+              "thumb": {"src": "images/gallery-08-270x404.jpg", "width": 270, "height": 404, "alt": ""},
+              "target": {"src": "images/gallery-08_original-1170x600.jpg", "width": 1170, "height": 600, "alt": ""}
+            })
+          .col-12.col-md-6.col-lg-8.isotope-item(data-filter="Events")
+            +thumbnail-classic({
+              "type": "thumbnail",
+              "thumb": {"src": "images/gallery-07-570x270.jpg", "width": 570, "height": 270, "alt": ""},
+              "target": {"src": "images/home-11_original-1200x801.jpg", "width": 1200, "height": 801, "alt": ""}
+            })
+          .col-12.col-md-6.col-lg-8.isotope-item(data-filter="Birthday")
+            +thumbnail-classic({
+              "type": "thumbnail",
+              "thumb": {"src": "images/gallery-10-570x270.jpg", "width": 570, "height": 270, "alt": ""},
+              "target": {"src": "images/gallery-10_original-1170x600.jpg", "width": 1170, "height": 600, "alt": ""}
+            })
+          .col-12.col-md-6.col-lg-4.isotope-item(data-filter="Birthday")
+            +thumbnail-classic({
+              "type": "thumbnail",
+              "thumb": {"src": "images/gallery-09-270x270.jpg", "width": 270, "height": 270, "alt": ""},
+              "target": {"src": "images/gallery-09_original-1200x808.jpg", "width": 1200, "height": 808, "alt": ""}
+            })
+
+
+  // Map
+  +google-map({
+    center: '9870 St Vincent Place, Glasgow, DC 45 Fr 45.'
+  }, [{
+    location: '9870 St Vincent Place, Glasgow, DC 45 Fr 45.',
+    description: '9870 St Vincent Place, Glasgow'
+  }]).section
+
+  // Page Footer
+  include ../sections/_section-footer-default
+
+

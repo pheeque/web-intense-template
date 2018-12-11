@@ -1,0 +1,20 @@
+//- Includes
+include ../elements/_ui-rd-parallax
+
+// Intense is the most powerful Bootstrap theme on TemplateMonster
+section.section.bg-black.context-dark.rd-parallax(data-on="false" data-md-on="true")
+  .rd-parallax-layer(data-speed="0.45", data-type="media", data-url="images/intros/intro-04-1920x955.jpg")
+  .rd-parallax-layer.bg-overlay-gray-darkest(data-speed="0.3", data-type='html' data-md-fade="true")
+    .container-fluid
+      .row
+        .row.justify-content-sm-center.align-items-sm-center.section-cover.section-110
+          .col-sm-11.col-xl-8.col-xxl-6
+            h1.wow.fadeInUp(data-wow-duration="1s" data-wow-delay="0.4s") Intense is the most powerful Bootstrap theme on TemplateMonster
+
+            .row.justify-content-sm-center.offset-top-41.wow.fadeInUp(data-wow-duration="1s" data-wow-delay="1s")
+              .col-sm-7.col-md-4.col-lg-4.col-xl-5.col-xxl-4.text-md-right
+                .inset-xl-left-50
+                  a.btn.btn-block.btn-primary.btn-anis-effect(href=cfg.buyLink target='_blank') buy intense now
+              .col-sm-7.col-md-4.col-lg-4.col-xl-5.col-xxl-4.text-md-left.offset-top-20.offset-md-top-0
+                .inset-xl-right-50
+                  a.btn.btn-block.btn-default(href='#' data-waypoint-to="#section-childs") start a journey

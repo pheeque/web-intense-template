@@ -1,0 +1,711 @@
+//
+// Custom typography
+// --------------------------------------------------
+
+// Page
+// -------------------------
+
+.page {
+  overflow: hidden;
+}
+
+// Page header
+// -------------------------
+
+.page-header {
+  margin: 0;
+  padding: 0;
+}
+
+// Fonts
+// -------------------------
+
+.font-default {
+  font-family: $font-family-base;
+}
+
+.font-accent {
+  font-family: $font-family-sec;
+}
+
+// Basic Typography
+// -------------------------
+
+.page {
+  #{headings()} {
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 1.2;
+    letter-spacing: -.05em;
+
+    &.line-height-36 {
+      line-height: 36px;
+    }
+  }
+
+  h5, .h5,
+  h6, .h6 {
+    letter-spacing: .05em;
+    text-transform: uppercase;
+  }
+}
+
+h1,
+.h1 {
+  font-size: 36px;
+  font-weight: 700;
+
+  @media (min-width: $screen-sm-min) {
+    line-height: $font-lh-h1;
+    font-size: $font-size-h1;
+  }
+}
+
+h2,
+.h2 {
+  font-size: 36px;
+
+  @media (min-width: $screen-sm-min) {
+    line-height: $font-lh-h2;
+    font-size: $font-size-h2;
+  }
+}
+
+h3,
+.h3 {
+  font-size: 26px;
+  font-weight: 700;
+
+  @media (min-width: $screen-sm-min) {
+    line-height: $font-lh-h3;
+    font-size: $font-size-h3;
+  }
+}
+
+h4,
+.h4 {
+  font-size: 26px;
+
+  @media (min-width: $screen-sm-min) {
+    line-height: $font-lh-h4;
+    font-size: $font-size-h4;
+  }
+}
+
+h5,
+.h5 {
+  font-size: 18px;
+  font-weight: 700;
+
+  @media (min-width: $screen-sm-min) {
+    font-size: 20px;
+  }
+  @media (min-width: $screen-md-min) {
+    line-height: $font-lh-h5;
+    font-size: $font-size-h5;
+  }
+}
+
+h6,
+.h6 {
+  font-size: 18px;
+
+  @media (min-width: $screen-sm-min) {
+    font-size: 20px;
+  }
+  @media (min-width: $screen-md-min) {
+    line-height: $font-lh-h6;
+    font-size: $font-size-h6;
+  }
+}
+
+a {
+  &:hover {
+    .icon:before {
+      text-decoration: none;
+    }
+  }
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  a {
+    transition: .3s all ease;
+  }
+
+  a:hover {
+    color: $brand-primary;
+  }
+
+  .small {
+    color: $gray-dark;
+  }
+}
+
+p,
+.p,
+.list {
+  a:hover {
+    text-decoration: underline;
+  }
+}
+
+@media (min-width: $screen-xs) {
+  .big {
+    font-size: $font-size-large;
+    line-height: floor(($font-size-large * $line-height-large));
+
+    h1 &,
+    .h1 & {
+      font-size: 142.22%;
+      line-height: 1.125;
+    }
+
+    h2 &,
+    .h2 & {
+      font-size: 147.36%;
+      line-height: 1.142857142857143;
+    }
+  }
+}
+
+small,
+.small {
+  font-size: $font-size-small;
+  line-height: floor(($font-size-small * $line-height-small));
+}
+
+blockquote small,
+blockquote .small,
+small,
+.small {
+  font-size: 93.75%;
+
+  h1 &,
+  .h1 & {
+    font-size: 62.22222222222222%;
+  }
+
+  h2 &,
+  .h2 & {
+    font-size: 63.15789473684211%;
+  }
+
+  h3 &,
+  .h3 & {
+    font-size: 73.33333333333333%;
+  }
+
+  h4 &,
+  .h4 & {
+    font-size: 75%;
+  }
+
+  h5 &,
+  .h5 & {
+    font-size: 72.72727272727273%;
+  }
+
+  h6 &,
+  .h6 & {
+    font-size: 94.11764705882353%;
+  }
+}
+
+code {
+  padding: 2px;
+  font-size: 14px;
+  font-family: $font-family-sans-serif;
+  color: $white;
+  background-color: $brand-primary;
+}
+
+mark, .mark {
+  background-color: $brand-primary;
+  padding: .1em;
+}
+
+.page .text-extra-small {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.text-extra-big {
+  font-size: 42px;
+
+  @media (max-width: $screen-sm-min - 1) {
+    line-height: 44px;
+  }
+  @media (min-width: $screen-sm-min) {
+    font-size: 54px;
+  }
+  @media (min-width: $screen-md-min) {
+    font-size: 72px;
+  }
+}
+
+html .page .transition-none {
+ transition: none;
+}
+
+// Lists
+// -------------------------
+
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.list {
+  > li + li {
+    margin-top: 10px;
+  }
+}
+
+// List inline
+//
+
+.list-inline {
+  margin-left: -5px;
+  margin-right: -5px;
+
+  > li {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+
+.list-inline-2 {
+  margin-left: -2px;
+  margin-right: -2px;
+
+  > li {
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+}
+
+.list-inline-0 {
+  margin-left: 0;
+  margin-right: 0;
+
+  > li {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.list-inline-13 {
+  li + li {
+    margin-left: 13px;
+  }
+}
+
+.list-inline-dashed {
+  > li {
+    padding-right: 0;
+    padding-left: 0;
+
+    & + li {
+      &:before {
+        content: '/';
+        padding-right: 10px;
+      }
+    }
+  }
+}
+
+.page {
+  .list-primary {
+    li a {
+      transition: .3s all ease;
+
+      &:hover {
+        color: $brand-primary;
+      }
+    }
+  }
+
+  .list-calypso {
+    li a {
+      transition: .3s all ease;
+
+      &:hover {
+        color: #cea013;
+      }
+    }
+  }
+
+  .list-silver-chalice {
+    li a {
+      transition: .3s all ease;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .list-white {
+    li a {
+      transition: .3s all ease;
+
+      &:hover {
+        color: $white;
+      }
+    }
+  }
+}
+
+// Description Lists
+dl {
+  margin: 0;
+}
+
+// List terms
+//
+
+.list-terms {
+  margin-top: 35px;
+  dt + dd {
+    margin-top: 5px;
+  }
+  dd + dt {
+    margin-top: 25px;
+  }
+}
+
+// List index
+//
+
+.list-index {
+  counter-reset: li;
+
+  li {
+    .list-index-counter {
+      &:before {
+        content: counter(li, decimal-leading-zero)".";
+        counter-increment: li;
+      }
+    }
+  }
+
+  &-extra-small {
+    li {
+      .list-index-counter {
+        &:before {
+
+        }
+      }
+    }
+  }
+}
+
+.list-index-lg {
+  counter-reset: li;
+
+  .list-index-counter {
+    &:before {
+      content: counter(li, decimal-leading-zero)".";
+      counter-increment: li;
+    }
+  }
+}
+
+// List marked
+//
+
+.list-marked {
+  li {
+    position: relative;
+    padding-left: 12px;
+
+    &:before {
+      content: '';
+      display: inline-block;
+      background: $brand-primary;
+      border-radius: 50%;
+      width: 4px;
+      height: 4px;
+      position: absolute;
+      left: 0;
+      top: 10px;
+    }
+  }
+
+  &-type-2 {
+    li {
+      &:before {
+        left: -8px;
+      }
+      &:first-child {
+        padding-left: 0;
+        &:before {
+          display: none;
+        }
+      }
+    }
+
+    &-dot-1 {
+      li {
+        &:before {
+          left: 2px;
+        }
+      }
+    }
+  }
+
+  &-type-3 {
+    margin-left: -19px;
+
+    li {
+      padding-left: 19px;
+
+      &:before {
+        display: none;
+      }
+
+      &:after {
+        content: '';
+        display: inline-block;
+        background: $brand-primary;
+        border-radius: 50%;
+        width: 4px;
+        height: 4px;
+        position: absolute;
+        right: -12px;
+        top: 10px;
+      }
+
+      &:last-child {
+        &:after {
+          display: none;
+        }
+      }
+    }
+
+    @media (min-width: $screen-lg-min) {
+      margin-left: -29px;
+
+      li {
+        padding-left: 29px;
+
+        &:after {
+          right: -15px;
+        }
+      }
+    }
+  }
+
+  &-mine-shaft {
+    li {
+      &:before {
+        background: $brand-mine-shaft;
+      }
+    }
+  }
+
+  &-silver-chalice {
+    li {
+      &:before {
+        background: $brand-silver-chalice;
+      }
+    }
+  }
+
+  &.text-extra-small {
+    li:before {
+      top: 8px;
+    }
+  }
+}
+
+// List tags
+//
+
+.list-tags {
+  line-height: 30px;
+
+  li {
+    position: relative;
+    padding-right: 15px;
+
+    &:before {
+      position: absolute;
+      right: -1px;
+      top: 15px;
+      display: inline-block;
+      width: 4px;
+      height: 4px;
+      content: '';
+      background: $brand-silver-chalice;
+      border-radius: 50%;
+    }
+
+    &:last-child {
+      &:before {
+        display: none;
+      }
+    }
+  }
+
+  &-small {
+    li {
+      &:before {
+        top: 8px;
+        right: 0;
+      }
+    }
+  }
+}
+
+// Misc
+// -------------------------
+
+// Blockquotes
+blockquote {
+  q {
+    &:before,
+    &:after {
+      content: none;
+    }
+  }
+  cite {
+    font-style: normal;
+  }
+
+  &.quote {
+    padding: 0;
+    border-left: none;
+
+    p {
+      font-size: 18px;
+      line-height: 24px;
+    }
+
+    cite {
+      font-size: 18px;
+      line-height: 24px;
+    }
+  }
+}
+
+// Addresses
+address {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+
+// Shadows
+// -------------------------
+
+.shadow-drop-ambient { box-shadow: $shadow-area-ambient; }
+.shadow-drop-xxs { box-shadow: $shadow-area-xxs; }
+.shadow-drop-xs { box-shadow: $shadow-area-xs; }
+.shadow-drop-sm { box-shadow: $shadow-area-sm; }
+.shadow-drop, .shadow-drop-md { box-shadow: $shadow-area-md; }
+.shadow-drop-lg { box-shadow: $shadow-area-lg; }
+.shadow-drop-xl { box-shadow: $shadow-area-xl; }
+
+
+// Backgrounds
+// -------------------------
+
+// Contextual backgrounds
+//
+
+.page {
+  .bg-white { @include bg-variant-custom(#{$white}); }
+  .bg-gray-base {
+    @include bg-variant-custom(#{$gray-base});
+  }
+  .bg-gray-lighter { @include bg-variant-custom(#{$gray-lighter}); }
+  .bg-gray { @include bg-variant-custom(#{$gray}); }
+  .bg-gray { @include bg-variant-custom(#{$gray}); }
+  .bg-gray-base { @include bg-variant-custom(#{$gray-base}); }
+  .bg-gray-darker { @include bg-variant-custom(#{$gray-darker}); }
+  .bg-mercury { @include bg-variant-custom(#{$brand-mercury}); }
+  .bg-gallery { @include bg-variant-custom(#{$brand-gallery}); }
+  .bg-primary { @include bg-variant-custom(#{$brand-primary}); }
+  .bg-mine-shaft { @include bg-variant-custom(#{$brand-mine-shaft}); }
+  .bg-concrete { @include bg-variant-custom(#{$brand-concrete}); }
+}
+
+.context-dark{
+
+  #{headings()},
+  &{
+    color: white;
+  }
+}
+
+
+// Overlay backgrounds
+//
+.bg-overlay-chathams-blue {
+  background: rgba($brand-chathams-blue, .5);
+}
+
+
+// Gradients
+//
+.bg-calypso-scooter {
+  @include bg-variant-custom(linear-gradient(180deg, $brand-calypso 20%, $brand-scooter 80%));
+}
+
+// Colors
+// -------------------------
+
+// Contextual colors
+//
+
+.page {
+  @include text-emphasis-variant('.text-gray-base', $gray-base);
+  @include text-emphasis-variant('.text-gray-darker', $gray-darker);
+  @include text-emphasis-variant('.text-gray-dark', $gray-dark);
+  @include text-emphasis-variant('.text-gray', $gray);
+  @include text-emphasis-variant('.text-gray-light', $gray-light);
+  @include text-emphasis-variant('.text-gray-lighter', $gray-lighter);
+  @include text-emphasis-variant('.text-white', $white);
+  @include text-emphasis-variant('.text-primary', $brand-primary);
+  @include text-emphasis-variant('.text-turquoise', $brand-turquoise);
+  @include text-emphasis-variant('.text-pelorous', $brand-pelorous);
+  @include text-emphasis-variant('.text-silver-chalice', $brand-silver-chalice);
+  @include text-emphasis-variant('.text-mine-shaft', $brand-mine-shaft);
+  @include text-emphasis-variant('.text-teal-blue', $brand-teal-blue);
+  @include text-emphasis-variant('.text-mine-shaft', $brand-mine-shaft);
+  @include text-emphasis-variant('.text-mercury', $brand-mercury);
+  @include text-emphasis-variant('.text-nobel', $brand-nobel);
+  @include text-emphasis-variant('.text-alto', $brand-alto);
+  @include text-emphasis-variant('.text-malibu', $brand-malibu);
+  @include text-emphasis-variant('.text-silver', $brand-silver);
+  @include text-emphasis-variant('.text-white-light', $white-light);
+}
+
+// Page footer
+// -------------------------
+
+.page-footer {
+
+}
+
+
+//
+// Breadcrumbs
+// --------------------------------------------------
+
+.breadcrumb-modern {
+  a {
+    &:hover {
+      color: $white;
+      text-decoration: underline;
+    }
+  }
+}

@@ -1,0 +1,63 @@
+//
+// Products
+// --------------------------------------------------
+
+
+// Cart Total
+// --------------------------------------------------
+
+.cart-total {
+  .cart-total-item {
+    padding: 17px 20px;
+
+    &:first-child {
+      border-top-left-radius: 13px;
+      border-top-right-radius: 13px;
+    }
+
+    &:last-child {
+      border-bottom-left-radius: 13px;
+      border-bottom-right-radius: 13px;
+    }
+
+    &+ .cart-total-item {
+      margin-top: 1px;
+    }
+  }
+
+  @media (min-width: $screen-xs-min) {
+    .cart-total-item {
+      padding: 17px 10px 17px 30px;
+    }
+  }
+}
+
+
+// Product Number
+// --------------------------------------------------
+
+.product-number {
+  .form-control {
+    padding-top: 8px;
+    padding-bottom: 11px;
+    font: 700 18px/24px $font-family-base;
+    color: #2c2b2b;
+    background: $brand-concrete;
+    transition: .3s all ease;
+  }
+}
+
+
+// Product Switch View
+// --------------------------------------------------
+
+.product-switch-view {
+  a {
+    color: $brand-silver-chalice;
+    transition: .3s all ease;
+
+    &.active, &:hover, &:focus {
+      color: $brand-turquoise;
+    }
+  }
+}

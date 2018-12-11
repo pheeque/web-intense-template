@@ -1,0 +1,519 @@
+// Row spacing
+
+
+.spacing-negative-1 {
+  @include grid-offset(-1px);
+}
+
+.row-0 {
+  @include grid-offset(0);
+}
+.row-10 {
+  @include grid-offset(10px);
+}
+
+.row-20 {
+  @include grid-offset(20px);
+}
+
+.row-30 {
+  @include grid-offset(30px);
+}
+
+.row-50 {
+  @include grid-offset(50px);
+}
+
+.row-55 {
+  @include grid-offset(55px);
+}
+
+.row-70 {
+  @include grid-offset(70px);
+}
+
+.row-90 {
+  @include grid-offset(90px);
+}
+
+@include media-breakpoint-up(md) {
+  .row-md-70 {
+    @include grid-offset(70px);
+  }
+
+  .row-md-90 {
+    @include grid-offset(90px);
+  }
+}
+
+// Insets
+// -------------------------
+.inset-left-25 {
+  padding-left: 25px;
+}
+
+@include media-breakpoint-up(lg) {
+
+  .inset-sm-25 {
+    padding: 0 25px;
+  }
+}
+
+// Sections
+// -------------------------
+
+.section-xxs {
+  padding: 25px 0;
+} 
+
+.section-xs {
+  padding: 40px 0;
+}
+
+.section-md-top {
+  padding-top: 50px;
+}
+
+.section-md-bottom {
+  padding-bottom: 50px;
+}
+
+.section-sm,
+.section-md,
+.section-lg,
+.section-xl {
+  padding: 60px 0;
+}
+
+@include media-breakpoint-down(sm) {
+  section {
+    &:first-child {
+      &.section-sm,
+      &.section-md,
+      &.section-lg,
+      &.section-xl {
+        padding-top: 40px;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-up(md) {
+  section {
+    &:first-child {
+      &.section-sm {
+        padding-top: 100px;
+      }
+    }
+  }
+
+  .section-md {
+    padding: 70px 0;
+  }
+
+  .section-lg {
+    padding: 80px 0;
+  }
+
+  .section-xl {
+    padding: 95px 0;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+
+  .section-md {
+    padding: 95px 0;
+  }
+
+  .section-md-alternate {
+    padding-bottom: 60px;
+  }
+
+  .section-md-top {
+    padding-top: 95px;
+  }
+
+  .section-md-bottom {
+    padding-bottom: 95px;
+  }
+
+  .section-lg {
+    padding: 100px 0;
+  }
+
+  .section-xl {
+    padding: 130px 0;
+  }
+}
+
+@media (min-width: 1200px) and (min-height: $screen-height-desktop) {
+  .section-lg {
+    padding: 120px 0;
+  }
+
+  .section-xl {
+    padding: 150px 0;
+  }
+}
+
+// Elements
+// -------------------------
+
+* + h1,
+* + .h1 {
+  margin-top: 15px;
+}
+
+* + h2,
+* + .h2 {
+}
+
+* + h3,
+* + .h3 {
+  margin-top: 20px;
+}
+
+* + h4,
+* + .h4 {
+  margin-top: 40px;
+
+  &.header-lighter {
+    margin-top: 22px;
+  }
+}
+
+* + h5,
+* + .h5 {
+}
+
+* + h6,
+* + .h6 {
+}
+
+h1 + p,
+.h1 + p {
+  //margin-top: 15px;
+}
+
+h2 + p,
+.h2 + p {
+  //margin-top: 10px;
+}
+
+h3 + p,
+.h3 + p {
+}
+
+h4 + p,
+.h4 + p {
+  //margin-top: 6px;
+}
+
+h5 + p,
+.h5 + p {
+  //margin-top: 14px;
+}
+
+h6 + p,
+.h6 + p {
+}
+
+* + p,
+* + .p {
+  margin-top: 20px;
+}
+
+* + hr {
+  margin-top: 15px;
+}
+
+* + .h7 {
+  margin-top: 20px;
+}
+
+* + .big {
+  margin-top: 8px;
+}
+
+* + .large {
+  margin-top: 10px;
+}
+
+* + .btn {
+  margin-top: 22px;
+}
+
+* + .btn.btn-offset-medium {
+  margin-top: 20px;
+}
+
+* + .btn.btn-offset-small {
+  margin-top: 14px;
+}
+
+* + .mark-bigger {
+  margin-top: 12px;
+}
+
+* + .marked-list,
+* + .ordered-list {
+  margin-top: 12px;
+}
+
+* + .quote-primary {
+  margin-top: 40px;
+}
+
+* + .row {
+  margin-top: 30px;
+}
+
+* + .rd-mailform {
+  margin-top: 40px;
+}
+
+* + .form-inline {
+  margin-top: 10px;
+}
+
+* + .figure-lighter {
+  margin-top: 30px;
+}
+
+.text-decoration-lines + * {
+  margin-top: 25px;
+}
+
+* + .group-xs {
+  margin-top: 15px;
+}
+
+* + .group-sm {
+  margin-top: 35px;
+}
+
+* + .group-xl {
+  margin-top: 30px;
+}
+
+* + .privacy-link {
+  margin-top: 30px;
+}
+
+* + .list-bars {
+  margin-top: 25px;
+}
+
+* + .inline-list-sm {
+  margin-top: 22px;
+}
+
+* + .inline-list-xs {
+  margin-top: 20px;
+}
+
+* + .inline-list-lg {
+  margin-top: 20px;
+}
+
+* + .box-cta {
+  margin-top: 30px;
+}
+
+* + .tabs-line {
+  margin-top: 35px;
+}
+
+* + .list-md {
+  margin-top: 35px;
+}
+
+* + .box-contact-info {
+  margin-top: 40px;
+}
+
+* + .rd-video-player {
+  margin-top: 24px;
+}
+
+* + .pricing-carousel {
+  margin-top: 40px;
+}
+
+* + .divider-scroll {
+  margin-top: 15px;
+}
+
+* + .link-waypoint {
+  margin-top: 15px;
+}
+
+p + p,
+p + img,
+p + .marked-list{
+  margin-top: 24px;
+}
+
+p + h2 {
+  margin-top: 10px;
+}
+
+p + .rd-mailform {
+  margin-top: 18px;
+}
+
+p + .quote-primary,
+.quote-primary + p {
+  margin-top: 24px;
+}
+
+p + .row {
+  margin-top: 40px;
+}
+
+p + .group-sm {
+  margin-top: 15px;
+}
+
+img + h4,
+img + .h4 {
+  margin-top: 30px;
+}
+
+h4 + .checkbox-inline,
+.h4 + .checkbox-inline {
+  margin-top: 15px;
+}
+
+h4 + .marked-list {
+  margin-top: 25px;
+}
+
+.checkbox + h4,
+.checkbox + .h4 {
+  margin-top: 30px;
+}
+
+.h7 + .rd-mailform {
+  margin-top: 25px;
+}
+
+.marked-list + .btn {
+  margin-top: 30px;
+}
+
+.container + .container {
+  margin-top: 45px;
+}
+
+.row + h2 {
+  margin-top: 70px;
+}
+
+.big + .group-sm{
+  margin-top: 40px;
+}
+
+html {
+  * + .offset-custom-1 {
+    margin-top: 40px;
+  }
+
+  * + .offset-custom-2 {
+    margin-top: 10px;
+  }
+
+  .row-30 {
+    @include grid-offset(30px);
+  }
+
+  * + .gallery-widget {
+    margin-top: 14px;
+  }
+}
+
+@include media-breakpoint-up(sm) {
+  * + .btn {
+    margin-top: 30px;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  * + h4,
+  * + .h4 {
+    margin-top: 55px;
+  }
+  
+  * + hr {
+    margin-top: 25px;
+  }
+
+  * + .big {
+    margin-top: 12px;
+  }
+
+  * + .btn {
+    margin-top: 50px;
+  }
+
+  * + .row {
+    margin-top: 50px;
+  }
+
+  * + .figure-lighter {
+    margin-top: 40px;
+  }
+
+  * + .group-xl {
+    margin-top: 50px;
+  }
+
+  * + .list-bars {
+    margin-top: 40px;
+  }
+
+  * + .inline-list-lg {
+    margin-top: 10px;
+  }
+
+  * + .h7 {
+    margin-top: 10px;
+  }
+
+  * + .tabs-line {
+    margin-top: 20px;
+  }
+  
+  * + .divider-scroll {
+    margin-top: 20px;
+  }
+
+  * + .link-waypoint {
+    margin-top: 20px;
+  }
+
+  .container + .container {
+    margin-top: 70px;
+  }
+  .row + h2 {
+    margin-top: 90px;
+  }
+}
+
+@include media-breakpoint-up(xl) {
+  * + .big {
+    margin-top: 24px;
+  }
+  * + .divider-scroll {
+    margin-top: 30px;
+  }
+
+  * + .link-waypoint {
+    margin-top: 25px;
+  }
+
+  .container + .container {
+    margin-top: 100px;
+  }
+}

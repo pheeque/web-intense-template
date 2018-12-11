@@ -1,0 +1,56 @@
+//
+// Box Icon
+// --------------------------------------------------
+
+.box-icon-link {
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+  padding: 20px 10px 10px;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    border-radius: 15px;
+    opacity: 0;
+    @include bg-variant-custom(linear-gradient(120deg, #3589a7 10%, $brand-turquoise 70%));
+  }
+
+  @media (max-width: $screen-lg-min - 1) {
+    &:before {
+      opacity: 1;
+    }
+    .box-icon-dots {
+      opacity: 0;
+    }
+    .text-primary, .text-silver-chalice {
+      color: $white;
+    }
+  }
+  @media (min-width: $screen-lg-min) {
+    &:before, .text-primary,
+    .text-silver-chalice, .box-icon-dots {
+      transition: .3s all ease;
+    }
+
+    &:hover {
+      .text-primary, .text-silver-chalice {
+        color: $white;
+      }
+
+      &:before {
+        opacity: 1;
+      }
+
+      .box-icon-dots {
+        opacity: 0;
+      }
+    }
+  }
+}

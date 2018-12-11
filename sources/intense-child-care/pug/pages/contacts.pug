@@ -1,0 +1,123 @@
+extends  ../_skeleton
+
+//- Includes
+include  ../elements/_ui-material-parallax
+include  ../elements/_ui-box-icon-type-2
+include  ../elements/_ui-google-map
+include ../elements/_ui-vacation
+//-Title
+block title
+  title= cfg.nav.contacts.title
+
+//- Page
+block page
+
+  // Page Head
+  header.section.page-head
+    //- RD Navbar
+    +rd-navbar-top-panel(
+    'rd-navbar-light',
+    {
+      "data-lg-auto-height": "true",
+      "data-md-layout": 'rd-navbar-fixed',
+      "data-lg-layout": 'rd-navbar-static',
+      "data-lg-stick-up": 'true'
+    },
+    cfg.brand.logo,
+    cfg.nav.contacts,
+    cfg.nav
+    )
+
+
+  // Breadcrumbs
+  +material-parallax({
+    img: 'images/bg-01-1920x718.jpg',
+    Class: 'section-34 section-md-66 text-lg-left context-dark bg-overlay-info'
+  }).section
+    .container
+      div.d-none.d-md-block.d-lg-inline-block
+        h1.font-weight-bold
+          span.big Contact Us
+      div.pull-lg-right.offset-md-top-10.offset-lg-top-41
+        ul.p.list-inline.list-inline-dashed
+          li.list-inline-item.text-safety-orange
+            a(href= cfg.nav.home.href) Home
+          li.list-inline-item Contact Us
+
+  // Contact Us
+  section.section.novi-background.section-98.section-lg-110.text-xl-left#form-child-care
+    .container
+      .row.justify-content-sm-center.justify-content-sm-center
+        .col-xl-4
+          h1.text-uppercase.font-weight-bold.text-primary How to Find us
+          address.contact-info.offset-top-50
+            p.h6.text-uppercase.font-weight-bold.text-safety-orange.font-default.offset-top-20 Intense Office
+            p 9863 - 9867 MILL ROAD, CAMBRIDGE, MG09 99HT.
+            dl
+              dt Telephone
+              dd
+                a(href='tel:#') +1 800 603 6035
+            dl
+              dt E-mail:
+              dd
+                a(href='mailto:#') mail@demolink.org
+          address.contact-info.offset-top-50
+            p.h6.text-uppercase.font-weight-bold.text-safety-orange.font-default Open Hours
+            dl.offset-top-20
+              dt.font-weight-bold Mornings:
+              dd 8 am – 12 pm
+            dl
+              dt.font-weight-bold Afternoons:
+              dd 1 pm – 5 pm
+            dl
+              dt.font-weight-bold Full Day:
+              dd 8 am – 5 pm
+
+        .col-md-8.offset-top-66.offset-xl-top-0
+          h1.text-uppercase.font-weight-bold.text-primary Get in touch
+          // RD Mailform
+          form.rd-mailform.text-left.offset-top-50(data-form-output="form-output-global", data-form-type='contact', method='post', action='bat/rd-mailform.php')
+            .row
+              .col-xl-6
+                .form-group
+                  label.form-label.form-label-outside(for="contact-us-name") Name:
+                  input#contact-us-name.form-control(type="text" name="name" data-constraints="@Required")
+              .col-xl-6.offset-top-20.offset-xl-top-0
+                .form-group
+                  label.form-label.form-label-outside(for="contact-us-email") E-Mail:
+                  input#contact-us-email.form-control(type="email" name="email" data-constraints="@Required @Email")
+              .col-xl-12.offset-top-20
+                .form-group
+                  label.form-label.form-label-outside(for="contact-us-message") Message:
+                  textarea#contact-us-message.form-control(name="message" data-constraints="@Required")
+            .group-sm.text-center.text-xl-left.offset-top-30
+              button(type="submit").btn.btn-primary Send
+              button(type="reset").btn.btn-default Reset
+
+  // Free Lesson
+  +material-parallax({
+    img: 'images/bg-02-1920x748.jpg',
+    Class: 'section-66 context-dark'
+  }).section
+    .container
+      h1.font-weight-bold Get a Free Lesson
+      .row.justify-content-sm-center.offset-top-20
+        .col-sm-10.col-sm-8
+          div
+            p The free lesson is a perfect opportunity for your kid to enjoy our programs, including learning and entertaining activities.
+          .offset-top-30
+            a(href="#" data-waypoint-to="#form-child-care").btn.btn-icon.btn-icon-left.btn-default Send us a letter
+              span.novi-icon.icon.mdi-email-outline.mdi
+
+  // Map
+  +google-map({
+    center: '9870 St Vincent Place, Glasgow, DC 45 Fr 45.'
+  }, [{
+    location: '9870 St Vincent Place, Glasgow, DC 45 Fr 45.',
+    description: '9870 St Vincent Place, Glasgow'
+  }]).section
+
+  // Page Footer
+  include ../sections/_section-footer-default
+
+

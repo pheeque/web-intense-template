@@ -1,0 +1,112 @@
+//- Includes
+include ../elements/_ui-progress-bar-linear
+include ../elements/_ui-box-member
+include ../elements/_widget-list-social
+
+// Who we are?
+section.section.novi-background.section-98.section-sm-124
+  .container
+    .row
+      .col-xl-5.text-xl-left
+        h1 Who we are?
+        hr.divider.bg-mantis.hr-xl-left-0
+
+    .row.justify-content-sm-center.align-items-md-center.offset-top-10.grid-group-md.text-lg-left
+      .col-md-10.col-xl-5
+        p Intense is an independent web design studio with a rich history. It started as a small family-owned business in Oakville, and has grown enough to successfully occupy two large buildings in two different cities.
+        p Today Intense offers a full range of web design, app development and content marketing services, including building full-featured ecommerce websites and web startups with custom functionality.
+
+      .col-md-10.col-xl-7
+        +progress-bar-linear({
+          "title": "HTML/CSS",
+          "apClass": "bg-success",
+          "valueTo": "70"
+        })
+        .offset-top-50
+          +progress-bar-linear({
+            "title": "Java Script",
+            "apClass": "bg-info",
+            "valueTo": "54"
+          })
+        .offset-top-50
+          +progress-bar-linear({
+            "title": "PHP",
+            "apClass": "bg-warning",
+            "valueTo": "87"
+          })
+        .offset-top-50
+          +progress-bar-linear({
+            "title": "UI/UX Design",
+            "apClass": "bg-danger",
+            "valueTo": "65"
+          })
+
+    .row.justify-content-sm-center.offset-md-top-66
+      .col-md-10.col-xl-12
+        .row
+          .col-md-6.col-xl-3.offset-top-66.offset-sm-top-0
+            +box-member("images/users/user-john-doe-270x270.jpg", "John Doe", "Founder", cfg.nav.pages.submenu.teamMember.href)
+              +widget-list-social([
+                {
+                  "icon": "fa fa-facebook",
+                  "href": "#"
+                },
+                {
+                  "icon": "fa fa-twitter",
+                  "href": "#"
+                },
+                {
+                  "icon": "fa fa-google-plus",
+                  "href": "#"
+                }
+              ], "icon-xs icon-circle icon-darker-filled", "list-inline-xs")
+          .col-md-6.col-xl-3.offset-top-66.offset-md-top-0.offset-xl-top-0
+            +box-member("images/users/user-july-mao-270x270.jpg", "July Mao", "Web Designer", cfg.nav.pages.submenu.teamMember.href)
+              +widget-list-social([
+                {
+                  "icon": "fa fa-facebook",
+                  "href": "#"
+                },
+                {
+                  "icon": "fa fa-twitter",
+                  "href": "#"
+                },
+                {
+                  "icon": "fa fa-google-plus",
+                  "href": "#"
+                }
+              ], "icon-xs icon-circle icon-darker-filled", "list-inline-xs")
+
+          .col-md-6.col-xl-3.offset-top-66.offset-md-top-30.offset-xl-top-0
+            +box-member("images/users/user-bernard-show-270x270.jpg", "Bernard Show", "Co-Founder", cfg.nav.pages.submenu.teamMember.href)
+              +widget-list-social([
+                {
+                  "icon": "fa fa-facebook",
+                  "href": "#"
+                },
+                {
+                  "icon": "fa fa-twitter",
+                  "href": "#"
+                },
+                {
+                  "icon": "fa fa-google-plus",
+                  "href": "#"
+                }
+              ], "icon-xs icon-circle icon-darker-filled", "list-inline-xs")
+
+          .col-md-6.col-xl-3.offset-top-66.offset-md-top-30.offset-xl-top-0
+            +box-member("images/users/user-ronald-oswald-270x270.jpg", "Ronald Oswald", "Developer", cfg.nav.pages.submenu.teamMember.href)
+              +widget-list-social([
+                {
+                  "icon": "fa fa-facebook",
+                  "href": "#"
+                },
+                {
+                  "icon": "fa fa-twitter",
+                  "href": "#"
+                },
+                {
+                  "icon": "fa fa-google-plus",
+                  "href": "#"
+                }
+              ], "icon-xs icon-circle icon-darker-filled", "list-inline-xs")

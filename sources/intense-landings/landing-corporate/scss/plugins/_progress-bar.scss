@@ -1,0 +1,243 @@
+//
+// ProgressBars
+// --------------------------------------------------
+
+.progress-bar-js {
+  position: relative;
+  width: 100%;
+
+  .progress-bar__body {
+    white-space: nowrap;
+    font: 400 12px/18px $font-family-sec;
+    color: $black;
+
+    &:after {
+      content: '%';
+    }
+  }
+
+  .progress-bar__stroke,
+  .progress-bar__trail {
+    stroke-linejoin: round;
+  }
+}
+
+.progress-bar-horizontal {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  text-align: left;
+
+  > * {
+    margin: 0;
+  }
+
+  > svg {
+    height: 10px;
+    flex-grow: 1;
+  }
+
+  .progress-bar__body {
+    margin-left: 10px;
+    width: 30px !important;
+  }
+}
+
+.progress-bar-radial {
+  position: relative;
+  padding-bottom: 100%;
+
+  > svg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+
+  .progress-bar__stroke,
+  .progress-bar__trail {
+    stroke-location: outside;
+  }
+
+  .progress-bar__body {
+    transform: translate(50%, -50%);
+  }
+}
+
+.progress-bar-default {
+  .progress-bar__stroke {
+    stroke: $gray;
+  }
+
+  .progress-bar__trail {
+    stroke: rgba($gray, 0.05);
+  }
+}
+
+.progress-bar-primary {
+  .progress-bar__stroke {
+    stroke: $primary;
+  }
+
+  .progress-bar__trail {
+    stroke: $wild-sand;
+  }
+}
+
+
+.progress-bar-radial-default {
+  text-align: center;
+  &-header {
+    letter-spacing: .05em;
+    text-transform: uppercase;
+    color: $gray;
+  }
+}
+
+.progress-bar-radial-default-wrap {
+  max-width: 182px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+
+  .progress-bar-radial {
+    position: relative;
+    padding-bottom: 100%;
+
+    svg,
+    .progress-bar__body {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin: 0;
+    }
+
+    svg {
+      height: auto;
+    }
+
+    .progress-bar__body {
+      right: 10px;
+      top: 52%;
+      font-size: 36px;
+      font-weight: 900;
+      line-height: 1;
+      color: $black;
+    }
+  }
+}
+
+.progress-bar-bs {
+  position: relative;
+  padding-right: 60px;
+  height: auto;
+  margin: 0;
+
+  .progress {
+    height: 10px;
+    margin-bottom: 0;
+    box-shadow: none;
+    border-radius: 20px;
+  }
+
+  .progress-bar {
+    box-shadow: none;
+    border: 0;
+    border-radius: 20px;
+  }
+
+  .caption {
+    position: absolute;
+    bottom: -6px;
+    right: 5px;
+    width: 60px;
+    padding-left: 20px;
+    text-transform: uppercase;
+    color: $gray;
+  }
+}
+
+.progress-variant-primary {
+  .progress {
+    background: $gray-light;
+  }
+
+  .progressbar {
+    background: $primary;
+  }
+}
+
+.progress-variant-secondary-1 {
+  .progress {
+    background: $gray-lighter;
+  }
+
+  .progress-bar {
+    background: #f8333c;
+  }
+}
+.progress-variant-secondary-2 {
+  .progress {
+    background: $gray-lighter;
+  }
+
+  .progress-bar {
+    background: #45a4ff;
+  }
+}
+.progress-variant-secondary-3 {
+  .progress {
+    background: $gray-lighter;
+  }
+
+  .progress-bar {
+    background: #fde74c;
+  }
+}
+.progress-variant-secondary-4 {
+  .progress {
+    background: $gray-lighter;
+  }
+
+  .progress-bar {
+    background: #58c4a7;
+  }
+}
+
+
+
+.list-bars-variant-1 {
+  max-width: 375px;
+  
+  .progress-bar-bs .progress {
+    height: 4px;  
+  }
+
+  .progress-bar-bs {
+    padding-right: 0;
+
+    .caption {
+      width: auto;
+      bottom: 8px;
+      right: 0;
+    }
+  }
+
+  .list-bars-item-header,
+  .caption {
+    color: $gray-darker;
+  }
+
+  .list-bars-item-header {
+    padding-right: 60px;
+  }
+
+   * + .progress {
+     margin-top: 5px;
+   }
+}

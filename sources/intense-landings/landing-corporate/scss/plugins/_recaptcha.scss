@@ -1,0 +1,26 @@
+//
+// Google reCaptcha
+// --------------------------------------------------
+
+.recaptcha {
+  iframe {
+    border-radius: $border-radius-small;
+
+    @media(max-width: 350px) {
+      max-width: 100%;
+      transform:scale(0.77);
+      -webkit-transform:scale(0.77);
+      transform-origin: -5px;
+      -webkit-transform-origin: -5px;
+    }
+  }
+}
+
+.recaptcha div div { display: inline-block; }
+
+.has-error {
+  // Google reCaptcha error styling
+  .recaptcha {
+    iframe { border: 1px solid $state-danger-bg; }
+  }
+}

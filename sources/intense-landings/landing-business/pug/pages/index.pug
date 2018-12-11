@@ -1,0 +1,240 @@
+extends  ../_skeleton
+
+block variables
+	- var activeIndex = 0
+	- var footerActiveIndex = 0
+
+block title
+	title Landing Business
+
+block page
+	// Page Header
+	header.section.page-header
+		// RD Navbar
+		.rd-navbar-wrap.novi-background
+			nav.rd-navbar.rd-navbar-top-panel-lightnav.rd-navbar.rd-navbar-top-panel-light(
+				data-layout=                'rd-navbar-fixed'
+				data-sm-layout=             'rd-navbar-fixed'
+				data-md-layout=             'rd-navbar-fixed'
+				data-md-device-layout=      'rd-navbar-fixed'
+				data-lg-layout=             'rd-navbar-fixed'
+				data-lg-device-layout=      'rd-navbar-fixed'
+				data-xl-layout=             'rd-navbar-fullwidth'
+				data-xl-device-layout=      'rd-navbar-fullwidth'
+				data-xxl-layout=             'rd-navbar-fullwidth'
+				data-xxl-device-layout=      'rd-navbar-fullwidth'
+				data-lg-stick-up-offset=    '90px'
+				data-xl-stick-up-offset=    '90px'
+				data-xxl-stick-up-offset=   '90px'
+				data-lg-stick-up=           'true'
+				data-xl-stick-up=           'true'
+				data-xxl-stick-up=          'true'
+				data-stick-up-clone='true'
+			)
+				.rd-navbar-inner
+					// RD Navbar Nav
+					.rd-navbar-nav-wrap
+						ul.rd-navbar-nav
+							li(class={active: activeIndex === 1})
+								a(href='#about-us') About Us
+
+							li(class={active: activeIndex === 2})
+								a(href='#our-mission') Our Mission
+
+							li(class={active: activeIndex === 3})
+								a(href='#services') Services
+
+							li(class={active: activeIndex === 4})
+								a(href='#pricing') Our Prices
+
+					// RD Navbar Panel
+					.rd-navbar-panel
+						button.rd-navbar-toggle(data-rd-navbar-toggle='.rd-navbar-nav-wrap')
+							span
+
+						// RD Navbar Brand
+						.rd-navbar-brand
+							a.brand-name(href='index.html')
+								+png(logoDefault)
+
+					// RD Navbar Top Panel
+					.rd-navbar-top-panel
+						.rd-navbar-top-panel-toggle(data-rd-navbar-toggle='.rd-navbar-top-panel')
+							span
+						.rd-navbar-top-panel-content
+							ul.inline-list-xxs 
+								li: a.icon.novi-icon.icon-xs.icon-gray-6.fa.fa-instagram(href='#')
+								li: a.icon.novi-icon.icon-xs.icon-gray-6.fa.fa-facebook(href='#')
+								li: a.icon.novi-icon.icon-xs.icon-gray-6.fa.fa-twitter(href='#')
+								li: a.icon.novi-icon.icon-xs.icon-gray-6.fa.fa-google-plus(href='#')
+
+							a.btn.btn-sm.btn-primary.btn-effect-ujarak(href=getTemplateLink) get template
+
+							.rd-navbar-nav-wrap__shop: a.icon.novi-icon.fl-bigmug-line-shopping202.link-primary(href='#') (2)
+							
+	include ../sections/_section-slider-2
+		
+	// About us
+	section.section.novi-background.bg-cover.bg-image.section-lg.bg-default.text-center#about-us(data-type='anchor')
+		.container
+			.row.justify-content-xl-between.row-55.text-left
+				.col-md-9.col-lg-6.col-xl-5
+					h4 The Advantages of Our Website
+					p.
+						Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced features of activating account and new login widgets, you will definitely have a great experience of using our web page. It will tell you lots of interesting things about our company, its products and services, highly professional staff and happy customers.
+				.col-lg-6
+					ul.list-bars
+						li.list-bars-item
+							// Progress Bar
+							.progress-bar-bs.progress-variant-primary
+								p.list-bars-item-header GENERAL CONSTRUCTION
+								.progress
+									.progress-bar(role='progressbar', aria-valuenow='75', aria-valuemin='0', aria-valuemax='100', style='width: 75%;')
+								span.caption 75%
+
+						li.list-bars-item
+							// Progress Bar
+							.progress-bar-bs.progress-variant-primary
+								p.list-bars-item-header PRE-CONSTRUCTION PLANNING
+								.progress
+									.progress-bar(role='progressbar', aria-valuenow='85', aria-valuemin='0', aria-valuemax='100', style='width: 85%;')
+								span.caption 85%
+
+						li.list-bars-item
+							// Progress Bar
+							.progress-bar-bs.progress-variant-primary
+								p.list-bars-item-header MANAGING PROJECTS
+								.progress
+									.progress-bar(role='progressbar', aria-valuenow='80', aria-valuemin='0', aria-valuemax='100', style='width: 80%;')
+								span.caption 80%
+
+
+	// Mission
+	section.section.novi-background.bg-cover.bg-image.section-md.bg-gray-light.text-center.text-md-left#our-mission(data-type='anchor')
+		.container
+			.row.justify-content-md-center.flex-md-row-reverse.align-items-md-center.row-55
+				.col-md-5
+					h2 Our Mission
+					p.text-gray Our mission is to manifest our clients’ concepts into dynamic functional business realities. We aim to maximize the performance of our web templates.
+					a.btn.btn-primary.btn-effect-ujarak.btn-square(href='#') Read more
+
+				.col-md-7
+					figure.figure-fullwidth 
+						+png('landing-1-620x465')
+
+
+	
+	// CTA
+	section.section.novi-background.bg-cover.section-md.bg-image.bg-accent(style='background-image: url(images/bg-image-1.jpg)')
+		.container
+			.row.row-30.justify-content-sm-center
+				.col-md-7
+					h3 We Make the Best Web Design Solutions
+				.col-md-4
+					a(href='#').btn.btn-primary.btn-square.btn-effect-ujarak contact us
+
+
+	// Services
+	section.section.novi-background.bg-cover.bg-image.section-md.text-center.bg-gray-light#services(data-type='anchor')
+		.container
+			h2 Our Services
+			.row.row-50.row-md-70
+				.col-sm-6.col-lg-4
+					article.box-minimal.box-bordered-variant-2
+						.box-minimal-icon.fl-bigmug-line-paintbrush9.icon-primary.novi-icon
+						.box-minimal-title Web Design
+						.box-minimal-divider
+						.box-minimal-text We provide clean designs and easy-to-use interfaces, making your website look fresh and attractive.
+
+				.col-sm-6.col-lg-4
+					article.box-minimal.box-bordered-variant-2
+						.box-minimal-icon.fl-bigmug-line-headphones32.icon-primary.novi-icon
+						.box-minimal-title 24/7 Support 
+						.box-minimal-divider
+						.box-minimal-text Our dedicated 24/7 support service helps our customers quickly create their own web solution.
+
+				.col-sm-6.col-lg-4
+					article.box-minimal.box-bordered-variant-2
+						.box-minimal-icon.fl-bigmug-line-code30.icon-primary.novi-icon
+						.box-minimal-title Coding Services
+						.box-minimal-divider
+						.box-minimal-text We offer our customers a variety of coding services, which help them create perfectly working websites.
+
+	
+	// Pricing tables
+	section.section.novi-background.bg-cover.bg-image.section-lg.bg-default.text-center#pricing(data-type='anchor')
+		.container
+			.row
+				// Owl Carousel
+				.owl-carousel.pricing-carousel-2(data-items='1',data-lg-items='3', data-stage-padding='0', data-loop='false', data-margin='0', data-mouse-drag="false",  data-dots='true')
+
+					.pricing-box-2
+						.pricing-title
+							| Regular
+						.price-wrap
+							span.price 10
+							span 90
+						ul.pricing-list-marked.pricing-list-marked__mod-1
+							li
+								span 1
+								| Website
+							li
+								span 150 Email
+								| Addresses
+							li
+								span 200 GB
+								| Storage
+							li
+								span 900 GB
+								| Bandwidth 
+							li Dedicated Database
+						a(href='#').btn.btn-square.btn-silver-outline.btn-lg Buy now
+
+					.pricing-box-2.active
+						.pricing-title
+							span.pricing-label Popular
+							span PRO Pack
+						.price-wrap
+							span.price 19
+							span 90
+						ul.pricing-list-marked.pricing-list-marked__mod-2
+							li
+								span 1
+								| Website
+							li
+								span 150 Email
+								| Addresses
+							li
+								span 200 GB
+								| Storage
+							li
+								span 900 GB
+								| Bandwidth
+							li Dedicated Database
+						a(href='#').btn.btn-square.btn-primary.btn-lg Buy now
+
+					.pricing-box-2
+						.pricing-title
+							| Premium
+						.price-wrap
+							span.price 39
+							span 90
+						ul.pricing-list-marked
+							li
+								span 1
+								| Website
+							li
+								span 150 Email
+								| Addresses
+							li
+								span 200 GB
+								| Storage
+							li
+								span 900 GB
+								| Bandwidth
+							li Dedicated Database
+						a(href='#').btn.btn-square.btn-silver-outline.btn-lg Buy now
+
+
+
+	include ../sections/_footer-corporate

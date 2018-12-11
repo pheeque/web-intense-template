@@ -1,0 +1,19 @@
+//- thumbnail - {thumbnail} object
+mixin thumbnail-winston(thumbnail)
+  -
+    var lightgallery = ( typeof( thumbnail.target.href ) !== 'undefined' )
+      ? { "href": thumbnail.target.href }
+      : { "data-lightgallery": "item", "href": thumbnail.target.src };
+
+  // Thumbnail Winston
+  a.thumbnail-winston&attributes( lightgallery )
+    figure
+      img(width=thumbnail.thumb.width, height=thumbnail.thumb.height, src=thumbnail.thumb.src, alt=thumbnail.thumb.alt)
+      figcaption.text-left
+        h3.thumbnail-winston-title= thumbnail.title
+        .offset-top-50.veil.reveal-lg-inline-block
+          p= thumbnail.description[0]
+          br
+          p= thumbnail.description[1]
+          br
+          p= thumbnail.description[2]

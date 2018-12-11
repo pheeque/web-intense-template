@@ -1,0 +1,54 @@
+extends  ../_skeleton
+
+block variables
+  - var activeIndex = 5
+
+block title
+  title Contacts
+
+block page
+  // Page Header
+  include ../sections/_header-default
+
+  // Page Content
+  main.page-content
+    section.section-title.section-title-left.section-title-left-3(data-title='contact us')
+      .shell.shell-wide
+        .page-counter.page-counter-bottom-3
+          img(src="images/contacts-01.jpg"  alt="").img-responsive.center-block
+        h4.offset-top-20 Contact form
+        // RD Mailform
+        form.offset-top-40.range.range-xs-center.rd-mailform.text-left(data-form-output="form-output-global", data-form-type='contact', method='post', action='bat/rd-mailform.php')
+          .cell-md-10
+            .range
+              .cell-md-4
+                .form-group
+                  label.form-label(for="contact-name") Name
+                  input#contact-name.form-control(type="text" name="name" data-constraints='@Required')
+              .cell-md-4.offset-top-30.offset-md-top-0
+                .form-group
+                  label.form-label(for="contact-phone") Phone
+                  input#contact-phone.form-control(type="text" name="phone" data-constraints="@Numeric @Required")
+              .cell-md-4.offset-top-30.offset-md-top-0
+                .form-group
+                  label.form-label(for="contact-email") Email
+                  input#contact-email.form-control(type="email" name="email" data-constraints="@Email @Required")
+              .cell-md-12.offset-top-30
+                .form-group
+                  label.form-label(for="contact-message") Message
+                  textarea#contact-message.form-control(name="message" data-constraints="@Required")
+                .text-center.offset-top-65
+                  button(type="submit").btn.btn-default send message
+
+    section.section-top-92
+      .shell.shell-wide
+        +google-map({
+          center: '9870 St Vincent Place, Glasgow, DC 45 Fr 45.'
+        }, [ {
+          location: '9870 St Vincent Place, Glasgow, DC 45 Fr 45.',
+          description: '9870 St Vincent Place, Glasgow'
+        } ])
+
+
+  // Page Footer
+  include ../sections/_footer-default

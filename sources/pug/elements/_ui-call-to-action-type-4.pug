@@ -1,0 +1,19 @@
+//- title - title of element
+//- btnClass - button class
+//- iconClass - class of icon inside button
+//- btnText - button text
+//- bgElement - background of element
+mixin call-to-action-type-4(title, btnHref, btnClass, iconClass, iconAlign, btnText, bgElement, target)
+  // Call to action type 4
+  - var bgElement = bgElement || "bg-mantis"
+  - var btnText = btnText || "By intense now"
+  section.section.novi-background.section-top-66.section-bottom-41(class= bgElement).context-dark
+    .container
+      h2
+        span.big= title
+      if iconClass != null
+        a(href= btnHref class= btnClass class='btn-icon-' + iconAlign target= target).btn.btn-icon.offset-top-10
+          span.novi-icon.icon(class= iconClass)
+          = btnText
+      else
+        a.btn(href= btnHref class= btnClass target= target).offset-top-10= btnText

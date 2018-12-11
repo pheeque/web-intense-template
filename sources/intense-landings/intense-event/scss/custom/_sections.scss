@@ -1,0 +1,45 @@
+//
+// Sections
+// --------------------------------------------------
+
+.section-relative {
+  position: relative;
+  z-index: 1;
+}
+
+.slider-menu-position {
+  position: relative;
+  .rd-navbar-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+}
+
+
+// Full Screen Section
+// --------------------------------------------------
+
+.section-cover {
+  height: 99vh;
+  min-height: 100vh;
+
+  padding-top: 95px;
+  padding-bottom: 70px;
+
+  @include media-breakpoint-up(lg) {
+    padding-top: 130px;
+    padding-bottom: 150px;
+  }
+}
+
+
+// Section Spacing
+// --------------------------------------------------
+
+$insets: (0, 20px, 34px, 41px, 50px, 66px, 85px, 98px, 110px, 124px, 254px, 350px);
+
+@include indent-responsive(section, '', (padding-top, padding-bottom), $grid-breakpoints, $insets);
+@include indent-responsive(section, top, padding-top, $grid-breakpoints, $insets);
+@include indent-responsive(section, bottom, padding-bottom, $grid-breakpoints, $insets);

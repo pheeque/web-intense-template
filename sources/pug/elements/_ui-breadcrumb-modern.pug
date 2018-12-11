@@ -1,0 +1,17 @@
+//- title - page title
+//- breacrumbs - an array of {link} object
+//- url - address of bg-parallax img
+mixin breadcrumb-modern(title, breadcrumbs, url)
+  // Modern Breadcrumbs
+  section.section.novi-background.breadcrumb-modern.bg-gray-darkest.context-dark.parallax-container( data-parallax-img= url )
+    .parallax-content.section-98.section-md-124
+      .container
+        h2: span.big= title
+        ul.list-inline.list-inline-dashed.p
+          each link, index in breadcrumbs
+            if breadcrumbs[parseInt(index) + 1]
+              li.list-inline-item
+                a(href=link.href)= link.title
+            else
+              li.list-inline-item
+                = link.title

@@ -1,0 +1,36 @@
+include ../elements/_ui-thumbnail-simple
+
+// Our Works 
+section#section-childs.section.novi-background.section-66.section-xl-110.smooth
+  .container-fluid
+    div: h2: span.big Niche Templates
+    div.offset-top-24.d-none.d-lg-block
+      hr.divider.bg-mantis
+
+    div.offset-top-10.offset-lg-top-20.offset-xxl-top-66
+      h3.text-regular Check out other themes based on
+        span.text-uppercase.text-ubold.text-mantis= " Intense"
+
+    .offset-top-30.offset-xxl-top-66
+      .row.grid-group-md
+        .col-sm-12.col-md-6.col-lg-4.col-xl-3
+          +thumbnail-simple({
+            src:     'images/landing/landing-03-420x316.jpg',
+            caption: 'Intense Main Theme',
+            href:    'index-variant-2.html',
+            blank:   true,
+            width:   420,
+            height:  316
+          })
+
+        - for ( var key in cfg.themes )
+          .col-sm-12.col-md-6.col-lg-4.col-xl-3
+            +thumbnail-simple({
+              src:     cfg.themes[key].imageSm.src,
+              caption: cfg.themes[key].title,
+              href:    cfg.themes[key].href,
+              width:   cfg.themes[key].imageSm.width,
+              height:  cfg.themes[key].imageSm.height,
+              label:   cfg.themes[key].label,
+              blank:   true
+            })

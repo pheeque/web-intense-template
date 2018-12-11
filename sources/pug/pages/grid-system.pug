@@ -1,0 +1,91 @@
+extends  ../_skeleton
+
+//- Includes
+include ../mixins/_grid-col
+include ../elements/_ui-breadcrumb-classic
+include ../elements/_ui-member-block
+include ../elements/_ui-box-icon-type-1
+include ../elements/_ui-call-to-action-type-2
+
+
+//- Title
+block title
+  title= cfg.nav.components.submenu.toolkitComponents.submenu.gridSystem.title
+
+//- Page
+block page
+  // Page Header
+  header.page-head
+    //- RD Navbar
+    +rd-navbar-default(
+      'rd-navbar-default rd-navbar-light',
+      {
+        "data-lg-auto-height": "true",
+        "data-md-layout": 'rd-navbar-fixed',
+        "data-lg-layout": 'rd-navbar-static',
+        "data-lg-stick-up": 'true'
+      },
+      cfg.brand.logo,
+      cfg.nav.components,
+      cfg.nav
+    )
+
+  +breadcrumb-classic(
+  cfg.nav.components.submenu.toolkitComponents.submenu.gridSystem.title,
+  "icon-lg " + cfg.nav.components.submenu.toolkitComponents.submenu.gridSystem.icon,
+  {
+    0: {
+      "title": cfg.nav.home.title,
+      "href": cfg.nav.home.href
+    },
+    1: {
+      "title": cfg.nav.components.title,
+      "href": cfg.nav.components.href
+    },
+    2: {
+      "title": cfg.nav.components.submenu.toolkitComponents.submenu.gridSystem.title,
+      "href": cfg.nav.components.submenu.toolkitComponents.submenu.gridSystem.href
+    }
+  })
+
+  // Section Bootstrap Grid
+  section.section.novi-background.section-50.section-md-top-124
+    .container.grid-demo
+      h1 Bootstrap Grid
+      p Default Bootstrap Grid is also included. Its fully compatible with Flex Grid from our Bootstrap Toolkit.
+      hr.divider.divider-md.bg-mantis
+      .row.offset-top-30
+        +loop( 12 )
+          .col-lg-1: +grid-col( '.col-lg-1' )
+      .row
+        +loop( 6 )
+          .col-lg-2: +grid-col('.col-lg-2')
+      .row
+        +loop( 4 )
+          .col-lg-3: +grid-col('.col-lg-3')
+      .row
+        +loop( 3 )
+          .col-lg-4: +grid-col('.col-lg-4')
+      .row
+        +loop( 2 )
+          .col-lg-6: +grid-col('.col-lg-6')
+      .row
+        .col-lg-7: +grid-col('.col-lg-7')
+        .col-lg-5: +grid-col('.col-lg-5')
+      .row
+        .col-lg-8: +grid-col('.col-lg-8')
+        .col-lg-4: +grid-col('.col-lg-4')
+      .row
+        .col-lg-9: +grid-col('.col-lg-9')
+        .col-lg-3: +grid-col('.col-lg-3')
+      .row
+        .col-lg-10: +grid-col('.col-lg-10')
+        .col-lg-2: +grid-col('.col-lg-2')
+      .row
+        .col-lg-11: +grid-col('.col-lg-11')
+        .col-lg-1: +grid-col('.col-lg-1')
+
+  // Page Footer
+  include ../sections/_section-footer-default
+
+

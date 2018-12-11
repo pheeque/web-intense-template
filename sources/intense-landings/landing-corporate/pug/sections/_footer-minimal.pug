@@ -1,0 +1,55 @@
+footer.section.novi-background.bg-cover.bg-gray-dark
+  .pre-footer-minimal(class={'bg-decorated' : includeSvg})
+    if (includeSvg)
+      .bg-decoration.bg-decoration-top
+        +svg-decoration({orientation: 'top'})
+
+    .pre-footer-minimal-inner
+
+      .container.text-center.text-md-left
+        .row.justify-content-md-center.row-55
+          .col-md-12.col-lg-4.text-md-center.text-lg-left
+            h4 Quick Links
+            .group-md-1
+              ul.list-nav-marked
+                li(class={'active': footerActiveIndex == 0}): a(href='index.html') Home
+                li(class={'active': footerActiveIndex == 1}): a(href='#') About us
+
+              ul.list-nav-marked
+                li(class={'active': footerActiveIndex == 3}): a(href='#') Gallery
+                li(class={'active': footerActiveIndex == 4}): a(href='#') Services
+
+              ul.list-nav-marked
+                li(class={'active': footerActiveIndex == 2}): a(href='#') Shop
+                li(class={'active': footerActiveIndex == 5}): a(href='#') Blog
+          .col-md-4.col-lg-3
+            h4 Opening Hours
+            dl.terms-list-inline
+              dt Weekdays
+              dd 08:00am–7:30pm
+
+            dl.terms-list-inline
+              dt Sunday, Saturday
+              dd 08:00am–4:00pm
+
+          .col-md-4.col-lg-2
+            h4 Phone
+            ul.list-xxs
+              li: a.link.link-md(href='tel:#') +1 (409) 987–5874
+              li: a.link(href='mailto:#') info@demolink.org
+
+          .col-md-4.col-lg-3
+            h4 Address
+            address.d-inline-block(style='max-width: 215px;'): p Washington, USA 6036 Richmond hwy., Alexandria, VA, 2230
+    .container
+      hr.gray
+
+  .page-footer-minimal
+    .container
+      p.rights
+        =brandName
+        | &nbsp;&copy;&nbsp;
+        span.copyright-year
+        | .&nbsp;
+        br.d-md-none
+        a.link-underline(href="#") Privacy Policy

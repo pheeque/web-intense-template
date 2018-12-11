@@ -1,0 +1,80 @@
+//
+// Formstone Stepper Plugin
+// --------------------------------------------------
+
+.stepper{
+  position: relative;
+  display: inline-block;
+  max-width: 83px;
+  width: 83px;
+  //overflow: hidden;
+
+  input[type="number"]{
+    width: 100%;
+    padding-left: 30px;
+    padding-right: 27px;
+    text-align: center;
+    -moz-appearance: textfield;
+    border: 0;
+    color: $gray-darker;
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+
+  &:hover{
+   .stepper-arrow.up ,
+   .stepper-arrow.down {
+     transform: translateX(0);
+   }
+  }
+
+  &-arrow{
+    position: absolute;
+    top: 50%;
+    margin-top: -10px;
+    //width: 20px;
+    height: 20px;
+    line-height: 20px;
+    font-size: 24px;
+    font-family: $font-material-design;
+    cursor: pointer;
+    color: #cdcdcd;
+    transition: .3s all ease;
+
+    
+    &:hover{
+      color: $primary;
+    }
+
+    &.up{
+      //transform: translateX(100%);
+      right: 0;
+      text-align: left;
+
+      &:before{
+        content: '\f506';
+      }
+    }
+
+    &.down{
+      //transform: translateX(-100%);
+      left: 0;
+      text-align: right;
+
+      &:before{
+        content: '\f467';
+      }
+    }
+  }
+
+  &.disabled{
+    .stepper-arrow{
+      pointer-events: none;
+      opacity: .5;
+    }
+  }
+}

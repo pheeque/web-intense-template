@@ -1,0 +1,22 @@
+//- Includes
+include ../elements/_ui-bg-vide
+
+section.section
+  +bg-vide({
+    src: 'video/bg-video-3/bg-video-3-lg',
+    options: 'posterType: jpg'
+  })
+    section.context-dark.bg-overlay-gray-darkest
+      .container
+        .row.align-items-sm-center.justify-content-sm-center.section-cover.section-110
+          .col-sm-12
+            div
+              h1.text-uppercase
+                span.big Background Video
+            .row.justify-content-sm-center.offset-top-0
+              .col-sm-10
+                .offset-top-20
+                  h4.text-light Feel the power of our brand new Background Video Plugin.
+            .row.justify-content-sm-center.offset-top-0
+              .col-sm-5.col-md-4.col-lg-3.offset-top-41.offset-lg-top-66
+                a(href=cfg.buyLink target='_blank').btn.btn-block.btn-primary buy intense now

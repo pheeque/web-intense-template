@@ -1,0 +1,75 @@
+//
+// Box Member
+// --------------------------------------------------
+
+.box-member {
+  position: relative;
+
+  &-img-wrap {
+    position: relative;
+
+    img {
+      width: 100%;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba($brand-astronaut, .6);
+    }
+  }
+
+  &-caption {
+    position: absolute;
+    left: 50%;
+    bottom: 35px;
+    width: 100%;
+    padding: 0 15px;
+    @include transform(translateX(-50%));
+  }
+
+  @media (min-width: $screen-lg-min) {
+    overflow: hidden;
+
+    .box-member-caption {
+      padding-left: 30px;
+      padding-right: 30px;
+      opacity: 0;
+      visibility: hidden;
+      @include transform(translate(-50%, 100%));
+      transition: .3s all ease
+    }
+
+    .box-member-img-wrap {
+      &:before {
+        opacity: 0;
+        transition: .3s opacity ease;
+      }
+    }
+
+    &:hover {
+      .box-member-caption {
+        opacity: 1;
+        visibility: visible;
+        @include transform(translate(-50%, 0%));
+      }
+
+      .box-member-img-wrap {
+        &:before {
+          opacity: 1;
+        }
+      }
+    }
+  }
+  @media (min-width: $screen-xl-min) {
+    .box-member-caption {
+      padding-left: 100px;
+      padding-right: 100px;
+    }
+  }
+}

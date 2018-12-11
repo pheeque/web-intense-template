@@ -1,0 +1,22 @@
+//- Testimonials Slider with Custom Pagination
+
+mixin testimonials-slider-custom-pag(testimonials)
+  // Custom Pagination
+  ul.list-inline.owl-custom-pagination
+    each testimonial, index in testimonials
+      li.list-inline-item.owl-dot-custom.rounded-circle.img-bordered-white(data-owl-item=index)
+        img.rounded-circle(width=testimonial.image.width, height=testimonial.image.height, src=testimonial.image.src, alt=testimonial.image.alt)
+
+
+  // Testimonials Slider with Custom Pagination
+  .owl-carousel.owl-carousel-default.owl-carousel-class-light.veil-lg-owl-dots.veil-owl-nav.reveal-lg-owl-nav.inset-left-7p.inset-right-7p(data-mouse-drag="false" data-active="2" data-loop="false" data-dots="true"
+  data-dots-custom=".owl-custom-pagination" data-nav="true" data-nav-class='["owl-prev mdi mdi-chevron-left", "owl-next mdi mdi-chevron-right"]')
+    each testimonial in testimonials
+      div
+        blockquote.quote.quote-custom-image.offset-top-0.offset-md-top-24
+          img.rounded-circle.img-bordered-white.img-fluid.d-block.mx-auto.d-md-none(width=testimonial.image.width, height=testimonial.image.height, src=testimonial.image.src, alt=testimonial.image.alt)
+          p.quote-body.offset-top-34= testimonial.q
+          .offset-top-41
+            h3.font-accent= testimonial.title
+          p.text-uppercase.font-weight-bold.text-spacing-120.offset-top-10
+            span.small.text-malibu= testimonial.desc

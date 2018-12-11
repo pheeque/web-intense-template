@@ -1,0 +1,20 @@
+//- Includes
+include ../elements/_ui-bg-vide
+
+section.section
+  +bg-vide({
+    src: 'video/bg-video-2/bg-video-2-lg',
+    options: 'posterType: jpg'
+  })
+    section.context-dark.bg-overlay-gray-darkest
+      .container
+        .section-110.section-cover.row.justify-content-center.align-items-center
+          .col-lg-12
+            h1.text-uppercase.text-ubold.text-spacing-60
+              span.big Become our customer
+        
+            h4.offset-top-14.offset-md-top-20.text-light The smartest and most flexible bootstrap template by TemplateMonster you’ve ever seen.
+              span.d-none.d-md-block Create exactly what you need with our powerful bootstrap toolkit.
+        
+            .group.offset-top-14.offset-md-top-30
+              a(href=cfg.nav.pages.submenu.makeAnAppointment.href).btn.btn-primary make an appointment

@@ -1,0 +1,89 @@
+//- Includes
+include ../elements/_widget-twitter
+include ../elements/_widget-list-social
+include ../elements/_ui-quote-simple-slider
+include ../elements/_widget-flickrfeed
+
+// Footer variant 3
+footer.section-relative.section-top-66.section-bottom-34.page-footer
+  .container
+    .row.justify-content-md-center.text-xl-left
+      .col-md-12
+        .row.justify-content-sm-center
+
+          .col-sm-10.col-md-3.text-left.order-md-4.col-md-10.col-xl-3.offset-md-top-50.offset-xl-top-0.order-xl-2.offset-xl-top-10
+            // Twitter Feed
+            p.text-uppercase.text-spacing-60.font-weight-bold.text-center.text-xl-left Twitter Feed
+            .offset-top-20
+              +widget-twitter({
+                "dataTwitterUsername": "templatemonster"
+              }, true)
+
+          .col-sm-10.col-md-3.offset-top-66.order-md-3.col-md-10.offset-xl-top-0.col-md-6.col-xl-2.order-xl-4.offset-xl-top-10
+            h6.text-uppercase.text-spacing-60.text-center.text-xl-left Flickr
+
+            .offset-xl-top-30
+              +widget-flickrfeed("tm58888_landscapes", {"data-image_q": "src"}, 4)
+
+          .col-sm-10.col-md-3.offset-top-66.order-md-2.col-md-6.col-xl-4.offset-md-top-0.order-xl-3.offset-xl-top-10
+            h6.text-uppercase.text-spacing-60.text-center.text-lg-left What people say
+            .offset-xl-top-30
+              +quote-simple-slider(
+              [{
+                "title": "John Doe",
+                "q": "Thank you for your extraordinary dental service! You helped me to get rid of gum disease and mouth cavity inflammation I had suffered."
+              },
+                {
+                  "title": "July Mao",
+                  "q": "I am glad I’ve purchased a template from TemplateMonster. Extraordinary customer service, always available."
+                }
+              ], "text-dark"
+              )
+
+              .offset-top-20.text-sm-center.text-lg-left
+                +widget-list-social([
+                  {
+                    "icon": "fa fa-facebook",
+                    "href": "#"
+                  },
+                  {
+                    "icon": "fa fa-twitter",
+                    "href": "#"
+                  },
+                  {
+                    "icon": "fa fa-google-plus",
+                    "href": "#"
+                  },
+                  {
+                    "icon": "fa fa-linkedin",
+                    "href": "#"
+                  }
+                ])
+
+          .col-sm-10.col-md-3.offset-top-66.order-md-1.offset-md-top-0.col-md-6.col-xl-3.order-xl-1
+            // Footer brand
+            .footer-brand
+              a(href="index.html")
+                | !{cfg.brand.logo}
+
+            address.contact-info.offset-top-20.p
+              div
+                dl
+                  dt.font-weight-bold Address:
+                  dd.text-dark.d-xl-block 4578 Marmora St, #[span.d-xl-block San Francisco] #[span.d-xl-block D04 89GR.]
+
+              div
+                dl.offset-top-0
+                  dt.font-weight-bold Telephone:
+                  dd
+                    a.text-dark(href='tel:#') 1-800-1234-567
+              div
+                dl.offset-top-0
+                  dt.font-weight-bold E-mail:
+                  dd
+                    a.text-dark(href='mailto:#') mail@demolink.org
+
+  .container.offset-top-50
+    p
+      | #{cfg.brand.name} &copy; #[span(id="copyright-year")] . #[a.text-darker(href="#") Privacy Policy]
+      | . Design&nbsp;by&nbsp;#[a.text-darker(href="https://zemez.io/") Zemez]

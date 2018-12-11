@@ -1,0 +1,304 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-breadcrumb-classic
+include ../elements/_ui-member-block
+include ../elements/_widget-list-social
+include ../elements/_ui-box-member
+include ../elements/_ui-member-block-type-5
+include ../elements/_ui-progress-bar-linear
+include ../elements/_ui-member-block-type-4
+include ../elements/_ui-member-block-type-3
+
+//-Title
+block title
+  title= cfg.nav.components.submenu.toolkitComponents.submenu.memberBoxes.title
+
+//- Page
+block page
+  // Page Header
+  header.page-head
+    //- RD Navbar
+    +rd-navbar-default(
+    'rd-navbar-default rd-navbar-light',
+    {
+      "data-lg-auto-height": "true",
+      "data-md-layout": 'rd-navbar-fixed',
+      "data-lg-layout": 'rd-navbar-static',
+      "data-lg-stick-up": 'true'
+    },
+    cfg.brand.logo,
+    cfg.nav.components,
+    cfg.nav
+    )
+
+  +breadcrumb-classic(
+  cfg.nav.components.submenu.toolkitComponents.submenu.memberBoxes.title,
+  "icon-lg " + cfg.nav.components.submenu.toolkitComponents.submenu.memberBoxes.icon,
+  {
+    0: {
+      "title": cfg.nav.home.title,
+      "href": cfg.nav.home.href
+    },
+    1: {
+      "title": cfg.nav.components.title,
+      "href": cfg.nav.components.href
+    },
+    2: {
+      "title": cfg.nav.components.submenu.toolkitComponents.submenu.memberBoxes.title,
+      "href": cfg.nav.components.submenu.toolkitComponents.submenu.memberBoxes.href
+    }
+  })
+
+  // Member BoxesMember Boxes Type 1
+  section.section.novi-background.section-66.setion-md-top-100
+    .container
+      h1 Member Boxes Type 1
+      hr.divider.bg-mantis
+      .row.justify-content-sm-center.offset-top-66
+        .col-md-8.col-xl-12
+          .row
+            .col-md-6.col-xl-3
+              +member-block(
+              {"title": "John Doe", "href": "#"},
+              {"src": "images/users/user-john-doe-140x140.jpg", "width": 140, "height": 140, "alt": ""},
+              "Software Developer",
+              [
+                {"icon": "fa fa-facebook", "href": "#"},
+                {"icon": "fa fa-twitter", "href": "#"},
+                {"icon": "fa fa-google-plus", "href": "#"}
+              ]
+              )
+
+            .col-md-6.col-xl-3.offset-top-66.offset-md-top-0
+              +member-block(
+              {"title": "July Mao", "href": "#"},
+              {"src": "images/users/user-july-mao-140x140.jpg", "width": 140, "height": 140, "alt": ""},
+              "Support Operator",
+              [
+                {"icon": "fa fa-facebook", "href": "#"},
+                {"icon": "fa fa-twitter", "href": "#"},
+                {"icon": "fa fa-google-plus", "href": "#"}
+              ]
+              )
+
+            .col-md-6.col-xl-3.offset-top-66.offset-xl-top-0
+              +member-block(
+              {"title": "Bernard Show", "href": "#"},
+              {"src": "images/users/user-bernard-show-140x140.jpg", "width": 140, "height": 140, "alt": ""},
+              "Creative Director",
+              [
+                {"icon": "fa fa-facebook", "href": "#"},
+                {"icon": "fa fa-twitter", "href": "#"},
+                {"icon": "fa fa-google-plus", "href": "#"}
+              ]
+              )
+
+            .col-md-6.col-xl-3.offset-top-66.offset-xl-top-0
+              +member-block(
+                {"title": "Ronald Oswald", "href": "#"},
+                {"src": "images/users/user-ronald-oswald-140x140.jpg", "width": 140, "height": 140, "alt": ""},
+                "Founder, Sales",
+                [
+                  {"icon": "fa fa-facebook", "href": "#"},
+                  {"icon": "fa fa-twitter", "href": "#"},
+                  {"icon": "fa fa-google-plus", "href": "#"}
+                ]
+              )
+
+  // Member BoxesMember Boxes Type 2
+  section.section.novi-background.section-66
+    .container
+      h1 Member Boxes Type 2
+      hr.divider.bg-mantis
+      .row.justify-content-sm-center.offset-md-top-66
+        .col-md-10.col-xl-12
+          .row
+            .col-md-6.col-xl-3.offset-top-66.offset-sm-top-0
+              +box-member("images/users/user-john-doe-270x270.jpg", "John Doe", "Founder", "#")
+                +widget-list-social([
+                  {
+                    "icon": "fa fa-facebook",
+                    "href": "#"
+                  },
+                  {
+                    "icon": "fa fa-twitter",
+                    "href": "#"
+                  },
+                  {
+                    "icon": "fa fa-google-plus",
+                    "href": "#"
+                  }
+                ], "icon-xs icon-circle icon-darker-filled", "list-inline-xs")
+            .col-md-6.col-xl-3.offset-top-66.offset-md-top-0.offset-xl-top-0
+              +box-member("images/users/user-july-mao-270x270.jpg", "July Mao", "Web Designer", "#")
+                +widget-list-social([
+                  {
+                    "icon": "fa fa-facebook",
+                    "href": "#"
+                  },
+                  {
+                    "icon": "fa fa-twitter",
+                    "href": "#"
+                  },
+                  {
+                    "icon": "fa fa-google-plus",
+                    "href": "#"
+                  }
+                ], "icon-xs icon-circle icon-darker-filled", "list-inline-xs")
+
+            .col-md-6.col-xl-3.offset-top-66.offset-xl-top-0
+              +box-member("images/users/user-bernard-show-270x270.jpg", "Bernard Show", "Co-Founder", "#")
+                +widget-list-social([
+                  {
+                    "icon": "fa fa-facebook",
+                    "href": "#"
+                  },
+                  {
+                    "icon": "fa fa-twitter",
+                    "href": "#"
+                  },
+                  {
+                    "icon": "fa fa-google-plus",
+                    "href": "#"
+                  }
+                ], "icon-xs icon-circle icon-darker-filled", "list-inline-xs")
+            .col-md-6.col-xl-3.offset-top-66.offset-xl-top-0
+              +box-member("images/users/user-ronald-oswald-270x270.jpg", "Ronald Oswald", "Developer", "#")
+                +widget-list-social([
+                  {
+                    "icon": "fa fa-facebook",
+                    "href": "#"
+                  },
+                  {
+                    "icon": "fa fa-twitter",
+                    "href": "#"
+                  },
+                  {
+                    "icon": "fa fa-google-plus",
+                    "href": "#"
+                  }
+                ], "icon-xs icon-circle icon-darker-filled", "list-inline-xs")
+
+  // Member BoxesMember Boxes Type 3
+  section.section.novi-background.section-66
+    .container
+      h1 Member Boxes Type 3
+      .row.justify-content-sm-center
+        .col-sm-10.col-md-5
+          +member-block-type-5(
+          {
+            "width": 437,
+            "height": 437,
+            "src": "images/users/user-john-doe-437x437.jpg"
+          },
+          [{
+            "class": "fa-facebook",
+            "link": "#"
+          },
+            {
+              "class": "fa-twitter",
+              "link": "#"
+            },
+            {
+              "class": "fa-google-plus",
+              "link": "#"
+            },
+            {
+              "class": "fa-linkedin",
+              "link": "#"
+            }],
+
+          [{
+            "type": "phone",
+            "class": "mdi mdi-phone",
+            "link": "1-800-1234-567"
+          }, {
+            "type": "mail",
+            "class": "mdi mdi-email-open",
+            "link": "info@demolink.org"
+          }],
+
+
+          {
+            "link": "#",
+            "class": "btn-primary",
+            "text": "get in touch"
+          })
+
+  // Member BoxesMember Boxes Type 4
+  section.section.novi-background.section-66
+    .container
+      h1 Member Boxes Type 4
+      .row.justify-content-sm-center
+        .col-sm-8
+          +member-block-type-4(
+            "Eugene Newman",
+              {"src": "images/users/user-eugene-newman-140x140.jpg", "width": 140, "height": 140, "alt": ""},
+              "#",
+              "Founder, Lead Developer",
+              "Intense is an independent web design studio with a rich history. It started as a small family - owned business in Oakville, and has grown enough to successfully occupy two large buildings in two different cities.")
+
+  // Member BoxesMember Boxes Type 5
+  section.section.novi-background.section-66.section-lg-bottom-110
+    .container
+      h1 Member Boxes Type 5
+      .row.justify-content-sm-center.offset-top-66
+        .col-lg-3
+          +member-block-type-3("images/users/user-july-mao-140x140.jpg", "July Mao", "Support Operator",[{
+            "iconClass": "mdi mdi-facebook",
+            "btnLink": "#"
+          },
+            {
+              "iconClass": "mdi mdi-twitter",
+              "btnLink": "#"
+            },
+            {
+              "iconClass": "mdi mdi-google-plus",
+              "btnLink": "#"
+            }], "All Posts")
+
+        .col-lg-3
+          +member-block-type-3("images/users/user-ronald-oswald-140x140.jpg", "Ronald Oswald", "Founder, Sales",[{
+            "iconClass": "mdi mdi-facebook",
+            "btnLink": "#"
+          },
+            {
+              "iconClass": "mdi mdi-twitter",
+              "btnLink": "#"
+            },
+            {
+              "iconClass": "mdi mdi-google-plus",
+              "btnLink": "#"
+            }], "All Posts")
+
+        .col-lg-3
+          +member-block-type-3("images/users/user-bernard-show-140x140.jpg", "Bernard Show", "Creative Director",[{
+            "iconClass": "mdi mdi-facebook",
+            "btnLink": "#"
+          },
+            {
+              "iconClass": "mdi mdi-twitter",
+              "btnLink": "#"
+            },
+            {
+              "iconClass": "mdi mdi-google-plus",
+              "btnLink": "#"
+            }], "All Posts")
+
+        .col-lg-3
+          +member-block-type-3("images/users/user-john-doe-140x140.jpg", "John Doe", "Software Developer",[{
+            "iconClass": "mdi mdi-facebook",
+            "btnLink": "#"
+          },
+            {
+              "iconClass": "mdi mdi-twitter",
+              "btnLink": "#"
+            },
+            {
+              "iconClass": "mdi mdi-google-plus",
+              "btnLink": "#"
+            }], "All Posts")
+
+  // Page Footers
+  include ../sections/_section-footer-default

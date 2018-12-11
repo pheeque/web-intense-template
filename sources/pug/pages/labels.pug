@@ -1,0 +1,129 @@
+extends  ../_skeleton
+
+//- Includes
+include  ../elements/_ui-breadcrumb-classic
+
+//- Title
+block title
+  title= cfg.nav.components.submenu.toolkitComponents.submenu.labels.title
+
+//- Page
+block page
+  // Page Header
+  header.page-head
+    //- RD Navbar
+    +rd-navbar-default(
+      'rd-navbar-default rd-navbar-light',
+      {
+        "data-lg-auto-height": "true",
+        "data-md-layout": 'rd-navbar-fixed',
+        "data-lg-layout": 'rd-navbar-static',
+        "data-lg-stick-up": 'true'
+      },
+      cfg.brand.logo,
+      cfg.nav.components,
+      cfg.nav
+    )
+
+  +breadcrumb-classic(
+  cfg.nav.components.submenu.toolkitComponents.submenu.labels.title,
+  "icon-lg " + cfg.nav.components.submenu.toolkitComponents.submenu.labels.icon,
+  {
+    0: {
+      "title": cfg.nav.home.title,
+      "href": cfg.nav.home.href
+    },
+    1: {
+      "title": cfg.nav.components.title,
+      "href": cfg.nav.components.href
+    },
+    2: {
+      "title": cfg.nav.components.submenu.toolkitComponents.submenu.labels.title,
+      "href": cfg.nav.components.submenu.toolkitComponents.submenu.labels.href
+    }
+  })
+
+  // Section Label Styles
+  section.section.novi-background.section-66.section-md-top-110
+    .container
+      h1 Label Styles
+      .divider.bg-mantis
+      .group-sm.offset-top-50.offset-lg-top-66
+        span.label-custom.label-xs-custom.label-rounded-custom.label-default Default
+        span.label-custom.label-xs-custom.label-rounded-custom.label-primary Primary
+        span.label-custom.label-xs-custom.label-rounded-custom.label-deluge Deluge
+        span.label-custom.label-xs-custom.label-rounded-custom.label-success Success
+        span.label-custom.label-xs-custom.label-rounded-custom.label-warning Warning
+        span.label-custom.label-xs-custom.label-rounded-custom.label-danger Danger
+        span.label-custom.label-xs-custom.label-rounded-custom.label-info Info
+
+  // Section Label Shapes
+  section.section.novi-background.section-66
+    .container
+      h1 Label Shapes
+      .divider.bg-mantis
+      .group-sm.offset-top-50.offset-lg-top-66
+        span.label-custom.label-xs-custom.label-primary Rect
+        span.label-custom.label-xs-custom.label-rounded-custom.label-primary Rounded
+        span.label-custom.label-xs-custom.label-ellipsis-custom.label-primary Ellipse
+
+  // Section Label Sizes
+  section.section.novi-background.section-66
+    .container
+      h1 Label Sizes
+      .divider.bg-mantis
+      .row.text-xl-left
+        .col-md-6.offset-md-3.col-lg-4.offset-lg-4
+          h1
+            span.text-middle Heading 1
+            span.text-middle.label-custom.label-danger.label-xl-custom.label-rounded-custom.label New
+          h2
+            span.text-middle Heading 2
+            span.text-middle.label-custom.label-danger.label-lg-custom.label-rounded-custom.label New
+          h3
+            span.text-middle Heading 3
+            span.text-middle.label-custom.label-danger.label-lg-custom.label-rounded-custom.label New
+          h4
+            span.text-middle Heading 4
+            span.text-middle.label-custom.label-danger.label-rounded-custom.label New
+          h5
+            span.text-middle Heading 5
+            span.text-middle.label-custom.label-danger.label-sm-custom.label-rounded-custom.label New
+          h6
+            span.text-middle Heading 6
+            span.text-middle.label-custom.label-danger.label-sm-custom.label-rounded-custom.label New
+          p
+            span.text-middle Default Paragraph
+            span.text-middle.label-custom.label-danger.label-xs-custom.label-rounded-custom.label New
+
+  // Section Bootstrap Labels
+  section.section.novi-background.section-66.section-md-bottom-110
+    .container
+      h1 Bootstrap Badges
+      .divider.bg-mantis
+      .group-sm.offset-top-50.offset-lg-top-66
+        span.badge.badge-primary Primary
+        span.badge.badge-deluge Deluge
+        span.badge.badge-success Success
+        span.badge.badge-warning Warning
+        span.badge.badge-danger Danger
+        span.badge.badge-info Info
+        span.badge.badge-dark Dark
+  
+      .group-sm.offset-top-50.offset-lg-top-66
+        button.btn.btn-primary(type='button')
+          | Profile 
+          span.badge.badge-light 9
+          span.sr-only unread messages
+        button.btn.btn-success(type='button')
+          | Messages 
+          span.badge.badge-light 42
+          span.sr-only unread messages
+        button.btn.btn-warning(type='button')
+          | Notifications 
+          span.badge.badge-light 4
+          span.sr-only unread messages
+  
+
+  // Page Footers
+  include ../sections/_section-footer-default

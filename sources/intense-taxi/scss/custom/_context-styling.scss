@@ -1,0 +1,46 @@
+// Contexts
+// -------------------------
+
+%context-light {
+  // Text Styles
+  &, a,
+  h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+    color: $gray-darker;
+  }
+}
+
+%context-dark {
+  // Text Styles
+  &, a, .accordion-alternative .responsive-tabs .resp-accordion,
+  .accordion-alternative .responsive-tabs .resp-accordion .resp-arrow,
+  h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+    color: $white;
+  }
+
+  .owl-dot {
+    box-shadow: inset 0 0 0 2px $white;
+
+    &.active {
+      box-shadow: inset 0 0 0 8px $white;
+    }
+  }
+
+  .bootstrap-accordion-alternative {
+    .panel {
+      background-color: transparent;
+    }
+
+    .text-mine-shaft, .text-nobel, .text-turquoise,
+    a:hover, a:focus {
+      color: $white;
+    }
+  }
+}
+
+.context-light {
+  @extend %context-light;
+}
+
+.context-dark {
+  @extend %context-dark;
+}

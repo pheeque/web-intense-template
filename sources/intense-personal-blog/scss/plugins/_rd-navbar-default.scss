@@ -1,0 +1,235 @@
+//
+// RD Navbar Default
+// --------------------------------------------------
+
+.rd-navbar-default {
+  @extend %rd-navbar-default-cart !optional;
+  @extend %rd-navbar-transition !optional;
+
+  &.rd-navbar-fixed {
+    @extend %rd-navbar-default-panel !optional;
+    @extend %rd-navbar-default-mobile-menu !optional;
+    @extend %rd-navbar-default-cart-aside-right !optional;
+    @extend %rd-navbar-default-aside-left !optional;
+    @extend %rd-navbar-default-mobile-search !optional;
+
+    .rd-navbar-brand {
+      display: none;
+    }
+
+    .rd-navbar-search {
+      display: none;
+    }
+
+    @include media-breakpoint-up(sm) {
+      .rd-navbar-mobile-brand {
+        display: none;
+      }
+      .rd-navbar-brand {
+        display: block;
+        transform: translateX(-50%);
+      }
+    }
+  }
+
+  &.rd-navbar-static {
+    .rd-navbar-mobile-brand {
+      display: none;
+    }
+
+    @extend %rd-navbar-default-menu-first-lvl !optional;
+    @extend %rd-navbar-default-menu-dropdown !optional;
+    @extend %rd-navbar-default-search !optional;
+    @extend %rd-navbar-default-desktop-cart !optional;
+
+    .rd-navbar-brand {
+      float: left;
+
+      img {
+        vertical-align: baseline;
+      }
+    }
+
+    .rd-navbar-brand-slogan{
+      vertical-align: baseline;
+      font-size: $rd-navbar-default-slogan-size;
+      margin-left: $rd-navbar-default-slogan-offset-left;
+    }
+
+    .rd-navbar-menu-wrap {
+      float: right;
+    }
+
+    .rd-navbar-panel .rd-navbar-toggle, .form-search-wrap {
+      display: none;
+    }
+
+    .rd-navbar-inner {
+      @include clearfix;
+      transition: .3s all ease;
+      padding: $rd-navbar-default-inner-padding;
+      position: relative;
+      text-align: left;
+
+      &.active {
+        .rd-navbar-panel {
+          opacity: 0;
+          visibility: hidden;
+        }
+      }
+    }
+
+    .rd-navbar-megamenu {
+      margin-top: $rd-navbar-default-megamenu-offset-top;
+    }
+
+    .rd-navbar-nav-wrap, .rd-navbar-panel, .rd-navbar-cart-wrap {
+      transition: .3s all ease;
+    }
+
+    .rd-navbar-nav-wrap {
+      @include clearfix;
+      margin-top: 6px;
+      display: inline-block;
+    }
+
+    // Cart
+    .rd-navbar-cart-wrap {
+      display: inline-block;
+      position: relative;
+      margin-left: $rd-navbar-default-cart-wrap-offset-left;
+    }
+
+    .rd-navbar-search-toggle, .rd-navbar-cart {
+      margin-top: 5px;
+    }
+
+    &.rd-navbar--is-stuck {
+      box-shadow: $rd-navbar-default-stuck-shadow;
+
+      .rd-navbar-nav > li > .rd-navbar-dropdown {
+        margin-top: $rd-navbar-default-stuck-dropdown-offset-top;
+      }
+
+      .rd-navbar-inner {
+        padding-top: $rd-navbar-default-stuck-inner-padding-top;
+        padding-bottom: $rd-navbar-default-stuck-inner-padding-bottom;
+      }
+      .rd-navbar-megamenu {
+        margin-top: 0;
+      }
+    }
+  }
+
+
+  // Themes
+  // --------------------------------------------------
+
+  // Light
+  // -------------------------
+
+  &.rd-navbar-transparent {
+    &.rd-navbar-static:not(.rd-navbar--is-stuck) {
+      .rd-navbar-search-form {
+        bottom: -23px;
+      }
+    }
+  }
+
+  // Light, Dark Theme
+  // -------------------------
+
+  &.rd-navbar-light, &.rd-navbar-dark {
+    &.rd-navbar-static {
+      .rd-navbar-inner {
+        padding: $rd-navbar-default-light-inner-padding;
+      }
+
+      &.rd-navbar--is-stuck {
+        .rd-navbar-inner {
+          padding-top: $rd-navbar-default-stuck-inner-padding-top;
+          padding-bottom: $rd-navbar-default-stuck-inner-padding-bottom;
+        }
+      }
+
+      .rd-navbar-megamenu {
+        margin-top: 0;
+      }
+    }
+  }
+
+  // Transparent, Dark Theme
+  // -------------------------
+
+  &.rd-navbar-transparent, &.rd-navbar-dark {
+    @extend %rd-navbar-default-cart-dark !optional;
+
+    // Mobile Fixed Layout Colors
+    &.rd-navbar-fixed {
+      @extend %rd-navbar-default-panel-dark !optional;
+      @extend %rd-navbar-default-mobile-menu-dark !optional;
+      @extend %rd-navbar-default-cart-aside-right-dark !optional;
+      @extend %rd-navbar-default-aside-left-dark !optional;
+      @extend %rd-navbar-default-mobile-search-dark !optional;
+    }
+
+    // Desktop Static Layout Colors
+    &.rd-navbar-static {
+      @extend %rd-navbar-default-menu-first-lvl-dark !optional;
+      @extend %rd-navbar-default-menu-dropdown-dark !optional;
+      @extend %rd-navbar-default-search-dark !optional;
+
+      .rd-navbar-search-form-input, .rd-navbar-search-toggle, .rd-navbar-cart {
+        color: $rd-navbar-default-dark-inputs-color;
+      }
+
+      &.rd-navbar--is-stuck {
+        background: $rd-navbar-default-dark-stuck-background;
+      }
+    }
+  }
+
+  // Dark Theme
+  // -------------------------
+
+  &.rd-navbar-dark {
+    background: $rd-navbar-default-dark-stuck-background;
+  }
+
+  // Light Theme
+  // -------------------------
+
+  &.rd-navbar-light {
+    background: $rd-navbar-default-light-background;
+    @extend %rd-navbar-default-cart-light !optional;
+
+    .rd-navbar-search-toggle, .rd-navbar-cart {
+      span {
+        color: $rd-navbar-default-light-toggles-color;
+      }
+    }
+
+    // Mobile Fixed Layout Colors
+    &.rd-navbar-fixed {
+      @extend %rd-navbar-default-panel-light !optional;
+      @extend %rd-navbar-default-mobile-menu-light !optional;
+      @extend %rd-navbar-default-cart-aside-right-light !optional;
+      @extend %rd-navbar-default-aside-left-light !optional;
+      @extend %rd-navbar-default-mobile-search-light !optional;
+    }
+
+    // Desktop Static Layout Colors
+    &.rd-navbar-static {
+      @extend %rd-navbar-default-menu-first-lvl-light !optional;
+      @extend %rd-navbar-default-menu-dropdown-light !optional;
+      @extend %rd-navbar-default-search-light !optional;
+
+      .rd-navbar-search-form-input, .rd-navbar-search-toggle, .rd-navbar-cart {
+        color: $rd-navbar-default-light-inputs-color;
+      }
+      &.rd-navbar--is-stuck {
+        background: $rd-navbar-default-light-stuck-background;
+      }
+    }
+  }
+}

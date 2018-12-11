@@ -1,0 +1,14 @@
+//- icon - icon class
+//- title - box title
+//- title - box title attr
+//- desc - description of box
+mixin box-icon-type-3(obj)
+  // Icon Box Type 3
+  .box-icon-3(class=obj.modClass)
+    
+    .unit.align-items-end.unit-spacing-sm.unit-xs.flex-row.text-center.text-sm-left
+      .unit-left
+        span.icon.novi-icon.icon-circle.icon-lg.text-middle(class=obj.icon)
+      .unit-body
+        h4.box-title= obj.title
+    p.offset-top-20.text-left= obj.text

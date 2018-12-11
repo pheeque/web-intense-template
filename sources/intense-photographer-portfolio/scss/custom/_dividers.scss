@@ -1,0 +1,86 @@
+//
+// Dividers
+// --------------------------------------------------
+
+
+// Hr
+// --------------------------------------------------
+
+.hr {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border: none;
+  padding: 0;
+  height: 1px;
+  background: $gray-200;
+}
+
+.hr-dashed{
+  height: 0;
+  border-bottom: 1px dashed $gray-500;
+  background-color: transparent;
+}
+
+.hr-gradient{
+  @include divider-gradient($white, $gray-500);
+}
+
+
+// Text Subline
+// --------------------------------------------------
+
+.text-subline {
+  position: relative;
+  height: 1px;
+  padding: 0;
+  border: none;
+  background: $gray-500;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 1px;
+    width: 40px;
+    background: $black;
+  }
+}
+
+
+// Divider
+// --------------------------------------------------
+
+// Base Styles
+
+.divider{
+  margin: 27px auto 34px;
+  border: none;
+  padding: 0;
+  width: 40px;
+  height: 2px;
+  background: $gray-500;
+}
+
+.divider-vertical {
+  width: 2px;
+  height: 20px;
+  background: $gray-500;
+}
+
+// Sizing
+
+.divider-sm{
+  width: 30px;
+}
+
+.divider-lg{
+  width: 60px;
+  height: 3px;
+}
+
+// Styles
+
+@include indent-responsive(hr, null, (margin-left, margin-right), $grid-breakpoints, auto);
+@include indent-responsive(hr, left, margin-left, $grid-breakpoints, 0);
+@include indent-responsive(hr, right, margin-right, $grid-breakpoints, 0);

@@ -1,0 +1,74 @@
+//- Includes
+include ../elements/_ui-material-parallax
+
++material-parallax({ img: 'images/background-01-1920x955.jpg' })
+  .bg-overlay-info
+    .container.container-wide
+      //Swiper
+      .swiper-container.swiper-slider( data-loop="true" data-dragable="false" )
+        .swiper-wrapper.text-center
+          #page-loader.swiper-slide
+            .swiper-caption.swiper-parallax
+              .swiper-slide-caption
+                .row.justify-content-sm-center.align-items-sm-center
+                  .col-xl-7.col-xxl-5.section-xl-top-15
+                    img.img-fluid.d-none.d-xl-inline-block(src="images/home-01-563x616.png" width="563" height="616" alt="")
+                  .col-md-10.col-xl-5.col-xxl-4.text-xl-left.offset-top-0
+                    blockquote.quote
+                      h2 “We'll do our best to deliver the best possible healthcare and customer service to you!”
+                      .unit.unit-lg.flex-xl-row.unit-spacing-xs.offset-top-20
+                        .unit-left
+                          hr.divider.bg-white.d-none.d-xl-inline-block(style="margin-bottom: 3px;")
+                        .unit-body
+                          div
+                            h5 Dr. Mark Hoffman
+                          .offset-top-10.d-none.d-sm-block
+                            p(style="color: #e8e8e8;") Founder & head of Intense Dental Clinic
+                    .row.justify-content-sm-center.justify-content-xl-start.offset-top-20.offset-sm-top-50
+                      .col-sm-10.col-md-6.col-lg-5.col-xl-7
+                        a.btn.btn-block.btn-primary(href=cfg.nav.schedule.href) BOOK AN APPOINTMENT
+                      .col-sm-10.col-md-5.col-lg-3.col-xl-5.offset-top-10.offset-md-top-0
+                        a.btn.btn-block.btn-default(href="#") More Info
+
+          .swiper-slide
+            .swiper-caption.swiper-parallax
+              .swiper-slide-caption
+                .row.justify-content-sm-center.align-items-sm-center
+                  .col-xl-8.col-xxl-6
+                    img.img-fluid.d-none.d-xl-inline-block.section-xl-top-182.section-xxl-top-110(src="images/home-02-680x488.png" width="680" height="488" alt="")
+                  .col-md-10.col-xl-4.col-xxl-4.text-xl-left.offset-top-0
+                    h2 We strive to provide a relaxed atmosphere
+                    p(style="color: #e8e8e8;") If you would like to improve, enhance, or protect your smile, please do not hesitate to contact us today.
+                    div.offset-top-20
+                      span.icon.icon-xxs.mdi.mdi-cellphone-android.text-middle.inset-right-10
+                      span.h6
+                        a.text-middle.p(href="tel:#") 1-800-1234-567
+                    .row.justify-content-sm-center.justify-content-xl-start.offset-top-20.offset-sm-top-50
+                      .col-sm-10.col-md-6.col-lg-5.col-xl-12.col-xxl-7
+                        .inset-xl-left-20.inset-xl-right-20.inset-xxl-left-0.inset-xxl-right-0
+                          a.btn.btn-block.btn-primary(href=cfg.nav.schedule.href) BOOK AN APPOINTMENT
+                      .col-sm-10.col-md-5.col-lg-3.col-xl-12.col-xxl-5.offset-top-10.offset-xxl-top-0.offset-md-top-0.offset-xl-top-10
+                        .inset-xl-left-20.inset-xl-right-20.inset-xxl-left-0.inset-xxl-right-0
+                          a.btn.btn-block.btn-default(href="#") More Info
+
+          .swiper-slide
+            .swiper-caption.swiper-parallax
+              .swiper-slide-caption
+                .row.justify-content-sm-center.align-items-sm-center
+                  .col-xl-6.col-xxl-5.section-xl-top-15
+                    img.img-fluid.d-none.d-xl-inline-block(src="images/home-03-363x606.png" width="363" height="606" alt="")
+                  .col-md-10.col-xl-6.col-xxl-4.text-xl-left.offset-top-0
+                    h2 Appointments
+                    .offset-top-30
+                      p(style="color: #e8e8e8;") To make an appointment with our doctor, please complete the form available on this page. Otherwise, we welcome you to contact our scheduling coordinator directly during our normal office hours.
+                    .row.justify-content-sm-center.justify-content-xl-start.offset-top-30
+                      .col-sm-10.col-md-6.col-lg-5.col-xl-7
+                        a.btn.btn-block.btn-primary(href=cfg.nav.schedule.href) BOOK AN APPOINTMENT
+                      .col-sm-10.col-md-5.col-lg-3.col-xl-5.offset-top-10.offset-md-top-0
+                        a.btn.btn-block.btn-default(href="#") More Info
+
+        .swiper-button.swiper-button-prev.swiper-parallax.mdi.mdi-chevron-left
+
+        .swiper-button.swiper-button-next.swiper-parallax.mdi.mdi-chevron-right
+
+        .swiper-pagination

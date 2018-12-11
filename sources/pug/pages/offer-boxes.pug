@@ -1,0 +1,278 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-breadcrumb-classic
+include ../elements/_ui-box-offer-type-1
+include ../elements/_ui-thumbnail-terry
+
+//-Title
+block title
+  title= cfg.nav.components.submenu.toolkitComponents.submenu.offerBoxes.title
+
+//- Page
+block page
+  // Page Header
+  header.page-head
+    //- RD Navbar
+    +rd-navbar-default(
+    'rd-navbar-default rd-navbar-light',
+    {
+      "data-lg-auto-height": "true",
+      "data-md-layout": 'rd-navbar-fixed',
+      "data-lg-layout": 'rd-navbar-static',
+      "data-lg-stick-up": 'true'
+    },
+    cfg.brand.logo,
+    cfg.nav.components,
+    cfg.nav
+    )
+
+  +breadcrumb-classic(
+  cfg.nav.components.submenu.toolkitComponents.submenu.offerBoxes.title,
+  cfg.nav.components.submenu.toolkitComponents.submenu.offerBoxes.icon,
+  {
+    0: {
+      "title": cfg.nav.home.title,
+      "href": cfg.nav.home.href
+    },
+    1: {
+      "title": cfg.nav.components.title,
+      "href": cfg.nav.components.href
+    },
+    2: {
+      "title": cfg.nav.components.submenu.toolkitComponents.submenu.offerBoxes.title,
+      "href": cfg.nav.components.submenu.toolkitComponents.submenu.offerBoxes.href
+    }
+  })
+
+  // Offer box type 1
+  section.section.novi-background.section-top-66.section-md-top-110
+    .container
+      h1 Offer box type 1
+      hr.divider.bg-mantis
+  
+    section.section.offset-top-50.context-dark.bg-primary
+      .row.no-gutters.justify-content-sm-center
+        .col-sm-10.col-md-9.col-lg-10.col-xl-12
+          .owl-carousel.owl-carousel-default.veil-xl-owl-dots.veil-owl-nav(data-items="1" data-sm-items="2" data-lg-items="3" data-xl-items="6" data-dots="true")
+            div
+              +box-offer-type-1({
+                "link": "#",
+                "waypoint": null
+              },{
+                "styling": "list list-unstyled list-vertical-right-line bg-primary",
+                "itemPadding": "section-xl-34"
+              },"icon icon-lg mdi mdi-food",
+              {
+                "styling": "h5",
+                "description": "Infrastructure"
+              },"divider divider-sm bg-default")
+  
+            div
+              +box-offer-type-1({
+                "link": "#",
+                "waypoint": null
+              },{
+                "styling": "list list-unstyled list-vertical-right-line bg-primary",
+                "itemPadding": "section-xl-34"
+              },"icon icon-lg mdi mdi-file-image",
+              {
+                "styling": "h5",
+                "description": "Portfolio"
+              },"divider divider-sm bg-default")
+  
+            div
+              +box-offer-type-1({
+                "link": "#",
+                "waypoint": null
+              },{
+                "styling": "list list-unstyled list-vertical-right-line bg-primary",
+                "itemPadding": "section-xl-34"
+              },"icon icon-lg mdi mdi-format-text",
+              {
+                "styling": "h5",
+                "description": "Blog"
+              },"divider divider-sm bg-default")
+  
+            div
+              +box-offer-type-1({
+                "link": "#",
+                "waypoint": null
+              },{
+                "styling": "list list-unstyled list-vertical-right-line bg-primary",
+                "itemPadding": "section-xl-34"
+              },"icon icon-lg mdi mdi-account-multiple",
+              {
+                "styling": "h5",
+                "description": "Agency"
+              },"divider divider-sm bg-default")
+  
+            div
+              +box-offer-type-1({
+                "link": "#",
+                "waypoint": null
+              },{
+                "styling": "list list-unstyled list-vertical-right-line bg-primary",
+                "itemPadding": "section-xl-34"
+              },"icon icon-lg mdi mdi-palette",
+              {
+                "styling": "h5",
+                "description": "Creative"
+              },"divider divider-sm bg-default")
+  
+            div
+              +box-offer-type-1({
+                "link": "#",
+                "waypoint": null
+              },{
+                "styling": "list list-unstyled list-vertical-right-line bg-primary",
+                "itemPadding": "section-xl-34"
+              },"icon icon-lg mdi mdi-factory",
+              {
+                "styling": "h5",
+                "description": "Industrial"
+              },"divider divider-sm bg-default")
+
+  // Offer box type 2
+  section.section.novi-background.section-top-66.section-md-top-98
+    .container
+      h1 Offer box type 2
+      hr.divider.bg-mantis
+
+    section.section.context-dark.offset-top-66
+      .owl-carousel.owl-carousel-default.owl-carousel-arrows.owl-carousel-arrows-fullwidth.veil-xxl-owl-dots.veil-owl-nav.d-xxl-owl-nav(data-items="1" data-lg-items="2" data-xl-items="4" data-nav="true" data-dots="true" data-nav-class='["owl-prev mdi mdi-chevron-left", "owl-next mdi mdi-chevron-right"]')
+        div
+          .row.justify-content-sm-center
+            .col-sm-8.col-md-6.col-lg-12
+              +thumbnail-terry({
+                "type": "thumbnail",
+                "thumbnailStyle": "thumbnail-border-none",
+                "figcaption": true,
+                "titleStyle": "text-uppercase font-weight-bold font-italic",
+                "title": "Infrastructure Themes",
+                "description": null,
+                "thumb": {
+                  "src": "images/skins/skin-red-energy-infrastructure-480x480.jpg",
+                  "width": 480,
+                  "height": 480,
+                  "alt": ""
+                },
+                "target": {"href": "#",},
+                "btnClass": "btn-danger",
+                "btnLink": "#",
+                "btnWaypointTo": "#",
+                "btnText": "view all themes"
+              })
+        div
+          .row.justify-content-sm-center
+            .col-sm-8.col-md-6.col-lg-12
+              +thumbnail-terry({
+                "type": "thumbnail",
+                "thumbnailStyle": "thumbnail-border-none",
+                "figcaption": true,
+                "titleStyle": "text-uppercase font-weight-bold font-italic",
+                "title": "Blog Themes",
+                "description": null,
+                "thumb": {
+                  "src": "images/skins/skin-red-energy-blog-themes-480x480.jpg",
+                  "width": 480,
+                  "height": 480,
+                  "alt": ""
+                },
+                "target": {"href": "#"},
+                "btnClass": "btn-danger",
+                "btnLink": "#",
+                "btnWaypointTo": "#",
+                "btnText": "view all themes"
+              })
+        div
+          .row.justify-content-sm-center
+            .col-sm-8.col-md-6.col-lg-12
+              +thumbnail-terry({
+                "type": "thumbnail",
+                "thumbnailStyle": "thumbnail-border-none",
+                "figcaption": true,
+                "titleStyle": "text-uppercase font-weight-bold font-italic",
+                "title": "Portfolio Themes",
+                "description": null,
+                "thumb": {
+                  "src": "images/skins/skin-red-energy-portfolio-themes-480x480.jpg",
+                  "width": 480,
+                  "height": 480,
+                  "alt": ""
+                },
+                "target": {"href": "#"},
+                "btnClass": "btn-danger",
+                "btnLink": "#",
+                "btnWaypointTo": "#",
+                "btnText": "view all themes"
+              })
+        div
+          .row.justify-content-sm-center
+            .col-sm-8.col-md-6.col-lg-12
+              +thumbnail-terry({
+                "type": "thumbnail",
+                "thumbnailStyle": "thumbnail-border-none",
+                "figcaption": true,
+                "titleStyle": "text-uppercase font-weight-bold font-italic",
+                "title": "Business Themes",
+                "description": null,
+                "thumb": {
+                  "src": "images/skins/skin-red-energy-business-themes-480x480.jpg",
+                  "width": 480,
+                  "height": 480,
+                  "alt": ""
+                },
+                "target": {"href": "#"},
+                "btnClass": "btn-danger",
+                "btnLink": "#",
+                "btnWaypointTo": "#",
+                "btnText": "view all themes"
+              })
+        div
+          .row.justify-content-sm-center
+            .col-sm-8.col-md-6.col-lg-12
+              +thumbnail-terry({
+                "type": "thumbnail",
+                "thumbnailStyle": "thumbnail-border-none",
+                "figcaption": true,
+                "titleStyle": "text-uppercase font-weight-bold font-italic",
+                "title": "Creative Themes",
+                "description": null,
+                "thumb": {
+                  "src": "images/skins/skin-red-energy-creative-themes-480x480.jpg",
+                  "width": 480,
+                  "height": 480,
+                  "alt": ""
+                },
+                "target": {"href": "#"},
+                "btnClass": "btn-danger",
+                "btnLink": "#",
+                "btnWaypointTo": "#",
+                "btnText": "view all themes"
+              })
+        div
+          .row.justify-content-sm-center
+            .col-sm-8.col-md-6.col-lg-12
+              +thumbnail-terry({
+                "type": "thumbnail",
+                "thumbnailStyle": "thumbnail-border-none",
+                "figcaption": true,
+                "titleStyle": "text-uppercase font-weight-bold font-italic",
+                "title": "Infrastructure Themes",
+                "description": null,
+                "thumb": {
+                  "src": "images/skins/skin-red-energy-infrastructure-480x480.jpg",
+                  "width": 480,
+                  "height": 480,
+                  "alt": ""
+                },
+                "target": {"href": "#",},
+                "btnClass": "btn-danger",
+                "btnLink": "#",
+                "btnWaypointTo": "#",
+                "btnText": "view all themes"
+              })
+
+  // Page Footers
+  include ../sections/_section-footer-default

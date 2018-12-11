@@ -1,0 +1,62 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-rd-navbar-default-transparent
+
+
+//- Title
+block title
+	title Gifter Card 2
+
+//- Page
+block page
+	// Page Head
+	section.bg-lightest.one-page.one-page-decorate.section-card-2
+
+
+		.section-inner-bg.bg-image-card-2
+		canvas#canv.snow-effect
+		.parallax-scene.parallax-scene-js.d-none.d-xl-block(data-scalar-x="5" data-scalar-y="10")
+			.layer-1
+				.layer(data-depth="0.1")
+					img(src="images/card-2-parallax-img-1.png",  alt="")
+			.layer-3
+				.layer(data-depth="-0.02")
+					img(src="images/card-2-parallax-img-3.png",  alt="")
+			.layer-2
+				.layer(data-depth="-0.1")
+					img(src="images/card-2-parallax-img-2.png",  alt="")
+
+		.container.container-wide.section-relative
+			.row.section-cover.section-110.align-items-center.justify-content-center.justify-content-lg-start
+				.brand-position
+					a(href='index.html')
+						img(src="images/logo-dark-118x55.png",  alt="")
+				.col-12.col-lg-2.col-xl-2.col-xxl-1.order-lg-2.section-lg-bottom-170
+					a.icon.icon-lg.icon-circle.mdi.mdi-play.icon-video(href='https://www.youtube.com/embed/ncjuqj0WN6s' data-lightgallery='item')
+				.col-md-8.col-lg-6.col-xl-5.order-lg-1.text-lg-left
+					.quote-minimal
+						h2.text-accent-classic.text-bold Merry Christmas
+							br.d-none.d-xl-block
+							| & Happy New Year
+						.quote-decorate-body.offset-top-30
+							p May this wonderful time of the year touch your heart in a special way. Wishing you much happiness not just today, but throughout the whole New Year!
+							p.quote-decorate-author.offset-top-24 John Doe, CEO
+						ul.list-inline.offset-top-50
+							li.list-inline-item: a.icon.icon-xxs.icon-insta.mdi.icon-circle.mdi-instagram(href='#')
+							li.list-inline-item: a.icon.icon-xxs.icon-youtube.mdi.icon-circle.mdi-youtube-play(href='#')
+							li.list-inline-item: a.icon.icon-xxs.icon-facebook.mdi.icon-circle.mdi-facebook(href='#')
+
+				.footer-position.text-lg-left
+					p.text-opacity-60
+						span &copy;&nbsp;
+						span.copyright-year
+						span &nbsp;
+						span= cfg.brand.name
+						span .
+						span &nbsp;
+						span  All Rights Reserved.
+						span &nbsp;
+						span  Design&nbsp;by&nbsp;#[a(href="https://zemez.io/") Zemez]
+
+block bgAudio

@@ -1,0 +1,48 @@
+
+include ../elements/_widget-list-social.pug
+
+// Default footer
+footer.section.novi-background.section-relative.section-85.section-bottom-34.page-footer
+	.container
+		.row.justify-content-sm-center.justify-content-lg-between.text-xl-left.grid-group-md
+			.col-sm-5.col-md-4.col-lg-3.col-xl-2.text-sm-left.order-2.order-lg-1
+				h6.footer-title Help
+				.d-block.offset-top-30
+					.d-inline-block
+						ul.list.footer-link
+							li: a(href='#benefit') benefits
+							li: a(href='#deals')  top deals
+							li: a(href='#partners')  Partners
+							li: a(href='#faq') FAQ
+							li: a(href='#contacts') contacts
+			
+			.col-sm-12.col-md-9.col-lg-4.text-lg-left.order-lg-2
+				h6.footer-title newsletter Signup
+
+				.offset-top-30
+					form.rd-mailform.form-subscribe(data-form-output='form-output-global', data-form-type='subscribe', method='post', action='bat/rd-mailform.php')
+						.form-group
+							.input-group
+								input.form-control(placeholder='E-Mail', type="email", data-constraints="@Required @Email", name="email")
+								span.input-group-append
+
+									button(type="submit").btn.btn-secondary Join now
+
+				p.offset-top-30 Subscribe to our newsletter to receive the latest news about our sale right into your inbox.
+			.col-sm-6.col-md-6.col-lg-3.order-3
+
+				h6.footer-title Get in touch
+				.offset-top-30
+					+widget-list-social([
+						{icon: "mdi mdi-facebook-messenger", href: "#"},
+						{icon: "mdi mdi-instagram", href: "#"},
+						{icon: "mdi mdi-telegram", href: "#"},
+						{icon: "mdi mdi-facebook", href: "#"}
+					])
+				.offset-top-24
+					p.footer-call-link
+						span.icon.mdi.mdi-cellphone-android
+						a(href='tel:#') +1233 654 7989
+		.row.text-center
+			.col-12
+				+rights

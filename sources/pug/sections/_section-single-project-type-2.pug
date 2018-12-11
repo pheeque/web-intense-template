@@ -1,0 +1,110 @@
+//- Includes
+include ../elements/_ui-carousel-gallery-classic
+include ../elements/_ui-rd-map
+include ../elements/_ui-table-bootstrap
+
+// Section single project type 2
+section.section.novi-background.section-top-98.section-sm-top-110.section-bottom-34
+  .container
+    h2.font-weight-bold Single Project Variant 3
+    hr.divider.bg-mantis
+    .offset-md-top-66
+      .row
+        .col-lg-7.col-xl-8
+          +carousel-gallery-classic([
+            {
+              "type": "thumbnail",
+              "thumb": {
+                "src": "images/portfolio/portfolio-single-01-716x404.jpg",
+                "width": 716,
+                "height": 404,
+                "alt": ""
+              },
+              "target": {
+                "src": "images/portfolio/portfolio-single-01-716x404.jpg",
+                "width": 716,
+                "height": 404,
+                "alt": ""
+              }
+            },
+            {
+              "type": "thumbnail",
+              "thumb": {
+                "src": "images/portfolio/portfolio-single-02-716x404.jpg",
+                "width": 716,
+                "height": 404,
+                "alt": ""
+              },
+              "target": {
+                "src": "images/portfolio/portfolio-single-02-716x404.jpg",
+                "width": 716,
+                "height": 404,
+                "alt": ""
+              }
+            },
+            {
+              "type": "thumbnail",
+              "thumb": {
+                "src": "images/portfolio/portfolio-single-03-716x404.jpg",
+                "width": 716,
+                "height": 404,
+                "alt": ""
+              },
+              "target": {
+                "src": "images/portfolio/portfolio-single-03-716x404.jpg",
+                "width": 716,
+                "height": 404,
+                "alt": ""
+              }
+            }
+          ])
+
+          .text-md-left.offset-top-50
+            h5.font-weight-bold Website Design
+            p A website is a medium that connects a person with the world of digital data. With its help users can access information, make purchases, communicate with each other, and do loads of other things.
+            p Due to the clever marketing strategy and professional web designing, corporations can grow their client base with ease. On the modern market the competition is very tough, so in order to be a success, businesses experiment with multiple strategies with the goal of coming up with the perfect one.
+          .offset-top-30
+            +table-bootstrap([
+              ['Project details', ''],
+              ['Founder, Lead Developer', 'Ronald Oswald'],
+              ['Lead Email', 'ronald@demolink.org'],
+              ['Date of release', '04/11/2019'],
+              ['Last update', '04/23/2019'],
+              ['Project site', "https://path-to-project-site.com"]
+            ], 'table-striped')
+
+        .col-lg-5.col-xl-4.text-lg-left.inset-lg-left-30.offset-top-66.offset-md-top-0
+          .row
+            .col-sm-12.offset-top-41.offset-lg-top-0
+              p
+                span.text-middle.novi-icon.mdi-calendar-today.mdi.text-light.icon.icon-xxs
+                = " "
+                span April 12, 2019
+
+            .col-sm-12.offset-top-50
+              .unit.unit-md.flex-lg-row
+                .unit-left
+                  img.img-fluid.d-inline-block(src="images/users/user-ronald-oswald-140x140.jpg" width=140 height=140 alt="")
+                .unit-body
+                  div
+                    h5.text-primary.font-weight-bold Ronald Oswald
+                  .offset-top-10
+                    address.contact-info.text-lg-left
+                      ul.list-unstyled.p
+                        li.d-block
+                          span.icon.icon-xxs.novi-icon.mdi.mdi-phone.text-middle
+                          = " "
+                          a.d-inline-block.text-middle(href="tel:#") 1-800-7650-986
+                        li.d-block
+                          span.icon.icon-xxs.novi-icon.mdi.mdi-email-open.text-middle
+                          = " "
+                          a.d-inline-block.text-middle(href="mailto:#") ronald@demolink.org
+
+            .col-sm-12.offset-top-20
+              a(href=cfg.nav.pages.submenu.contactMe.href).btn.btn-primary contact an author
+              .offset-top-10
+                a(href=cfg.buyLink target='_blank').btn.btn-info Buy Now
+
+
+
+

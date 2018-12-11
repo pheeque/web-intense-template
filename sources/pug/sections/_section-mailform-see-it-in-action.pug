@@ -1,0 +1,60 @@
+//- Includes
+include ../elements/_ui-material-parallax
+
+// See it in action
++material-parallax({
+  img: "images/backgrounds/background-05-1920x960.jpg",
+  Class: 'section-98 section-sm-110 bg-overlay-white'
+})#mailform-widget
+  .container
+    h1 See It In Action
+    hr.divider.bg-mantis
+    .row.justify-content-sm-center
+      .col-md-8.col-lg-12
+        .row.justify-content-sm-center
+          .col-lg-8
+            // RD Mailform
+            form.rd-mailform.text-left(data-form-output="form-output-global", data-form-type='contact', method='post', action='bat/rd-mailform.php')
+              .row
+                .col-lg-6
+                  .form-group
+                    label.form-label.form-label-outside(for="rd-mailform-first-name") First name:
+                    input#rd-mailform-first-name.form-control(type="text" name="name" data-constraints="@Required")
+                .col-lg-6
+                  .form-group
+                    label.form-label.form-label-outside(for="rd-mailform-last-name") Last name:
+                    input#rd-mailform-last-name.form-control(type="text" name="name" data-constraints="@Required")
+                .col-lg-6.offset-lg-top-20
+                  .form-group
+                    label.form-label.form-label-outside(for="rd-mailform-email") E-mail:
+                    input#rd-mailform-email.form-control(type="email" name="email" data-constraints="@Required @Email")
+
+                .col-lg-6.offset-lg-top-20
+                  .row
+                    .col-md-6
+                      .form-group
+                        label.form-label.form-label-outside(for="rd-mailform-phone") Phone:
+                        input#rd-mailform-phone.form-control(type="text" name="phone" data-constraints="@Required")
+                    .col-md-6
+                      .form-group
+                        label.form-label.form-label-outside(for="rd-mailform-select") Gender:
+                        select#rd-mailform-select.form-control(data-placeholder="Select an option", data-minimum-results-for-search="Infinity")
+                          option Male
+                          option Female
+
+                .col-lg-6.offset-lg-top-20
+                  .form-group
+                    label.form-label.form-label-outside(for="rd-mailform-date") Date:
+                    input#rd-mailform-date.form-control(type="text" name="date" data-constraints="@Required" data-time-picker="date")
+                .col-lg-6.offset-lg-top-20
+                  .form-group
+                    label.form-label.form-label-outside(for="rd-mailform-time") Time:
+                    input#rd-mailform-time.form-control(type="text" name="time" data-constraints="@Required" data-time-picker="time")
+
+                .col-xl-12.offset-top-30.offset-lg-top-20
+                  .form-group
+                    label.form-label.form-label-outside(for="rd-mailform-message") Message:
+                    textarea#rd-mailform-message.form-control(name="message" data-constraints="@Required" style="height: 150px")
+                  .row.justify-content-sm-center.justify-content-xl-start.text-center.text-xl-left.offset-top-30
+                    .col-sm-5.col-lg-4.col-xl-3
+                      button(type="submit").btn.btn-block.btn-primary Send

@@ -1,0 +1,42 @@
+// Custom card styles
+
+.card-accordion {
+  border-radius: 0;
+  border: none;
+
+  .card-header {
+    position: relative;
+    padding: $card-spacer-y $card-spacer-x*2 $card-spacer-y $card-spacer-x;
+    border-radius: 4px;
+    border-bottom: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: .3s;
+
+    &:hover {
+      background-color: $warning;
+    }
+
+    &::after {
+      content: '\f465';
+      position: absolute;
+      top: 24px;
+      right: 10px;
+      transform: translateY(-50%);
+      font-family: $icon-font-material-design;
+      font-size: 21px;
+      font-weight: 400;
+      color: $gray-700;
+    }
+    
+    &.collapsed {
+      &::after {
+        content: '\f504';
+      }
+    }
+  }
+}
+
+.card-accordion + .card-accordion {
+  margin-top: 10px;
+}

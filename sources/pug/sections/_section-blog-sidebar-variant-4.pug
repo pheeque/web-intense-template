@@ -1,0 +1,109 @@
+//- Includes
+include ../elements/_widget-post
+include ../elements/_widget-tags
+
+// Section Blog Modern
+aside.text-left
+  // Recent Posts
+  .row
+    .col-md-6.col-xl-12
+      h6.text-uppercase.text-spacing-60 Recent Posts
+      div.text-subline
+
+      .offset-top-34
+        +widget-post("#", "05/14/2018", "Let’s Change the world", {
+          "w": 46,
+          "h": 46,
+          "src": "images/blog/post-thumb-01-46x46.jpg",
+          "alt": ""
+        }, "", "text-picton-blue")
+      .offset-top-30
+        +widget-post("#", "05/14/2018", "The meaning of Web De...", {
+          "w": 46,
+          "h": 46,
+          "src": "images/blog/post-thumb-02-46x46.jpg",
+          "alt": ""
+        }, "", "text-picton-blue")
+      .offset-top-30
+        +widget-post("#", "05/14/2018", "Get Started with Templa...", {
+          "w": 46,
+          "h": 46,
+          "src": "images/blog/post-thumb-03-46x46.jpg",
+          "alt": ""
+        }, "", "text-picton-blue")
+
+    .col-md-6.offset-top-41.offset-md-top-0.col-xl-12.offset-xl-top-41
+      // Recent Posts
+      h6.text-uppercase.text-spacing-60 Popular Posts
+      div.text-subline
+
+      .offset-top-34
+        +widget-post("#", "05/14/2018", "Printing and typesetting", {
+          "w": 46,
+          "h": 46,
+          "src": "images/blog/post-thumb-01-46x46.jpg",
+          "alt": ""
+        })
+      .offset-top-30
+        +widget-post("#", "05/14/2018", "Content Builder for posts", {
+          "w": 46,
+          "h": 46,
+          "src": "images/blog/post-thumb-02-46x46.jpg",
+          "alt": ""
+        })
+      .offset-top-30
+        +widget-post("#", "05/14/2018", "Meaning of HTML5", {
+          "w": 46,
+          "h": 46,
+          "src": "images/blog/post-thumb-03-46x46.jpg",
+          "alt": ""
+        })
+
+  .row.offset-top-41
+    .col-sm-6.col-xl-12
+      // Category
+      h6.text-uppercase.text-spacing-60 Category
+      div.text-subline
+
+      ul.list.list-marked.offset-top-30
+        li
+          a(href="#") Web Design #[span.text-dark (37)]
+        li
+          a(href="#") UX #[span.text-dark (211)]
+        li
+          a(href="#") Marketing #[span.text-dark (12)]
+        li
+          a(href="#") Events #[span.text-dark (7)]
+        li
+          a(href="#") News #[span.text-dark (15)]
+
+    .col-sm-6.col-xl-12.offset-top-41.offset-sm-top-0.offset-xl-top-41
+      // Archive
+      h6.text-uppercase.text-spacing-60 Archive
+      div.text-subline
+
+      ul.list.list-marked.offset-top-30
+        li
+          a(href="#") January 2019 #[span.text-dark (17)]
+        li
+          a(href="#") December 2018 #[span.text-dark (121)]
+        li
+          a(href="#") November 2018 #[span.text-dark (19)]
+        li
+          a(href="#") October 2018 #[span.text-dark (9)]
+        li
+          a(href="#") September 2018 #[span.text-dark (25)]
+
+  // Tags
+  h6.offset-top-41.text-uppercase.text-spacing-60 Tags
+  div.text-subline
+
+  .offset-top-34
+    +widget-tags("btn btn-xs btn-default", [
+      {"title": "Web", "href": "#"},
+      {"title": "UX", "href": "#"},
+      {"title": "Marketing", "href": "#"},
+      {"title": "News", "href": "#"},
+      {"title": "Design", "href": "#"},
+      {"title": "Events", "href": "#"}
+    ])

@@ -1,0 +1,46 @@
+//- Includes
+include ../elements/_ui-customer-slider
+
+section.section.novi-background.shadow-drop-ambient
+  .bg-overlay-white
+    .container.section-66
+      .row
+        .col-xl-4.text-xl-left
+          h3 Our Clients
+      .row.align-items-sm-center.justify-content-sm-center.offset-top-20
+        .col-xl-4.text-xl-left
+          p Among our clients there are many world-renowned industry leaders. Their websites are modern looking and reliable – thanks to us.
+
+          // Custom Pagination
+          .owl-custom-navigation.owl-customer-navigation.offset-top-14
+            .owl-nav
+              .owl-prev.mdi.mdi-chevron-left(data-owl-prev)
+              .owl-next.mdi.mdi-chevron-right(data-owl-next)
+
+        .col-xl-8.offset-top-41.offset-xl-top-0
+          +customer-slider([
+            {
+              "link": {"href": cfg.nav.pages.submenu.clients.href},
+              "image": {"src": "images/clients/client-01-169x68.png", "width": 169, "height": 68, "alt": ""}
+            },
+            {
+              "link": {"href": cfg.nav.pages.submenu.clients.href},
+              "image": {"src": "images/clients/client-02-126x68.png", "width": 126, "height": 68, "alt": ""}
+            },
+            {
+              "link": {"href": cfg.nav.pages.submenu.clients.href},
+              "image": {"src": "images/clients/client-03-126x100.png", "width": 126, "height": 100, "alt": ""}
+            },
+            {
+              "link": {"href": cfg.nav.pages.submenu.clients.href},
+              "image": {"src": "images/clients/client-04-95x101.png", "width": 95, "height": 101, "alt": ""}
+            },
+            {
+              "link": {"href": cfg.nav.pages.submenu.clients.href},
+              "image": {"src": "images/clients/client-05-149x102.png", "width": 149, "height": 102, "alt": ""}
+            },
+            {
+              "link": {"href": cfg.nav.pages.submenu.clients.href},
+              "image": {"src": "images/clients/client-06-141x88.png", "width": 141, "height": 88, "alt": ""}
+            }
+          ])

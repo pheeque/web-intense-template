@@ -1,0 +1,14 @@
+// Google Map
+.google-map-markers{
+	display: none;
+}
+
+.google-map-container {
+	width: 100%;
+}
+
+.google-map {
+	width: 100%;
+	height: $map-min-height;
+	max-height: $map-max-height;
+}

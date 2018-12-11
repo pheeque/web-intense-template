@@ -1,0 +1,448 @@
+include ../_config
+include ../_mixins
+include ../elements/_ui-rd-navbar-top-panel-fullwidth
+include ../elements/_ui-box-icon-type-2
+include ../elements/_ui-material-parallax
+include ../elements/_widget-post
+include ../elements/_widget-form-subscribe
+include ../elements/_widget-list-social
+include ../elements/_ui-media-elements
+include ../elements/_ui-counter-type-1
+include ../elements/_ui-thumbnail-classic
+include ../elements/_ui-isotope
+include ../elements/_ui-box-member
+include ../elements/_ui-partners-carousel
+include ../elements/_widget-twitter
+include ../elements/_widget-form-contact
+include ../elements/_widget-list-social
+include ../elements/_widget-form-subscribe-type-2
+include ../elements/_ui-page-loader-variant-1
+include ../elements/_ui-testimonials-type-2
+include ../elements/_ui-rd-map
+
+
+doctype html
+html.wide.wow-animation.scrollTo( lang='en' )
+	head
+		title= cfg.nav.home.submenu.skins.submenu.eternalJoy.title
+		meta( charset='utf-8' )
+		meta( name='format-detection' content='telephone=no' )
+		meta( name='viewport' content='width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' )
+		meta( http-equiv='X-UA-Compatible' content='IE=Edge' )
+		block search-meta
+			meta( name='keywords' content='intense web design multipurpose template' )
+			meta( name='date' content='Dec 26' )
+
+		link( rel='icon' href='images/favicon.ico' type='image/x-icon' )
+		link( rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=PT+Sans:400,700%7CAmatic+SC:400,700' )
+		link( rel='stylesheet' href='intense-child-care/css/style.css' )
+
+		style .ie-panel{display: none;background: #212121;padding: 10px 0;box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3);clear: both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: block;}
+
+	body
+		+page-loader-1( '<img class="img-fluid" width="329" height="67" src="images/childs/child-care-logo-big-330x67.png" alt=""/>' )
+
+		.ie-panel
+			a( href='http://windows.microsoft.com/en-US/internet-explorer/' )
+				img( src='images/ie8-panel/warning_bar_0000_us.jpg', height=42, width=820, alt='You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today.' )
+
+		.page.text-center
+			header.page-head
+				+rd-navbar-top-panel-fullwidth(
+					'rd-navbar-light',
+					{
+						'data-lg-auto-height': 'true',
+						'data-md-layout': 'rd-navbar-fixed',
+						'data-lg-layout': 'rd-navbar-static',
+						'data-lg-stick-up': 'true'
+					},
+					'<img class="img-fluid" width="135" height="55" src="images/childs/intense-child-care-logo-dark.png" alt=""/>',
+					'<img class="img-fluid" width="243" height="32" src="images/childs/intense-child-care-logo-dark-horizontal.png" alt=""/>',
+					cfg.nav.home,
+					cfg.nav
+				)
+
+			// Welcome To Intense
+			+material-parallax({
+				img: 'images/skins/skin-eternal-joy-01-1920x718.jpg',
+				Class: 'section-66 section-md-0 section-xl-top-85 context-dark'
+			})
+				.container
+					.row.offset-top-0.justify-content-sm-center
+						.col-lg-6.text-center.offset-lg-top-24.offset-xxl-top-0
+							img.img-fluid.d-none.d-lg-inline-block( src='images/skins/skin-eternal-joy-03-494x506.png' width=494 height=506 alt='' )
+						.col-sm-10.col-lg-6.text-lg-left.offset-top-0.offset-xl-top-98
+							h1.font-weight-bold
+								span.big Welcome To Intense
+							.offset-top-34.offset-lg-top-50
+								+svg-divider( 'bg-white', '71', '13' )
+							p The smartest and most flexible bootstrap template by TemplateMonster you've ever seen. Create exactly what you need with our powerful bootstrap toolkit.
+							a( href=cfg.buyLink target='_blank' ).btn.btn-safety-orange buy intense now
+
+			// Intense is the most
+			section.section-66.section-sm-85.section-md-bottom-124
+				.container
+					.row.justify-content-sm-center.offset-lg-top-41
+						.col-sm-10.col-lg-6.offset-md-top-10.order-lg-2
+							+media-elements({
+								'type': 'video',
+								'href': '//www.youtube.com/embed/-AhmuMqZB0s',
+								'ratio': '16by9'
+							})
+						.col-sm-10.col-lg-6.order-lg-1.offset-top-50.offset-lg-top-0
+							.text-md-left.inset-md-right-30
+								h1.font-weight-bold.text-uppercase.text-primary Intense is the most flexible Bootstrap theme on TemplateMonster
+								.offset-top-20.offset-lg-top-50
+									p Join the 205,000+ Satified Customers Today at TemplateMonster.com. Created by the industry leaders Intense is a comprehensive set of tools which are super easy to pick up and run. It gives you a huge leg up to create your own beautiful site. Powerful options & tools, unlimited designs, responsive framework and amazing support are the reasons for our customers to fall in love.
+								.offset-top-30.offset-lg-top-30
+									a( href=cfg.nav.pages.submenu.contactUs.href ).btn.btn-safety-orange contact us
+
+			// Take Full Control of Your Site
+			section.section-98.section-md-124.bg-lightest
+				.container
+					h1.text-primary.font-weight-bold.
+						Take Full Control of Your Site
+					+svg-divider( 'bg-primary', '71', '13' )
+					.row.text-lg-left.offset-top-50
+						.col-md-8.offset-md-2.col-lg-4.offset-lg-0
+							+box-icon-type-2( 'icon-lg icon-circle icon-bordered text-safety-orange mdi mdi-brush', 'ADVANCED UI KIT', 'font-default text-uppercaase offset-lg-top-20', 'Intense has dozens of new components and elements built on the same level of quality as Bootstrap elements and highlighted with several example pages.' )
+						.col-md-8.offset-md-2.col-lg-4.offset-lg-0.offset-top-66.offset-lg-top-0
+							+box-icon-type-2( 'icon-lg icon-circle icon-bordered text-safety-orange mdi mdi-cube-outline', 'EXTENDED TOOLKIT', 'font-default text-uppercaase offset-lg-top-20', 'Intense provides a poweful and flexible exntended toolkit in addition to basic Bootsrap. If you’ve used Bootstrap itself, you’ll find this all super familiar and easy-to-use.' )
+						.col-md-8.offset-md-2.col-lg-4.offset-lg-0.offset-top-66.offset-lg-top-0
+							+box-icon-type-2( 'icon-lg icon-circle icon-bordered text-safety-orange mdi mdi-palette', 'UNLIMITED SKINS & COLORS', 'font-default text-uppercaase offset-lg-top-20', 'Theme components inherit much of their style from variables, exactly like Bootstrap. Change a few values and the theme adapts.' )
+						.col-md-8.offset-md-2.col-lg-4.offset-lg-0.offset-top-66
+							+box-icon-type-2( 'icon-lg icon-circle icon-bordered text-safety-orange mdi mdi-vector-arrange-above', 'PARALLAX EFFECTS', 'font-default text-uppercaase offset-lg-top-20', 'Everyone loves parallax scrolling effects, they are simply beautiful. Intense has advanced parallax options & controls based on flexible and easy-to-use RD Parallax plugin.' )
+						.col-md-8.offset-md-2.col-lg-4.offset-lg-0.offset-top-66
+							+box-icon-type-2( 'icon-lg icon-circle icon-bordered text-safety-orange mdi mdi-share-variant', 'SOCIAL INTEGRATION', 'font-default text-uppercaase offset-lg-top-20', 'Intense has full set of social icons and styling options which allow you to share any content the way you wish.' )
+						.col-md-8.offset-md-2.col-lg-4.offset-lg-0.offset-top-66
+							+box-icon-type-2( 'icon-lg icon-circle icon-bordered text-safety-orange mdi mdi-spellcheck', 'MADE FOR SPEED', 'font-default text-uppercaase offset-lg-top-20', 'We know how embarassing and time-consuming can be content loading, so we took care of pages optimization for your smooth expirience.' )
+
+					.offset-top-50
+						a( href=cfg.buyLink target='_blank' ).btn.btn-primary buy intense now
+
+			// Counters
+			+material-parallax({
+				img: 'images/skins/skin-eternal-joy-02-1920x748.jpg',
+				Class: 'section-98 context-dark'
+			})
+				.container-fluid
+					.row
+						.col-md-6.col-lg-3.offset-lg-0
+							+counter-type-1('Templates', 'font-weight-bold font-default', {
+								'dataTo': '58249',
+								'dataSpeed': '3000',
+								'attr': 'text-uppercase text-spacing-60 font-default'
+							}, 'divider bg-gray-darker', 'h2')
+						.col-md-6.col-lg-3.offset-top-66.offset-md-top-0
+							+counter-type-1('Happy Clients', 'font-weight-bold font-default', {
+								'dataTo': '246',
+								'dataSpeed': '2500',
+								'preffix': 'K',
+								'attr': 'text-uppercase text-spacing-60 font-default'
+							}, 'divider bg-gray-darker', 'h2')
+						.col-md-6.col-lg-3.offset-top-66.offset-lg-top-0
+							+counter-type-1('Hours of Coding', 'font-weight-bold font-default', {
+								'dataTo': '1200',
+								'dataSpeed': '1500',
+								'attr': 'text-uppercase text-spacing-60 font-default'
+							}, 'divider bg-gray-darker', 'h2')
+						.col-md-6.col-lg-3.offset-top-66.offset-lg-top-0
+							+counter-type-1('Lines of Code', 'font-weight-bold font-default', {
+								'dataTo': '834',
+								'dataSpeed': '1300',
+								'preffix': 'K',
+								'attr': 'text-uppercase text-spacing-60 font-default'
+							}, 'divider bg-gray-darker', 'h2')
+
+			// Our Advantages
+			section.section-98.section-md-124
+				.container
+					h1.text-primary.font-weight-bold.
+						Our Advantages
+					+svg-divider('bg-primary', '71', '13')
+					.row.align-items-center.justify-content-center.offset-top-98.grid-group-sm
+						.col-lg-4.order-lg-1
+							img.img-fluid.d-block.mx-auto( src='images/moqups/moqup-home-mobile.png' alt='' width=247 height=470 )
+
+						.col-md-8.col-lg-4.text-lg-right
+							.unit.unit-spacing-sm.unit-md.flex-lg-row-reverse
+								.unit-left
+									span.icon.icon-circle.novi-icon.icon-lg.icon-bordered.text-safety-orange.mdi.mdi-message-text-outline
+								.unit-body
+									h4.offset-lg-top-24.font-default.text-uppercase.font-weight-bold Social Integration
+									p The information should be not only well-organized and easy to read. thus making the process enjoyable.
+
+							.unit.unit-spacing-sm.unit-md.flex-lg-row-reverse.offset-top-30
+								.unit-left
+									span.icon.icon-circle.novi-icon.icon-lg.icon-bordered.text-safety-orange.mdi.mdi-image-filter
+								.unit-body
+									h4.offset-lg-top-24.font-default.text-uppercase.font-weight-bold All images Included
+									p The information should be not only well-organized and easy to read. thus making the process enjoyable.
+
+							.unit.unit-spacing-sm.unit-md.flex-lg-row-reverse.offset-top-30
+								.unit-left
+									span.icon.icon-circle.novi-icon.icon-lg.icon-bordered.text-safety-orange.mdi.mdi-emoticon-happy
+								.unit-body
+									h4.offset-lg-top-24.font-default.text-uppercase.font-weight-bold 2000+ #[br.d-none.d-md-inline.d-lg-none] icons
+									p The information should be not only well-organized and easy to read. thus making the process enjoyable.
+
+						.col-md-8.col-lg-4.order-lg-1.text-lg-left
+							.unit.unit-spacing-sm.unit-md.flex-lg-row
+								.unit-left
+									span.icon.icon-circle.novi-icon.icon-lg.icon-bordered.text-safety-orange.mdi.mdi-cellphone-link
+								.unit-body
+									h4.offset-lg-top-24.font-default.text-uppercase.font-weight-bold Responsive & Retina
+									p The information should be not only well-organized and easy to read. thus making the process enjoyable.
+
+							.unit.unit-spacing-sm.unit-md.flex-lg-row.offset-top-30
+								.unit-left
+									span.icon.icon-circle.novi-icon.icon-lg.icon-bordered.text-safety-orange.mdi.mdi-television-guide
+								.unit-body
+									h4.offset-lg-top-24.font-default.text-uppercase.font-weight-bold Extensive docs
+									p The information should be not only well-organized and easy to read. thus making the process enjoyable.
+
+							.unit.unit-spacing-sm.unit-md.flex-lg-row.offset-top-30
+								.unit-left
+									span.icon.icon-circle.novi-icon.icon-lg.icon-bordered.text-safety-orange.mdi.mdi-play-box-outline
+								.unit-body
+									h4.offset-lg-top-24.font-default.text-uppercase.font-weight-bold Video backgrounds
+									p The information should be not only well-organized and easy to read. thus making the process enjoyable.
+
+			+material-parallax({
+				img: 'images/skins/skin-eternal-joy-01-1920x718.jpg',
+				Class: 'section-66 context-dark'
+			})
+				.container
+					.row.justify-content-sm-center
+						.col-sm-8
+							.row.align-items-md-center
+								.col-xl-8
+									h2.font-weight-bold
+										span.big Intense Is Exactly What You Need
+								.col-xl-4
+									a( href=cfg.buyLink, target='_blank' ).btn.btn-safety-orange buy intense now
+
+			section.section-98.section-md-124
+				.container-fluid
+					h1.font-weight-bold.text-uppercase.text-primary.
+						Child Themes
+					+svg-divider('bg-primary', '71', '13')
+					.row.justify-content-sm-center
+						.col-sm-10
+							p Check out other themes based on INTENSE
+
+					.offset-top-41
+						+isotope(['All', 'Infrastructure', 'Portfolio', 'Blog', 'Agency', 'Creative'],{
+							'group': 'gallery',
+							'layout': 'fitRows',
+							'alignClass': 'isotope-filters-horizontal'
+						}, 'isotope-1')
+							// Isotope
+							.row.grid-group-sm
+								- for ( var key in cfg.themes )
+									.col-12.col-md-6.col-xl-4.isotope-item( data-filter=cfg.themes[ key ].category )
+										.shadow-variant-2
+											+thumbnail-classic({
+												type: "thumbnail",
+												title: cfg.themes[ key ].title,
+												description: cfg.themes[ key ].desc,
+												thumb: cfg.themes[ key ].image,
+												target: { href: cfg.themes[ key ].href },
+												targetBlank: true,
+												titleAttrs: 'text-uppercase text-darkest'
+											})
+
+			// Meet our team
+			section.section-98.section-sm-110.section-bottom-66.bg-lightest
+				.container
+					h1.font-weight-bold.text-primary Meet Our Team
+					+svg-divider('bg-primary', '71', '13')
+					.offset-md-top-34.text-center.text-lg-left
+						.row.justify-content-sm-center.section-34
+							.col-md-6.col-lg-3
+								img.img-fluid.d-inline-block(src='images/users/user-ashley-masson-270x270.jpg' width=270 height=270 alt='')
+								.text-lg-left.offset-top-14
+									div
+										h5.font-weight-bold.text-safety-orange.font-default
+											a(href=cfg.nav.pages.submenu.teamMember.href) Ashley Mason
+								address.contact-info.text-lg-left.post-meta.offset-top-10
+									ul.list-unstyled.p
+										li.d-block
+											span.icon.novi-icon.icon-xxs.mdi.mdi-phone.text-middle.text-dark
+											a.d-inline-block.text-middle.inset-left-10(href='tel:1-800-7650-986') 1-800-7650-986
+										li.d-block
+											span.icon.novi-icon.icon-xxs.mdi.mdi-email-open.text-middle.text-dark
+											a.d-inline-block.text-middle.inset-left-10(href='mailto:ashley@demolink.org') ashley@demolink.org
+
+							.col-md-6.col-lg-3.offset-top-50.offset-md-top-0
+								img.img-fluid.d-inline-block(src='images/users/user-alisa-myers-270x270.jpg' width=270 height=270 alt='')
+								.text-lg-left.offset-top-14
+									div
+										h5.font-weight-bold.text-safety-orange.font-default
+											a(href=cfg.nav.pages.submenu.teamMember.href) Alisa Myers
+								address.contact-info.text-lg-left.post-meta.offset-top-10
+									ul.list-unstyled.p
+										li.d-block
+											span.icon.novi-icon.icon-xxs.mdi.mdi-phone.text-middle.text-dark
+											a.d-inline-block.text-middle.inset-left-10(href='tel:1-800-7650-986') 1-800-7650-986
+										li.d-block
+											span.icon.novi-icon.icon-xxs.mdi.mdi-email-open.text-middle.text-dark
+											a.d-inline-block.text-middle.inset-left-10(href='mailto:alisa@demolink.org') alisa@demolink.org
+
+							.col-md-6.col-lg-3.offset-top-50.offset-lg-top-0
+								img.img-fluid.d-inline-block(src='images/users/user-shirley-vasques-270x270.jpg' width=270 height=270 alt='')
+								.text-lg-left.offset-top-14
+									div
+										h5.font-weight-bold.text-safety-orange.font-default
+											a(href=cfg.nav.pages.submenu.teamMember.href) Shirley Vasquez
+								address.contact-info.text-lg-left.post-meta.offset-top-10
+									ul.list-unstyled.p
+										li.d-block
+											span.icon.novi-icon.icon-xxs.mdi.mdi-phone.text-middle.text-dark
+											a.d-inline-block.text-middle.inset-left-10(href='tel:1-800-7650-986') 1-800-7650-986
+										li.d-block
+											span.icon.novi-icon.icon-xxs.mdi.mdi-email-open.text-middle.text-dark
+											a.d-inline-block.text-middle.inset-left-10(href='mailto:shirley@demolink.org') shirley@demolink.org
+
+							.col-md-6.col-lg-3.offset-top-50.offset-lg-top-0
+								img.img-fluid.d-inline-block(src='images/users/user-terry-sandoval-270x270.jpg' width=270 height=270 alt='')
+								.text-lg-left.offset-top-14
+									div
+										h5.font-weight-bold.text-safety-orange.font-default
+											a(href=cfg.nav.pages.submenu.teamMember.href) Terry Sandoval
+								address.contact-info.text-lg-left.post-meta.offset-top-10
+									ul.list-unstyled.p
+										li.d-block
+											span.icon.novi-icon.icon-xxs.mdi.mdi-phone.text-middle.text-dark
+											a.d-inline-block.text-middle.inset-left-10(href='tel:1-800-7650-986') 1-800-7650-986
+										li.d-block
+											span.icon.novi-icon.icon-xxs.mdi.mdi-email-open.text-middle.text-dark
+											a.d-inline-block.text-middle.inset-left-10(href='mailto:terry@demolink.org') terry@demolink.org
+
+			// Testimonials
+			+material-parallax({
+				img: 'images/skins/skin-eternal-joy-02-1920x748.jpg',
+				Class: 'section-98 section-md-124 context-dark'
+			})
+				.container
+					h1.font-weight-bold Testimonials
+					+svg-divider('bg-white', '71', '13')
+					.row.justify-content-sm-center.offset-top-66
+						.col-sm-10.col-md-7.col-lg-4
+							+testimonials-type-2(
+								{
+									width: 80,
+									height: 80,
+									src: 'images/users/user-alex-ross-80x80.jpg',
+									alt: ''
+								},
+								'Alex Ross',
+								'Ceo/Founder at demolink.com',
+								'Lorem ipsum dolor sit amet conse ctetur adip isicing elit, sed do eiusmod tempor incididunt ut labore et dolore ',
+								'bg-white text-darker',
+								'font-weight-bold font-default',
+								''
+							)
+						.col-sm-10.col-md-7.col-lg-4.offset-top-50.offset-lg-top-0
+							+testimonials-type-2(
+								{
+									width: 80,
+									height: 80,
+									src: 'images/users/user-alisa-milano-80x80.jpg',
+									alt: ''
+								},
+								'Alisa Milano',
+								'Sales at demolink.com',
+								'Lorem ipsum dolor sit amet conse ctetur adip isicing elit, sed do eiusmod tempor incididunt ut labore et dolore ',
+								'bg-white text-darker',
+								'font-weight-bold font-default',
+								''
+							)
+						.col-sm-10.col-md-7.col-lg-4.offset-top-50.offset-lg-top-0
+							+testimonials-type-2(
+								{
+									width: 80,
+									height: 80,
+									src: 'images/users/user-john-more-80x80.jpg',
+									alt: ''
+								},
+								'john More',
+								'Support at demolink.com',
+								'Lorem ipsum dolor sit amet conse ctetur adip isicing elit, sed do eiusmod tempor incididunt ut labore et dolore ',
+								'bg-white text-darker',
+								'font-weight-bold font-default',
+								''
+							)
+
+
+			// Map
+			include ../sections/_section-google-map
+
+
+			// Default footer
+			footer.section.novi-background.section-relative.section-top-66.section-bottom-34.page-footer
+				.container
+					.row.justify-content-md-center.text-lg-left
+						.col-md-8.col-lg-12
+							.row.justify-content-sm-center
+								.col-lg-5.order-lg-2
+									h6.text-uppercase.text-spacing-60.font-default Newsletter
+									p Keep up with our always upcoming  product features  and technologies. Enter your e-mail and subscribe to  our newsletter.
+									.offset-top-30
+										+widget-form-subscribe('Type your E-Mail', 'form-subscribe-footer')
+
+								.col-lg-4.offset-top-50.offset-lg-top-0.order-lg-3.col-xl-3.offset-xl-1
+									ul.list.list-unstyled.address.contact-info.text-left
+										li
+											.unit.unit-spacing-xxs.flex-row
+												.unit-left
+													span.icon.novi-icon.icon-xxs.mdi.mdi-phone.text-primary.text-middle
+												.unit-body
+													a.text-middle(href='tel:#') 1-800-1234-567
+										li
+											.unit.unit-spacing-xxs.flex-row
+												.unit-left
+													span.icon.novi-icon.icon-xxs.mdi.mdi-map-marker-radius.text-primary.text-middle
+												.unit-body
+													span.text-middle 2130 Fulton Street, San Francisco, CA 94117-1080 USA
+										li
+											.unit.unit-spacing-xxs.flex-row
+												.unit-left
+													span.icon.novi-icon.icon-xxs.mdi.mdi-clock.text-primary.text-middle
+												.unit-body
+													span.text-middle Mon–Sat: 7:00am–8:00pm
+
+								.col-lg-3.offset-top-50.offset-lg-top-0.order-lg-1
+									// Footer brand
+									.footer-brand.text-center.text-lg-left
+										a(href=cfg.nav.home.href).d-inline-block
+											img.img-fluid(width='135' height='55' src='images/childs/intense-child-care-logo-dark.png' alt='')
+									ul.list-inline.list-inline-xxs.d-inline-block.offset-top-34.post-meta.text-dark.list-inline-primary
+										li.list-inline-item
+											a(href='#')
+												span.icon.novi-icon.icon-xxs.fa-facebook
+										li.list-inline-item
+											a(href='#')
+												span.icon.novi-icon.icon-xxs.fa-twitter
+										li.list-inline-item
+											a(href='#')
+												span.icon.novi-icon.icon-xxs.fa-google-plus
+										li.list-inline-item
+											a(href='#')
+												span.icon.novi-icon.icon-xxs.fa-youtube-play
+										li.list-inline-item
+											a(href='#')
+												span.icon.novi-icon.icon-xxs.fa-instagram
+
+
+				.container.offset-top-50
+					p.small.text-dark
+						| #{cfg.brand.name} &copy; #[span.copyright-year] . #[a(href='privacy.html') Privacy Policy]
+						| . Design&nbsp;by&nbsp;#[a(href="https://zemez.io/") Zemez]
+
+		// Global Mailform Output
+		#form-output-global.snackbars
+
+		// Java script
+		script(src='js/core.min.js')
+		script(src='js/script.js')

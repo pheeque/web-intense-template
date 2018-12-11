@@ -1,0 +1,61 @@
+include ../elements/_widget-form-subscribe
+
+// Default footer
+footer.section.novi-background.section-relative.section-top-66.section-bottom-34.page-footer
+  .container
+    .row.justify-content-center.grid-group-md.text-lg-left
+      .col-lg-3
+        // Footer brand
+        .footer-brand
+          a(href="index.html")
+            | !{cfg.brand.logo}
+        ul.list-inline.list-inline-xxs.d-inline-block.offset-top-34.post-meta.text-dark.list-inline-primary
+          li.list-inline-item
+            a(href="#")
+              span.novi-icon.icon.icon-xxs.fa-facebook
+          li.list-inline-item
+            a(href="#")
+              span.novi-icon.icon.icon-xxs.fa-twitter
+          li.list-inline-item
+            a(href="#")
+              span.novi-icon.icon.icon-xxs.fa-google-plus
+          li.list-inline-item
+            a(href="#")
+              span.novi-icon.icon.icon-xxs.fa-youtube-play
+          li.list-inline-item
+            a(href="#")
+              span.novi-icon.icon.icon-xxs.fa-instagram
+
+      .col-lg-5
+        h6.text-uppercase.text-spacing-60.font-default Newsletter
+        p Keep up with our always upcoming  programs and latest news. Enter your e-mail and subscribe to our newsletter.
+        .offset-top-30
+          +widget-form-subscribe("Type your E-Mail", "form-subscribe-footer")
+
+      .col-lg-4.col-xl-3.offset-xxl-1
+        ul.list.list-unstyled.address.contact-info.text-left
+          li
+            .unit.unit-spacing-xxs.flex-row
+              .unit-left
+                span.novi-icon.icon.icon-xxs.mdi.mdi-phone.text-primary.text-middle
+              .unit-body
+                a.text-middle(href="tel:#") 1-800-1234-567
+          li
+            .unit.unit-spacing-xxs.flex-row
+              .unit-left
+                span.novi-icon.icon.icon-xxs.mdi.mdi-map-marker-radius.text-primary.text-middle
+              .unit-body
+                a.text-middle(href=cfg.nav.contacts.href) 2130 Fulton Street, San Francisco, CA 94117-1080 USA
+          li
+            .unit.unit-spacing-xxs.flex-row
+              .unit-left
+                span.novi-icon.icon.icon-xxs.mdi.mdi-clock.text-primary.text-middle
+              .unit-body
+                span.text-middle Mon–Sat: 7:00am–8:00pm
+
+
+
+  .container.offset-top-50
+    p.small.text-darker
+      | #{cfg.brand.name} &copy; #[span(id="copyright-year")]. #[a(href="#") Privacy Policy]
+      | . Design&nbsp;by&nbsp;#[a(href="https://zemez.io/") Zemez]

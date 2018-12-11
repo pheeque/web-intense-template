@@ -1,0 +1,14 @@
+// Subscribe to Our Newsletter
+section.section.novi-background.bg-cover.section-md.bg-gray-dark.bg-image.text-center(style='background-image: url(images/bg-image-3.jpg);')
+  .container
+    .row.justify-content-md-center
+      .col-md-10.col-lg-8.col-xl-7
+        h3 Subscribe to Our Newsletter
+        p.big.text-width-smaller Sign up to our newsletter and be the first to know about our latest news, special offers, and events.
+        // Campaign Monitor
+        form.campaign-mailform.form-inline.form-center(data-form-output="form-output-global", action='http://templatemonster1.createsend.com/t/d/s/xlyhhk/' method='post')
+          .form-wrap
+            input#subscribe-email.form-input(type="email" name='cm-xlyhhk-xlyhhk' data-constraints="@Email @Required")
+            label.form-label(for="subscribe-email") Enter your e-mail
+          button(type="submit").btn.btn-primary.btn-effect-ujarak.btn-square Subscribe
+='\n'

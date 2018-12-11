@@ -1,0 +1,53 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-rd-navbar-default-transparent
+include ../elements/_ui-page-loader-variant-1
+
+//- Title
+block title
+  title Intense - the best HTML theme at Templatemonster.com
+
+//- Page
+block page
+  // Page Head
+  header.section.page-head.slider-menu-position
+    //- RD Navbar
+    +rd-navbar-default(
+      'rd-navbar-default rd-navbar-transparent',
+      {
+        "data-lg-auto-height": "true",
+        "data-md-layout": 'rd-navbar-fixed',
+        "data-lg-layout": 'rd-navbar-static',
+        "data-lg-stick-up": 'true'
+      },
+      cfg.brand.logoInverse,
+      cfg.nav.home,
+      cfg.nav,
+      cfg.builderLink
+    )
+
+    include ../sections/_section-swiper-4
+  include ../sections/_section-landing-skills
+  include ../sections/_section-landing-builder
+  include ../sections/_section-landing-niche-layouts
+  include ../sections/_section-landing-best-selling
+  include ../sections/_section-landing-page-layouts
+  include ../sections/_section-landing-loved
+  include ../sections/_section-landing-core-features
+  include ../sections/_section-home-intro-buy-now
+  include ../sections/_section-landing-customer-reviews
+  include ../sections/_section-landing-features
+  include ../sections/_section-landing-revolution
+  include ../sections/_section-landing-responsive-and-retina
+  include ../sections/_section-landing-header-and-footer
+  include ../sections/_section-landing-portfolio-templates
+  include ../sections/_section-landing-blog-templates
+  include ../sections/_section-landing-shop-templates
+  include ../sections/_section-landing-event-managing
+  include ../sections/_section-landing-included-psd
+  include ../sections/_section-home-intro-included-images
+  include ../sections/_section-landing-support
+  include ../sections/_section-home-intro-buy-now-variant-2
+
+  include ../sections/_section-footer-micro

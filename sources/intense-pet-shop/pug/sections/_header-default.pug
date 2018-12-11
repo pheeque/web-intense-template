@@ -1,0 +1,37 @@
+header.page-head
+  // RD Navbar 
+  .rd-navbar-wrap
+    nav.rd-navbar(
+      data-layout='rd-navbar-fixed',
+
+      data-sm-layout='rd-navbar-fixed',
+      data-sm-device-layout='rd-navbar-fixed',
+
+      data-md-layout='rd-navbar-fullwidth',
+      data-md-device-layout='rd-navbar-fullwidth',
+      data-md-stick-up="true",
+      data-md-stick-up-offset="115px",
+
+      data-lg-layout='rd-navbar-static',
+      data-lg-device-layout="rd-navbar-static",
+      data-lg-stick-up="true",
+      data-lg-stick-up-offset="71px",
+
+      data-xl-layout='rd-navbar-static',
+      data-xl-device-layout="rd-navbar-static",
+      data-xl-stick-up="true",
+      data-xl-stick-up-offset="133px",
+    )
+      .rd-navbar-inner
+        // RD Navbar Panel
+        .rd-navbar-panel
+          // RD Navbar Toggle
+          button.rd-navbar-toggle(data-rd-navbar-toggle='.rd-navbar-nav-wrap')
+            span
+          // RD Navbar Brand
+          .rd-navbar-brand
+            a.brand-name(href='index.html')
+              img(src="images/logo.png" width="172" height="75" alt="")
+
+        .rd-navbar-nav-wrap
+          include ../_navigation

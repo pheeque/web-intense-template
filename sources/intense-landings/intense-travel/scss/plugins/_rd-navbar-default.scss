@@ -1,0 +1,92 @@
+//
+// RD Navbar Default
+// --------------------------------------------------
+
+.rd-navbar-default {
+  @extend %rd-navbar-transition !optional;
+  &.rd-navbar-fixed {
+    @extend %rd-navbar-default-panel !optional;
+    @extend %rd-navbar-default-mobile-menu !optional;
+    @extend %rd-navbar-default-aside-left !optional;
+
+    .rd-navbar-brand {
+      display: block;
+      transform: translateX(-50%);
+    }
+  }
+
+  &.rd-navbar-static {
+
+    @extend %rd-navbar-default-menu-first-lvl !optional;
+
+    .rd-navbar-brand {
+      float: left;
+
+      img {
+        vertical-align: baseline;
+      }
+    }
+
+    .rd-navbar-menu-wrap {
+      float: right;
+    }
+
+    .rd-navbar-panel .rd-navbar-toggle, .form-search-wrap {
+      display: none;
+    }
+
+    .rd-navbar-inner {
+      @include clearfix;
+      transition: .3s all ease;
+      padding: 20px;
+      position: relative;
+      text-align: left;
+      @include media-breakpoint-up(lg) {
+        padding: $rd-navbar-default-inner-padding;
+      }
+    }
+
+
+    .rd-navbar-nav-wrap, .rd-navbar-panel, .rd-navbar-cart-wrap {
+      transition: .3s all ease;
+    }
+
+    .rd-navbar-nav-wrap {
+      @include clearfix;
+      margin-top: 8px;
+      display: inline-block;
+    }
+
+    &.rd-navbar--is-stuck {
+      box-shadow: $rd-navbar-default-stuck-shadow;
+      background: $gray-900;
+      .rd-navbar-inner {
+        padding-top: $rd-navbar-default-stuck-inner-padding-top;
+        padding-bottom: $rd-navbar-default-stuck-inner-padding-bottom;
+      }
+    }
+  }
+
+  // Transparent, Dark Theme
+  // -------------------------
+
+  &.rd-navbar-transparent, &.rd-navbar-dark {
+    @extend %rd-navbar-default-cart-dark !optional;
+
+    // Mobile Fixed Layout Colors
+    &.rd-navbar-fixed {
+      @extend %rd-navbar-default-panel-dark !optional;
+      @extend %rd-navbar-default-mobile-menu-dark !optional;
+      @extend %rd-navbar-default-aside-left-dark !optional;
+    }
+
+    // Desktop Static Layout Colors
+    &.rd-navbar-static {
+      @extend %rd-navbar-default-menu-first-lvl-dark !optional;
+
+      &.rd-navbar--is-stuck {
+        background: $rd-navbar-default-dark-stuck-background;
+      }
+    }
+  }
+}

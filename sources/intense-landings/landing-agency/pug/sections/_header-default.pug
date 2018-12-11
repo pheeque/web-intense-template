@@ -1,0 +1,61 @@
+header.section.page-header
+	// RD Navbar
+	.rd-navbar-wrap
+		nav.rd-navbar.rd-navbar-default.rd-navbar-mod-1(
+		data-layout=                'rd-navbar-fixed'
+		data-sm-layout=             'rd-navbar-fixed'
+		data-md-layout=             'rd-navbar-fixed'
+		data-md-device-layout=      'rd-navbar-fixed'
+		data-lg-layout=             'rd-navbar-static'
+		data-lg-device-layout=      'rd-navbar-fixed'
+		data-xl-layout=             'rd-navbar-static'
+		data-xl-device-layout=      'rd-navbar-static'
+		data-xxl-layout=             'rd-navbar-static'
+		data-xxl-device-layout=      'rd-navbar-static'
+		data-lg-stick-up-offset=    '190px'
+		data-xl-stick-up-offset=    '190px'
+		data-xxl-stick-up-offset=   '190px'
+		data-lg-stick-up=           'true'
+		data-xl-stick-up=           'true'
+		data-xxl-stick-up=          'true'
+		data-stick-up-clone='true'
+		)
+			.rd-navbar-top-panel.novi-background
+				.rd-navbar-top-panel-toggle(data-rd-navbar-toggle='.rd-navbar-top-panel')
+					span
+				.rd-navbar-top-panel-content
+					ul.inline-list-xxs
+						li: a.icon.novi-icon.icon-xxs.icon-circle.icon-gray-outline.icon-effect-1.fa.fa-instagram(href='#')
+						li: a.icon.novi-icon.icon-xxs.icon-circle.icon-gray-outline.icon-effect-1.fa.fa-facebook(href='#')
+						li: a.icon.novi-icon.icon-xxs.icon-circle.icon-gray-outline.icon-effect-1.fa.fa-twitter(href='#')
+						li: a.icon.novi-icon.icon-xxs.icon-circle.icon-gray-outline.icon-effect-1.fa.fa-google-plus(href='#')
+
+					.object-inline
+						span.icon.novi-icon.icon-sm.icon-gray.material-icons-phone
+						a.link.link-md.link-white(href='tel:#') +1 (409) 987–5874
+			.novi-background
+				.rd-navbar-inner
+					// RD Navbar Panel
+					.rd-navbar-panel
+						button.rd-navbar-toggle(data-rd-navbar-toggle='.rd-navbar-nav-wrap')
+							span
+
+						// RD Navbar Brand
+						.rd-navbar-brand
+							a.brand-name(href='index.html')
+								+png(logoDefault)
+
+					// RD Navbar Nav
+					.rd-navbar-nav-wrap
+						ul.rd-navbar-nav
+							li(class={active: activeIndex === 1})
+								a(href='#about-us') About Us
+
+							li(class={active: activeIndex === 2})
+								a(href='#portfolio') Portfolio
+
+							li(class={active: activeIndex === 3})
+								a(href='#testimonials') Testimonials
+
+							li(class={active: activeIndex === 4})
+								a(href='#contact-us') Contact Us

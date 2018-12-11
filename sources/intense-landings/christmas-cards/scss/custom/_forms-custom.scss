@@ -1,0 +1,444 @@
+//
+// Custom form styles
+// --------------------------------------------------
+
+.rd-mailform {
+  position: relative;
+}
+
+[data-x-mode] {
+  form * {
+    pointer-events: none;
+  }
+
+  form {
+    label, button {
+      pointer-events: auto;
+    }
+  }
+}
+
+// Normalize non-controls
+// --------------------------------------------------
+
+label {
+  margin-bottom: 10px;
+  font-weight: 400;
+}
+
+// Common form controls
+// --------------------------------------------------
+
+.input-sm,
+.input-lg,
+.form-control {
+  font-size: $input-font-size;
+
+  &, &:focus {
+    box-shadow: none;
+  }
+}
+
+textarea.form-control {
+  height: $form-textarea-default-height;
+  min-height: $form-textarea-default-min-height;
+  max-height: $form-textarea-default-max-height;
+  resize: vertical;
+}
+
+.form-control {
+  -webkit-appearance: none;
+  height: $input-height;
+  border: 1px solid $gray-400;
+  box-shadow: inset 2px 2px 4px rgba($black, 0.15);
+  line-height: $input-height - ($padding-base-vertical + $border-width-base)*2;
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+.input-sm {
+  line-height: $input-height-sm - ($padding-small-vertical + $border-width-small)*2;
+}
+
+.input-lg {
+  line-height: $input-height-lg - ($padding-large-vertical + $border-width-base)*2;
+}
+
+// Form Controls Appearance
+
+.form-control-rect {
+  border-radius: 0;
+}
+
+.form-control-ellipse {
+  &.form-control {
+    border-radius: $input-height / 2;
+  }
+
+  &.form-control-sm {
+    border-radius: $input-height-sm / 2;
+  }
+
+  &.form-control-lg {
+    border-radius: $input-height-lg / 2;
+  }
+}
+
+.form-control-impressed {
+  background: $input-impressed-bg;
+  border: none;
+
+  &, &:focus {
+    box-shadow: inset $shadow-area-xxs;
+  }
+
+  // change validation bg
+  &.form-validation-inside + .form-validation {
+    background: $input-impressed-bg;
+  }
+}
+
+// Form groups
+
+.form-group {
+  position: relative;
+}
+
+.form-group-multiple {
+  display: flex;
+  justify-content: center;
+
+  flex-direction: column;
+  .form-group {
+    width: 100%;
+    margin-bottom: 0;
+    & + .form-group {
+      position: relative;
+      margin-top: 20px;
+    }
+  }
+  @include media-breakpoint-up(sm) {
+    flex-direction: row;
+    align-items: baseline;
+    .form-group {
+      & + .form-group {
+        margin-left: 30px;
+        margin-top: 0;
+        position: relative;
+        &:before {
+          content: "–";
+          position: absolute;
+          bottom: 15px;
+          left: -20px;
+          margin-top: -1px;
+        }
+      }
+    }
+  }
+}
+
+// Form labels
+
+.form-label {
+  position: absolute;
+  top: $form-label-position-top;
+  left: $padding-base-horizontal;
+  font-size: $input-font-size;
+  color: $input-color-placeholder;
+  pointer-events: none;
+  z-index: 9;
+  transition: .3s;
+  transform: translateY(-50%);
+  transform-origin: 0 0;
+
+  &.focus {
+    opacity: 0;
+  }
+
+  &.auto-fill {
+    color: $input-color;
+  }
+}
+
+.form-label-sm {
+  top: $form-label-sm-position-top;
+  left: $padding-small-horizontal;
+
+  &.focus {
+    top: $form-label-sm-focus-position-top;
+  }
+}
+
+.form-label-lg {
+  top: $form-label-lg-position-top;
+  left: $padding-large-horizontal;
+
+  &.focus {
+    top: $form-label-lg-focus-position-top;
+  }
+}
+
+.form-label-outside {
+  @include media-breakpoint-up(md) {
+    position: static;
+    &, &.focus, &.auto-fill {
+      transform: none;
+      color: $input-color-placeholder;
+      font-size: $input-font-size;
+    }
+  }
+}
+
+.form-label-outside {
+  &.form-label-size-lg {
+    font-size: $input-font-size * 1.2;
+  }
+  &.form-label-size-sm {
+    font-size: $input-font-size * 0.8;
+  }
+}
+
+// Form validation
+.form-validation {
+  position: absolute;
+  top: 2px;
+  left: auto;
+  right: 10px;
+  font-size: $form-validation-size;
+  line-height: $form-validation-line-height;
+  margin-top: $form-validation-offset-top;
+  transition: .3s;
+
+  .form-validation-inside + & {
+    top: $form-validation-inside-position-top;
+    margin-top: 0;
+    left: $form-validation-inside-position-left;
+    background: $form-validation-inside-bg;
+    z-index: 10;
+  }
+}
+
+.form-control-feedback {
+  font-size: $form-control-feedback-size;
+}
+
+// Form-in-process
+.form-in-process {
+  cursor: wait;
+
+  button,
+  textarea,
+  select,
+  input{
+    pointer-events: none;
+  }
+}
+
+// Error Styling
+.has-error {
+  @include form-control-validation-custom($state-danger-text, $state-danger-bg, $state-danger-bg);
+
+  // Google reCaptcha error styling
+  .recaptcha {
+    iframe { border: 1px solid $state-danger-bg; }
+  }
+}
+
+// Success Styling
+.has-success {
+  @include form-control-validation-custom($state-success-text, $state-success-bg, $state-success-bg);
+}
+
+// Warning Styling
+.has-warning {
+  @include form-control-validation-custom($state-warning-text, $state-warning-bg, $state-warning-bg);
+}
+
+// Info Styling
+.has-info {
+  @include form-control-validation-custom($state-info-text, $state-info-bg, $state-info-bg);
+}
+
+.has-feedback .form-label ~ .form-control-feedback {
+  top: 0;
+
+  @include media-breakpoint-up(md) {
+    top: 34px;
+  }
+}
+
+.has-feedback .input-sm ~ .form-control-feedback {
+  width: $input-height-sm;
+  height: $input-height-sm;
+  line-height: $input-height-sm;
+}
+
+.has-feedback .form-control {
+  padding-right: $form-control-feedback-padding-right;
+}
+
+.has-feedback .form-control.input-sm {
+  padding-right: $form-control-sm-feedback-padding-right;
+}
+
+.has-feedback .form-control.input-lg {
+  padding-right: $form-control-lg-feedback-padding-right;
+}
+
+// Form output
+
+#form-output-global {
+  position: fixed;
+  bottom: 30px;
+  left: 15px;
+  visibility: hidden;
+  transform: translateX(-500px);
+  transition: .3s all ease;
+  z-index: 9999999;
+  &.active {
+    transform: translateX(0);
+    visibility: visible;
+  }
+
+  @include media-breakpoint-up(sm) {
+    left: 30px;
+  }
+}
+
+.form-output {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  font-size: $form-validation-size;
+  line-height: $form-validation-line-height;
+  margin-top: 2px;
+  transition: .3s;
+  opacity: 0;
+  visibility: hidden;
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+  &.error {
+    color: $form-validation-error-color;
+  }
+  &.success {
+    color: $form-validation-success-color;
+  }
+}
+
+// Radio and Checkbox Custom
+// -------------------------
+.custom-control-label {
+  &:hover {
+    cursor: pointer;
+  }
+  
+  &:before {
+    box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.15);
+  }
+}
+
+// Toggles Custom
+// -------------------------
+
+.toggle-custom {
+  display: none;
+
+  &-dummy {
+    content: "";
+    display: inline-block;
+    width: $rd-toggles-mftoggle-width;
+    height: $rd-toggles-mftoggle-height;
+    background-color: $rd-toggles-mftoggle-background;
+    border-radius: $rd-toggles-mftoggle-border-radius;
+    transition: background 0.3s ease;
+    vertical-align: middle;
+    cursor: pointer;
+    box-shadow: $rd-toggles-mftoggle-shadow;
+
+    &:after {
+      content: "";
+      display: inline-block;
+      width: $rd-toggles-mftoggle-after-width;
+      height: $rd-toggles-mftoggle-after-height;
+      background-color: $rd-toggles-mftoggle-after-background;
+      border-radius: $rd-toggles-mftoggle-after-border-radius;
+      position: relative;
+      box-shadow: $rd-toggles-mftoggle-after-shadow;
+      left: -9px;
+      top: -4px;
+      transition: left 0.3s ease, background 0.3s ease, box-shadow 0.1s ease;
+    }
+  }
+}
+
+.toggle-custom:checked + .toggle-custom-dummy {
+  background-color: $rd-toggles-mftoggle-active-background;
+
+  &:after { left: 9px; }
+}
+
+// Toggle inline
+//
+
+.toggle-inline {
+  cursor: pointer;
+
+  .toggle-custom-dummy {
+    margin-right: $rd-toggles-mftoggle-offset-right;
+    margin-left: $rd-toggles-mftoggle-offset-left;
+  }
+}
+
+.toggle-inline + .toggle-inline {margin-left: 20px;}
+
+// Search Form
+// -------------------------
+.form-search {
+  position: relative;
+
+  .form-group {
+    margin-bottom: 0;
+  }
+}
+
+.form-search-submit {
+  position: absolute;
+  font-size: $form-search-btn-size;
+  right: 8px;
+  top: 0;
+  bottom: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  box-shadow: none;
+  color: $form-search-btn-color;
+  transition: .3s all ease;
+  &:hover, &:focus {
+    color: $form-search-btn-focus-color;
+    outline: none;
+  }
+}
+
+.form-search-label {
+  color: $form-search-label-color;
+}
+
+.form-search-input {
+  padding-right: $form-search-input-padding-right;
+  color: $form-search-input-color;
+}
+
+
+// Google reCaptcha styling
+// -------------------------
+.recaptcha {
+  iframe {
+    border-radius: $border-radius-small;
+  }
+}
+

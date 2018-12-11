@@ -1,0 +1,62 @@
+//- Includes
+include ../elements/_ui-material-parallax
+include ../elements/_ui-post-event-date-type-2
+
+// Upcoming Workshops
+section.context-dark
+  +material-parallax({ img: 'images/home-04-1920x1230.jpg' })
+    .bg-overlay-gray-darkest
+      .container.section-98.section-md-110
+        h1.text-between.text-white Upcoming Workshops
+        .row.justify-content-sm-center
+          .col-md-6.col-lg-5.col-xl-3
+            +post-event-date-type-2("#", {
+              "number": "22",
+              "month": "September",
+              "time": "18:00"
+            }, "Sew Workshop for Beginners",
+            {
+              "type": "img",
+              "target": {"href": "#"},
+              "image": {"src": "images/home-05-270x310.jpg", "width": 270, "height": 310, "alt": ""}
+            }, "Julia Flores")
+          .col-md-6.col-lg-5.col-xl-3.offset-top-41.offset-md-top-0
+            +post-event-date-type-2("#", {
+              "number": "26",
+              "month": "September",
+              "time": "18:00"
+            }, "Woodworking Workshop",
+            {
+              "type": "img",
+              "target": {"href": "#"},
+              "image": {"src": "images/home-06-270x310.jpg", "width": 270, "height": 310, "alt": ""}
+            }, "Douglas Torres")
+
+          .row-spacer.d-none.d-md-block.d-xl-none.offset-top-41
+
+          .col-md-6.col-lg-5.col-xl-3.offset-top-41.offset-md-top-0
+            +post-event-date-type-2("#", {
+              "number": "22",
+              "month": "September",
+              "time": "18:00"
+            }, "Scrapbooking Workshop for Beginners",
+            {
+              "type": "img",
+              "target": {"href": "#"},
+              "image": {"src": "images/home-07-270x310.jpg", "width": 270, "height": 310, "alt": ""}
+            }, "Rose Warren")
+          .col-md-6.col-lg-5.col-xl-3.offset-top-41.offset-md-top-0
+            +post-event-date-type-2("#", {
+              "number": "22",
+              "month": "September",
+              "time": "18:00"
+            }, "Wood processing Workshop",
+            {
+              "type": "img",
+              "target": {"href": "#"},
+              "image": {"src": "images/home-08-270x310.jpg", "width": 270, "height": 310, "alt": ""}
+            }, "Douglas Torres")
+
+        .row.justify-content-sm-center.offset-top-66
+          .col-sm-10.col-md-6.col-lg-5.col-xl-4.inset-left-50.inset-sm-left-80.inset-right-50.inset-sm-right-80
+            a(href= "#").btn.btn-block.btn-default.btn-ellipse view all workshops

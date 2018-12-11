@@ -1,0 +1,52 @@
+//- Includes
+include ../elements/_widget-twitter
+include ../elements/_widget-form-contact
+include ../elements/_widget-list-social
+include ../elements/_widget-form-subscribe-type-2
+
+// Footer variant 4
+footer.section.novi-background.section-relative.section-34.page-footer.bg-black.context-dark
+  .container
+    .row.justify-content-md-center.text-xl-left
+      .col-sm-12.col-lg-4
+        // Footer brand
+        .footer-brand
+          a(href=cfg.nav.home.href)
+            !=cfg.brand.logoInverse
+        p.small.text-darker.offset-top-4
+          | &copy; #[span.copyright-year] . #[a(href="privacy.html") Privacy Policy]
+          | . Design&nbsp;by&nbsp;#[a(href="https://zemez.io/") Zemez]
+
+      .col-sm-12.col-lg-8.text-lg-right.offset-top-34.offset-lg-top-0
+        div
+          ul.list-inline.list-inline-dashed.p.text-darker
+            li.list-inline-item
+              a(href="#") Documentation
+            li.list-inline-item
+              a(href="#") Plugins
+            li.list-inline-item
+              a(href="#") Themes
+            li.list-inline-item
+              a(href="#") Support
+            li.list-inline-item
+              a(href="#") GitHub
+
+        ul.list-inline.list-inline-white.offset-top-10.text-darker
+          li.list-inline-item
+            a(href="#" class="fa fa-facebook")
+          li.list-inline-item
+            a(href="#" class="fa fa-twitter")
+          li.list-inline-item
+            a(href="#" class="fa fa-google-plus")
+          li.list-inline-item
+            a(href="#" class="fa fa-pinterest")
+          li.list-inline-item
+            a(href="#" class="fa fa-vimeo")
+          li.list-inline-item
+            a(href="#" class="fa fa-youtube")
+          li.list-inline-item
+            a(href="#" class="fa fa-linkedin")
+          li.list-inline-item
+            a(href="#" class="fa fa-github")
+          li.list-inline-item
+            a(href="#" class="fa fa-yahoo")

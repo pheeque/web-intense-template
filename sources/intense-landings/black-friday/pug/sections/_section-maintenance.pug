@@ -1,0 +1,25 @@
+// Maintenance
+
+include ../elements/_ui-timers
+include ../elements/_widget-form-subscribe-type-2
+
+section.section.novi-background.section-98.section-sm-124
+  .container
+    .title-block.title-block-modern
+      h3.title-custom Stay up to date
+      p Prepare your cash, credit cards, and mood! Stay tuned for the sizzling deals and save up to 90% with insane Black Friday Sale.
+
+   
+
+    .offset-top-24
+      +timer({
+        "dataTypeattr": "until",
+        "dataTime": "25 Apr 2019",
+        "dataFormat": "dhms"
+      }, 'countdown-custom countdown-ellipse')
+
+    .row.justify-content-md-center.offset-top-30
+      .col-md-8.col-lg-5
+        
+        .offset-top-4
+          +widget-form-subscribe-type-2("E-Mail", "form-output-global", "text", true)

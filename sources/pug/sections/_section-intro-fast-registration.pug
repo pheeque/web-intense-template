@@ -1,0 +1,36 @@
+// Parallax
+.bg-black.context-dark.parallax-container( data-parallax-img= "images/intros/intro-03-1920x955.jpg" )
+  .parallax-content
+    .container
+      .section-110.section-cover.row.justify-content-lg-center.align-items-lg-center.justify-content-xxl-end
+        .col-lg-12.col-xl-10.col-xxl-6
+          .row
+            .col-lg-6.col-xxl-12.text-lg-left.text-xxl-center
+              h1.text-uppercase.text-ubold.text-spacing-60
+                span.big create #[<br>] an account
+
+              h4.d-none.d-md-block.offset-md-top-20.text-light Let's Create Something Together!
+            .col-lg-6.col-xxl-12.offset-md-top-66
+              .row.justify-content-md-center
+                .col-md-6.col-lg-8
+                  // RD Mailform
+                  form.rd-mailform.text-left(data-form-output="form-output-global", data-form-type='contact', method='post', action='bat/rd-mailform.php')
+                    .form-group
+                      label.form-label(for="form-reg-name") Name
+                      input#form-reg-name.form-control(type="text" data-constraints="@Required" name="name")
+
+                    .form-group.offset-top-20.offset-md-top-30
+                      label.form-label(for="form-reg-email") E-mail
+                      input#form-reg-email.form-control(type="email" data-constraints="@Required @Email" name="email")
+
+                    .form-group.offset-top-20.offset-md-top-30
+                      label.form-label(for="form-reg-username") Username
+                      input#form-reg-username.form-control(type="text" data-constraints="@Required" name="username")
+
+                    .form-group.offset-top-20.offset-md-top-30
+                      label.form-label(for="form-reg-password") Password
+                      input#form-reg-password.form-control(type="password" data-constraints="@Required" name="password")
+
+                    .group.offset-top-30
+                      .group-item.element-fullwidth
+                        button(type="submit").btn.btn-block.btn-primary create account

@@ -1,0 +1,17 @@
+//-
+  Simple Thumbnail
+  @param {object}  thumbnail          storage object
+  @param {boolean} thumbnail.blank    open link in new tab
+  @param {string}  thumbnail.href     link href
+  @param {string}  thumbnail.src      image source
+  @param {string}  thumbnail.alt      image alternative text
+  @param {number}  thumbnail.width    image width
+  @param {number}  thumbnail.height   image height
+  @param {string}  thumbnail.caption
+mixin thumbnail-simple( thumbnail )
+  - thumbnail.blank = thumbnail.blank ? '_blank' : '_self';
+  - thumbnail.alt = thumbnail.alt || '';
+  a.thumbnail-simple( target= thumbnail.blank, href= thumbnail.href )&attributes( attributes )
+    .thumbnail-wrap
+      img( src= thumbnail.src, alt='' )
+    

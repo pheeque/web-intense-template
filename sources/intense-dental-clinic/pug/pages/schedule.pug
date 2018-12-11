@@ -1,0 +1,156 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-material-parallax
+include ../elements/_widget-rd-calendar
+
+//-Title
+block title
+  title= cfg.nav.schedule.title
+
+//- Page
+block page
+
+  // Page Head
+  header.page-head
+    //- RD Navbar
+    +rd-navbar-top-panel(
+    'rd-navbar-light',
+    {
+      "data-lg-auto-height": "true",
+      "data-md-layout": 'rd-navbar-fixed',
+      "data-lg-layout": 'rd-navbar-static',
+      "data-lg-stick-up": 'true'
+    },
+    cfg.brand.logoInverse,
+    cfg.nav.schedule,
+    cfg.nav
+    )
+    // Breadcrumbs
+    section.context-dark
+      +material-parallax({ img: 'images/background-03-1920x640.jpg' })
+        .bg-overlay-info
+          .container.section-34.section-md-85.text-lg-left
+            div.d-none.d-md-block.d-lg-inline-block
+              h1 Schedule
+            div.pull-md-right.offset-md-top-10.offset-lg-top-20
+              ul.p.list-inline.list-inline-dashed
+                li.list-inline-item
+                  a(href= cfg.nav.home.href) Home
+                li.list-inline-item Schedule
+
+  // Page Content
+  main.page-content
+
+    // Calendar
+    section.section-98.section-md-110.bg-overlay-white
+      .container.container-wide
+        h1 The Calendar
+        hr.divider.bg-mantis
+        .offset-top-41
+          .rd-calendar-fullwidth
+            +widget-rd-calendar([
+              {
+                "date": "08/06/2018",
+                "time": "10:00 am, 11:00 am, 12:00 am, 01:00 pm",
+                "title": "",
+                "link": "#",
+                "bg": "bg-malibu"
+              },
+              {
+                "date": "08/07/2018",
+                "time": "8:00 am, 9:00 am, 10:00 am, 11:00 am, 12:00 am, 01:00 pm",
+                "title": "",
+                "link": "#",
+                "bg": "bg-malibu"
+              },
+              {
+                "date": "08/08/2018",
+                "time": "",
+                "title": "Not Available",
+                "link": "#",
+                "bg": "bg-acapulco"
+              },
+              {
+                "date": "08/13/2018",
+                "time": "10:00 am, 11:00 am, 12:00 am, 01:00 pm",
+                "title": "",
+                "link": "#",
+                "bg": "bg-malibu"
+              },
+              {
+                "date": "08/17/2018",
+                "time": "8:00 am, 9:00 am, 10:00 am, 11:00 am, 12:00 am, 01:00 pm",
+                "title": "",
+                "link": "#",
+                "bg": "bg-malibu"
+              },
+              {
+                "date": "08/28/2018",
+                "time": "",
+                "title": "Not Available",
+                "link": "#",
+                "bg": "bg-acapulco"
+              },
+              {
+                "date": "09/06/2018",
+                "time": "10:00 am, 11:00 am, 12:00 am, 01:00 pm",
+                "title": "",
+                "link": "#",
+                "bg": "bg-malibu"
+              },
+              {
+                "date": "09/07/2018",
+                "time": "8:00 am, 9:00 am, 10:00 am, 11:00 am, 12:00 am, 01:00 pm",
+                "title": "",
+                "link": "#",
+                "bg": "bg-malibu"
+              },
+              {
+                "date": "09/08/2018",
+                "time": "",
+                "title": "Not Available",
+                "link": "#",
+                "bg": "bg-acapulco"
+              },
+              {
+                "date": "09/13/2018",
+                "time": "10:00 am, 11:00 am, 12:00 am, 01:00 pm",
+                "title": "",
+                "link": "#",
+                "bg": "bg-malibu"
+              },
+              {
+                "date": "09/17/2018",
+                "time": "8:00 am, 9:00 am, 10:00 am, 11:00 am, 12:00 am, 01:00 pm",
+                "title": "",
+                "link": "#",
+                "bg": "bg-malibu"
+              },
+              {
+                "date": "09/28/2018",
+                "time": "",
+                "title": "Not Available",
+                "link": "#",
+                "bg": "bg-acapulco"
+              }
+            ])
+
+    // Call to action
+    section.section-66.bg-malibu.context-dark
+      .container
+        .row.justify-content-sm-center.align-items-sm-center
+          .col-xl-6.text-xl-left
+            h5.text-regular For more information about our dental services or to book an appointment with us please call this number
+          .col-xl-4
+            h2
+              span.text-middle.icon.icon-sm.mdi.mdi-cellphone-android
+              = " "
+              span.text-middle
+                a(href="tel:1-800-1234-567") 1-800-1234-567
+
+
+
+  // Page Footer
+  include ../sections/_section-footer
+

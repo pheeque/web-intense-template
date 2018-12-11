@@ -1,0 +1,53 @@
+//- Includes
+include  ../elements/_ui-box-icon-type-4
+
+// Register
+section
+  .container
+    .section-110.section-cover.row.justify-content-sm-center.align-items-sm-center
+      .col-sm-8.col-md-6.col-lg-4
+        .card.section-34.section-sm-41.inset-left-20.inset-right-20.inset-md-left-20.inset-md-right-20.inset-xl-left-30.inset-xl-right-30.bg-default.shadow-drop-md
+
+          .text-center
+            +box-icon-type-4("icon-lg icon-default mdi mdi-account-multiple-outline")
+              .offset-top-24.text-darker.big.font-weight-bold Create your account
+              p.text-extra-small.text-dark.offset-top-4 All fields are required
+
+          // RD Mailform
+          form.text-left.offset-top-30(data-form-output="form-output-global", data-form-type='contact', method='post')
+
+            .form-group
+              .input-group.input-group-sm
+                span.input-group-prepend
+                  span.input-group-text.input-group-addon-inverse
+                    span.novi-icon.mdi.mdi-account-outline
+                input#login-user-name.form-control(placeholder="User Name" type="text" name="user-name" data-constraints="@Required")
+
+            .form-group.offset-top-20
+              .input-group.input-group-sm
+                span.input-group-prepend
+                  span.input-group-text.input-group-addon-inverse
+                    span.novi-icon.mdi.mdi-email-outline
+                input#login-email.form-control(placeholder="E-Mail" type="email" name="email" data-constraints="@Required @Email")
+
+            .form-group.offset-top-20
+              .input-group.input-group-sm
+                span.input-group-prepend
+                  span.input-group-text.input-group-addon-inverse
+                    span.novi-icon.mdi.mdi-lock-open-outline
+                input#login-password.form-control(placeholder="Password" type="password" name="password" data-constraints="@Required")
+
+            .form-group.offset-top-20
+              .input-group.input-group-sm
+                span.input-group-prepend
+                  span.input-group-text.input-group-addon-inverse
+                    span.novi-icon.mdi.mdi-lock-outline
+                input#login-repeat-password.form-control(placeholder="Repeat a password" type="password" name="repeat-password" data-constraints="@Required")
+
+            .form-group.offset-top-24
+              .custom-control.custom-checkbox
+                input#customCheck1.custom-control-input( name="agreement", value="true", type="checkbox" )
+                label.custom-control-label( for='customCheck1' )
+                  span.text-dark.text-extra-small I agree with the #[a.text-picton-blue(href="#") Terms of use].
+
+            button(type="submit").btn.btn-xs.btn-icon.btn-block.btn-primary.offset-top-20 Sign Up #[span.novi-icon.icon.mdi.mdi-arrow-right-bold-circle-outline]

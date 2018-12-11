@@ -1,0 +1,377 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-rd-navbar-top-panel
+include ../elements/_ui-page-loader-variant-1
+include ../elements/_ui-timers
+include ../elements/_ui-product-modern
+include  ../elements/_ui-box-icon-type-4
+include  ../elements/_ui-box-product-brand
+include  ../elements/_ui-tabs-classic-vertical
+include ../elements/_ui-thumbnail-zoe
+include  ../elements/_ui_accordion-classic
+
+block variables
+	- var pageName = 'index'
+
+//- Title
+block title
+	title GetSales
+
+//- Page
+block page
+	// Page Head
+	header.page-head.header-top-panel
+		//- RD Navbar
+		+rd-navbar-top-panel(
+		'rd-navbar-dark',
+		{
+			"data-lg-auto-height": "true",
+			"data-md-layout": 'rd-navbar-fixed',
+			"data-lg-layout": 'rd-navbar-static',
+			"data-lg-stick-up": 'true'
+		},
+		cfg.brand.logoInverse,
+		cfg.nav.features,
+		cfg.nav
+		)
+
+	include ../sections/_section-swiper-2
+	include ../sections/_section-maintenance
+	section.section-98.bg-custom-gradient.section-decorate#deals
+		.section-decorate-left.wow.slideInLeft
+			img(src="images/section-decorate-left.png",  alt="")
+		.section-decorate-right.wow.slideInRight
+			img(src="images/section-decorate-right.png",  alt="")
+		.section-decorate-title
+			p sale
+		.container.wow.fadeIn(data-wow-delay='.75s')
+			.title-block
+				h5 Take a Look at Our Best Deals
+				p We have prepared some unique deals for you. From clothes to shoewear and accessories, our prices will surely surprise you and your wallet!
+			.row.offset-top-50
+				.col-md-6.col-lg-4
+					+product-modern({
+						priceText: 'up to -30%',
+						img: 'product-modern-1-232x210',
+						title: 'shoes',
+						list: [
+							{product: 'Nike'},
+							{product: 'New Balance'},
+							{product: 'Under Armour'}
+						]
+					})
+				.col-md-6.col-lg-4.offset-top-50.offset-md-top-0
+					+product-modern({
+						priceText: 'up to -60%',
+						img: 'product-modern-2-267x246',
+						title: 'pullovers',
+						list: [
+							{product: 'Chaps'},
+							{product: 'DKNY'},
+							{product: 'Lauren'}
+						]
+					})
+				.col-md-6.col-lg-4.offset-top-50.offset-lg-top-0
+					+product-modern({
+						priceText: 'up to -90%',
+						img: 'product-modern-3-229x220',
+						title: 'accessories',
+						list: [
+							{product: 'Hermes'},
+							{product: 'Versace'},
+							{product: 'Prada'}
+						]
+					})
+				.col-md-6.col-lg-4.offset-top-50
+					+product-modern({
+						priceText: 'up to -90%',
+						img: 'product-modern-4-156x251',
+						title: 'Casual Clothing',
+						list: [
+							{product: 'Fila'},
+							{product: 'Hackett'},
+							{product: 'Levi’s'}
+						]
+					})
+				.col-md-6.col-lg-4.offset-top-50
+					+product-modern({
+						priceText: 'up to -50%',
+						img: 'product-modern-5-203x255',
+						title: 'sportswear',
+						list: [
+							{product: 'Adidas'},
+							{product: 'Reebok'},
+							{product: 'Puma'}
+						]
+					})
+				.col-md-6.col-lg-4.offset-top-50
+					+product-modern({
+						priceText: 'up to -30%',
+						img: 'product-modern-6-223x244',
+						title: 'Workwear',
+						list: [
+							{product: 'Everlane'},
+							{product: 'Uniqlo'},
+							{product: 'Express'}
+						]
+					})
+	section.section.novi-background.section-98
+		.container
+			.title-block
+				h5 What We offer
+				p Besides great offers for clothes, shoewear, and accessories, there are other reasons to visit us this week.
+			.row.offset-top-50.offset-top-66
+				.col-md-8.offset-md-2.col-lg-4.offset-lg-0
+					+box-icon-type-4("icon-outlined mdi mdi-comment-text-outline")
+						h6.offset-top-30 Friendly Managers
+						p.
+							We employ the best team of highly qualified and friendly managers and shop assistants.
+
+				.col-md-8.offset-md-2.col-lg-4.offset-lg-0.offset-top-50.offset-lg-top-0
+					+box-icon-type-4("icon-outlined mdi mdi-rotate-3d")
+						h6.offset-top-30 14-day Money Back Guarantee
+						p.
+							If you didn’t like any of our products, you can always return your money even after the sale is over.
+
+				.col-md-8.offset-md-2.col-lg-4.offset-lg-0.offset-top-50.offset-lg-top-0
+					+box-icon-type-4("icon-outlined mdi mdi-tshirt-crew")
+						h6.offset-top-30 Free Delivery
+						p.
+							Our team also provides free and secure delivery of clothes and shoewear to any part of the world.
+
+	section.section-98.bg-custom-gradient.section-decorate.section-decorate-reverse#partners
+		.section-decorate-left.wow.slideInLeft
+			img(src="images/section-decorate-left-reverse.png",  alt="")
+		.section-decorate-right.wow.slideInRight
+			img(src="images/section-decorate-right-reverse.png",  alt="")
+		.container
+			.title-block
+				h5 Huge Discounts on the top brands
+				p We partner with a variety of widely known clothes and shoewear providers who are glad to give you a discount on their products.
+			.row.offset-top-50
+				.col-12
+					.block-text-img
+						svg(width='1170', height='200', viewBox='0 0 1170 200', xmlns="http://www.w3.org/2000/svg", xmlns:xlink="http://www.w3.org/1999/xlink" )
+							defs
+								clippath#clipPath( x='0', y='0' )
+									text.svg-wow.fadeSvg( style='transition-delay: 1s' x='0', y='180' ) b
+									text.svg-wow.fadeSvg( style='transition-delay: 0.6s' x='198', y='180' ) r
+									text.svg-wow.fadeSvg( style='transition-delay: 1.2s' x='385', y='180' ) a
+									text.svg-wow.fadeSvg( style='transition-delay: 0.2s' x='608', y='180' ) n
+									text.svg-wow.fadeSvg( style='transition-delay: 0.8s' x='826', y='180' ) d
+									text.svg-wow.fadeSvg( style='transition-delay: 0.4s' x='1024', y='180' ) s
+
+							image( x='0', y='0', width='100%', height='100%', clip-path='url(#clipPath)', xlink:href='images/text-bg.jpg' )
+				.col-sm-6.col-lg-4.offset-top-66
+					+box-product-brand({
+						img: 'brand-1',
+						sale: '-40%'
+					})
+				.col-sm-6.col-lg-4.offset-top-66
+					+box-product-brand({
+						img: 'brand-2',
+						sale: '-40%'
+					})
+				.col-sm-6.col-lg-4.offset-top-66
+					+box-product-brand({
+						img: 'brand-3',
+						sale: '-40%'
+					})
+				.col-sm-6.col-lg-4.offset-top-66
+					+box-product-brand({
+						img: 'brand-4',
+						sale: '-40%'
+					})
+				.col-sm-6.col-lg-4.offset-top-66
+					+box-product-brand({
+						img: 'brand-5',
+						sale: '-40%'
+					})
+				.col-sm-6.col-lg-4.offset-top-66
+					+box-product-brand({
+						img: 'brand-6',
+						sale: '-40%'
+					})
+	// Classic Vertical Tabs
+	section.section.novi-background.section-110
+		.container
+			.text-left
+				+tabs-classic-vertical(['23 fr DAY One', '25 SA Day Two', '26 SU Day Three', '27 Mo Day Four'])
+					div.tab-classic-content
+						.row
+							.col-lg-5
+								.tab-classic-img-block
+									img(src="images/tab-1-img.jpg", alt="")
+									.img-small
+										img(src="images/tab-1-img-small.jpg", alt="")
+							.col-lg-6.offset-top-50.offset-lg-top-0
+								h5.tab-classic-content-title Day 1: Join our sale to buy Exclusive Sportswear
+								p.offset-top-30 Black Friday Sale starts soon and its first day will be devoted to sportswear. It includes not only clothes by famous brands but also sportswear as well as exclusive offers available only at our store throughout the first day of the sale.
+								a.btn.btn-primary.offset-top-30(href='#') Join now
+					div.tab-classic-content
+						.row
+							.col-lg-5
+								.tab-classic-img-block
+									img(src="images/tab-2-img.jpg", alt="")
+									.img-small
+										img(src="images/tab-2-img-small.jpg", alt="")
+							.col-lg-6.offset-top-50.offset-lg-top-0
+								h5.tab-classic-content-title Day 2: Casual Clothes and accessories
+								p.offset-top-30 Looking for huge discounts on your favorite casual clothes? During the second day of our sale, you can get access to all kinds of everyday clothes sold at our store. You will also find great deals on accessories throughout day 2.
+								a.btn.btn-primary.offset-top-30(href='#') Join now
+					div.tab-classic-content
+						.row
+							.col-lg-5
+								.tab-classic-img-block
+									img(src="images/tab-3-img.jpg", alt="")
+									.img-small
+										img(src="images/tab-3-img-small.jpg", alt="")
+							.col-lg-6.offset-top-50.offset-lg-top-0
+								h5.tab-classic-content-title Day 3: Update your Workwear Wardrobe
+								p.offset-top-30 Our store has a great collection of workwear and the third day of Black Friday Sale will have an awesome variety of discounts on that type of clothes. Shop what you prefer without overpaying for your favorite brands!
+								a.btn.btn-primary.offset-top-30(href='#') Join now
+					div.tab-classic-content
+						.row
+							.col-lg-5
+								.tab-classic-img-block
+									img(src="images/tab-1-img.jpg", alt="")
+									.img-small
+										img(src="images/tab-1-img-small.jpg", alt="")
+							.col-lg-6.offset-top-50.offset-lg-top-0
+								h5.tab-classic-content-title Day 4: More amazing offers on all Clothing
+								p.offset-top-30 If you don’t have time to visit our sale during the first 3 days, then one bonus day of the best offers on clothes, accessories, and shoewear is just for you! Take advantage of all our specials and other great deals we offer.
+								a.btn.btn-primary.offset-top-30(href='#') Join now
+
+
+	section.section-110.bg-custom-gradient.section-decorate
+		.section-decorate-left.wow.slideInLeft
+			img(src="images/section-decorate-left.png",  alt="")
+		.section-decorate-right.wow.slideInRight
+			img(src="images/section-decorate-right.png",  alt="")
+		.container-fluid.wow.fadeIn(data-wow-delay='.75s')
+			.title-block
+				h5 Black Friday Sale Highlights
+				p In our gallery, we gather the best moments from our previous sales as well as photos of exclusive clothes.
+		.isotope-wrap.offset-top-50.wow.fadeIn(data-wow-delay='.75s')
+			.row
+				.col-12
+					.isotope.row.row-offset-20.justife-content-center(data-isotope-layout='masonry', data-isotope-group='gallery' data-lightgallery='group' data-lg-thumbnail='false')
+
+
+						.col-12.col-sm-6.col-md-6.col-lg-4.col-xl-3.isotope-item(data-filter="*")
+							+thumbnail-zoe({
+								"type": "thumbnail",
+								"title": "Skirts",
+								"thumb": {"src": "images/gallery-1-465x312.jpg", "width": 465, "height": 312, "alt": ""},
+								"target": {"src": "images/gallery-1-1000x600.jpg", "width": 1000, "height": 600, "alt": ""}
+							})
+						.col-12.col-sm-6.col-md-6.col-lg-4.col-xl-3.isotope-item(data-filter="Happiness")
+							+thumbnail-zoe({
+								"type": "thumbnail",
+								"title": "Watches",
+								"thumb": {"src": "images/gallery-2-465x407.jpg", "width": 465, "height": 407, "alt": ""},
+								"target": {"src": "images/gallery-2-400x600.jpg", "width": 400, "height": 600, "alt": ""}
+							})
+						.col-12.col-sm-6.col-md-6.col-lg-4.col-xl-3.isotope-item(data-filter="*")
+							+thumbnail-zoe({
+								"type": "thumbnail",
+								"title": "Sunglasses",
+								"thumb": {"src": "images/gallery-3-465x312.jpg", "width": 465, "height": 312, "alt": ""},
+								"target": {"src": "images/gallery-3-400x600.jpg", "width": 400, "height": 600, "alt": ""}
+							})
+						.col-12.col-sm-6.col-md-6.col-lg-4.col-xl-3.isotope-item(data-filter="Happiness")
+							+thumbnail-zoe({
+								"type": "thumbnail",
+								"title": "Casual Shoewear",
+								"thumb": {"src": "images/gallery-4-465x407.jpg", "width": 465, "height": 407, "alt": ""},
+								"target": {"src": "images/gallery-4-1000x600.jpg", "width": 1000, "height": 600, "alt": ""}
+							})
+						.col-12.col-sm-6.col-md-6.col-lg-4.col-xl-3.isotope-item(data-filter="Clients")
+							+thumbnail-zoe({
+								"type": "thumbnail",
+								"title": "Women’s Clothes",
+								"thumb": {"src": "images/gallery-5-465x407.jpg", "width": 465, "height": 407, "alt": ""},
+								"target": {"src": "images/gallery-5-1000x600.jpg", "width": 1000, "height": 600, "alt": ""}
+							})
+						.col-12.col-sm-6.col-md-6.col-lg-4.col-xl-3.isotope-item(data-filter="Business")
+							+thumbnail-zoe({
+								"type": "thumbnail",
+								"title": "Exclusive Clothes",
+								"thumb": {"src": "images/gallery-7-465x407.jpg", "width": 465, "height": 407, "alt": ""},
+
+								"target": {"src": "images/gallery-7-1000x600.jpg", "width": 1000, "height": 600, "alt": ""}
+							})
+						.col-12.col-sm-6.col-md-6.col-lg-4.col-xl-3.isotope-item(data-filter="Clients")
+							+thumbnail-zoe({
+								"type": "thumbnail",
+								"title": "Luxury  shoes",
+								"thumb": {"src": "images/gallery-6-465x312.jpg", "width": 465, "height": 312, "alt": ""},
+								"target": {"src": "images/gallery-6-1000x600.jpg", "width": 1000, "height": 600, "alt": ""}
+							})
+						.col-12.col-sm-6.col-md-6.col-lg-4.col-xl-3.isotope-item(data-filter="Happiness")
+							+thumbnail-zoe({
+								"type": "thumbnail",
+								"title": "Accessories",
+								"thumb": {"src": "images/gallery-8-465x312.jpg", "width": 465, "height": 312, "alt": ""},
+								"target": {"src": "images/gallery-8-400x600.jpg", "width": 400, "height": 600, "alt": ""}
+							})
+
+	section.section.novi-background.section-110#faq
+		.container
+			.row.justify-content-lg-between.text-left
+				.col-lg-5
+					.block-faq-claccis
+						h5 faq
+						p.offset-top-30 Here are some of the most frequently asked questions. Find the answer, or contact us for any details.
+						a.btn.btn-primary.offset-top-30(href='#') Get In Touch
+
+				.col-lg-7.col-xl-6
+					+accordion-classic(
+					'accordion-1',
+					[{
+						show: true,
+						title: 'What is black friday?',
+						description: 'The Day After Thanksgiving (Friday) is known as Black Friday. This used to be unofficially or officially the start of holiday shopping season. In last few years, we have witnessed a trend towards bringing those Black Friday Sales online.'
+					},
+						{
+							title: 'do people shop only from desktop devices?',
+							description: 'No, they don’t. Our website is also available on mobile devices and that’s why our customers like to shop not only on desktops but also on smartphones and tablets. You can select any device you prefer to join Black Friday Sale.'
+						},
+						{
+							title: 'why Is It called black friday?',
+							description: 'Many retailers report some of their highest profits on Black Friday. The black portion of the name, "Black Friday" relates to businesses recording their losses in red ink and gains in black. This tradition lives on in modern times. '
+						}])
+
+
+	section.section-98.bg-custom-gradient.section-decorate.section-decorate-reverse#contacts
+		.section-decorate-left.wow.slideInLeft
+			img(src="images/section-decorate-left-reverse.png",  alt="")
+		.section-decorate-right.wow.slideInRight
+			img(src="images/section-decorate-right-reverse.png",  alt="")
+		.container.wow.fadeIn(data-wow-delay='.75s')
+			.title-block
+				h5 contact us now
+				p Feel free to get in touch with us if you want to find out any necessary information or ask questions about our sale.
+			.row.justify-content-center
+				.col-sm-10.col-md-8.col-lg-6.col-xl-5
+					form.rd-mailform.form-modern.text-center.form-center(data-form-output="form-output-global", data-form-type='contact', method='post', action='bat/rd-mailform.php')
+						.row
+							.col-12
+								.form-group
+									label.form-label(for="contact-me-name") Name:
+									input#contact-me-name.form-control(type="text" name="name" data-constraints="@Required")
+							.col-12.offset-top-20
+								.form-group
+									label.form-label(for="contact-me-email") E-Mail:
+									input#contact-me-email.form-control(type="email" name="email" data-constraints="@Required @Email")
+							.col-xl-12.offset-top-20
+								.form-group
+									label.form-label(for="contact-me-message") Message:
+									textarea#contact-me-message.form-control(name="message" data-constraints="@Required")
+						.text-center.offset-top-30
+							button(type="submit").btn.btn-primary send message
+
+
+	include ../sections/_section-footer-default
+

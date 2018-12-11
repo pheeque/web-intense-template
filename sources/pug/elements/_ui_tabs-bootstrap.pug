@@ -1,0 +1,16 @@
+
+//- Bootstrap Tabs
+  @param {string} id - id of tabs
+  @param {array} tabs - array of tab objects
+mixin tabs-bootstrap( id, tabs )
+  // Bootstrap Tabs
+  ul.nav.nav-tabs( id= id, role= 'tablist' )
+    - for ( var i = 0; i < tabs.length; i++ )
+      - if ( !tabs[i].tabId ) tabs[i].tabId = id +'-'+ i
+      li.nav-item
+        a.nav-link( id= tabs[i].tabId +'-tab', data-toggle='tab', href='#'+ tabs[i].tabId, role='tab', aria-controls= tabs[i].tabId, aria-selected= (i === 0), class= { active: i === 0 } )!= tabs[i].title
+
+  .tab-content.offset-top-30( id= id +'-content' )
+    - for ( var i = 0; i < tabs.length; i++ )
+      - if ( !tabs[i].tabId ) tabs[i].tabId = id +'-'+ i
+      .tab-pane.fade( id= tabs[i].tabId, role='tabpanel', aria-labelledby= tabs[i].tabId +'-tab', class= { 'show active': i === 0 } )!= tabs[i].description

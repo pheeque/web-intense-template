@@ -1,0 +1,392 @@
+//
+// Backgrounds
+// --------------------------------------------------
+@mixin bg-behaviour($bg-color) {
+  background-color: $bg-color;
+
+  &:not([style*="background-"]) + &:not([style*="background-"]) {
+    padding-top: 0;
+  }
+
+  .bg-decoration > svg {
+    fill: $bg-color;
+  }
+}
+
+// Bg colors
+//
+%context-dark {
+  color: $white;
+
+  #{headings()},
+  .h3-alternate,
+  .h4-alternate {
+    color: $headings-color-inverse;
+  }
+
+  .rd-mailform {
+    .form-input {
+      background: rgba($white, .47);
+    }
+
+    .form-input,
+    .form-label,
+    .form-label-outside,
+    .form-validation {
+      color: $white;
+    }
+  }
+
+  .counter-box {
+    &,
+    .counter-box-header {
+      color: $white;
+    }
+  }
+
+  .counter-box-bold {
+    .counter,
+    .counter-box-header {
+      color: $white;
+    }
+    .counter {
+      color: $gray-4;
+    }
+  }
+
+  .counter-box-minimal {
+    .counter,
+    .counter-box-title {
+      color: $white;
+    }
+  }
+
+  .quote-circle {
+    cite,
+    .quote-text,
+    .quote-boxed-meta {
+      color: $white;
+    }
+  }
+
+  .list-nav-marked {
+    > li {
+      color: $white;
+    }
+  }
+
+  .terms-list-inline {
+    dt:after,
+    dd {
+      color: $manatee;
+    }
+  }
+
+  .link {
+    @include link(inherit, $primary);
+  }
+
+  .owl-carousel {
+    .owl-prev,
+    .owl-next {
+
+      &:hover {
+        opacity: .5;
+      }
+    }
+
+    .owl-prev {
+      &,
+      &:hover {
+        border-color: transparent transparent $white $white;
+      }
+    }
+
+    .owl-next {
+      &,
+      &:hover {
+        border-color: $white $white transparent transparent;
+      }
+    }
+
+    .owl-dot {
+      background: $white;
+
+      &.active {
+        background: $primary;
+      }
+    }
+  }
+
+  .rd-mailform {
+    .select2-container--bootstrap .select2-selection {
+      color: $gray-darker;
+      background: $white;
+    }
+
+    .select2-container .select2-selection--single .select2-selection__rendered {
+      color: $gray-darker;
+    }
+  }
+
+  .terms-list-uppercase {
+    dd {
+      color: $white;
+    }
+  }
+
+  .custom-bordered-small {
+    .col-bordered:after {
+      border-color: rgba($white, .22);
+    }
+  }
+}
+
+%context-light {
+  color: $body-color;
+  #{headings()} {
+    color: $headings-color;
+  }
+}
+
+.context-dark {
+  @extend %context-dark;
+}
+
+.context-light {
+  @extend %context-light;
+}
+
+.bg-default {
+  @include bg-behaviour($white);
+}
+
+.bg-gray-dark {
+  @extend %context-dark;
+  @include bg-behaviour($gray-dark);
+
+  &:not(.bg-image) .rd-mailform {
+    .form-input {
+      background: $mako;
+    }
+  }
+}
+
+.bg-accent {
+  @extend %context-dark;
+  @include bg-behaviour($primary);
+
+  .custom-bordered {
+    [class*='cell'] {
+      border-color: rgba(#848e9c, 1);
+    }
+  }
+}
+
+.bg-secondary-3 {
+  @extend %context-dark;
+  @include bg-behaviour($secondary-3);
+
+  .custom-bordered {
+    [class*='cell'] {
+      border-color: rgba(#848e9c, 1);
+    }
+  }
+  .height-fill {
+    border-color: rgba($white,.11);
+  }
+}
+
+
+
+.bg-gray-light {
+  @include bg-behaviour($gray-light);
+
+  .progress-variant-primary {
+    .progress {
+      background: $white;
+    }
+  }
+
+  .divider-light {
+    background: $silver;
+  }
+  
+  .thumbnail-variant-2,
+  hr {
+    border-color: $silver;
+  }
+
+  .post-boxed {
+    background: $white;
+  }
+
+  .thumbnail-boxed {
+    background: $white;
+  }
+
+  .box-inset {
+    background: $white;
+  }
+
+  .box-line {
+    background: $white;
+  }
+
+  .box-triangle,
+  .box-triangle-body,
+  .box-triangle-body:before {
+    background: $white;
+  }
+
+  .box-cta {
+    background: $white;
+  }
+
+  .box-line {
+    background: $white;
+  }
+
+  .quote-boxed-body,
+  .quote-boxed-body:before {
+    background: $white;
+  }
+
+  .box-form {
+  }
+
+  .form-input {
+    background: $white;
+  }
+  
+  .comment {
+    .form-input {
+      border: 2px solid $gray-1;
+    }
+  }
+  
+  .form-label {
+    color: $gray-darker;
+    font-size: 18px;
+  }
+  
+  .search-form-classic .rd-search-submit {
+    &:before{
+      color: $gray-darker;
+    }
+    &:hover{
+      &:before{
+        color: $gray;
+      } 
+    }
+  }
+}
+
+.bg-blue-marguerite {
+  @extend %context-dark;
+  @include bg-behaviour($blue-marguerite);
+
+  .counter-box-bold {
+    .counter {
+      color: #9b8ad3;
+    }
+  }
+
+  &.custom-bordered,
+  .custom-bordered {
+    [class*='cell'] {
+      border-color: #9b8ad3;
+    }
+  }
+}
+
+.bg-secondary-6 {
+  @extend %context-dark;
+  @include bg-behaviour($secondary-6);
+  
+  background-color: $secondary-6;
+}
+.bg-aside-left {
+  position: relative;
+  z-index: 0;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    background: inherit;
+    width: 100vw;
+  }
+}
+
+// Bg image
+//
+.bg-image {
+  background-size: cover;
+  background-position: center 55%;
+  background-repeat: no-repeat;
+  
+  form[data-form-type='subscribe'] {
+    .btn-primary {
+      &,
+      &:active,
+      &:focus {
+        color: $gray-darker;
+        background: $white;
+        border-color: $white;
+      }
+
+      &:hover {
+        color: $white;
+        background: $primary;
+        //border-color: $primary;
+      }
+    }
+  }
+}
+
+.bg-fixed {
+  .desktop & {
+    @include media-breakpoint-up(lg) {
+      background-attachment: fixed;
+    }
+  }
+}
+
+// Bg decorated
+//
+.bg-decorated {
+  position: relative;
+  z-index: 10;
+}
+
+.bg-decoration {
+  position: absolute;
+  left: 0;
+  right: 0;
+  font-size: 0;
+  line-height: 0;
+
+  &-top {
+    top: 1px;
+    transform: translateY(-100%);
+  }
+
+  &-bottom {
+    bottom: 1px;
+    transform: translateY(100%);
+  }
+
+  svg {
+    min-width: 1000px;
+    width: 100%;
+    fill: $white;
+  }
+}
+
+.bg-cover {
+  background-size: cover;
+}

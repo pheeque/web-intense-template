@@ -1,0 +1,34 @@
+//- Includes
+include ../elements/_ui-post-boxed
+
+// Latest Blog Posts
+section.section-98.section-md-110
+  .container
+    h1.text-between Latest Blog Posts
+    .row.justify-content-sm-center
+      .col-md-10.col-lg-6
+        +post-boxed(cfg.nav.blog.submenu.blogPost.href, "2 days ago", "How To Grow Your Creative Business from Scratch", "Cheryl Crawford", [
+          {"title": "Handmade", "href": "#"},
+          {"title": "Scrapbooking", "href": "#"}],
+        {"src": "images/post-01-570x321.jpg", "width": 570, "height": 321, "alt": ""})
+      .col-md-10.col-lg-6.offset-top-66.offset-md-top-30.offset-lg-top-0
+        +post-boxed(cfg.nav.blog.submenu.blogPost.href, "2 days ago", "How To Prepare For a Creative Conference", "Cheryl Crawford", [
+          {"title": "Handmade", "href": "#"},
+          {"title": "Scrapbooking", "href": "#"}],
+        {"src": "images/post-02-570x321.jpg", "width": 570, "height": 321, "alt": ""})
+
+      .row-spacer.d-none.d-lg-block.offset-top-30
+
+      .col-md-10.col-lg-6.offset-top-66.offset-md-top-30.offset-lg-top-0
+        +post-boxed(cfg.nav.blog.submenu.blogPost.href, "2 days ago", "Wooden Toys For Learning and Play", "Jack George", [
+          {"title": "Handmade", "href": "#"},
+          {"title": "Scrapbooking", "href": "#"}],
+        {"src": "images/post-03-570x321.jpg", "width": 570, "height": 321, "alt": ""})
+      .col-md-10.col-lg-6.offset-top-66.offset-md-top-30.offset-lg-top-0
+        +post-boxed(cfg.nav.blog.submenu.blogPost.href, "2 days ago", "Alpha Custom Rugs' Ashram", "Barbara Hunt", [
+          {"title": "Handmade", "href": "#"},
+          {"title": "Textile", "href": "#"}],
+        {"src": "images/post-04-570x321.jpg", "width": 570, "height": 321, "alt": ""})
+
+      .col-12.offset-top-66
+          a(href=cfg.nav.blog.href).btn.btn-primary.btn-ellipse view all blog posts

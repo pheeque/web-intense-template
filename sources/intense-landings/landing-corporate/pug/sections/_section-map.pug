@@ -1,0 +1,27 @@
+// RD Google Map
+section.box-wrap
+	.box-wrap-map
+		.google-map-container(data-center='9870 St Vincent Place, Glasgow, DC 45 Fr 45.' data-style='[{"featureType":"administrative.neighborhood","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"saturation":"100"}]},{"featureType":"landscape.natural.landcover","elementType":"geometry.fill","stylers":[{"visibility":"on"}]},{"featureType":"poi.park","elementType":"geometry.stroke","stylers":[{"visibility":"on"}]},{"featureType":"poi.park","elementType":"labels.icon","stylers":[{"visibility":"on"}]},{"featureType":"water","elementType":"labels.icon","stylers":[{"visibility":"on"}]}]')
+			.google-map
+			ul.google-map-markers
+				li(data-location='9870 St Vincent Place, Glasgow, DC 45 Fr 45.', data-description='9870 St Vincent Place, Glasgow', data-icon='images/gmap_marker.png', data-icon-active='images/gmap_marker_active.png')
+
+	.box-wrap-content
+		.container
+			.box-wrap-content-interactive
+				ul.box-contacts
+					li
+						h4 Address
+						address
+							p 6036 Richmond hwy., Alexandria, VA, 2230
+
+					li
+						h4 Phones
+						ul.list-0
+							li: a.link.link-sm.link-gray-darker(href='tel:#') +1 (409) 987–5874
+							li: a.link.link-sm.link-gray-darker(href='tel:#') +1 (409) 455–5454
+
+					li
+						h4 E-mail
+						a.link-gray(href='mailto:#') info@demolink.org
+='\n'

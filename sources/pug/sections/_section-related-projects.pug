@@ -1,0 +1,48 @@
+//- Includes
+include ../elements/_ui-thumbnail-classic
+// section related project
+section.section.novi-background.section-top-98.section-bottom-124
+  .container
+    h1 Related Projects
+    hr.divider.bg-mantis
+    .row.offset-top-66.justify-content-sm-center.text-left
+      .col-sm-10.col-md-6.col-lg-3
+        +thumbnail-classic({
+          "type": "thumbnail",
+          "thumb": { "src": "images/portfolio/portfolio-single-related-01-370x278.jpg", "width": 370, "height": 278, "alt": ""},
+          "target": { "href": cfg.nav.portfolio.submenu.singleProject.href}
+        })
+        div
+          h6.offset-top-24
+            a(href=cfg.nav.portfolio.submenu.singleProject.href) New Vision
+        p.text-dark.offset-top-4.text-extra-small UX, Design
+      .col-sm-10.col-md-6.col-lg-3.offset-top-50.offset-md-top-0
+        +thumbnail-classic({
+          "type": "thumbnail",
+          "thumb": { "src": "images/portfolio/portfolio-single-related-02-370x278.jpg", "width": 370, "height": 278, "alt": ""},
+          "target": { "href": cfg.nav.portfolio.submenu.singleProject.href}
+        })
+        div
+          h6.offset-top-24
+            a(href=cfg.nav.portfolio.submenu.singleProject.href) Complex Solutions
+        p.text-dark.offset-top-4.text-extra-small Web, Development
+      .col-sm-10.col-md-6.col-lg-3.offset-top-50.offset-lg-top-0
+        +thumbnail-classic({
+          "type": "thumbnail",
+          "thumb": { "src": "images/portfolio/portfolio-single-related-03-370x278.jpg", "width": 370, "height": 278, "alt": ""},
+          "target": { "href": cfg.nav.portfolio.submenu.singleProject.href}
+        })
+        div
+          h6.offset-top-24
+            a(href=cfg.nav.portfolio.submenu.singleProject.href) Unlimited Opportunities
+        p.text-dark.offset-top-4.text-extra-small UX, eCommerce
+      .col-sm-10.col-md-6.col-lg-3.offset-top-50.offset-lg-top-0
+        +thumbnail-classic({
+          "type": "thumbnail",
+          "thumb": { "src": "images/portfolio/portfolio-single-related-04-370x278.jpg", "width": 370, "height": 278, "alt": ""},
+          "target": { "href": cfg.nav.portfolio.submenu.singleProject.href}
+        })
+        div
+          h6.offset-top-24
+            a(href=cfg.nav.portfolio.submenu.singleProject.href) Better Possibilities
+        p.text-dark.offset-top-4.text-extra-small Project Management

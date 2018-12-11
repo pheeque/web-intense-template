@@ -1,0 +1,329 @@
+extends  ../_skeleton
+
+include ../elements/_widget-form-subscribe
+include ../elements/_widget-list-social
+include ../elements/_ui-testimonials-type-4
+include ../elements/_ui-material-parallax
+include ../elements/_ui-counter-type-2
+include ../elements/_ui-box-planning-type-1
+
+block title
+  title Book
+
+block page
+  section.section
+    header.section-mobile-panel.context-dark.d-lg-block
+      a.panel-toggle.novi-icon.icon.mdi.mdi-menu( href='#', data-custom-toggle='panel-icons' )
+      .container.container-wide
+        .row.align-items-sm-center
+          .col-md-6.text-md-left
+            a.brand( href='../../index.html' )
+              img.img-fluid.d-inline-block( src='images/logo-light-187x32.png', width='187', height='32', alt='' )
+          .col-md-6.text-md-right
+            ul#panel-icons.list-inline.list-inline-darkest
+              li.list-inline-item: a.novi-icon.icon.icon-xxs.mdi.mdi-google-plus( href='#', style='font-size: 22px; line-height: 18px' )
+              li.list-inline-item: a.novi-icon.icon.icon-xxs.mdi.mdi-vimeo( href='#' )
+              li.list-inline-item: a.novi-icon.icon.icon-xxs.mdi.mdi-youtube-play( href='#' )
+              li.list-inline-item: a.novi-icon.icon.icon-xxs.mdi.mdi-tumblr( href='#' )
+              li.list-inline-item: a.novi-icon.icon.icon-xxs.mdi.mdi-camera-iris( href='#' )
+              li.list-inline-item: a.novi-icon.icon.icon-xxs.mdi.mdi-blogger( href='#' )
+  
+  
+    //Information Architecture
+    +material-parallax({ img: 'images/bg-01-1920x1000.jpg' }).bg-overlay-white
+      .container
+        .row.justify-content-center.align-items-center.justify-content-lg-end.section-cover
+          .col-sm-10.col-lg-6.section-top-110.section-bottom-66.section-lg-bottom-110.text-lg-left
+            div
+              h1.text-uppercase.font-weight-bold Information Architecture
+            .offset-top-17
+              h4.text-dark.text-regular Learn all the aspects of information architecture for web designers and developers in this book by Intense.
+            .offset-top-30.offset-lg-top-60.group
+              a.btn.btn-primary.btn-icon.btn-icon-left( href= buyLink )
+                span.novi-icon.icon.mdi.mdi-cart-outline
+                | buy now
+              a.btn.btn-default.btn-icon.btn-icon-left( href='#' )
+                span.novi-icon.icon.mdi.mdi-book
+                | learn more
+
+
+  //Counters
+  section.section.novi-background.section-95.bg-macaroni.context-dark
+    .container.container-wide
+      .row.grid-group-md.justify-content-center.section-divided
+        .col-lg-3.col-md-6
+          +counter-type-2(
+            {
+              description: 'HOURS OF READING',
+              titleStyle: 'text-uppercase font-weight-bold offset-top-15 text-spacing-60'
+            },
+            'mdi mdi-av-timer text-darker icon-sm',
+            {
+              dataTo: '56000',
+              dataSpeed: '1000',
+              preffix: '+'
+            }
+          )
+        .col-lg-3.col-md-6
+          +counter-type-2(
+            {
+              description: 'BOOK AWARDS',
+              titleStyle: 'text-uppercase font-weight-bold offset-top-15 text-spacing-60'
+            },
+            'mdi mdi-certificate text-darker',
+            {
+              dataTo: '12',
+              dataSpeed: '1500'
+            }
+          )
+        .col-lg-3.col-md-6
+          +counter-type-2(
+            {
+              description: 'Readers',
+              titleStyle: 'text-uppercase font-weight-bold offset-top-15 text-spacing-60'
+            },
+            'mdi mdi-emoticon text-darker icon-sm',
+            {
+              dataTo: '5671',
+              dataSpeed: '1500'
+            }
+          )
+        .col-lg-3.col-md-6
+          +counter-type-2(
+            {
+              description: 'BOOKS sold',
+              titleStyle: 'text-uppercase font-weight-bold offset-top-15 text-spacing-60'
+            },
+            'mdi mdi-cash-multiple text-darker icon-sm',
+            {
+              dataTo: '13500',
+              dataSpeed: '1300',
+              preffix: '+'
+            }
+          )
+
+  //You Can Read it Anyhow, Anytime, Anywhere
+  section.section.novi-background.section-top-85( style='overflow: hidden' )
+    .container
+      .row.justify-content-sm-center.grid-group-md
+        .col-sm-10.col-lg-6
+          img.img-fluid.wow.fadeInUp.d-inline-block( src='images/home-01-546x513.png', width='546', height='513', alt='' )
+        .col-sm-10.col-lg-6.text-lg-left
+          h2 You Can Read it Anyhow, Anytime, Anywhere
+          p.inset-lg-right-100.
+            Our book is available on various platforms and through numerous
+            book distribution services so you can read it even if
+            you are on the go.
+          .offset-xl-top-60.offset-top-30
+            a.btn.btn-primary.btn-icon.btn-icon-left( href= buyLink )
+              span.novi-icon.icon.mdi.mdi-cart-outline
+              | buy now
+
+  //Read All Books By Intense
+  +material-parallax({
+    img: 'images/bg-02-1920x800.jpg',
+    Class: 'section-110'
+  }).section.context-dark
+    .container
+      .row.justify-content-center.justify-content-lg-start
+        .col-sm-10.col-lg-4.text-lg-left
+          div
+            h2.font-weight-bold Read All Books By Intense
+          .offset-top-17
+            p.
+              The books of our publishing house are available at all
+              city libraries throughout the country as well as
+              at local book stores.
+          .offset-top-30.offset-lg-top-60
+            a.btn.btn-primary.btn-icon.btn-icon-left( href='#' )
+              span.novi-icon.icon.mdi.mdi-book
+              | learn more
+
+  //What People Say
+  section.section.novi-background.section-80.section-lg-110.section-lg-bottom-150.bg-white
+    .container
+      h2.font-weight-bold What People Say
+      .row.justify-content-sm-center.grid-group-md.offset-top-60.offset-lg-top-30
+        .col-md-8.col-lg-4.wow.fadeInLeft( data-wow-delay='0.1s' )
+          +testimonials-type-4(
+            {
+              width: 80,
+              height: 80,
+              src: 'images/user-alex-ross-80x80.jpg',
+              alt: ''
+            },
+            'Alex Ross',
+            'INFORMATION ARCHITECT',
+            "Pretty great book about information architecture. If you build websites, I'd recommend reading it.",
+            {
+              title: 'h6 text-uppercase',
+              cite: 'text-normal text-darker',
+              desc: 'text-primary'
+            }
+          )
+        .col-md-8.col-lg-4.wow.fadeInLeft( data-wow-delay='0.3s' )
+          +testimonials-type-4(
+            {
+              width: 80,
+              height: 80,
+              src: 'images/user-alisa-milano-80x80.jpg',
+              alt: ''
+            },
+            'Alisa Milano',
+            'DEVELOPER',
+            "Read this book for an information design class. It's a great resource for anyone wanting to learn about IA or get into a usability field.",
+            {
+              title: 'h6 text-uppercase',
+              cite: 'text-normal text-darker',
+              desc: 'text-primary'
+            }
+          )
+        .col-md-8.col-lg-4.wow.fadeInLeft( data-wow-delay='0.5s' )
+          +testimonials-type-4(
+            {
+              width: 80,
+              height: 80,
+              src: 'images/user-john-more-80x80.jpg',
+              alt: ''
+            },
+            'john more',
+            'DESIGNER',
+            'A well-balanced and well thought-through introduction to the field of information management and usability.',
+            {
+              title: 'h6 text-uppercase',
+              cite: 'text-normal text-darker',
+              desc: 'text-primary'
+            }
+          )
+
+  //Pricing & Plans
+  section.section.novi-background.section-80.section-lg-110.section-lg-bottom-35.bg-caribbean
+    .container
+      h2.text-white Pricing & Plans
+      .row.justify-content-center.grid-group-sm
+        .col-md-6.col-sm-8.col-lg-3.wow.fadeInRight( data-wow-delay='0.1s' )
+          +box-planning-1( 'Personal', '$19', 'per month', 'Sign up' )
+            ul.list.list-unstyled
+              li
+                span.text-darker 1
+                span.text-dark Account
+              li
+                span.text-darker 0
+                span.text-dark Private Books
+              li
+                span.text-darker 1
+                span.text-dark Free Download
+              li
+                span.text-darker 0
+                span.text-dark Custom Covers
+              li
+                span.text-darker 1
+                span.text-dark Paperback Book
+
+        .col-md-6.col-sm-8.col-lg-3.wow.fadeInRight( data-wow-delay='0.3s' )
+          +box-planning-1( 'Team', '$59', 'per month', 'Sign up', 'true' )
+            ul.list.list-unstyled
+              li
+                span.text-darker 2
+                span.text-dark Accounts
+              li
+                span.text-darker 5
+                span.text-dark Private Books
+              li
+                span.text-darker 10
+                span.text-dark Free Downloads
+              li
+                span.text-darker 2
+                span.text-dark Custom Covers
+              li
+                span.text-darker 3
+                span.text-dark Paperback Books
+
+        .col-md-6.col-sm-8.col-lg-3.wow.fadeInRight( data-wow-delay='0.5s' )
+          +box-planning-1( 'Studio', '$89', 'per month', 'Sign up' )
+            ul.list.list-unstyled
+              li
+                span.text-darker 3
+                span.text-dark Accounts
+              li
+                span.text-darker 10
+                span.text-dark Private Books
+              li
+                span.text-darker 20
+                span.text-dark Free Downloads
+              li
+                span.text-darker 5
+                span.text-dark Custom Covers
+              li
+                span.text-darker 7
+                span.text-dark Paperback Books
+
+        .col-md-6.col-sm-8.col-lg-3.wow.fadeInRight( data-wow-delay='0.7s' )
+          +box-planning-1( 'Business', '$129', 'per month', 'Sign up' )
+            ul.list.list-unstyled
+              li
+                span.text-darker 4
+                span.text-dark Accounts
+              li
+                span.text-darker 12
+                span.text-dark Private Books
+              li
+                span.text-darker 25
+                span.text-dark Free Downloads
+              li
+                span.text-darker 10
+                span.text-dark Custom Covers
+              li
+                span.text-darker 15
+                span.text-dark Paperback Books
+
+
+  //About the Author
+  section.section.novi-background.section-80.section-lg-110
+    .container
+      h2 About the Author
+      .row.justify-content-around.grid-group-md
+        .col-sm-10.col-lg-4
+          img.img-fluid.d-inline-block.wow.fadeInLeft( src='images/home-02-370x330.jpg', width='370', height='330', alt='' )
+        .col-sm-10.col-lg-7.text-lg-left
+            div
+              h3.text-regular Mark Hoffman
+            p.small.offset-top-10 Author of “Information Architecture”
+            p.text-darker.offset-top-30.
+              Mark Hoffman is an independent information architecture consultant. He has been instrumental in helping establish the field of information architecture, and in articulating the role and value of librarianship within the field. Mark played a leading role in organizing and programming first information architecture conferences.
+            p.text-darker As a consultant, he has helped AT&T, Ford, PayPal, Caterpillar, and many other large, highly-political organizations grapple with their information headaches.
+            .offset-top-30.offset-lg-top-55
+              a.btn.btn-primary( href='#' ) GET IN TOUCH
+
+  //Join Our Newsletter
+  +material-parallax({
+    img: 'images/bg-03-1920x650.jpg',
+    Class: 'section-110'
+  }).section.context-dark
+    .container
+      .row.justify-content-sm-center
+        .col-sm-10.col-md-7.col-xl-5
+          div
+            h2.font-weight-bold Join Our Newsletter
+          .offset-top-17
+            p Keep up with our latest news, updates, and special book offers.#[br.d-none.reveal.md-inline-block] Enter your e-mail and subscribe to our newsletter.
+          .offset-top-30.offset-lg-top-60.inset-lg-left-55.inset-lg-right-55
+            +widget-form-subscribe( 'Enter your E-Mail', 'form-subscribe-footer' )
+
+  //Default footer
+  footer.section.novi-background.section-50.section-md-30.page-footer.bg-gray-base.context-dark
+    .container
+      .row.justify-content-between.align-items-center.grid-group-sm
+        .col-md-6.text-md-left
+          .footer-brand.d-inline-block
+            a( href='../../index.html' )
+              img.img-fluid.d-inline-block( src='images/logo-footer-212x55.png', width='212', height='55', alt='' )
+        .col-md-6.text-md-right
+          +widget-list-social([
+            { icon: 'fa fa-facebook', href: '#' },
+            { icon: 'fa fa-twitter', href: '#' },
+            { icon: 'fa fa-google-plus', href: '#' },
+            { icon: 'fa fa-linkedin', href: '#' }
+          ])
+    .container.text-darker.offset-top-15
+      p Design&nbsp;by&nbsp;#[a(href="https://zemez.io/") Zemez]

@@ -1,0 +1,24 @@
+//
+// Custom grid styles
+// --------------------------------------------------
+
+* + .row {
+  margin-top: 50px;
+}
+
+@include media-breakpoint-up(xxl) {
+  .container-wide {
+    max-width: 1800px;
+  }
+}
+
+// Row gutter reset
+.row-condensed{
+  margin-left: 0;
+  margin-right: 0;
+
+  > [class*="col"]{
+    padding-left: 0;
+    padding-right: 0;
+  }
+}

@@ -1,0 +1,429 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-thumbnail-classic
+
+block variables
+	- var activeIndex = 0
+	- var footerActiveIndex = 0
+	- var pageName = 'Landing Agency'
+
+block title
+	title=pageName
+
+block page
+	// Page header
+	header.section.page-header
+		// RD Navbar
+		.rd-navbar-wrap
+			nav.rd-navbar.rd-navbar-dark.novi-background(
+				data-layout=                'rd-navbar-fixed'
+				data-sm-layout=             'rd-navbar-fixed'
+				data-md-layout=             'rd-navbar-fixed'
+				data-md-device-layout=      'rd-navbar-fixed'
+				data-lg-layout=             'rd-navbar-sidebar'
+				data-lg-device-layout=      'rd-navbar-fixed'
+				data-xl-layout=             'rd-navbar-sidebar'
+				data-xl-device-layout=      'rd-navbar-sidebar'
+				data-xxl-layout=            'rd-navbar-sidebar'
+				data-xxl-device-layout=     'rd-navbar-sidebar'
+				data-lg-stick-up-offset=    '90px'
+				data-xl-stick-up-offset=    '90px'
+				data-xxl-stick-up-offset=   '90px'
+				data-lg-stick-up=           'true'
+				data-xl-stick-up=           'true'
+				data-xxl-stick-up=          'true'
+				data-body-class='rd-navbar-absolute-linked'
+			)
+				.rd-navbar-inner
+					// RD Navbar Panel
+					.rd-navbar-panel
+						button.rd-navbar-toggle(data-rd-navbar-toggle='.rd-navbar-nav-wrap')
+							span
+
+						// RD Navbar Brand
+						.rd-navbar-brand
+							a.brand-name(href='index.html')
+								+png(logoDefault)
+
+					// RD Navbar Nav
+					.rd-navbar-nav-wrap
+						ul.rd-navbar-nav
+							li(class={active: activeIndex === 1})
+								a(href='#about-us') About Us
+
+							li(class={active: activeIndex === 2})
+								a(href='#portfolio') Portfolio
+
+							li(class={active: activeIndex === 3})
+								a(href='#team') Team
+
+							li(class={active: activeIndex === 4})
+								a(href='#testimonials') Testimonials
+
+							li(class={active: activeIndex === 5})
+								a(href='#news') News
+
+					// RD Navbar Top Panel
+					.rd-navbar-top-panel
+						.rd-navbar-top-panel-toggle(data-rd-navbar-toggle='.rd-navbar-top-panel')
+							span
+						.group-sm.group-middle.rd-navbar-top-panel-content
+							a.btn.btn-sm.btn-primary.btn-effect-ujarak(href='#') get template
+							.rd-navbar-nav-wrap__shop: a.icon.novi-icon.fl-bigmug-line-shopping202.link-primary(href='#') (2)
+	//  Slider
+	include ../sections/_section-slider-3
+
+	// About us
+	section.section.novi-background.bg-cover.bg-image.section-md.bg-default.text-center.text-md-left#about-us(data-type='anchor')
+		.container
+			.row.row-30
+				.col-md-5
+					h3 Our Features
+					hr.divider-sm.divider-success.divider-sm-left
+					p Our mission at Grand is to provide advanced and innovative web design and web development of the highest quality for all of our clients.
+					ul.marked-list.marked-list__marker-1
+						li Good relationships with clients & employees
+						li Integrity in all we do to achieve full potential
+						li Cut expenses without sacrificing quality
+						li Integrating innovations into every project
+					a(href='#').btn.btn-primary.btn-square.btn-effect-ujarak contact us
+				.col-md-7
+					figure.figure-fullwidth
+						+jpg('about-us-1-670x391', 'img-responsive')
+
+
+	//  Portfolio
+	section.section.novi-background.bg-cover.bg-image.section-md.bg-secondary-3.text-center#portfolio(data-type='anchor')
+		.container
+			h3 Your Portfolio
+			hr.divider-sm.divider-success
+			p.big Showcase your projects and share your achievements to attract #[br.d-none.d-md-inline-block] more potential customers to your website.
+
+		// Owl Carousel
+		.owl-carousel.owl-carousel-gallery.owl-carousel-gallery__mod-1(data-items='1',data-sm-items='2',data-md-items='3',data-lg-items='4', data-stage-padding='0', data-loop='false', data-margin='30', data-mouse-drag="false" data-photo-swipe-gallery='gallery' data-nav='true')
+			a.thumbnail-ruby(href='#')
+				+jpg('gallery-1-417x471', 'thumbnail-ruby-image')
+				.thumbnail-ruby-caption
+					p.thumbnail-ruby-title
+						span(data-letters-l='Proj', data-letters-r='ect #1') Project #1
+
+			a.thumbnail-ruby(href='#')
+				+jpg('gallery-2-417x471', 'thumbnail-ruby-image')
+				.thumbnail-ruby-caption
+					p.thumbnail-ruby-title
+						span(data-letters-l='Proj', data-letters-r='ect #2') Project #2
+
+			a.thumbnail-ruby(href='#')
+				+jpg('gallery-3-417x471', 'thumbnail-ruby-image')
+				.thumbnail-ruby-caption
+					p.thumbnail-ruby-title
+						span(data-letters-l='Proj', data-letters-r='ect #3') Project #3
+
+			a.thumbnail-ruby(href='#')
+				+jpg('gallery-4-417x471', 'thumbnail-ruby-image')
+				.thumbnail-ruby-caption
+					p.thumbnail-ruby-title
+						span(data-letters-l='Proj', data-letters-r='ect #4') Project #4
+
+			a.thumbnail-ruby(href='#')
+				+jpg('gallery-1-417x471', 'thumbnail-ruby-image')
+				.thumbnail-ruby-caption
+					p.thumbnail-ruby-title
+						span(data-letters-l='Proj', data-letters-r='ect #5') Project #5
+
+			a.thumbnail-ruby(href='#')
+				+jpg('gallery-2-417x471', 'thumbnail-ruby-image')
+				.thumbnail-ruby-caption
+					p.thumbnail-ruby-title
+						span(data-letters-l='Proj', data-letters-r='ect #6') Project #6
+
+
+	// Our team
+	section.section.novi-background.bg-cover.bg-image.section-xl.bg-gray-light.text-center#team(data-type='anchor')
+		.container
+			h3 Our Team
+			hr.divider-sm.divider-success
+			.row.row-30
+				.col-md-4
+					// Thumbnail variant 1
+					.thumbnail-variant-1
+						+jpg('team-01-280x232', 'thumbnail-image')
+						.thumbnail-body
+							a(href='#').thumbnail-title Emily Smith
+							p.thumbnail-subtitle CEO
+							hr.thumbnail-divider
+							ul.inline-list-xs.thumbnail-list
+								li: a.icon.novi-icon.icon-xs.icon-gray-darker.icon-effect-1.fa.fa-facebook(href='#')
+								li: a.icon.novi-icon.icon-xs.icon-gray-darker.icon-effect-1.fa.fa-twitter(href='#')
+								li: a.icon.novi-icon.icon-xs.icon-gray-darker.icon-effect-1.fa.fa-google-plus(href='#')
+								li: a.icon.novi-icon.icon-xs.icon-gray-darker.icon-effect-1.fa.fa-pinterest-p(href='#')
+
+				.col-md-4
+					// Thumbnail variant 1
+					.thumbnail-variant-1
+						+jpg('team-02-280x232', 'thumbnail-image')
+						.thumbnail-body
+							a(href='#').thumbnail-title Matthew Scott
+							p.thumbnail-subtitle Leading Designer
+							hr.thumbnail-divider
+							ul.inline-list-xs.thumbnail-list
+								li: a.icon.novi-icon.icon-xs.icon-gray-darker.icon-effect-1.fa.fa-facebook(href='#')
+								li: a.icon.novi-icon.icon-xs.icon-gray-darker.icon-effect-1.fa.fa-twitter(href='#')
+								li: a.icon.novi-icon.icon-xs.icon-gray-darker.icon-effect-1.fa.fa-google-plus(href='#')
+								li: a.icon.novi-icon.icon-xs.icon-gray-darker.icon-effect-1.fa.fa-pinterest-p(href='#')
+
+				.col-md-4
+					// Thumbnail variant 1
+					.thumbnail-variant-1
+						+jpg('team-03-280x232', 'thumbnail-image')
+						.thumbnail-body
+							a(href='#').thumbnail-title Jennifer Lee
+							p.thumbnail-subtitle Leading Developer
+							hr.thumbnail-divider
+							ul.inline-list-xs.thumbnail-list
+								li: a.icon.novi-icon.icon-xs.icon-gray-darker.icon-effect-1.fa.fa-facebook(href='#')
+								li: a.icon.novi-icon.icon-xs.icon-gray-darker.icon-effect-1.fa.fa-twitter(href='#')
+								li: a.icon.novi-icon.icon-xs.icon-gray-darker.icon-effect-1.fa.fa-google-plus(href='#')
+								li: a.icon.novi-icon.icon-xs.icon-gray-darker.icon-effect-1.fa.fa-pinterest-p(href='#')
+
+
+	// Counters
+	section.section.novi-background.bg-cover.bg-image.bg-default.section-md
+		.container
+			.row.no-gutters.custom-bordered
+				.col-sm-6.col-md-3
+					.counter-box
+						.counter(data-from='0', data-to='12') 12
+						p.counter-box-header CUPS OF COFFEE
+
+				.col-sm-6.col-md-3
+					.counter-box
+						.counter(data-from='0', data-to='23') 23
+						p.counter-box-header coders
+
+				.col-sm-6.col-md-3
+					.counter-box
+						.counter(data-from='0', data-to='98') 98
+						p.counter-box-header designers
+
+				.col-sm-6.col-md-3
+					.counter-box
+						.counter(data-from='0', data-to='23') 25
+						p.counter-box-header projects
+
+
+	// CTA
+	+parallax({
+		img: 'bg-image-1',
+		addClass: 'section-md context-dark text-center'
+	})
+			.container
+				.row.justify-content-md-center.flex-md-row-reverse.align-items-md-center
+					.col-md-10.col-xl-8
+						hr.divider-sm.divider-success
+						h1 Extremely Responsive
+						p.subtitle-variant-3.text-success and Retina Ready
+						a(href='#').btn.btn-square.btn-white-outline.btn-lg.btn-aqil.btn-aqil--mod-1: span get the template
+
+
+	// Clients
+	section.section.novi-background.bg-cover.bg-image.bg-default.section-md
+		.container
+			.row.justify-content-md-center.row-30
+				.col-md-6.col-lg-3
+					// Box icon
+					article.box-icon
+						figure.box-icon-image: a(href='#')
+							+png('company-1-126x102')
+						.box-icon-body
+							h5: a(href='#') Design Company
+							p Design Company offers its customers high-quality branding services.
+							a(href='#') www.demolink.org
+
+				.col-md-6.col-lg-3
+					// Box icon
+					article.box-icon
+						figure.box-icon-image: a(href='#')
+							+png('company-2-134x102')
+						.box-icon-body
+							h5: a(href='#') Pacific Coast
+							p This company sells affordable surfwear all over the world.
+							a(href='#') www.demolink.org
+
+				.col-md-6.col-lg-3
+					// Box icon
+					article.box-icon
+						figure.box-icon-image: a(href='#')
+							+png('company-3-132x102')
+						.box-icon-body
+							h5: a(href='#') Pompadour
+							p Pompadour provides companies with top-notch merchandise.
+							a(href='#') www.demolink.org
+
+				.col-md-6.col-lg-3
+					// Box icon
+					article.box-icon
+						figure.box-icon-image: a(href='#')
+							+png('company-4-126x102')
+						.box-icon-body
+							h5: a(href='#') Brandsign
+							p Brandsign provides an opportunity to record a first-class music release.
+							a(href='#') www.demolink.org
+
+	// Testimonials
+	section.section.novi-background.bg-cover.bg-image.section-md.bg-gray-light.text-center#testimonials(data-type='anchor')
+		.container
+			h3 Testimonials
+			hr.divider-sm.divider-success
+			.row
+				.col-sm-12
+					// Owl Carousel
+					.owl-carousel(data-items='1',data-lg-items='2' data-stage-padding='0', data-loop='false', data-margin='30', data-mouse-drag="false", data-dots='true')
+						.item
+							// Quote boxed
+							.quote-boxed
+								.quote-boxed-left
+									+jpg('testimonials-01-280x308', 'quote-boxed-image')
+
+								.quote-boxed-body
+									cite Karen Sanders
+									p.caption Project Manager
+									p.quote-text: q As a Project Manager at a small local company, I was looking for a universal solution for my company’s website. Arctic is just what I need!.
+
+									.quote-boxed-meta
+										ul.quote-boxed-meta-list
+											li: time(datetime='2018') March 15, 2018
+
+						.item
+							// Quote boxed
+							.quote-boxed
+								.quote-boxed-left
+									+jpg('testimonials-02-280x308', 'quote-boxed-image')
+
+								.quote-boxed-body
+									cite Walter Williams
+									p.caption Architect
+									p.quote-text: q Thanks to Arctic, I am now able to showcase all my works without doing any extra coding and design manipulations. Thank you!
+
+									.quote-boxed-meta
+										ul.quote-boxed-meta-list
+											li: time(datetime='2018') May 08, 2018
+
+						.item
+							// Quote boxed
+							.quote-boxed
+								.quote-boxed-left
+									+jpg('testimonials-01-280x308', 'quote-boxed-image')
+
+								.quote-boxed-body
+									cite Karen Sanders
+									p.caption Project Manager
+									p.quote-text: q As a Project Manager at a small local company, I was looking for a universal solution for my company’s website. Arctic is just what I need!.
+
+									.quote-boxed-meta
+										ul.quote-boxed-meta-list
+											li: time(datetime='2018') March 15, 2018
+
+						.item
+							// Quote boxed
+							.quote-boxed
+								.quote-boxed-left
+									+jpg('testimonials-02-280x308', 'quote-boxed-image')
+
+								.quote-boxed-body
+									cite Walter Williams
+									p.caption Architect
+									p.quote-text: q Thanks to Arctic, I am now able to showcase all my works without doing any extra coding and design manipulations. Thank you!
+
+									.quote-boxed-meta
+										ul.quote-boxed-meta-list
+											li: time(datetime='2018') May 08, 2018
+
+						.item
+							// Quote boxed
+							.quote-boxed
+								.quote-boxed-left
+									+jpg('testimonials-01-280x308', 'quote-boxed-image')
+
+								.quote-boxed-body
+									cite Karen Sanders
+									p.caption Project Manager
+									p.quote-text: q As a Project Manager at a small local company, I was looking for a universal solution for my company’s website. Arctic is just what I need!.
+
+									.quote-boxed-meta
+										ul.quote-boxed-meta-list
+											li: time(datetime='2018') March 15, 2018
+
+						.item
+							// Quote boxed
+							.quote-boxed
+								.quote-boxed-left
+									+jpg('testimonials-02-280x308', 'quote-boxed-image')
+
+								.quote-boxed-body
+									cite Walter Williams
+									p.caption Architect
+									p.quote-text: q Thanks to Arctic, I am now able to showcase all my works without doing any extra coding and design manipulations. Thank you!
+
+									.quote-boxed-meta
+										ul.quote-boxed-meta-list
+											li: time(datetime='2018') May 08, 2018
+
+
+	// CTA
+	section.section.novi-background.bg-cover.section-md.bg-image.bg-accent(style='background-image: url(images/bg-image-2.jpg)')
+		.container
+			.row.row-30.justify-content-sm-center
+				.col-md-7
+					h3 We Make the Best Web Design Solutions
+				.col-md-4
+					a(href='#').btn.btn-primary.btn-square.btn-effect-ujarak contact us
+
+
+	// recent news
+	section.section.novi-background.bg-cover.bg-image.section-md.bg-gray-light.text-center#news(data-type='anchor')
+		.container.container-wide
+			h3 Blog Posts
+			hr.divider-sm.divider-success
+			.row.row-30.justify-content-md-center
+
+				.col-sm-12.col-md-11.col-xxl-12
+					// Owl Carousel
+					.owl-style-tiny
+						.owl-carousel(data-items='1', data-md-items='2', data-xl-items='2', data-xxl-items='3', data-nav='true', data-dots='true', data-lg-stage-padding='0', data-loop='true', data-margin='15', data-md-margin='15', data-mouse-drag="false")
+							.item
+								// Post-minimal
+								article.post-minimal
+									+jpg('post-1-560x263', 'post-minimal-image')
+									.post-minimal-body
+										time.post-minimal-time(datetime='2018-01-01')
+											span.big 25
+											span.small April
+										.post-minimal-main
+											p.post-minimal-title: a(href='#') A Few Steps for Perfect Web Navigation
+
+							.item
+								// Post-minimal
+								article.post-minimal
+									+jpg('post-2-560x263', 'post-minimal-image')
+									.post-minimal-body
+										time.post-minimal-time(datetime='2018-01-01')
+											span.big 16
+											span.small june
+										.post-minimal-main
+											p.post-minimal-title: a(href='#') Popular Techniques for Fine-Tuning UX with Color
+
+							.item
+								// Post-minimal
+								article.post-minimal
+									+jpg('post-3-560x263', 'post-minimal-image')
+									.post-minimal-body
+										time.post-minimal-time(datetime='2018-01-01')
+											span.big 09
+											span.small may
+										.post-minimal-main
+											p.post-minimal-title: a(href='#') Going Freelance: Pros and Cons of Changing the Way You Work
+
+
+	include ../sections/_footer-default-map

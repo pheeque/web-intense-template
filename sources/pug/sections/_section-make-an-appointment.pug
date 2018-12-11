@@ -1,0 +1,38 @@
+// Make an Appointment
+section.section.novi-background.section-98.section-sm-110
+  .container
+    h1 Make an Appointment
+    hr.divider.bg-mantis
+    .row.justify-content-sm-center
+      .col-md-8.col-lg-7.col-xl-8
+        // RD Mailform
+        form.rd-mailform.text-left(data-form-output="form-output-global", data-form-type='contact', method='post', action='bat/rd-mailform.php')
+          .row
+            .col-xl-6
+              .form-group
+                label.form-label.form-label-outside(for="make-appointment-name") Name:
+                input#make-appointment-name.form-control(type="text" name="name" data-constraints="@Required")
+            .col-xl-6.offset-top-20.offset-xl-top-0
+              .form-group
+                label.form-label.form-label-outside(for="make-appointment-email") Email:
+                input#make-appointment-email.form-control(type="text" name="email" data-constraints="@Required @Email")
+            .col-xl-6.offset-top-20
+              .form-group
+                label.form-label.form-label-outside(for="make-appointment-date") Date:
+                input#make-appointment-date.form-control(type="text" name="date" data-constraints="@Required" data-time-picker="date")
+            .col-xl-6.offset-top-20
+              .row.offset-top-0
+                .col-sm-6
+                  .form-group 
+                    label.form-label.form-label-outside(for="make-appointment-time-start") Required Time Interval Start:
+                    input#make-appointment-time-start.form-control(type="text" name="time-start" data-constraints="@Required" data-time-picker="time")
+                .col-sm-6
+                  .form-group
+                    label.form-label.form-label-outside(for="make-appointment-time-end") Required Time Interval End:
+                    input#make-appointment-time-end.form-control(type="text" name="tim-end" data-constraints="@Required" data-time-picker="time")
+            .col-xl-12.offset-top-20
+              .form-group
+                label.form-label.form-label-outside(for="make-appointment-message") Message:
+                textarea#make-appointment-message.form-control(name="message" data-constraints="@Required" style="height: 150px")
+          .text-center.text-xl-left.offset-top-30
+            button(type="submit").btn.btn-primary Make an appointment

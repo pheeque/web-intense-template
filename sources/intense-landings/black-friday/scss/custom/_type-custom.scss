@@ -1,0 +1,1127 @@
+//
+// Custom typography
+// --------------------------------------------------
+
+// Page header
+// -------------------------
+
+.page-header {
+  padding-bottom: 14px;
+}
+
+// Fonts
+// -------------------------
+
+.font-default {
+  font-family: $font-family-base;
+}
+
+.font-accent {
+  font-family: $font-family-accent;
+}
+
+// Basic Typography
+// -------------------------
+
+h1,
+.h1 {
+  margin-top: 26px;
+  margin-bottom: 21px;
+  font-size: 36px;
+  line-height: 1.4;
+
+  @include media-breakpoint-up(md) {
+    line-height: value-ratio( 1.4, $h1-line-height, 0 );
+    font-size: value-ratio( 36px, $h1-font-size, .4 );
+  }
+
+  @include media-breakpoint-up(xl) {
+    line-height: value-ratio( 1.4, $h1-line-height, .5 );
+    font-size: value-ratio( 36px, $h1-font-size, .5 );
+  }
+
+  @include media-breakpoint-up(xxl) {
+    line-height: $h1-line-height;
+    font-size: $h1-font-size;
+  }
+}
+
+h2,
+.h2 {
+  margin-top: 42px;
+  margin-bottom: 17px;
+  font-size: 32px;
+  line-height: 1.3;
+
+  @include media-breakpoint-up(md) {
+    line-height: value-ratio( 1.3, $h2-line-height, 0 );
+    font-size: value-ratio( 32px, $h2-font-size, .4 );
+  }
+
+  @include media-breakpoint-up(xl) {
+    line-height: value-ratio( 1.3, $h2-line-height, .5 );
+    font-size: value-ratio( 32px, $h2-font-size, .5 );
+  }
+
+  @include media-breakpoint-up(xxl) {
+    line-height: $h2-line-height;
+    font-size: $h2-font-size;
+  }
+}
+
+h3,
+.h3 {
+  margin-top: 27px;
+  margin-bottom: 18px;
+  font-size: 28px;
+  line-height: 1.5;
+
+  @include media-breakpoint-up(md) {
+    line-height: value-ratio( 1.5, $h3-line-height, 0 );
+    font-size: value-ratio( 28px, $h3-font-size, .4 );
+  }
+
+  @include media-breakpoint-up(xl) {
+    line-height: value-ratio( 1.5, $h3-line-height, .5 );
+    font-size: value-ratio( 28px, $h3-font-size, .5 );
+  }
+
+  @include media-breakpoint-up(xxl) {
+    line-height: $h3-line-height;
+    font-size: $h3-font-size;
+  }
+}
+
+h4,
+.h4 {
+  margin-top: 28px;
+  margin-bottom: 16px;
+  font-size: 24px;
+  line-height: 1.5;
+
+  * + .icon,
+  .icon + * {
+    padding-left: 8px;
+  }
+
+  @include media-breakpoint-up(md) {
+    line-height: value-ratio( 1.5, $h4-line-height, 0 );
+    font-size: value-ratio( 24px, $h4-font-size, .3 );
+  }
+
+  @include media-breakpoint-up(xl) {
+    line-height: value-ratio( 1.5, $h4-line-height, 1 );
+    font-size: value-ratio( 24px, $h4-font-size, .5 );
+  }
+
+  @include media-breakpoint-up(xxl) {
+    line-height: $h4-line-height;
+    font-size: $h4-font-size;
+  }
+}
+
+h5,
+.h5 {
+  margin-top: 29px;
+  margin-bottom: 19px;
+  font-size: 20px;
+  line-height: 1.5;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0;
+
+  @include media-breakpoint-up(md) {
+    line-height: value-ratio( 1.5, $h5-line-height, 0 );
+    font-size: value-ratio( 20px, $h5-font-size, .3 );
+  }
+
+  @include media-breakpoint-up(xl) {
+    line-height: value-ratio( 1.5, $h5-line-height, .5 );
+    font-size: value-ratio( 20px, $h5-font-size, .5 );
+  }
+  
+  @include media-breakpoint-up(xxl) {
+    line-height: $h5-line-height;
+    font-size: $h5-font-size;
+  }
+}
+
+h6,
+.h6 {
+  margin-top: 29px;
+  margin-bottom: 18px;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.5;
+
+  * + .icon,
+  .icon + * {
+    padding-left: 8px;
+  }
+
+  @include media-breakpoint-up(md) {
+    line-height: value-ratio( 1.5, $h6-line-height, 0 );
+    font-size: value-ratio( 17px, $h6-font-size, .3 );
+  }
+
+  @include media-breakpoint-up(xl) {
+    line-height: value-ratio( 1.5, $h6-line-height, .5 );
+    font-size: value-ratio( 17px, $h6-font-size, .5 );
+  }
+
+  @include media-breakpoint-up(xxl) {
+    line-height: $h6-line-height;
+    font-size: $h6-font-size;
+  }
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  a {
+    transition: .3s all ease;
+  }
+
+  a:hover {
+    color: $picton-blue;
+  }
+
+  .small {
+    color: $gray-700;
+  }
+}
+
+p,
+.p,
+.list {
+  margin-top: 18px;
+  margin-bottom: 18px;
+
+  a:hover {
+    text-decoration: underline;
+  }
+}
+
+.big {
+  @include media-breakpoint-up(sm) {
+    font-size: 106.25%;
+    line-height: 1.470588235294118;
+  }
+
+  @include media-breakpoint-up(xl) {
+    h1 &,
+    .h1 & {
+      font-size: 120%;
+      line-height: 1.2;
+    }
+
+    h2 &,
+    .h2 & {
+      font-size: 120%;
+      line-height: 1.2;
+    }
+  }
+
+  @include media-breakpoint-up(xxl) {
+    h1 &,
+    .h1 & {
+      font-size: 142.22%;
+      line-height: 1.125;
+    }
+
+    h2 &,
+    .h2 & {
+      font-size: 147.36%;
+      line-height: 1.142857142857143;
+    }
+  }
+}
+
+blockquote small,
+blockquote .small,
+small,
+.small {
+  font-size: 93.75%;
+
+  &:before {
+    display: none;
+  }
+
+  h1 &,
+  .h1 & {
+    font-size: 62.22222222222222%;
+  }
+
+  h2 &,
+  .h2 & {
+    font-size: 63.15789473684211%;
+  }
+
+  h3 &,
+  .h3 & {
+    font-size: 73.33333333333333%;
+  }
+
+  h4 &,
+  .h4 & {
+    font-size: 75%;
+  }
+
+  h5 &,
+  .h5 & {
+    font-size: 72.72727272727273%;
+  }
+
+  h6 &,
+  .h6 & {
+    font-size: 94.11764705882353%;
+  }
+}
+
+sub {
+  bottom: -0.5em;
+}
+
+sub, sup {
+  font-size: 62%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+code, kbd, pre, samp {
+  font-family: Consolas, "Courier New", monospace;
+}
+
+code {
+  padding: 5px 7px;
+  font-size: 75%;
+  color: #E50A0A;
+  background-color: $gray-100;
+  border-radius: 2px;
+}
+
+pre {
+  padding: 16px 19px;
+  margin-bottom: 0;
+  font-size: 16px;
+  line-height: 1.13;
+  overflow-x: auto;
+
+  code {
+    font-size: 75%;
+    text-align: left;
+  }
+}
+
+mark, .mark {
+  background-color: #ABCC37;
+  padding: .1em;
+}
+
+.text-extra-small{
+  font-size: 13px;
+}
+
+.text-extra-big{
+  font-size: 100px;
+  line-height: .7;
+
+  @include media-breakpoint-up(md) {
+      font-size: 140px;
+  }
+  @include media-breakpoint-up(lg) {
+    font-size: 180px;
+  }
+  @include media-breakpoint-up(xl) {
+    font-size: 220px
+  }
+}
+
+// Lists
+// -------------------------
+
+.list {
+  > li + li {
+    margin-top: 10px;
+  }
+}
+
+.list-numbered {
+  padding-left: 15px;
+  li {
+    padding-left: 10px;
+  }
+}
+
+// List inline
+//
+.list-inline {
+  margin-left: -5px;
+  margin-right: -5px;
+
+  > li {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  .list-inline-item {
+    margin: 0;
+  }
+}
+
+.list-inline-sm {
+  margin-left: -10px;
+  margin-right: -10px;
+
+  > li {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+.list-inline-md {
+  margin-left: -15px;
+  margin-right: -15px;
+
+  > li {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+.list-inline-lg {
+  margin-left: -30px;
+  margin-right: -30px;
+
+  > li {
+    padding-left: 30px;
+    padding-right: 30px;
+
+    &:first-child {
+      padding-left: 0;
+    }
+
+    &:before {
+      color: $gray-500;
+    }
+
+    & + li {
+      [class*='fa-']:before {
+        margin-left: 15px;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    li + li {
+      [class*='fa-']:before {
+        margin-left: 0;
+      }
+    }
+
+    [class*='fa-']:before {
+      padding-left: 15px;
+      padding-right: 10px;
+    }
+  }
+}
+
+.list-inline-picton-blue {
+  > li > a {
+    transition: .3s;
+    &:hover {
+      color: $picton-blue;
+    }
+  }
+}
+.list-inline-white {
+  > li > a {
+    transition: .3s;
+    &:hover {
+      color: $white;
+    }
+  }
+}
+
+.list-inline-dashed {  
+  > li {
+    padding-right: 0;
+    & + li {
+      &:before {
+        content: '/';
+        padding-right: 5px;
+      }
+    }
+  }
+}
+
+.list-vertical-right-line {
+  li {
+    padding: 20px;
+    transition: .3s all ease;
+
+    &:hover {
+      color: $white;
+      background: darken($primary, 10%);
+    }
+    @include media-breakpoint-up(xl) {
+      padding: 0;
+    }
+  }
+
+  @media (min-width: 1400px) {
+    li {
+      position: relative;
+
+      &:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: 0;
+        width: 1px;
+        height: 160px;
+        transform: translateY(-50%);
+        background: rgba($white, .4);
+      }
+    }
+  }
+}
+
+.list-inline-dashed-wide {
+  > li {
+    padding-right: 0;
+    & + li {
+      &:before {
+        content: '/';
+        padding-right: 20px;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    > li {
+      & + li {
+        &:before {
+          padding-right: 5px;
+        }
+      }
+    }
+  }
+}
+
+.list-inline-squared {
+  > li {
+    position: relative;
+    & + li {
+      &:before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        margin-top: -3px;
+        left: -7px;
+        height: 6px;
+        border-left: 6px solid;
+      }
+    }
+  }
+
+  &.list-inline-mg{
+    &+li{
+      &:before{
+        left: -23px;
+      }
+    }
+  }
+
+  &.list-inline-lg{
+    &+li{
+      &:before{
+        left: -33px;
+      }
+    }
+  }
+}
+
+// List marked
+//
+
+.list-marked {
+  text-align: left;
+  @include list-unstyled;
+  li {
+    padding-left: 15px;
+    position: relative;
+    &:before {
+      content: '';
+      position: absolute;
+      left: 2px;
+      top: 13px;
+      transform: translateY(-50%);
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background-color: $primary;
+    }
+  }
+}
+
+// List index
+//
+.list-index {
+  @include list-unstyled;
+  counter-reset: li;
+  li {
+    .list-index-counter {
+      &:before {
+        content: counter(li, decimal-leading-zero);
+        counter-increment: li;
+      }
+    }
+  }
+}
+
+// List separeted
+//
+.list-separated {
+  li + li {
+    border-top: 1px solid $gray-200;
+    margin-top: 8px;
+    padding-top: 7px;
+  }
+}
+
+// Backgrounds
+// -------------------------
+
+.bg-fixed{
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+
+// Contextual backgrounds
+//
+.bg-black {
+  @include bg-variant-custom(#{$black});
+}
+
+.bg-gray-darkest {
+  @include bg-variant-custom(#{$gray-900});
+}
+
+.bg-gray-darker {
+  @include bg-variant-custom(#{$gray-800});
+}
+
+.bg-gray {
+  @include bg-variant-custom(#{$gray-500});
+}
+
+.bg-gray-light {
+  @include bg-variant-custom(#{$gray-300})
+}
+
+.bg-lighter {
+  @include bg-variant-custom(#{$gray-200});
+}
+
+.bg-lightest {
+  @include bg-variant-custom(#{$gray-100});
+}
+
+.bg-deluge {
+  @include bg-variant-custom(#{$deluge});
+  @extend %context-dark;
+}
+
+.bg-butterfly-bush {
+  @include bg-variant-custom(#{$butterfly-bush});
+  @extend %context-dark;
+}
+
+.bg-picton-blue {
+  @include bg-variant-custom(#{$picton-blue});
+}
+
+.bg-default {
+  @include bg-variant-custom(#{$white});
+}
+
+// Gradient background
+//
+
+.bg-black-haze {
+  @include bg-variant-custom(linear-gradient(0deg, $gray-100 0%, $white 100%));
+}
+
+.bg-acapulco {
+  @include bg-variant-custom(linear-gradient(90deg, $picton-blue 0%, $dollar-bill 100%), $picton-blue);
+}
+
+.bg-blue-gray {
+  @include bg-variant-custom(linear-gradient(90deg, $deluge 0%, $picton-blue 100%));
+}
+
+.bg-red {
+  @include bg-variant-custom(linear-gradient(90deg, $danger 0%, $ku-crimson 100%));
+}
+
+.bg-mantis {
+  @include bg-variant-custom(linear-gradient(90deg, $primary 0%, $dollar-bill 100%));
+}
+
+.bg-shark {
+  @include bg-variant-custom(linear-gradient(90deg, $black 0%, $gray-800 100%));
+}
+
+.bg-shark-radio {
+  @include bg-variant-custom(radial-gradient(ellipse at center, $gray-900 0%, $black 100%));
+}
+
+.bg-deluge {
+  @include bg-variant-custom(linear-gradient(90deg, $deluge 0%, $butterfly-bush 100%));
+}
+
+.bg-malibu {
+  @include bg-variant-custom(linear-gradient(90deg, $iceberg 0%, $info 100%));
+}
+
+.bg-saffron {
+  @include bg-variant-custom(linear-gradient(90deg, $warning 0%, $neon-carrot 100%));
+}
+
+// Tilt Gradient background
+//
+
+.bg-blue-gray-tilt {
+  @include bg-variant-custom(linear-gradient(45deg, $deluge 0%, $picton-blue 100%));
+}
+
+.bg-red-tilt {
+  @include bg-variant-custom(linear-gradient(45deg, $danger 0%, $ku-crimson 100%));
+}
+
+.bg-mantis-tilt {
+  @include bg-variant-custom(linear-gradient(45deg, $primary 0%, $dollar-bill 100%));
+}
+
+.bg-shark-tilt {
+  @include bg-variant-custom(linear-gradient(45deg, $black 0%, $gray-800 100%));
+}
+
+.bg-deluge-tilt {
+  @include bg-variant-custom(linear-gradient(45deg, $deluge 0%, $butterfly-bush 100%));
+}
+
+.bg-malibu-tilt {
+  @include bg-variant-custom(linear-gradient(45deg, $iceberg 0%, $info 100%));
+}
+
+.bg-saffron-tilt {
+  @include bg-variant-custom(linear-gradient(90deg, $warning 0%, $neon-carrot 100%));
+}
+
+.bg-custom-gradient {
+  @include bg-variant-custom(radial-gradient(984.13px at 49.14% 45.17%, #3F3F3F 0%, #292929 0.01%, #0D0D0D 100%));
+  .title-block {
+    color: $white;
+    h1, .h1,
+    h2, .h2,
+    h3, .h3,
+    h4, .h4,
+    h5, .h5,
+    h6, .h6 {
+      color: $white;
+    }
+    p {
+      color: rgba($white, .6);
+    }
+  }
+  .form-modern {
+    .form-control {
+      border-color: rgba($white, .2);
+      color: $white;
+    }
+    .form-label {
+      color: $white;
+    }
+  }
+}
+
+// Overlay background
+//
+
+.bg-overlay-white {
+  background: rgba($white, .8);
+}
+
+.bg-overlay-gray-darkest {
+  background: rgba($gray-900, .65);
+}
+
+// Colors
+// -------------------------
+
+// Contextual colors
+//
+
+.page {
+  @include text-emphasis-variant('.text-primary', $primary);
+  @include text-emphasis-variant('.text-gray', $gray-500);
+  @include text-emphasis-variant('.text-lighter', $gray-200);
+  @include text-emphasis-variant('.text-jungle-green', #212121);
+  @include text-emphasis-variant('.text-deluge', $deluge);
+  @include text-emphasis-variant('.text-butterfly-bush', $butterfly-bush);
+  @include text-emphasis-variant('.text-picton-blue', $picton-blue);
+  @include text-emphasis-variant('.text-dollar-bill', $dollar-bill);
+  @include text-emphasis-variant('.text-iceberg', $iceberg);
+  @include text-emphasis-variant('.text-ku-crimson  ', $ku-crimson);
+  @include text-emphasis-variant('.text-neon-carrot', $neon-carrot);
+  @include text-emphasis-variant('.text-darker', $gray-800);
+  @include text-emphasis-variant('.text-white', $white);
+  @include text-emphasis-variant('.text-dark', $gray-700);
+
+  // Contextual colors
+  //
+  %text-gradient {
+    &, &:before {
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  .text-mantis {
+    @extend %text-gradient;
+
+    &, &:before {
+      color: #42B574;
+      background-image: -webkit-linear-gradient(0deg, $primary 0%, $dollar-bill 100%);
+    }
+  }
+
+  .text-acapulco {
+    @extend %text-gradient;
+
+    &, &:before {
+      color: $picton-blue;
+      background-image: -webkit-linear-gradient(0deg, $picton-blue 0%, $dollar-bill 100%);
+    }
+  }
+
+  .text-blue-gray {
+    @extend %text-gradient;
+
+    &, &:before {
+      color: rgba(134, 104, 173, 1);
+      background-image: -webkit-linear-gradient(0deg, $deluge 0%, $picton-blue 100%);
+    }
+  }
+
+  .text-malibu {
+    @extend %text-gradient;
+
+    &, &:before {
+      color: $picton-blue;
+      background-image: -webkit-linear-gradient(0deg, $picton-blue 0%, $info 100%);
+    }
+  }
+
+  .text-carrot {
+    @extend %text-gradient;
+
+    &, &:before {
+      color: $warning;
+      background-image: -webkit-linear-gradient(0deg, $warning 0%, $neon-carrot 100%);
+    }
+  }
+
+  .text-red {
+    @extend %text-gradient;
+
+    &, &:before {
+      color: $danger;
+      background-image: -webkit-linear-gradient(0deg, $danger 0%, $ku-crimson 100%);
+    }
+  }
+
+  .text-pink {
+    @extend %text-gradient;
+
+    &, &:before {
+      color: $deluge;
+      background-image: -webkit-linear-gradient(0deg, $deluge 0%, $butterfly-bush 100%);
+    }
+  }
+}
+
+// Shadows
+// -------------------------
+
+.shadow-drop-ambient {
+  box-shadow: $shadow-area-ambient;
+}
+
+.shadow-drop-xxs {
+  box-shadow: $shadow-area-xxs;
+}
+
+.shadow-drop-xs {
+  box-shadow: $shadow-area-xs;
+}
+
+.shadow-drop-sm {
+  box-shadow: $shadow-area-sm;
+}
+
+.shadow-drop,
+.shadow-drop-md {
+  box-shadow: $shadow-area-md;
+}
+
+.shadow-drop-lg {
+  box-shadow: $shadow-area-lg;
+}
+
+.shadow-drop-xl {
+  box-shadow: $shadow-area-xl;
+}
+
+.shadow-variant-2{
+  box-shadow: $shadow-area-variant-2;
+}
+
+// Borders
+// -------------------------
+
+.border-gray-light {
+  border-color: $gray-300;
+}
+
+.border-gainsboro {
+  border-color: $gray-500;
+}
+
+// Address
+// -------------------------
+
+.contact-info {
+  p {
+    font-size: 15px;
+    margin-bottom: 0;
+  }
+
+  dl {
+    margin-bottom: 0;
+
+    dt, dd {
+      display: inline-block;
+      font-weight: 400;
+      font-size: 15px;
+    }
+
+    dt, dd a {
+      color: $gray-800;
+    }
+
+    dd a:hover {
+      color: $picton-blue;
+    }
+  }
+}
+
+.non-interacting {
+  pointer-events: none;
+  user-select: none;
+}
+
+
+// section decorate
+.section-decorate  {
+  position: relative;
+  overflow: hidden;
+  .section-decorate-left {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
+  .section-decorate-right {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .section-decorate-left,
+  .section-decorate-right {
+    display: none;
+    @include media-breakpoint-up(xl) {
+      display: block;
+    }
+  }
+  
+  &.section-decorate-reverse {
+    .section-decorate-left {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: inherit;
+    }
+    .section-decorate-right {
+      position: absolute;
+      top: inherit;
+      right: 0;
+      bottom: 0;
+    }
+    .section-decorate-left,
+    .section-decorate-right {
+      display: none;
+      
+    }
+    @include media-breakpoint-up(xl) {
+      .section-decorate-left,
+      .section-decorate-right {
+        display: block;
+      }
+      
+    }
+  }
+  .section-decorate-title {
+    position: absolute;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: .15em;
+    font-size: 100px;
+    color: rgba($white, .07);
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    .swiper-slider &{
+      p {
+        background: linear-gradient(to right, rgba(14, 86, 194, 0)  0%, $blue 52.49%,  rgba(14, 86, 194, 0)  100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        [class*='ie-'] & {
+          background: transparent;
+          color: rgba($blue, .07);
+        }
+      }
+      
+    }
+    @include media-breakpoint-up(md) {
+      font-size: 240px;
+    }
+    @include media-breakpoint-up(lg) {
+      font-size: 350px;
+    }
+  }
+  >.container, >.container-fluid {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+
+// block faq
+.block-faq-claccis {
+  position: relative;
+  max-width: 320px;
+  &:before {
+    position: absolute;
+    top: 0;
+    left: 13%;
+    content: '\f27b';
+    font-family: $icon-font-material-design;
+    font-size: 240px;
+    line-height: 1;
+    font-weight: 400;
+    color: rgba($black, .05);
+    @include media-breakpoint-up(lg) {
+      top: -30px;
+      font-size: 330px;
+    }
+    @include media-breakpoint-up(xl) {
+      font-size: 400px;
+    }
+  }
+  p, h5 {
+    margin-bottom: 0;
+  }
+}
+
+// footer
+.footer-title {
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.footer-link {
+  padding-left: 0;
+  list-style: none;
+  font-weight: 300;
+  color: $black;
+  letter-spacing: .02em;
+  text-transform: capitalize;
+  > li + li {
+    margin-top: 5px;
+  }
+}
+.footer-call-link {
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: 300;
+  color: $black;
+  letter-spacing: .05em;
+  .icon {
+    margin-right: 10px;
+    font-size: 22px;
+    color: rgba($black, .4);
+  }
+}
+
+// parallax-effect
+
+.parallax-scene {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: left;
+  display: none;
+  pointer-events: none;
+}
+
+@media (min-width: 992px) {
+  .desktop .parallax-scene {
+    display: block;
+  }
+}
+
+.parallax-scene-wrapper {
+  position: relative;
+}
+
+.parallax-scene-wrapper .shell {
+  position: relative;
+  z-index: 1;
+}
+
+.parallax-scene [class^='layer-'] {
+  position: absolute;
+  pointer-events: none;
+  top: 20%;
+}
+
+.parallax-scene [class^='layer-'] img {
+  max-width: none;
+}
+.parallax-scene .layer-1 {
+  left: -15%;
+}
+
+.parallax-scene .layer-2 {
+  left: 76%;
+}

@@ -1,0 +1,50 @@
+//- Includes
+include ../elements/_ui-counter-type-2
+
+// Skills
+section.section.novi-background.section-top-98
+  .container-fluid
+    .row.justify-content-sm-center
+      .col-md-10.col-xl-12
+        .row.justify-content-sm-center
+          .col-lg-3.col-md-5
+            +counter-type-2({
+              "description": "html Templates",
+              "titleStyle": "h6 text-uppercase text-spacing-60 font-weight-bold offset-top-14",
+            },
+            "mdi mdi-file-xml text-mantis",{
+              "dataTo": "200",
+              "dataSpeed": "1200",
+              "preffix": "+"
+            })
+          .col-lg-3.col-md-5.offset-top-66.offset-md-top-0
+            +counter-type-2({
+              "description": "niche templates",
+              "titleStyle": "h6 text-uppercase text-spacing-60 font-weight-bold offset-top-14",
+            },
+            "mdi mdi-star text-malibu",{
+              "dataTo": "19",
+              "dataSpeed": "1600"
+            })
+          .col-lg-3.col-md-5.offset-top-66.offset-lg-top-0
+            +counter-type-2({
+              "description": "different skins",
+              "titleStyle": "h6 text-uppercase text-spacing-60 font-weight-bold offset-top-14",
+            },
+            "mdi mdi-palette text-neon-carrot",{
+              "dataTo": "9",
+              "dataSpeed": "2000"
+            })
+          .col-lg-3.col-md-5.offset-top-66.offset-lg-top-0
+            +counter-type-2({
+              "description": "psd files",
+              "titleStyle": "h6 text-uppercase text-spacing-60 font-weight-bold offset-top-14",
+            },
+            "mdi mdi-file-image text-ku-crimson",{
+              "dataTo": "200",
+              "dataSpeed": "2400",
+              "preffix": "+"
+            })
+
+  .container-fluid.offset-top-98
+    hr.hr.bg-gray

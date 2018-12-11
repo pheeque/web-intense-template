@@ -1,0 +1,73 @@
+//- Includes
+include  ../elements/_ui-box-planning-type-2
+
+// Choose your Plan
+section.section.novi-background.section-98.section-sm-110
+  .container-fluid
+    h1 Choose your Plan
+    hr.divider.bg-mantis
+    p Pick the best plan that meets your business needs. A free trial is available to help you with the decision-making.
+    a.btn.btn-primary.btn-icon.btn-icon-left.offset-top-20(href="#")
+      span.novi-icon.icon.mdi.mdi-download.text-middle
+      | Download free Trial
+
+    .row.no-gutters.justify-content-lg-center.offset-top-66
+      .col-sm-8.offset-sm-2.col-lg-4.offset-lg-0.col-xl-3.col-xxl-2
+        +box-planning-2("Starter", "19", "month", "text-picton-blue", "bg-picton-blue", "bg-picton-blue", "Buy now", "btn-picton-blue")
+          p.text-light
+            small The plan is mainly intended for startups and small businesses.
+          ul.list-separated.list-unstyled
+            li
+              span.font-weight-bold 5GB
+              span.text-dark Space amount
+            li
+              span.font-weight-bold 20
+              span.text-dark Users
+            li
+              span.font-weight-bold 10GB
+              span.text-dark Bandwidth
+            li
+              span.text-dark No support
+            li
+              span.font-weight-bold 1
+              span.text-dark Database
+
+      .col-sm-8.offset-sm-2.col-lg-4.offset-lg-0.col-xl-3.col-xxl-2.offset-top-50.offset-lg-top-0
+        +box-planning-2("Business", "59", "month", "text-picton-blue", "bg-picton-blue", "bg-picton-blue", "Buy now", "btn-picton-blue", "active")
+          p.text-light
+            small Perfect for Medium-to-large sized businesses.
+          ul.list-separated.list-unstyled
+            li
+              span.font-weight-bold 10GB
+              span.text-dark Space amount
+            li
+              span.font-weight-bold Unlimited
+              span.text-dark  users
+            li
+              span.font-weight-bold 30GB
+              span.text-dark Bandwidth
+            li
+              span.text-dark Free support
+            li
+              span.font-weight-bold 20
+              span.text-dark Databases
+
+      .col-sm-8.offset-sm-2.col-lg-4.offset-lg-0.col-xl-3.col-xxl-2.offset-top-50.offset-lg-top-0
+        +box-planning-2("Ultimate", "99", "month", "text-picton-blue", "bg-picton-blue", "bg-picton-blue", "Buy now", "btn-picton-blue")
+          p.text-light
+            small The plan is best suited for large corporate websites.
+          ul.list-separated.list-unstyled
+            li
+              span.font-weight-bold 100GB
+              span.text-dark Space amount
+            li
+              span.font-weight-bold Unlimited
+              span.text-dark  users
+            li
+              span.font-weight-bold 60GB
+              span.text-dark Bandwidth
+            li
+              span.text-dark Free support
+            li
+              span.font-weight-bold Unlimited
+              span.text-dark Databases

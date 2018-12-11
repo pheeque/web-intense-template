@@ -1,0 +1,82 @@
+//
+// Icons
+// --------------------------------------------------
+
+// Base styles
+// --------------------------------------------------
+
+.page .icon {
+  width: 40px;
+  height: 40px;
+  font-size: 36px;
+  line-height: 40px;
+
+  &:before {
+    position: relative;
+    display: inline-block;
+    font-weight: 400;
+    font-style: normal;
+    speak: none;
+    text-transform: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+
+// Alternate icons
+// --------------------------------------------------
+
+.icon-default {
+
+}
+
+.icon-primary {
+
+}
+
+.icon-rotate{
+  @include transform(rotateY(180deg));
+  @include transform(rotateX(180deg));
+}
+
+
+// Button Sizes
+// --------------------------------------------------
+
+.icon {
+  &.icon-xxs {
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    font-size: 14px;
+  }
+
+  &.icon-xs {
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    font-size: 18px;
+  }
+
+  &.icon-sm {
+    width: 34px;
+    height: 34px;
+    line-height: 34px;
+    font-size: 24px;
+  }
+
+  &.icon-lg {
+    width: 55px;
+    height: 55px;
+    line-height: 55px;
+    font-size: 48px;
+  }
+
+  &.icon-xlg {
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+    font-size: 60px;
+  }
+}

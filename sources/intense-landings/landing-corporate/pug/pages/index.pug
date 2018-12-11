@@ -1,0 +1,432 @@
+extends  ../_skeleton
+
+block variables
+	- var activeIndex = 0
+	- var footerActiveIndex = 0
+
+block title
+	title Landing Corporate
+
+block page
+	// Page Header
+	header.section.page-header
+		// RD Navbar
+		.rd-navbar-wrap
+			nav.rd-navbar.rd-navbar-transparent(
+				data-layout=                'rd-navbar-fixed'
+				data-sm-layout=             'rd-navbar-fixed'
+				data-md-layout=             'rd-navbar-fixed'
+				data-md-device-layout=      'rd-navbar-fixed'
+				data-lg-layout=             'rd-navbar-static'
+				data-lg-device-layout=      'rd-navbar-fixed'
+				data-xl-layout=             'rd-navbar-static'
+				data-xl-device-layout=      'rd-navbar-static'
+				data-xxl-layout=             'rd-navbar-static'
+				data-xxl-device-layout=      'rd-navbar-static'
+				data-lg-stick-up-offset=    '190px'
+				data-xl-stick-up-offset=    '190px'
+				data-xxl-stick-up-offset=   '190px'
+				data-lg-stick-up=           'true'
+				data-xl-stick-up=           'true'
+				data-xxl-stick-up=          'true'
+				data-body-class='rd-navbar-absolute-linked swiper-jumbotron-mod'
+			)
+				.rd-navbar-top-panel.novi-background
+					.rd-navbar-top-panel-toggle(data-rd-navbar-toggle='.rd-navbar-top-panel')
+						span
+					.rd-navbar-top-panel-content
+						.rd-navbar-top-panel-content-inner
+							ul.inline-list-xs
+								li: a.icon.novi-icon.icon-xs.icon-white.fa.fa-facebook(href='#')
+								li: a.icon.novi-icon.icon-xs.icon-white.fa.fa-twitter(href='#')
+								li: a.icon.novi-icon.icon-xs.icon-white.fa.fa-google-plus(href='#')
+								li: a.icon.novi-icon.icon-xs.icon-white.fa.fa-pinterest-p(href='#')
+							address.contact-info
+								| 6036 Richmond hwy., Alexandria, VA, 2230
+
+						.object-inline
+							span.icon.novi-icon.icon-sm.icon-gray.material-icons-phone
+							a.link.link-sm.link-white(href='tel:#') +1 (409) 987–5874
+
+				.rd-navbar-inner
+					// RD Navbar Panel
+					.rd-navbar-panel
+						.rd-navbar-panel-background
+							.rd-navbar-panel-background-inner.novi-background
+						button.rd-navbar-toggle(data-rd-navbar-toggle='.rd-navbar-nav-wrap')
+							span
+
+						// RD Navbar Brand
+						.rd-navbar-brand
+							a.brand-name(href='index.html')
+								+png(logoDefault)
+
+					// RD Navbar Nav
+					.rd-navbar-nav-wrap
+						.rd-navbar-nav-wrap-bg
+							.rd-navbar-nav-wrap-bg-inner.novi-background
+
+						.rd-navbar-nav-wrap-inner
+							ul.rd-navbar-items-list.rd-navbar-search_collapsable
+								li: button.rd-navbar-search__toggle.rd-navbar-fixed--hidden(data-rd-navbar-toggle='.rd-navbar-search_toggled')
+								li.rd-navbar-nav-wrap__shop: a.icon.novi-icon.fl-bigmug-line-shopping202.link-white(href='#') (2)
+							include ../includes/_navbar-search
+						ul.rd-navbar-nav
+							li(class={active: activeIndex === 1})
+								a(href='#about-us') About Us
+
+							li(class={active: activeIndex === 2})
+								a(href='#services') Services
+
+							li(class={active: activeIndex === 3})
+								a(href='#clients') Clients
+
+							li(class={active: activeIndex === 4})
+								a(href='#testimonials') Testimonials
+
+							li(class={active: activeIndex === 5})
+								a(href='#news') News
+
+
+
+	// Swiper
+	section.section
+		.swiper-bg-wrap.swiper-style-1
+			.swiper-container.swiper-slider.swiper-bg.swiper-height-1(data-autoplay='6500' data-slide-effect='fade')
+				.swiper-wrapper
+					.swiper-slide(data-slide-bg='images/slide-1.jpg')
+						.swiper-slide-caption(data-speed='0.5', data-fade='true')
+							.jumbotron-custom.jumbotron-custom-variant-1.context-dark
+								hr.divider-sm.divider-success(data-caption-animate='fxRotateInLeft' data-caption-delay='50')
+								h1(data-caption-animate='fxRotateInRight', data-caption-delay='150') Create Your Website
+								p.subtitle-variant-3(data-caption-animate='fxRotateInLeft', data-caption-delay='350') With Webline Project powerful multipurpose template
+								a.btn.btn-square.btn-white-outline.btn-lg.btn-aqil.btn-aqil--mod-1(data-caption-animate='fxRotateInRight', data-caption-delay='550' href=getTemplateLink): span Buy this template
+
+					.swiper-slide(data-slide-bg='images/slide-2.jpg')
+						.swiper-slide-caption(data-speed='0.5', data-fade='true')
+							.jumbotron-custom.jumbotron-custom-variant-1.context-dark
+								hr.divider-sm.divider-success(data-caption-animate='fxRotateInLeft' data-caption-delay='50')
+								h1(data-caption-animate='fxRotateInRight', data-caption-delay='150') A Variety of Layouts
+								p.subtitle-variant-3(data-caption-animate='fxRotateInLeft', data-caption-delay='350') you can use any layout to customize your website
+								a.btn.btn-square.btn-white-outline.btn-lg.btn-aqil.btn-aqil--mod-1(data-caption-animate='fxRotateInRight', data-caption-delay='550' href=getTemplateLink): span Buy this template
+
+					.swiper-slide(data-slide-bg='images/slide-3.jpg')
+						.swiper-slide-caption(data-speed='0.5', data-fade='true')
+							.jumbotron-custom.jumbotron-custom-variant-1.context-dark
+								hr.divider-sm.divider-success(data-caption-animate='fxRotateInLeft' data-caption-delay='50')
+								h1(data-caption-animate='fxRotateInRight', data-caption-delay='150') Fully Responsive Template
+								p.subtitle-variant-3(data-caption-animate='fxRotateInLeft', data-caption-delay='350') with lots of improvements and new features
+								a.btn.btn-square.btn-white-outline.btn-lg.btn-aqil.btn-aqil--mod-1(data-caption-animate='fxRotateInRight', data-caption-delay='550' href=getTemplateLink): span Buy this template
+
+				// Swiper Navigation
+				.swiper-button-prev: span Prev
+				.swiper-button-next: span Next
+
+				// Swiper pagination
+				.swiper-pagination
+
+
+	// About us
+	section.section.novi-background.bg-cover.bg-image.section-lg.bg-default#about-us(data-type='anchor')
+		.container
+			.row.row-55
+				.col-md-6
+					h3 We make the best web design solutions
+					p We stand apart from other agencies and web studios. We offer a wide array of creative and strategic services for brands, companies, foundations, and other remarkable organizations. We assist and educate our clients in making the best use of the solutions we build with them.
+					p We are always ready to make exciting things happen for you and your company. We have a passion for people, flair for ideas, broad experience and creative bravery that’s at the heart of everything we do. We know it’s the right way to create designs because it’s one that still delights our clients. We believe you shouldn’t look for a compromise when making a website. That’s why our templates are valued by many big and well-known companies both in and outside the USA.
+				.col-md-6
+					+jpg('about-us-1-570x370', 'img-responsive')
+
+
+	section.section.novi-background.bg-cover.bg-image.section-md.bg-secondary-3.text-center
+		.container-fluid.container-custom-width
+			h3 What’s Included?
+			.row.row-55.box-bordered-variant-3-wrap
+				.col-md-6.col-xl-3
+					article.box-minimal.box-bordered-variant-3
+						.box-minimal-icon.fl-bigmug-line-monitor74.icon-success.novi-icon
+						h5.box-minimal-title Retina Ready
+						.box-minimal-text Webline Project is Retina ready, extremely responsive, and it adapts to any device.
+
+				.col-md-6.col-xl-3
+					article.box-minimal.box-bordered-variant-3
+						.box-minimal-icon.fl-bigmug-line-square160.icon-success.novi-icon
+						h5.box-minimal-title Incredibly Flexible
+						.box-minimal-text Webline Project offers increased flexibility, allowing you to customize your website.
+
+				.col-md-6.col-xl-3
+					article.box-minimal.box-bordered-variant-3
+						.box-minimal-icon.fl-bigmug-line-paintbrush9.icon-success.novi-icon
+						h5.box-minimal-title Clean Design
+						.box-minimal-text This template offers clean design and easy-to-use interface.
+
+				.col-md-6.col-xl-3
+					article.box-minimal.box-bordered-variant-3
+						.box-minimal-icon.fl-bigmug-line-headphones32.icon-success.novi-icon
+						h5.box-minimal-title 24/7 Premium Support
+						.box-minimal-text Our free 24/7 support service is always available to help you create a website.
+
+
+	section.section.novi-background.bg-cover.bg-image.section-lg.bg-default.text-center#services(data-type='anchor')
+		h2 Our Services
+		p.subtitle-variant-2 Look at our achievements
+
+		// Owl Carousel
+		.owl-carousel.owl-carousel-style-2(data-items='1', data-md-items='2',  data-stage-padding='30', data-xl-stage-padding='100', data-xxl-stage-padding='300', data-loop='true', data-margin='30', data-mouse-drag="true" data-autoplay='true')
+
+			.thumbnail-modern
+				+jpg('services-1-637x428', 'thumbnail-modern-image')
+				.thumbnail-modern-caption
+					.thumbnail-modern-caption-body
+						.thumbnail-modern-title-left Designer Website
+
+					.thumbnail-modern-caption-aside
+						a.thumbnail-modern-control(href='#') see more
+
+			.thumbnail-modern
+				+jpg('services-2-637x428', 'thumbnail-modern-image')
+				.thumbnail-modern-caption
+					.thumbnail-modern-caption-body
+						.thumbnail-modern-title-left Yacht Charter Website
+
+					.thumbnail-modern-caption-aside
+						a.thumbnail-modern-control(href='#') see more
+
+			.thumbnail-modern
+				+jpg('services-3-637x428', 'thumbnail-modern-image')
+				.thumbnail-modern-caption
+					.thumbnail-modern-caption-body
+						.thumbnail-modern-title-left Photographer Website
+
+					.thumbnail-modern-caption-aside
+						a.thumbnail-modern-control(href='#') see more
+
+			.thumbnail-modern
+				+jpg('services-4-637x428', 'thumbnail-modern-image')
+				.thumbnail-modern-caption
+					.thumbnail-modern-caption-body
+						.thumbnail-modern-title-left Art Gallery Website
+
+					.thumbnail-modern-caption-aside
+						a.thumbnail-modern-control(href='#') see more
+
+			.thumbnail-modern
+				+jpg('services-1-637x428', 'thumbnail-modern-image')
+				.thumbnail-modern-caption
+					.thumbnail-modern-caption-body
+						.thumbnail-modern-title-left Web Design
+
+					.thumbnail-modern-caption-aside
+						a.thumbnail-modern-control(href='#') see more
+
+			.thumbnail-modern
+				+jpg('services-2-637x428', 'thumbnail-modern-image')
+				.thumbnail-modern-caption
+					.thumbnail-modern-caption-body
+						.thumbnail-modern-title-left Coding Services
+
+					.thumbnail-modern-caption-aside
+						a.thumbnail-modern-control(href='#') see more
+
+
+	// CTA
+	+parallax({
+		img: 'bg-image-1',
+		addClass: 'section-lg context-dark text-center'
+	})
+		.container
+			.row.justify-content-sm-center
+				.col-md-10.col-lg-8.col-xl-7
+					h1 Providing High-quality Design for People
+					a(href='#').btn.btn-primary.btn-square.btn-effect-ujarak.btn-lg contact us
+
+
+	// Our clients
+	section.section.novi-background.bg-cover.bg-image.section-md.text-center.bg-default#clients(data-type='anchor')
+		.container
+			h2 Our Clients
+			.row.justify-content-sm-center.grid-system-bordered.custom-bordered
+				.col-md-6.col-lg-4.grid-element
+					figure.box-icon-image: a(href='#')
+						+png('company-1-126x102')
+				.col-md-6.col-lg-4.grid-element
+					figure.box-icon-image: a(href='#')
+						+png('company-2-134x102')
+				.col-md-6.col-lg-4.grid-element
+					figure.box-icon-image: a(href='#')
+						+png('company-3-132x102')
+
+				.col-md-6.col-lg-4.grid-element
+					figure.box-icon-image: a(href='#')
+						+png('company-4-126x102')
+				.col-md-6.col-lg-4.grid-element
+					figure.box-icon-image: a(href='#')
+						+png('company-5-138x102')
+				.col-md-6.col-lg-4.grid-element
+					figure.box-icon-image: a(href='#')
+						+png('company-6-143x102')
+
+
+
+	// What People Say
+	section.section.novi-background.bg-cover.bg-image.section-md.bg-gray-light#testimonials(data-type='anchor')
+		.container
+			.row
+				.col-sm-12
+					.complex-text.complex-text-divider
+						h2 What People Say
+						p.subtitle-variant-3 testimonials
+
+					// Bootstrap tabs
+					#tabs-2.tabs-custom.tabs-horizontal.tabs-complex
+						// Nav tabs
+
+						.scroll-wrap
+							ul.nav.nav-tabs
+								li(role='presentation'): a.active(href='#tabs-2-1' data-toggle='tab')
+									.quote-classic-preview
+										.quote-classic-preview-left
+											+jpg('quote-1-96x106', 'quote-classic-preview-image')
+										.quote-classic-preview-body
+											cite Karen Sanders
+											p.caption Project Manager
+
+
+								li(role='presentation'): a(href='#tabs-2-2' data-toggle='tab')
+									.quote-classic-preview
+										.quote-classic-preview-left
+											+jpg('quote-2-96x106', 'quote-classic-preview-image')
+										.quote-classic-preview-body
+											cite Walter Williams
+											p.caption Architect
+
+
+								li(role='presentation'): a(href='#tabs-2-3' data-toggle='tab')
+									.quote-classic-preview
+										.quote-classic-preview-left
+											+jpg('quote-3-96x106', 'quote-classic-preview-image')
+										.quote-classic-preview-body
+											cite Amanda Smith
+											p.caption Freelancer
+
+
+								li(role='presentation'): a(href='#tabs-2-4' data-toggle='tab')
+									.quote-classic-preview
+										.quote-classic-preview-left
+											+jpg('quote-4-96x106', 'quote-classic-preview-image')
+										.quote-classic-preview-body
+											cite Patrick Stewart
+											p.caption Entrepreneur
+
+						// Tab panes
+						.tab-content.tabs-centered
+							div#tabs-2-1.tab-pane.fade.show.active
+								// Quote boxed
+								.unit.unit-spacing-0.flex-column.flex-md-row.quote-boxed.quote-boxed__mod-1
+									.quote-boxed-left
+										+jpg('quote-5-180x263', 'quote-classic-image')
+
+									.quote-boxed-body.unit-body
+										cite Karen Sanders
+										p.caption Project Manager
+										p.quote-text: q As a Project Manager at a small local company, I was looking for a universal solution for my company’s website. Webline Project is just what I need!
+
+										.quote-boxed-meta
+											ul.quote-boxed-meta-list
+												li: time(datetime='2018') March 15, 2018
+
+							div#tabs-2-2.tab-pane.fade
+								// Quote boxed
+								.unit.unit-spacing-0.flex-column.flex-md-row.quote-boxed.quote-boxed__mod-1
+									.quote-boxed-left
+										+jpg('quote-6-180x263', 'quote-classic-image')
+
+									.quote-boxed-body.unit-body
+										cite Walter Williams
+										p.caption Walter Williams
+										p.quote-text: q Thanks to Webline Project, I am now able to showcase all my works without doing any extra coding and design manipulations. Thank you!
+
+										.quote-boxed-meta
+											ul.quote-boxed-meta-list
+												li: time(datetime='2018') March 10, 2018
+
+
+							div#tabs-2-3.tab-pane.fade
+								// Quote boxed
+								.unit.unit-spacing-0.flex-column.flex-md-row.quote-boxed.quote-boxed__mod-1
+									.quote-boxed-left
+										+jpg('quote-7-180x263', 'quote-classic-image')
+
+									.quote-boxed-body.unit-body
+										cite Amanda Smith
+										p.caption Freelancer
+										p.quote-text: q As a freelance landscape designer, it is important for me to have a great looking portfolio of all my works, and this template has what I need.
+
+										.quote-boxed-meta
+											ul.quote-boxed-meta-list
+												li: time(datetime='2018') March 5, 2018
+
+							div#tabs-2-4.tab-pane.fade
+								// Quote boxed
+								.unit.unit-spacing-0.flex-column.flex-md-row.quote-boxed.quote-boxed__mod-1
+									.quote-boxed-left
+										+jpg('quote-8-180x263', 'quote-classic-image')
+
+									.quote-boxed-body.unit-body
+										cite Patrick Stewart
+										p.caption Entrepreneur
+										p.quote-text: q Webline Project is truly a universal solution. My company needed something flexible to represent all our projects on one page, and I found it all in Arctic.
+
+										.quote-boxed-meta
+											ul.quote-boxed-meta-list
+												li: time(datetime='2018') March 1, 2018
+
+
+	include ../sections/_section-subscribe
+
+	// recent news
+	section.section.novi-background.bg-cover.bg-image.section-md.bg-gray-light.text-center#news(data-type='anchor')
+		.container.container-wide
+			.row.row-30.justify-content-md-center
+				.col-sm-12
+					h2 Our Latest News
+
+				.col-sm-12.col-md-11.col-xxl-12
+					// Owl Carousel
+					.owl-style-tiny
+						.owl-carousel(data-items='1', data-md-items='2', data-xl-items='2', data-xxl-items='3', data-nav='true', data-dots='true', data-lg-stage-padding='0', data-loop='true', data-margin='0', data-sm-margin='15', data-mouse-drag="false")
+							.item
+								// Post-minimal
+								article.post-minimal
+									+jpg('event-1-560x263', 'post-minimal-image')
+									.post-minimal-body
+										time.post-minimal-time(datetime='2018-01-01')
+											span.big 25
+											span.small April
+										.post-minimal-main
+											p.post-minimal-title: a(href='#') A Few Steps for Perfect Web Navigation
+
+							.item
+								// Post-minimal
+								article.post-minimal
+									+jpg('event-2-560x263', 'post-minimal-image')
+									.post-minimal-body
+										time.post-minimal-time(datetime='2018-01-01')
+											span.big 16
+											span.small june
+										.post-minimal-main
+											p.post-minimal-title: a(href='#') Popular Techniques for Fine-Tuning UX with Color
+
+							.item
+								// Post-minimal
+								article.post-minimal
+									+jpg('event-3-560x263', 'post-minimal-image')
+									.post-minimal-body
+										time.post-minimal-time(datetime='2018-01-01')
+											span.big 09
+											span.small may
+										.post-minimal-main
+											p.post-minimal-title: a(href='#') Going Freelance: Pros and Cons of Changing the Way You Work
+
+
+	include ../sections/_footer-default-map

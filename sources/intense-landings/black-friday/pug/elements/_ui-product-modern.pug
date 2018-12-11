@@ -1,0 +1,14 @@
+mixin product-modern(obj)
+	.product-modern
+		.product-modern-price
+			h6=obj.priceText
+		.product-modern-inner
+			.product-modern-content
+				h5.product-modern-title
+					a(href='#')=obj.title
+					.divider
+				ul.product-modern-list
+					each item in obj.list
+						li: a(href='#')=item.product
+			.product-modern-img
+				img(src='images/'+ obj.img + '.png'  alt='')

@@ -1,0 +1,68 @@
+extends  ../_skeleton
+
+//- Includes
+include  ../elements/_ui-breadcrumb-classic
+include  ../elements/_ui-map-embed
+include  ../elements/_ui-rd-map
+include  ../elements/_ui-google-map
+
+//- Title
+block title
+  title= cfg.nav.components.submenu.toolkitComponents.submenu.maps.title
+
+//- Page
+block page
+  // Page Header
+  header.page-head
+    //- RD Navbar
+    +rd-navbar-default(
+      'rd-navbar-default rd-navbar-light',
+      {
+        "data-lg-auto-height": "true",
+        "data-md-layout": 'rd-navbar-fixed',
+        "data-lg-layout": 'rd-navbar-static',
+        "data-lg-stick-up": 'true'
+      },
+      cfg.brand.logo,
+      cfg.nav.components,
+      cfg.nav
+    )
+
+  +breadcrumb-classic(
+    cfg.nav.components.submenu.toolkitComponents.submenu.maps.title,
+    "icon-lg " + cfg.nav.components.submenu.toolkitComponents.submenu.maps.icon,
+    {
+      0: {
+        "title": cfg.nav.home.title,
+        "href": cfg.nav.home.href
+      },
+      1: {
+        "title": cfg.nav.components.title,
+        "href": cfg.nav.components.href
+      },
+      2: {
+        "title": cfg.nav.components.submenu.toolkitComponents.submenu.maps.title,
+        "href": cfg.nav.components.submenu.toolkitComponents.submenu.maps.href
+      }
+    })
+
+  // Section Embed Google Map
+  section.section.novi-background.section-50.section-lg-top-110
+    .container
+      h1 Embed Google Map
+      hr.divider.bg-mantis
+      .row.text-lg-left.offset-top-50.offset-xl-top-66
+        .col-md-12
+          +map-embed({
+            "href": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193566.8995132651!2d-74.08718729101024!3d40.7073869168366!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2z0J3RjNGOLdCZ0L7RgNC6LCDQodCo0JA!5e0!3m2!1sru!2sua!4v1458573887419",
+            "ratio": "16by9"
+          })
+
+  // Section Google Map
+  section.section.novi-background.section-top-50
+    h1 Google Map
+    hr.divider.bg-mantis
+    +google-map.offset-top-66
+
+  // Page Footer
+  include ../sections/_section-footer-default

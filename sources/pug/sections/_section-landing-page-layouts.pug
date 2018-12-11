@@ -1,0 +1,181 @@
+//- Includes
+include ../elements/_ui-thumbnail-simple
+include ../elements/_ui-isotope.pug
+
+// Page Layouts
+section.section.novi-background.section-66.section-xl-110
+  .container.container-wide
+    div: h2: span.big Multi-Page & One-Page Layouts
+    div.offset-top-24.d-none.d-lg-block
+      hr.divider.bg-mantis
+
+    .offset-top-20.offset-xxl-top-41
+      +isotope(
+        ['All', 'Types', 'Skins', 'Intro'],
+        {
+          "group": "gallery",
+          "layout": "fitRows",
+          "alignClass": "isotope-filters-horizontal"
+        },
+        "isotope-1"
+      )
+        .row.grid-group-md
+          .col-12.col-md-6.col-lg-4.col-xl-3.isotope-item( data-filter='Types' )
+            +thumbnail-simple({
+              src:     'images/landing/landing-30-420x316.jpg',
+              caption: 'Home Default',
+              href:    cfg.nav.home.submenu.type.submenu.default.href,
+              blank:   true,
+              width:   420,
+              height:  316
+            })
+
+          .col-12.col-md-6.col-lg-4.col-xl-3.isotope-item( data-filter='Types' )
+            +thumbnail-simple({
+              src:     'images/landing/landing-31-420x316.jpg',
+              caption: 'Home One Page',
+              href:    cfg.nav.home.submenu.type.submenu.onePage.href,
+              blank:   true,
+              width:   420,
+              height:  316
+            })
+
+          .col-12.col-md-6.col-lg-4.col-xl-3.isotope-item( data-filter='Skins' )
+            +thumbnail-simple({
+              src:     'images/landing/landing-32-420x316.jpg',
+              caption: 'Home Default Intense',
+              href:    cfg.nav.home.submenu.skins.submenu.default.href,
+              blank:   true,
+              width:   420,
+              height:  316
+            })
+
+          .col-12.col-md-6.col-lg-4.col-xl-3.isotope-item( data-filter='Skins' )
+            +thumbnail-simple({
+              src:     'images/landing/landing-33-420x316.jpg',
+              caption: cfg.nav.home.submenu.skins.submenu.sunset.title,
+              href:    cfg.nav.home.submenu.skins.submenu.sunset.href,
+              blank:   true,
+              width:   420,
+              height:  316
+            })
+
+          .col-12.col-md-6.col-lg-4.col-xl-3.isotope-item( data-filter='Skins' )
+            +thumbnail-simple({
+              src:     'images/landing/landing-34-420x316.jpg',
+              caption: cfg.nav.home.submenu.skins.submenu.simplyChic.title,
+              href:    cfg.nav.home.submenu.skins.submenu.simplyChic.href,
+              blank:   true,
+              width:   420,
+              height:  316
+            })
+
+          .col-12.col-md-6.col-lg-4.col-xl-3.isotope-item( data-filter='Skins' )
+            +thumbnail-simple({
+              src:     'images/landing/landing-35-420x316.jpg',
+              caption: cfg.nav.home.submenu.skins.submenu.minimalBlue.title,
+              href:    cfg.nav.home.submenu.skins.submenu.minimalBlue.href,
+              blank:   true,
+              width:   420,
+              height:  316
+            })
+
+          .col-12.col-md-6.col-lg-4.col-xl-3.isotope-item( data-filter='Skins' )
+            +thumbnail-simple({
+              src:     'images/landing/landing-36-420x316.jpg',
+              caption: cfg.nav.home.submenu.skins.submenu.sunrise.title,
+              href:    cfg.nav.home.submenu.skins.submenu.sunrise.href,
+              blank:   true,
+              width:   420,
+              height:  316
+            })
+
+          .col-12.col-md-6.col-lg-4.col-xl-3.isotope-item( data-filter='Skins' )
+            +thumbnail-simple({
+              src:     'images/landing/landing-37-420x316.jpg',
+              caption: cfg.nav.home.submenu.skins.submenu.renaissance.title,
+              href:    cfg.nav.home.submenu.skins.submenu.renaissance.href,
+              blank:   true,
+              width:   420,
+              height:  316
+            })
+
+          .col-12.col-md-6.col-lg-4.col-xl-3.isotope-item( data-filter='Skins' )
+            +thumbnail-simple({
+              src:     'images/landing/landing-38-420x316.jpg',
+              caption: cfg.nav.home.submenu.skins.submenu.greenSpace.title,
+              href:    cfg.nav.home.submenu.skins.submenu.greenSpace.href,
+              blank:   true,
+              width:   420,
+              height:  316
+            })
+
+          .col-12.col-md-6.col-lg-4.col-xl-3.isotope-item( data-filter='Skins' )
+            +thumbnail-simple({
+              src:     'images/landing/landing-39-420x316.jpg',
+              caption: cfg.nav.home.submenu.skins.submenu.redEnergy.title,
+              href:    cfg.nav.home.submenu.skins.submenu.redEnergy.href,
+              blank:   true,
+              width:   420,
+              height:  316
+            })
+
+          .col-12.col-md-6.col-lg-4.col-xl-3.isotope-item( data-filter='Skins' )
+            +thumbnail-simple({
+              src:     'images/landing/landing-40-420x316.jpg',
+              caption: cfg.nav.home.submenu.skins.submenu.eternalJoy.title,
+              href:    cfg.nav.home.submenu.skins.submenu.eternalJoy.href,
+              blank:   true,
+              width:   420,
+              height:  316
+            })
+
+          .col-12.col-md-6.col-lg-4.col-xl-3.isotope-item( data-filter='Skins' )
+            +thumbnail-simple({
+              src:     'images/landing/landing-41-420x316.jpg',
+              caption: cfg.nav.home.submenu.skins.submenu.commercial.title,
+              href:    cfg.nav.home.submenu.skins.submenu.commercial.href,
+              blank:   true,
+              width:   420,
+              height:  316
+            })
+
+          .col-12.col-md-6.col-lg-4.col-xl-3.isotope-item( data-filter='Intro' )
+            +thumbnail-simple({
+              src:     'images/landing/landing-42-420x316.jpg',
+              caption: cfg.nav.home.submenu.intros.submenu.promo.title,
+              href:    cfg.nav.home.submenu.intros.submenu.promo.href,
+              blank:   true,
+              width:   420,
+              height:  316
+            })
+
+          .col-12.col-md-6.col-lg-4.col-xl-3.isotope-item( data-filter='Intro' )
+            +thumbnail-simple({
+              src:     'images/landing/landing-43-420x316.jpg',
+              caption: cfg.nav.home.submenu.intros.submenu.fastRegistration.title,
+              href:    cfg.nav.home.submenu.intros.submenu.fastRegistration.href,
+              blank:   true,
+              width:   420,
+              height:  316
+            })
+
+          .col-12.col-md-6.col-lg-4.col-xl-3.isotope-item( data-filter='Intro' )
+            +thumbnail-simple({
+              src:     'images/landing/landing-44-420x316.jpg',
+              caption: cfg.nav.home.submenu.intros.submenu.makeAnAppointment.title,
+              href:    cfg.nav.home.submenu.intros.submenu.makeAnAppointment.href,
+              blank:   true,
+              width:   420,
+              height:  316
+            })
+
+          .col-12.col-md-6.col-lg-4.col-xl-3.isotope-item( data-filter='Intro' )
+            +thumbnail-simple({
+              src:     'images/landing/landing-45-420x316.jpg',
+              caption: cfg.nav.home.submenu.intros.submenu.videoBg.title,
+              href:    cfg.nav.home.submenu.intros.submenu.videoBg.href,
+              blank:   true,
+              width:   420,
+              height:  316
+            })

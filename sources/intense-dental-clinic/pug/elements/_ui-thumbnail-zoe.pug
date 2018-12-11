@@ -1,0 +1,49 @@
+//-
+  Thumbnail Zoe
+  @param {object} data - parameters object
+  @param {array}  icons
+  @param {string} data.title
+  @param {object} data.thumb
+  @param {string} data.thumb.src
+  @param {number} data.thumb.width
+  @param {number} data.thumb.height
+  @param {string} data.thumb.alt
+  @param {object} data.target
+  @param {string} data.target.href
+  @param {string} data.target.src
+  @param {object} data.target.json
+
+mixin thumbnail-zoe( data, icons )
+  -
+    var lightgallery = ( function () {
+      if ( data.target.json ) {
+        return {
+          'data-lightgallery': 'dynamic',
+          'data-lg-dynamic-elements': data.target.json,
+        }
+      } else if ( data.target.src ) {
+        return {
+          'data-lightgallery': 'item',
+          href: data.target.src
+        }
+      } else if ( data.target.href ) {
+        return {
+          href: data.target.href
+        }
+      }
+    })();
+
+  // Thumbnail Zoe
+  figure.thumbnail-zoe&attributes( attributes )
+    a&attributes( lightgallery )
+      img( width=data.thumb.width, height=data.thumb.height, src=data.thumb.src, alt=data.thumb.alt )
+
+    figcaption
+      if ( data.title )
+        h5.thumbnail-zoe-title.d-none.d-xl-block= data.title
+
+      if ( icons )
+        ul.list-inline
+          each item in icons
+            li.list-inline-item: a( href= item.iconHref )
+              span.novi-icon.icon.icon-xxs( class= item.iconClass )

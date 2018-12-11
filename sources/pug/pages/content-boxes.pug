@@ -1,0 +1,203 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-breadcrumb-classic
+include ../elements/_ui-material-parallax
+include ../elements/_ui-media-elements
+include ../elements/_ui-thumbnail-zoe
+include  ../elements/_ui-box-icon-type-2
+
+//-Title
+block title
+  title= cfg.nav.components.submenu.toolkitComponents.submenu.contentBoxes.title
+
+//- Page
+block page
+  // Page Header
+  header.page-head
+    //- RD Navbar
+    +rd-navbar-default(
+      'rd-navbar-default rd-navbar-light',
+      {
+        "data-lg-auto-height": "true",
+        "data-md-layout": 'rd-navbar-fixed',
+        "data-lg-layout": 'rd-navbar-static',
+        "data-lg-stick-up": 'true'
+      },
+      cfg.brand.logo,
+      cfg.nav.components,
+      cfg.nav
+    )
+
+  +breadcrumb-classic(
+    cfg.nav.components.submenu.toolkitComponents.submenu.contentBoxes.title,
+    cfg.nav.components.submenu.toolkitComponents.submenu.contentBoxes.icon,
+    {
+      0: {
+        "title": cfg.nav.home.title,
+        "href": cfg.nav.home.href
+      },
+      1: {
+        "title": cfg.nav.pages.title,
+        "href": cfg.nav.pages.href
+      },
+      2: {
+        "title": cfg.nav.components.submenu.toolkitComponents.submenu.contentBoxes.title,
+        "href": cfg.nav.components.submenu.toolkitComponents.submenu.contentBoxes.href
+      }
+    })
+
+  // Carousel content box
+  section.section.novi-background.section-50.section-sm-top-110
+    .container
+      h1 Carousel content box
+      hr.divider.bg-mantis
+      .row.justify-content-md-center.offset-top-66
+        // Simple quote Slider
+        .col-md-8.col-lg-8.inset-lg-right-80
+          .owl-carousel.owl-carousel-classic.owl-carousel-class-light.shadow-drop-md(data-items="1" data-nav="false" data-dots="false" data-nav-custom=".owl-custom-navigation")
+            div
+              +media-elements({
+                "type": "video",
+                "href": "//www.youtube.com/embed/-AhmuMqZB0s",
+                "ratio": "16by9"
+              })
+
+            div
+              img.img-fluid.element-fullwidth(src="images/portfolio/portfolio-single-01-716x404.jpg" width=716 height=404 alt="")
+
+            div
+              img.img-fluid.element-fullwidth(src="images/portfolio/portfolio-single-02-716x404.jpg" width=716 height=404 alt="")
+
+        .col-md-8.col-lg-4.text-md-left.offset-top-34.offset-lg-top-0
+          h3 Website Design
+          p A website is a medium that connects a person with the world of digital data. With its help users can access information, make purchases, communicate with each other, and do loads of other things.
+          div.offset-top-20
+            p Due to the clever marketing strategy and professional web designing, corporations can grow their client base with ease. On the modern market the competition is very tough, so in order to be a success, businesses experiment with multiple strategies with the goal of coming up with the perfect one.
+          .owl-custom-navigation.owl-customer-navigation.offset-top-24
+            .owl-nav
+              .owl-prev.novi-icon.mdi.mdi-chevron-left(data-owl-prev)
+              .owl-next.novi-icon.mdi.mdi-chevron-right(data-owl-next)
+
+  section.section.section-50
+    .container
+      hr.hr.hr-gradient
+
+  // Fullwidth content box
+  section.section.novi-background.section-50
+    .container
+      h1 Fullwidth content box
+      hr.divider.bg-mantis
+      .row.justify-content-sm-center.justify-content-md-end.offset-top-66
+        .col-sm-10.col-md-6.section-image-aside.section-image-aside-left.text-left
+          .section-image-aside-img.d-none.d-md-block(style="background-image: url(images/pages/careers-02-960x540.jpg)")
+          .section-image-aside-body.offset-top-41.offset-md-top-0.section-sm-66.inset-md-left-50
+            div
+              h3.text-picton-blue 02
+            div.offset-top-10
+              h2  Diversity of Learning Opportunities at Intense
+            .offset-top-20
+              p When you join our team, you’ll dive into a knowledge-sharing environment. We encourage our employees to attend multiple conferences and workshops held both inside the company and on the outside. Keep in mind that you can take part in conferences as both a listener and speaker.
+              p As a part of our benefits package, we also offer multiple courses for you to master new subjects. Our working environment is full of learning opportunities, which can’t help motivating for a steady professional growth.
+              p Offices of Intense are located in different corners of the globe, so be ready to travel around the world. To save your budget, we cover all the travel costs including transportation, accommodation, food, and even some leisure activities. Our company gives you a perfect chance to explore the world and immerse in different cultures.
+
+  section.section.section-50
+    .container
+      hr.hr.hr-gradient
+
+  // Icon box aside right
+  section.section.novi-background.section-50.section-md-bottom-110
+    .container
+      h1 Icon box aside right
+      hr.divider.bg-mantis
+      .row.justify-content-sm-center.align-items-sm-center.justify-content-xxl-between.offset-top-66
+        .col-md-9.col-xl-6.col-xxl-7
+          img.img-fluid.d-none.d-md-inline-block.shadow-drop-lg(src="images/features/rd-mailform-01-670x467.png" width="670" height="467" alt="")
+        .col-md-9.col-xl-6.col-xxl-4.offset-md-top-66.offset-xl-top-0
+          .inset-xl-left-50.inset-xxl-left-0
+            +box-icon-type-2("icon-lg icon-circle mdi mdi-emoticon material-icons-tag_faces text-picton-blue offset-md-top-14", "User-Friendly Customization", "text-uppercase offset-md-top-24", "The script comes with ready-made presets, which will let you customize the form with comfort. The script also provides full customization of an email template.")
+            .offset-top-50
+              +box-icon-type-2("icon-lg icon-circle mdi mdi-web text-picton-blue offset-md-top-14", "CSS Stylization", "text-uppercase offset-md-top-24", "Stylize practically all the form pattern attributes with ease. The script features a fully fledged CSS API built specifically for this purpose.")
+
+  // Dark parallax content box
+  +material-parallax({
+    img: "images/backgrounds/background-04-1920x657.jpg",
+    Class: 'section-50 section-md-bottom-0 section-lg-top-110 section-lg-bottom-0 bg-overlay-gray-darkest context-dark'
+  })
+    .container
+      h1 Dark parallax content box
+      div.offset-top-20
+        hr.divider.bg-mantis
+      .row.justify-content-sm-center.align-items-xl-end
+        .col-md-9.col-xl-4.text-xl-left.section-lg-85
+          h3.font-weight-bold Cross-Browser Support
+          p RD Mailform is compatible with all the modern-day browsers. In such a way, all visitors can use your forms regardless of their browser preferences.
+          .row.justify-content-sm-center.justify-content-xl-start.text-center.text-xl-left.offset-top-41
+            .col-sm-6.col-lg-5.col-xl-9
+              a(href=cfg.buyLink target='_blank').btn.btn-block.btn-default buy intense now
+
+        .col-md-9.col-xl-8.offset-md-top-66.offset-xl-top-0.text-xl-right
+          .mock-up-wrapper.d-none.d-md-block
+            .mock-up-desktop-wrapper
+              img(src="images/features/rd-mailform-02-619x439.png" width="619" height="439" alt="").mock-up-desktop.img-fluid
+            span.d-none
+
+  // Full image content box
+  section.section.novi-background.section-98.section-sm-110.section-xl-bottom-0.bg-lightest
+    .container
+      h1 Image aside content box
+      hr.divider.bg-mantis
+      .row.justify-content-md-center.align-items-lg-center
+        .col-xl-5.d-none.d-xl-inline-block
+          img.img-fluid.center-block(width='470', height='770', src='images/pages/about-us-01-470x770.png', alt='')
+        .col-md-10.col-xl-5.section-lg-bottom-50
+          .offset-top-66.offset-xl-top-50
+            +box-icon-type-2("text-gray mdi mdi-monitor", "We use cutting-edge technologies", "text-malibu offset-md-top-14", "Our team of professional analysts is constantly roaming the web in search of promising techniques, which will make your business better.")
+            .offset-top-66.offset-xl-top-34
+              +box-icon-type-2("text-gray mdi mdi-newspaper", "We value your time", "text-malibu offset-md-top-14", "We know how important it is for you to maintain your schedule, that’s why we do everything to fit it. Our team works on your project in multiple threads.")
+            .offset-top-66.offset-xl-top-34
+              +box-icon-type-2("text-gray mdi mdi-headset", "We provide qualified support", "text-malibu offset-md-top-14", "Our support team is online 24/7, and is ready to help you with any design - related issue.")
+            .offset-top-66.offset-xl-top-34
+              +box-icon-type-2("text-gray mdi mdi-image-filter-none", "What does Intense offer for your marketing needs?", "text-malibu offset-md-top-14", "Intense has effective instruments for your marketing campaigns. Its package contains a number of landing and newsletter templates designed with proven marketing tactics in mind.")
+
+  // Light parallax content box
+  +material-parallax({
+    img: "images/backgrounds/background-05-1920x960.jpg",
+    Class: 'section-98 bg-overlay-white'
+  })
+    .container
+      h1 Light parallax content box
+      hr.divider.bg-mantis
+      .row.justify-content-sm-center.text-md-left
+        .col-md-9.col-xl-12
+          .row.justify-content-sm-center
+            .col-xl-5
+              h6 How does the 14-day trial work?
+              p Once you decide to opt for any of our plans, you can run a 14-day free trial first. Including all the basic features of each of the offered pricing plans, it will help you decide which features are of the greatest value to you. Once the 14 day period is over, you will be asked to make your choice.
+
+            .col-xl-5
+              h6 What happens at the end of my trial?
+              p After the end of your trial, you will automatically pay for the Starter Plan (the cheapest of the offered ones). Just in case you do not want to continue or wish to opt for any other plan, be sure to cancel the subscription before the free trial ends. For more detailed information, contact the support team.
+
+            .row-spacer.d-none.d-xl-inline-block.offset-xl-top-50
+
+            .col-xl-5
+              h6 My account has expired, can I recover it?
+              p If you do not decide to purchase the same or upgrade to a new plan, your account will expire. You can recover it by buying any of the offered plans. All data from your personal account will remain intact for 6 months. If you do not upgrade till that moment, all data will vanish.
+
+            .col-xl-5
+              h6 Can I change/cancel plans anytime?
+              p Yes, you can. Our plans are month-to-month or yearly. You are free to cancel the selected plan anytime you wish. Once you decide to cancel the current plan, we will not charge you for the next period. As soon as you decide what other plan to opt for, we will contact you for verification.
+
+            .row-spacer.d-none.d-xl-inline-block.offset-xl-top-50
+
+            .col-xl-5
+              h6 Do you offer discounts for students?
+              p We offer student and non-profit discounts. Just open a private discussion with us, verify your status and we will provide you with a 20% discount on any of the provided plans. We may ask you to confirm your status with documentation, so please get ready to verify that.
+
+            .col-xl-5
+              h6 How do I access my account?
+              p If you are having problems with accessing your account, please follow several quick and easy troubleshooting steps that will help you fix the issue in no time. For example, you can reset your password via email or SMS, change the username, or whatsoever.
+
+  // Page Footers
+  include ../sections/_section-footer-default

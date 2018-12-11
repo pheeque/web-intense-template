@@ -1,0 +1,19 @@
+include ../elements/_ui-material-parallax
+
+// Easy Integration of mailform with Template Pages
++material-parallax({
+  img: "images/intros/intro-07-1920x1078.jpg",
+  Class: 'bg-overlay-gray-darkest context-dark'
+})
+  .container
+    .row.justify-content-sm-center.align-items-sm-center.section-cover.section-110
+      .col-sm-12
+        h1.text-uppercase
+          span.big set of form plugins
+        h4.text-light.offset-top-0.inset-lg-left-80.inset-lg-right-80.d-none.d-md-block Add a form to any page, where you want to motivate visitors for a contact. Depending on your needs, you can use a contact, subscription or booking form type.
+
+        .row.justify-content-sm-center.offset-top-41
+          .col-sm-7.col-md-4.col-lg-4.col-xl-3.text-md-right.inset-md-left-50
+            a.btn.btn-block.btn-primary(href=cfg.buyLink target='_blank') buy intense now
+          .col-sm-7.col-md-4.col-lg-4.col-xl-3.text-md-left.inset-md-right-50.offset-top-20.offset-md-top-0
+            a.btn.btn-block.btn-default(href='#' data-waypoint-to="#mailform-widget") view widget

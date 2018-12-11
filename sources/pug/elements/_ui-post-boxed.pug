@@ -1,0 +1,35 @@
+//- Post Boxed
+//- url - expanded post link
+//- date - date of publishment
+//- title - post title
+//- author - authors name
+//- tags - array of {link}
+//- image - {image} object
+
+mixin post-boxed(url, date, title, author, tags, image)
+  // Post Boxed
+  a.d-block(href= url)
+    div.post.post-boxed
+      // Post media
+      header.post-media
+        img.img-fluid(width=image.width, height=image.height, src=image.src, alt=image.alt)
+
+      // Post content
+      section.post-content.text-left
+        if tags
+          .post-tags.group-xs
+            each tag in tags
+              span.label-custom.label-lg-custom.label-primary= tag.title
+
+        .post-body
+          // Post Title
+          .post-title
+            h3( title=title )= title
+
+          .post-meta.small
+            ul.list-inline.list-inline-sm.p
+              li.list-inline-item.font-italic.text-middle by&nbsp;
+                 span.text-picton-blue= author
+              li.list-inline-item
+                span.text-middle.novi-icon.icon-xxs.mdi.mdi-clock
+                time.font-italic.text-middle(datetime="2019-01-01" class="text-picton-blue")= date

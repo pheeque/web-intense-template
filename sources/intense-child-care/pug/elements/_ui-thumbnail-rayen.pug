@@ -1,0 +1,13 @@
+//- thumbnail - {thumbnail} object
+mixin thumbnail-rayen( thumbnail, iconAttr )
+  -
+    var lightgallery = ( typeof( thumbnail.target.href ) !== 'undefined' )
+      ? { "href": thumbnail.target.href }
+      : { "data-lightgallery": "item", "href": thumbnail.target.src };
+
+  // Thumbnail Rayen
+  figure.thumbnail-rayen
+    img(width=thumbnail.thumb.width, height=thumbnail.thumb.height, src=thumbnail.thumb.src, alt=thumbnail.thumb.alt)
+    figcaption
+      a&attributes( lightgallery )
+        span.novi-icon.icon(class=iconAttr)

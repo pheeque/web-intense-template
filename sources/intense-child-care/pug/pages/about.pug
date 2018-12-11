@@ -1,0 +1,331 @@
+extends  ../_skeleton
+
+//- Includes
+include  ../elements/_ui-material-parallax
+include  ../elements/_ui-box-icon-type-2
+include  ../elements/_ui-google-map
+include ../elements/_ui-vacation
+//-Title
+block title
+  title= cfg.nav.about.title
+
+//- Page
+block page
+
+  // Page Head
+  header.section.page-head
+    //- RD Navbar
+    +rd-navbar-top-panel(
+    'rd-navbar-light',
+    {
+      "data-lg-auto-height": "true",
+      "data-md-layout": 'rd-navbar-fixed',
+      "data-lg-layout": 'rd-navbar-static',
+      "data-lg-stick-up": 'true'
+    },
+    cfg.brand.logo,
+    cfg.nav.about,
+    cfg.nav
+    )
+
+
+
+  // Breadcrumbs
+  +material-parallax({
+    img: 'images/bg-01-1920x718.jpg',
+    Class: 'section-34 section-md-66 text-lg-left context-dark bg-overlay-info'
+  }).section
+    .container
+      div.d-none.d-md-block.d-lg-inline-block
+        h1.font-weight-bold
+          span.big About us
+      div.pull-lg-right.offset-md-top-10.offset-lg-top-41
+        ul.p.list-inline.list-inline-dashed
+          li.list-inline-item.text-safety-orange
+            a(href= cfg.nav.home.href) Home
+          li.list-inline-item About us
+
+  // Welcome to Intense
+  section.section.novi-background.section-lg-top-124.section-lg-bottom-0.section-98
+    .container
+      .row.justify-content-sm-center.grid-group-md
+        .col-sm-10.col-lg-6.text-lg-left.inset-lg-right-80
+          h1.font-weight-bold.text-primary A few words about us
+          .offset-top-30.offset-lg-top-50
+            p Intense is dedicated to providing a wide variety of childcare services to parents and their children. We are also increasing the skills and basic knowledge of your children as well as preparing them for further education at school. With our childcare services, you can be sure your child will not be bored but will have a great interest in the surrounding world.
+
+          .offset-top-20.offset-lg-top-30
+            a(href=cfg.nav.faq.href).btn.btn-safety-orange learn more
+        .col-sm-10.col-lg-6
+          img.img-fluid.d-inline-block.offset-top-10(src="images/about-01-570x320.jpg" width=570 height=320 alt="")
+
+      .row.justify-content-sm-center.justify-content-lg-start
+        .col-lg-6.inset-lg-left-30.d-none.d-lg-block
+          img.img-fluid(src="images/about-02-463x762.jpg" width=463 height=762 alt="")
+        .col-sm-10.col-lg-5.section-lg-41.text-lg-left
+          .text-center
+            h1.font-weight-bold.text-primary Advantages
+            +svg-divider("bg-primary", "71", "13")
+          .offset-top-50
+            +box-icon-type-2("icon-md mdi mdi-food-apple text-safety-orange", "Healthy Meals", "font-default font-weight-bold text-primary offset-md-top-14", "We cooperate with leading suppliers of kids’ food and that’s why you can be sure of its superior quality and variety.")
+          .offset-top-50.offset-lg-top-30
+            +box-icon-type-2("icon-md mdi mdi-school text-safety-orange", "Learning & Fun", "font-default font-weight-bold text-primary offset-md-top-14", "Our programs comprise learning with elements of entertainment, making it easier for your child to learn and master the new material.")
+          .offset-top-50.offset-lg-top-30
+            +box-icon-type-2("icon-md mdi mdi-verified text-safety-orange", "Child Safety", "font-default font-weight-bold text-primary offset-md-top-14", "We pay a lot of attention to the safety of your children - from the first to the last lesson as well as entertainment activities.")
+
+  // Our Teachers
+  section.section.novi-background.section-98.section-md-110.section-bottom-66.bg-lightest
+    .container
+      h1.font-weight-bold.text-primary Our Teachers
+      +svg-divider("bg-primary", "71", "13")
+      .row.justify-content-sm-center
+        .col-sm-10.col-md-8
+          p When it comes to teachers, our standards are as high as yours. At Intense, child care and education are provided by highly trained, dedicated professionals who know how to make the learning process fun and effective.
+      .offset-md-top-66.text-center.text-lg-left
+        .row.justify-content-sm-center.section-34
+          .col-md-6.col-lg-3
+            img.img-fluid.d-inline-block(src="images/about-03-270x270.jpg" width=270 height=270 alt="")
+            .text-lg-left.offset-top-14
+              div
+                h5.font-weight-bold.text-safety-orange.font-default
+                  a(href="#") Ashley Mason
+            address.contact-info.text-lg-left.post-meta.offset-top-10
+              ul.list-unstyled.p
+                li.d-block
+                  span.novi-icon.icon.icon-xxs.mdi.mdi-phone.text-middle.text-dark
+                  a.d-inline-block.text-middle.inset-left-10(href="tel:1-800-7650-986") 1-800-7650-986
+                li.d-block
+                  span.novi-icon.icon.icon-xxs.mdi.mdi-email-open.text-middle.text-dark
+                  a.d-inline-block.text-middle.inset-left-10(href="mailto:ashley@demolink.org") ashley@demolink.org
+
+          .col-md-6.col-lg-3.offset-top-50.offset-md-top-0
+            img.img-fluid.d-inline-block(src="images/about-04-270x270.jpg" width=270 height=270 alt="")
+            .text-lg-left.offset-top-14
+              div
+                h5.font-weight-bold.text-safety-orange.font-default
+                  a(href="#") Alisa Myers
+            address.contact-info.text-lg-left.post-meta.offset-top-10
+              ul.list-unstyled.p
+                li.d-block
+                  span.novi-icon.icon.icon-xxs.mdi.mdi-phone.text-middle.text-dark
+                  a.d-inline-block.text-middle.inset-left-10(href="tel:1-800-7650-986") 1-800-7650-986
+                li.d-block
+                  span.novi-icon.icon.icon-xxs.mdi.mdi-email-open.text-middle.text-dark
+                  a.d-inline-block.text-middle.inset-left-10(href="mailto:alisa@demolink.org") alisa@demolink.org
+
+          .col-md-6.col-lg-3.offset-top-50.offset-lg-top-0
+            img.img-fluid.d-inline-block(src="images/about-05-270x270.jpg" width=270 height=270 alt="")
+            .text-lg-left.offset-top-14
+              div
+                h5.font-weight-bold.text-safety-orange.font-default
+                  a(href="#") Shirley Vasquez
+            address.contact-info.text-lg-left.post-meta.offset-top-10
+              ul.list-unstyled.p
+                li.d-block
+                  span.novi-icon.icon.icon-xxs.mdi.mdi-phone.text-middle.text-dark
+                  a.d-inline-block.text-middle.inset-left-10(href="tel:1-800-7650-986") 1-800-7650-986
+                li.d-block
+                  span.novi-icon.icon.icon-xxs.mdi.mdi-email-open.text-middle.text-dark
+                  a.d-inline-block.text-middle.inset-left-10(href="mailto:shirley@demolink.org") shirley@demolink.org
+
+          .col-md-6.col-lg-3.offset-top-50.offset-lg-top-0
+            img.img-fluid.d-inline-block(src="images/about-06-270x270.jpg" width=270 height=270 alt="")
+            .text-lg-left.offset-top-14
+              div
+                h5.font-weight-bold.text-safety-orange.font-default
+                  a(href="#") Terry Sandoval
+            address.contact-info.text-lg-left.post-meta.offset-top-10
+              ul.list-unstyled.p
+                li.d-block
+                  span.novi-icon.icon.icon-xxs.mdi.mdi-phone.text-middle.text-dark
+                  a.d-inline-block.text-middle.inset-left-10(href="tel:1-800-7650-986") 1-800-7650-986
+                li.d-block
+                  span.novi-icon.icon.icon-xxs.mdi.mdi-email-open.text-middle.text-dark
+                  a.d-inline-block.text-middle.inset-left-10(href="mailto:terry@demolink.org") terry@demolink.org
+
+          .col-md-6.col-lg-3.offset-top-50
+            img.img-fluid.d-inline-block(src="images/about-07-270x270.jpg" width=270 height=270 alt="")
+            .text-lg-left.offset-top-14
+              div
+                h5.font-weight-bold.text-safety-orange.font-default
+                  a(href="#") Randy Schneider
+            address.contact-info.text-lg-left.post-meta.offset-top-10
+              ul.list-unstyled.p
+                li.d-block
+                  span.novi-icon.icon.icon-xxs.mdi.mdi-phone.text-middle.text-dark
+                  a.d-inline-block.text-middle.inset-left-10(href="tel:1-800-7650-986") 1-800-7650-986
+                li.d-block
+                  span.novi-icon.icon.icon-xxs.mdi.mdi-email-open.text-middle.text-dark
+                  a.d-inline-block.text-middle.inset-left-10(href="mailto:randy@demolink.org") randy@demolink.org
+
+          .col-md-6.col-lg-3.offset-top-50
+            img.img-fluid.d-inline-block(src="images/about-08-270x270.jpg" width=270 height=270 alt="")
+            .text-lg-left.offset-top-14
+              div
+                h5.font-weight-bold.text-safety-orange.font-default
+                  a(href="#") Olivia Marshall
+            address.contact-info.text-lg-left.post-meta.offset-top-10
+              ul.list-unstyled.p
+                li.d-block
+                  span.novi-icon.icon.icon-xxs.mdi.mdi-phone.text-middle.text-dark
+                  a.d-inline-block.text-middle.inset-left-10(href="tel:1-800-7650-986") 1-800-7650-986
+                li.d-block
+                  span.novi-icon.icon.icon-xxs.mdi.mdi-email-open.text-middle.text-dark
+                  a.d-inline-block.text-middle.inset-left-10(href="mailto:olivia@demolink.org") olivia@demolink.org
+
+          .col-md-6.col-lg-3.offset-top-50
+            img.img-fluid.d-inline-block(src="images/about-09-270x270.jpg" width=270 height=270 alt="")
+            .text-lg-left.offset-top-14
+              div
+                h5.font-weight-bold.text-safety-orange.font-default
+                  a(href="#") Alex Nelson
+            address.contact-info.text-lg-left.post-meta.offset-top-10
+              ul.list-unstyled.p
+                li.d-block
+                  span.novi-icon.icon.icon-xxs.mdi.mdi-phone.text-middle.text-dark
+                  a.d-inline-block.text-middle.inset-left-10(href="tel:1-800-7650-986") 1-800-7650-986
+                li.d-block
+                  span.novi-icon.icon.icon-xxs.mdi.mdi-email-open.text-middle.text-dark
+                  a.d-inline-block.text-middle.inset-left-10(href="mailto:alex@demolink.org") alex@demolink.org
+
+          .col-md-6.col-lg-3.offset-top-50
+            img.img-fluid.d-inline-block(src="images/about-10-270x270.jpg" width=270 height=270 alt="")
+            .text-lg-left.offset-top-14
+              div
+                h5.font-weight-bold.text-safety-orange.font-default
+                  a(href="#") Maria George
+            address.contact-info.text-lg-left.post-meta.offset-top-10
+              ul.list-unstyled.p
+                li.d-block
+                  span.novi-icon.icon.icon-xxs.mdi.mdi-phone.text-middle.text-dark
+                  a.d-inline-block.text-middle.inset-left-10(href="tel:1-800-7650-986") 1-800-7650-986
+                li.d-block
+                  span.novi-icon.icon.icon-xxs.mdi.mdi-email-open.text-middle.text-dark
+                  a.d-inline-block.text-middle.inset-left-10(href="mailto:maria@demolink.org") maria@demolink.org
+
+  // Your Career Starts Here
+  section.section.novi-background.section-98.section-md-110
+    .container
+      h1.font-weight-bold.text-primary Your Career Starts Here
+      +svg-divider("bg-primary", "71", "13")
+      .row.justify-content-sm-center
+        .col-sm-10.col-md-8
+          p Can't find the job you want? Send your resume to info@demolink.org , and we'll contact you when a new position opens.
+      .row.justify-content-sm-center.offset-top-66
+        .col-md-6
+          +post-vacation("#", "Senior Teacher ",[{
+            "type": "location",
+            "link": "#",
+            "text": "New York"
+          },
+            {
+              "type": "work-time",
+              "text": "Full Time"
+            },
+            {
+              "type": "date",
+              "text": "March 9, 2016"
+            }])
+
+        .col-md-6.offset-top-30.offset-md-top-0
+          +post-vacation("#", "Security Employee",[{
+            "type": "location",
+            "link": "#",
+            "text": "New York"
+          },
+            {
+              "type": "work-time",
+              "text": "Full Time"
+            },
+            {
+              "type": "date",
+              "text": "March 10, 2016"
+            }])
+
+        .col-md-6.offset-top-30
+          +post-vacation("#", "Teacher Assistant",[{
+            "type": "location",
+            "link": "#",
+            "text": "New York"
+          },
+            {
+              "type": "work-time",
+              "text": "Full Time"
+            },
+            {
+              "type": "date",
+              "text": "March 10, 2016"
+            }])
+
+        .col-md-6.offset-top-30
+          +post-vacation("#", "Teacher",[{
+            "type": "location",
+            "link": "#",
+            "text": "New York"
+          },
+            {
+              "type": "work-time",
+              "text": "Full Time"
+            },
+            {
+              "type": "date",
+              "text": "March 17, 2016"
+            }])
+
+        .col-md-6.offset-top-30
+          +post-vacation("#", "Kindergarten Director",[{
+            "type": "location",
+            "link": "#",
+            "text": "New York"
+          },
+            {
+              "type": "work-time",
+              "text": "Full Time"
+            },
+            {
+              "type": "date",
+              "text": "March 15, 2016"
+            }])
+
+        .col-md-6.offset-top-30
+          +post-vacation("#", "Secretary",[{
+            "type": "location",
+            "link": "#",
+            "text": "New York"
+          },
+            {
+              "type": "work-time",
+              "text": "Full Time"
+            },
+            {
+              "type": "date",
+              "text": "March 21, 2016"
+            }])
+
+  // First Lesson - Free
+  +material-parallax({
+    img: 'images/bg-02-1920x748.jpg',
+    Class: 'section-66 context-dark'
+  }).section
+    .container
+      h1.font-weight-bold First Lesson is Free
+      .row.justify-content-sm-center.offset-top-20
+        .col-sm-10.col-sm-8
+          div
+            p We provide a free lesson opportunity from any program for everyone who would like to try our services for their children.
+          .offset-top-30
+            a(href=cfg.nav.contacts.href).btn.btn-icon.btn-icon-left.btn-default Send us a letter
+              span.novi-icon.icon.mdi-email-outline.mdi
+
+  // Map
+  +google-map({
+    center: '9870 St Vincent Place, Glasgow, DC 45 Fr 45.'
+  }, [{
+    location: '9870 St Vincent Place, Glasgow, DC 45 Fr 45.',
+    description: '9870 St Vincent Place, Glasgow'
+  }]).section
+
+  // Page Footer
+  include ../sections/_section-footer-default
+
+

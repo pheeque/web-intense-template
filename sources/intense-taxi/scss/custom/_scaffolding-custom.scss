@@ -1,0 +1,112 @@
+//
+// Scaffolding
+// --------------------------------------------------
+
+
+// Reset fonts for relevant elements
+input,
+button,
+select,
+textarea {
+  outline: none;
+}
+
+body {
+  letter-spacing: .02em;
+}
+
+// Page styles
+// --------------------------------------------------
+
+.page {
+  overflow: hidden;
+  background-color: $content-bg;
+}
+
+// Links
+
+a {
+
+  &:hover,
+  &:focus {
+    outline: none;
+  }
+}
+
+// Horizontal rules
+
+hr {
+  margin-top: 0;
+  margin-bottom: 0;
+  border-top: 1px solid $hr-border;
+}
+
+// Well
+
+.well{
+  padding: 0;
+  background-color: transparent;
+  border-radius: 10px;
+  border: 1px solid #f2f2f2;
+  overflow: hidden;
+
+  &-row{
+    padding: 27px 15px;
+
+    @media (min-width: $screen-md-min) {
+      padding: 27px 9.7%;
+    }
+
+    @media (min-width: $screen-lg-min) {
+      padding: 27px 14.7%;
+    }
+
+    .form-control{
+      border-color: #d3d3d3;
+    }
+
+    &-flex{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @media (min-width: 768px) {
+        justify-content: flex-start;
+      }
+
+      label{
+        margin-bottom: 0;
+        margin-right: 19px;
+      }
+
+      .form-control{
+        padding: 10px 6px;
+
+        @media (min-width: $screen-xs-min) {
+          padding: 10px 16px;
+        }
+      }
+
+      .form-label{
+        left: 10px;
+
+        @media (min-width: $screen-xs-min) {
+          left: 19px;
+        }
+      }
+
+      .form-group{
+        max-width: 70px;
+        margin-bottom: 0;
+
+        & + .form-group{
+          margin-left: 9px;
+        }
+      }
+    }
+
+    &-bg{
+      background-color: #f8f8f8;
+    }
+  }
+}

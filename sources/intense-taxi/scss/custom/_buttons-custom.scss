@@ -1,0 +1,275 @@
+//
+// Custom Buttons Styles
+// --------------------------------------------------
+
+// Base styles
+// --------------------------------------------------
+
+.btn {
+  min-width: 160px;
+  @include button-size($padding-base-vertical, $padding-base-horizontal, 14px, 24px, 30px);
+  font-weight: 700;
+  font-family: $font-family-sec;
+  border-radius: 30px;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  transition: .3s ease-out;
+
+  &:focus,
+  &:active,
+  &:active:focus {
+    outline: none;
+  }
+
+  &:active,
+  &.active {
+    @include box-shadow(none);
+  }
+}
+
+// Alternate buttons
+// --------------------------------------------------
+
+.btn-white {
+  @include button-variant-custom($brand-primary, $white, $white, $white, $brand-silver-chalice, $brand-silver-chalice);
+}
+
+.btn-default {
+  @include button-variant-custom($white, $brand-silver-chalice, $brand-silver-chalice, $white, darken($brand-silver-chalice, 15%), darken($brand-silver-chalice, 15%));
+}
+
+.btn-gray-base {
+  @include button-variant-custom($white, $gray, $gray, $white, $brand-primary, $brand-primary);
+}
+
+.btn-primary {
+  @include button-variant-custom($white, $brand-primary, $brand-primary, $white, $gray, $gray);
+}
+
+.btn-primary-dr {
+  @include button-variant-custom($white, #cd9f14, #cd9f14, $white, darken(#cd9f14, 15%), darken(#cd9f14, 15%));
+}
+
+.btn-calypso {
+  @include button-variant-custom($white, $brand-calypso, $brand-calypso, $white, darken($brand-calypso, 15%), darken($brand-calypso, 15%));
+}
+
+.btn-curious-blue {
+  @include button-variant-custom($white, $brand-curious-blue, $brand-curious-blue, $white, darken($brand-curious-blue, 15%), darken($brand-curious-blue, 15%));
+}
+
+.btn-mandy {
+  @include button-variant-custom($white, $brand-mandy, $brand-mandy, $white, darken($brand-mandy, 15%), darken($brand-mandy, 15%));
+}
+
+
+// Button Sizes
+// --------------------------------------------------
+
+.btn-xs {
+  min-width: 125px;
+  @include button-size($padding-small-vertical, $padding-small-horizontal, 12px, 24px, 30px);
+}
+
+.btn-lg {
+  min-width: 152px;
+  @include button-size($padding-large-vertical, $padding-large-horizontal, 16px, 24px, 30px);
+}
+
+.btn-xl {
+  min-width: 190px;
+  @include button-size(15px, 18px, 18px, 24px, 30px);
+}
+
+// Button Shapes
+// --------------------------------------------------
+
+.btn {
+  &-rect {
+    border-radius: 0;
+  }
+
+  &-ellipse {
+    border-radius: 11px;
+  }
+
+  &-circle {
+    padding: 10px;
+    min-width: 75px;
+    min-height: 75px;
+    border-radius: 50%;
+  }
+}
+
+// Button Icon styles
+// --------------------------------------------------
+
+.btn {
+
+  &.btn-icon {
+    padding-left: 20px;
+    padding-right: 20px;
+
+    .icon {
+      font-size: 28px;
+      line-height: 28px;
+      vertical-align: middle;
+      transition: 0s;
+    }
+
+    .icon-xs {
+      width: 25px;
+      height: 25px;
+      line-height: 25px;
+      font-size: 18px;
+    }
+
+    &-left {
+      .icon {
+        float: left;
+      }
+    }
+
+    &-right {
+      .icon {
+        float: right;
+      }
+    }
+
+  }
+}
+
+// Button Tags
+// --------------------------------------------------
+
+.btn-tags {
+  .btn {
+    max-width: 130px;
+    min-width: 130px;
+    max-height: 40px;
+    line-height: 16px;
+  }
+
+  .btn.btn-icon {
+    padding-left: 22px;
+    padding-right: 22px;
+
+    .icon-xs {
+      line-height: 18px;
+    }
+  }
+}
+
+
+// Button Both Lines
+// --------------------------------------------------
+
+.btn-link {
+  font-weight: 700;
+  font-family: $font-family-sec;
+}
+
+
+// Button Both Lines
+// --------------------------------------------------
+
+.btn-both-lines {
+  overflow: hidden;
+  padding-left: 15px;
+  padding-right: 15px;
+
+  .btn, .btn-link{
+    position: relative;
+
+    &:before, &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: 1000%;
+      border-top: 1px solid rgba($white, .2);
+      pointer-events: none;
+    }
+
+    &:before {
+      right: 110%;
+    }
+    &:after {
+      left: 110%;
+    }
+  }
+
+  .btn-link {
+    &:before, &:after {
+      margin-top: 2px;
+    }
+  }
+
+  &-gray-lighter {
+    .btn, .btn-link {
+      &:before, &:after {
+        border-color: $gray-lighter;
+      }
+    }
+  }
+}
+
+@media (min-width: $screen-md-min) {
+  .btn-right-line {
+    position: relative;
+    overflow: hidden;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 66%;
+      width: 1000%;
+      border: 1px solid rgba($white, .2);
+      @include transform(translateY(-50%));
+      pointer-events: none;
+    }
+  }
+}
+
+@media (min-width: $screen-md-min) {
+  .btns-both-lines {
+    position: relative;
+    overflow: hidden;
+
+    &:before, &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: 1000%;
+      border: 1px solid rgba($white, .2);
+      @include transform(translateY(-50%));
+      pointer-events: none;
+    }
+
+    &:before {
+      right: 79%;
+    }
+    &:after {
+      left: 80%;
+    }
+  }
+}
+
+@media (min-width: $screen-md-min) {
+  .btns-right-line {
+    position: relative;
+    overflow: hidden;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 78%;
+      width: 1000%;
+      margin-top: 3px;
+      border: 1px solid rgba($white, .2);
+      @include transform(translateY(-50%));
+      pointer-events: none;
+    }
+  }
+}

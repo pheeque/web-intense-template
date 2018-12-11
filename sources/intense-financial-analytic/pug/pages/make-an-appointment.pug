@@ -1,0 +1,80 @@
+extends  ../_skeleton
+
+include ../elements/_ui-material-parallax
+include ../elements/_ui-post-modern
+include ../elements/_ui-pagination-bootstrap
+
+block title
+  title Make An Appointment
+
+block page
+  //Page Head
+  header.section.page-head
+    +rd-navbar-default( 
+      'rd-navbar-default rd-navbar-light',
+      {
+        'data-lg-auto-height': 'true',
+        'data-md-layout': 'rd-navbar-fixed',
+        'data-lg-layout': 'rd-navbar-static',
+        'data-lg-stick-up': 'true'
+      },
+      cfg.brand.logoInverse,
+      '',
+      cfg.nav
+    )
+
+
+  //Breadcrumbs
+  +material-parallax({
+    img: 'images/background-03-1920x447.jpg',
+    Class: 'section-41 section-md-50 section-lg-66 context-dark'
+  }).section
+    .container
+      div
+        h1.text-capitalize
+          span.big
+            | Make an Appointment
+      .offset-top-10
+        ul.list-inline.list-inline-dashed.font-italic.p
+          li.list-inline-item
+            a( href='index.html' ) Home
+          li.list-inline-item
+            | Free Consultation
+
+
+  include ../sections/_section-calendar
+
+
+  //Have a Question?
+  section.section.novi-background.section-bottom-66.section-top-34.section-xl-top-98.section-xl-bottom-124
+    .container
+      h1 Have a Question?
+      div: hr.divider.divider-lg.bg-mantis
+
+      .offset-top-41.offset-lg-top-66
+        .row.justify-content-sm-center
+          .col-sm-10.col-lg-8
+            //RD Mailform
+            form.rd-mailform.text-left( data-form-output='form-output-global', data-form-type='contact', method='post', action='bat/rd-mailform.php' )
+              .row.grid-group-xs.justify-content-sm-center
+                .col-md-6
+                  .form-group
+                    label.form-label.form-label-outside.form-label-size-lg.form-label-size-lg( for='git-3-mailform-first-name' ) First name
+                    input#git-3-mailform-first-name.form-control( type='text', name='firstname', data-constraints='@Required' )
+                .col-md-6
+                  .form-group
+                    label.form-label.form-label-outside.form-label-size-lg( for='git-3-mailform-last-name' ) Last name
+                    input#git-3-mailform-last-name.form-control( type='text', name='lastname', data-constraints='@Required' )
+                .col-12
+                  .form-group
+                    label.form-label.form-label-outside.form-label-size-lg( for='git-3-mailform-email' ) E-mail
+                    input#git-3-mailform-email.form-control( type='text', name='email', data-constraints='@Required @Email' )
+                .col-12
+                  .form-group
+                    label.form-label.form-label-outside.form-label-size-lg( for='git-3-mailform-message' ) Message
+                    textarea#git-3-mailform-message.form-control( name='message', data-constraints='@Required' )
+                .col-12.text-center
+                  button( type='submit', style='width:270px;' ).btn.btn-lg.btn-primary submit
+
+
+  include ../sections/_section-footer-default

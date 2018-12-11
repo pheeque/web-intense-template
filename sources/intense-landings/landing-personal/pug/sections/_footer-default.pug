@@ -1,0 +1,77 @@
+//- Includes
+include ../elements/_ui-thumbnail-classic
+
+footer.section.novi-background.bg-cover.bg-default
+	.pre-footer-default.text-center.text-md-left
+		.container
+			.row.justify-content-md-center.row-55
+				.col-md-6.col-lg-4
+					.brand-sm
+						a(href='index.html')
+							+png(logoDefault)
+					p Grand is a perfect solution for everyone who wants to establish a stunningly looking website with lots of useful functions and without extra coding.
+					.group-sm.group-middle
+						span.big.text-primary Social media
+						div: ul.inline-list-xxs
+							li: a.icon.novi-icon.icon-xxs.icon-circle.icon-trout-outline.icon-effect-1.fa.fa-instagram(href='#')
+							li: a.icon.novi-icon.icon-xxs.icon-circle.icon-trout-outline.icon-effect-1.fa.fa-facebook(href='#')
+							li: a.icon.novi-icon.icon-xxs.icon-circle.icon-trout-outline.icon-effect-1.fa.fa-twitter(href='#')
+							li: a.icon.novi-icon.icon-xxs.icon-circle.icon-trout-outline.icon-effect-1.fa.fa-google-plus(href='#')
+				.col-md-6.col-lg-4
+					h4 Instagram feed
+					.gallery-widget( data-lightgallery='group' )
+							+thumbnail-creative({
+								img: 'grid-gallery-10-114x114',
+								original: 'grid-gallery-10-1024x1024'
+							})
+							+thumbnail-creative({
+								img: 'grid-gallery-11-114x114',
+								original: 'grid-gallery-11-1024x683'
+							})
+							+thumbnail-creative({
+								img: 'grid-gallery-12-114x114',
+								original: 'grid-gallery-12-1024x683'
+							})
+							+thumbnail-creative({
+								img: 'grid-gallery-13-114x114',
+								original: 'grid-gallery-13-1024x683'
+							})
+							+thumbnail-creative({
+								img: 'grid-gallery-14-114x114',
+								original: 'grid-gallery-14-1024x675'
+							})
+							+thumbnail-creative({
+								img: 'grid-gallery-15-114x114',
+								original: 'grid-gallery-15-1024x694'
+							})
+
+				.col-md-9.col-lg-4.text-md-center.text-lg-left
+					h4 Newsletter
+					p Enter your e-mail to get the latest news of Webline Project.
+
+					// Mailchimp
+					form.form-bordered.form-centered.mailchimp-mailform(data-form-output="form-output-global", action="https://templatemonster.us15.list-manage.com/subscribe/post?u=ba5bb362073a413f48e4a7b90&id=8dc95d9dec" method='post')
+						.form-wrap
+							label.form-label(for="footer-subscribe-email2") Your e-mail address
+							input#footer-subscribe-email2.form-input(type="email" name="email" data-constraints="@Email @Required")
+						button(type="submit").btn.btn-primary.btn-block.btn-offset-small.btn-square.btn-effect-ujarak Subscribe
+
+	.page-footer-default.novi-background.text-center
+		.container
+			.row.row-30
+				.col-lg-8.col-xl-9.text-lg-left
+					ul.list-nav
+						li(class={'active': footerActiveIndex == 0}): a(href='index.html') Home
+						li(class={'active': footerActiveIndex == 1}): a(href='#') About us
+						li(class={'active': footerActiveIndex == 2}): a(href='#') Features
+						li(class={'active': footerActiveIndex == 3}): a(href='#') Gallery
+						li(class={'active': footerActiveIndex == 4}): a(href='#') Shop
+						li(class={'active': footerActiveIndex == 5}): a(href='#') Blog
+				.col-lg-4.col-xl-3.text-lg-right
+					p.rights
+						=brandName
+						| &nbsp;&copy;&nbsp;
+						span.copyright-year
+						| .&nbsp;
+						br.d-md-none
+						a.link-underline(href="#") Privacy Policy

@@ -1,0 +1,21 @@
+//------------------------------------
+//- Member Block
+//------------------------------------
+//-
+//- link - {Link} object
+//- image - {image} object
+//- job - memberjob description
+//- socials - {socials} object
+
+include ../elements/_widget-list-social
+
+mixin member-block(link, image, job, socials)
+   img.rounded-circle.img-fluid.d-block.mx-auto(src=image.src width=image.width height=image.height alt=image.alt )
+
+   .offset-top-24
+      h5.font-weight-bold
+         a(href=link.href)= link.title
+
+   p.offset-top-4.small.font-weight-bold.text-malibu= job
+   hr.divider
+   +widget-list-social(socials, "icon-xs icon-circle icon-darker-filled", "list-inline-xs")

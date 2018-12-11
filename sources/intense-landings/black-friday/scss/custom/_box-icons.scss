@@ -1,0 +1,51 @@
+//
+// Box icons
+// --------------------------------------------------
+
+// Base styles
+// -------------------------
+
+.box-icon {
+  position: relative;
+  padding: $box-icon-padding;
+}
+
+// Box sizes
+// -------------------------
+
+.box-icon-sm {
+  padding: $box-icon-sm-padding;
+}
+.box-icon-lg{
+  padding: $box-icon-lg-padding;
+}
+
+// Box styles
+// --------------------------
+
+.box-icon-bordered{
+  border: $box-icon-bordered-border;
+}
+
+// Icon styles
+//---------------------------
+
+.box-icon {
+  .icon {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.box-icon-type-4 {
+  &:hover {
+    .icon-outlined{
+      color: $primary;
+      &:after{
+        transform: rotate(45deg);
+      }
+    }
+  } 
+}

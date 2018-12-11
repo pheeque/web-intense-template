@@ -1,0 +1,139 @@
+/**
+ *	This element is created inside your target element
+ *	It is used so that your own element will not need to be altered
+ **/
+.time_circles {
+  position: relative;
+  width: 100%;
+}
+
+/**
+ *	This is all the elements used to house all text used
+ * in time circles
+ **/
+.time_circles > div {
+  position: absolute;
+  text-align: center;
+  font-family: $font-family-sec;
+  top: 50% !important;
+  transform: translateY(-65%) !important;
+  -webkit-transform: translateY(-65%) !important;
+}
+
+@include media-breakpoint-up(xl) {
+  #DateCountdown {
+    width: 100%;
+  }
+}
+
+/**
+ *	Titles (Days, Hours, etc)
+ **/
+.time_circles > div > h4 {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 14px !important;
+  color: $gray-dark;
+  position: absolute;
+  bottom: -65px;
+  left: 0;
+  right: 0;
+
+  & + * {
+    margin-top: 0;
+  }
+}
+
+/**
+ *	Time numbers, ie: 12
+ **/
+.time_circles > div > span {
+  display: block;
+  font-size: 20px;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 10px;
+
+  @include media-breakpoint-up(sm) {
+    margin-top: 0;
+  }
+  
+  @include media-breakpoint-up(md) {
+    font-size: 30px;
+  }
+
+  @include media-breakpoint-up(xl) {
+    font-size: 36px;
+  }
+}
+
+.countdown-wrap {
+  width: 100%;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 0;
+  line-height: 0;
+
+  .time_circles > div {
+    display: flex;
+    flex-direction: column-reverse;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    font-size: 0;
+    line-height: 0;
+  }
+
+  div > h4 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -14vw;
+    font: 400 14px $font-family-base !important;
+    color: $silver;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+
+    @include media-breakpoint-up(sm) {
+      bottom: -15px;
+    }
+
+    @include media-breakpoint-up(md) {
+      bottom: -10px;
+    }
+
+    @include media-breakpoint-up(xl) {
+      bottom: -10px;
+    }
+  }
+
+  span {
+    margin-top: 2px;
+    font: 500 26px $font-family-sec !important;
+    font-style: normal;
+    color: $black;
+  }
+
+  @include media-breakpoint-up(sm) {
+    span {
+      font-size: 36px !important;
+    }
+  }
+}
+
+.countdown-inverse {
+  div > h4 {
+    color: rgba($white, .8);
+  }
+
+  span {
+    color: $white;
+  }
+}
+
+* + .countdown-wrap {
+  margin-top: 30px;
+}

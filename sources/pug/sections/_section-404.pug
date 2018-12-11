@@ -1,0 +1,20 @@
+//- Includes
+include  ../elements/_ui-box-icon-type-4
+
+// 404
+section.context-dark
+	.container
+		.section-110.section-cover.row.justify-content-sm-center.align-items-sm-center
+			.col-xl-6
+				h3 Sorry, but page was not found
+				hr.divider.bg-mantis
+				.text-extra-big.text-light 404
+				p.offset-top-50 You may have mistyped the address or the page may have moved.
+				.group.offset-top-30
+					a.btn.btn-icon.btn-icon-left.btn-primary(href= cfg.nav.home.href)
+						span.icon.novi-icon.mdi.mdi-arrow-left
+						| back to home
+
+					a.btn.btn-icon.btn-icon-left.btn-default(href= cfg.nav.pages.submenu.contactUs.href)
+						span.icon.novi-icon.mdi.mdi-email-outline
+						| Contact us

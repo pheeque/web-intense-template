@@ -1,0 +1,52 @@
+// Contact Us
+section.section-98.section-lg-110.text-xl-left
+  .container
+    .row.justify-content-sm-center.justify-content-sm-center
+      .col-xl-4
+        h3.text-uppercase.font-weight-bold How to Find us
+        hr.divider.hr-xl-left-0.bg-mantis
+        p
+          | Email us with any questions or inquiries or use our contact data. We would be happy to answer you as soon as possible.
+        address.contact-info.offset-top-50
+          .h6.text-uppercase.font-weight-bold.text-picton-blue.letter-space-none.offset-top-none Intense Restaurant
+          p 9863 - 9867 MILL ROAD, CAMBRIDGE, MG09 99HT.
+          dl.offset-top-0
+            dt Telephone
+            dd
+              a(href='tel:#') +1 800 603 6035
+          dl
+            dt E-mail:
+            dd
+              a(href='mailto:#') mail@demolink.org
+        address.contact-info.offset-top-50
+          .h6.text-uppercase.font-weight-bold.text-picton-blue.letter-space-none Intense Cafe
+          p 9870 ST VINCENT PLACE, GLASGOW, DC 45 FR 45.
+          dl.offset-top-0
+            dt Telephone
+            dd
+              a(href='tel:#') +1 800 559 6580
+          dl
+            dt E-mail:
+            dd
+              a(href='mailto:#') mail@demolink.org
+      .col-md-8.offset-top-66.offset-xl-top-0
+        h3.text-uppercase.font-weight-bold Get in touch
+        hr.divider.hr-xl-left-0.bg-mantis
+        // RD Mailform
+        form.rd-mailform.text-left(data-form-output="form-output-global", data-form-type='contact', method='post', action='bat/rd-mailform.php')
+          .row
+            .col-xl-6
+              .form-group
+                label.form-label.form-label-outside(for="contact-us-name") Name:
+                input#contact-us-name.form-control(type="text" name="name" data-constraints="@Required")
+            .col-xl-6.offset-top-20.offset-xl-top-0
+              .form-group
+                label.form-label.form-label-outside(for="contact-us-email") E-Mail:
+                input#contact-us-email.form-control(type="email" name="email" data-constraints="@Required @Email")
+            .col-xl-12.offset-top-20
+              .form-group
+                label.form-label.form-label-outside(for="contact-us-message") Message:
+                textarea#contact-us-message.form-control(name="message" data-constraints="@Required")
+          .group-sm.text-center.text-xl-left.offset-top-30
+            button(type="submit").btn.btn-primary Send
+            button(type="reset").btn.btn-default Reset

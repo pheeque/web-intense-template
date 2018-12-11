@@ -1,0 +1,53 @@
+//
+// RD Navbar Default Mobile Search
+// --------------------------------------------------
+
+%rd-navbar-default-mobile-search{
+  .form-search-input {
+    border: none;
+  }
+}
+
+//
+// Dark Theme
+// --------------------------------------------------
+%rd-navbar-default-mobile-search-dark{
+  .form-search-wrap {
+    .form-group {
+      .form-label, .form-lable.focus {
+        color: $gray-700;
+      }
+    }
+  }
+
+  .form-search-submit {
+    color: $gray-800;
+  }
+
+  .form-search-input {
+    background: $gray-900;
+    color: $white;
+  }
+}
+
+//
+// Light Theme
+// --------------------------------------------------
+%rd-navbar-default-mobile-search-light{
+  .form-search-wrap {
+    .form-group {
+      .form-label, .form-lable.focus {
+        color: $gray-700;
+      }
+    }
+  }
+
+  .form-search-submit {
+    color: $gray-800;
+  }
+
+  .form-search-input {
+    background: $gray-100;
+    color: $gray-900;
+  }
+}

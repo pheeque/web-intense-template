@@ -1,0 +1,20 @@
+//- Includes
+include ../elements/_ui-material-parallax
+  
++material-parallax({
+  img:   "images/backgrounds/background-36-1920x1281.jpg",
+  Class: "bg-overlay-gray-darkest context-dark"
+})
+  .container
+    .row.align-items-sm-center.justify-content-sm-center.section-cover.section-110
+      .col-sm-12
+        h1.text-uppercase.font-weight-bold
+          span.big RD Navbar
+        .row.justify-content-sm-center
+          .col-sm-10
+            h4.text-light Your reliable assistant to create any kind of navigation
+        .row.justify-content-sm-center.offset-top-66
+          .col-sm-5.col-md-4.col-lg-4.col-xl-3.text-md-right.inset-md-left-50
+            a.btn.btn-block.btn-primary(href=cfg.buyLink target='_blank') buy intense now
+          .col-sm-5.col-md-4.col-lg-4.col-xl-3.text-md-left.inset-md-right-50
+            a.btn.btn-block.btn-default(href='#' data-custom-scroll-to="rdnavbar") view widget

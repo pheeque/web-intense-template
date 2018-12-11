@@ -1,0 +1,547 @@
+include ../_config
+include ../_mixins
+include ../elements/_ui-page-loader-variant-1
+include ../elements/_ui-rd-navbar-default-transparent
+include ../elements/_widget-form-contact
+include ../elements/_widget-post
+include ../elements/_widget-list-social
+include ../elements/_ui-material-parallax
+include ../elements/_ui-box-icon-type-2
+include ../elements/_ui-media-elements
+include ../elements/_ui-counter-type-1
+include ../elements/_ui-thumbnail-classic
+include ../elements/_ui-isotope
+include ../elements/_ui-testimonials-type-3
+include ../elements/_ui-partners-carousel
+
+doctype html
+html.wide.wow-animation.scrollTo( lang='en' )
+	head
+		title= cfg.nav.home.submenu.skins.submenu.greenSpace.title
+
+		meta( charset='utf-8' )
+		meta( name='format-detection', content='telephone=no' )
+		meta( name='viewport', content='width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' )
+		meta( http-equiv='X-UA-Compatible', content='IE=Edge' )
+		block search-meta
+			meta( name='keywords', content='intense web design multipurpose template' )
+			meta( name='date', content='Dec 26' )
+
+		link( rel='icon', href='images/favicon.ico', type='image/x-icon' )
+		link( rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Crimson+Text:700italic,400,400italic,700%7CMontserrat:400,700' )
+		link( rel='stylesheet' href='intense-financial-analytic/css/style.css' )
+
+		style .ie-panel{display: none;background: #212121;padding: 10px 0;box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3);clear: both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: block;}
+
+	body
+		+page-loader-1( '<img class="img-fluid" style="margin-top: -20px;margin-left: -18px;" width="330" height="67" src="images/childs/green-space-logo-big-330x67.png" alt=""/>' )
+
+		.ie-panel
+			a( href='http://windows.microsoft.com/en-US/internet-explorer/' )
+				img( src='images/ie8-panel/warning_bar_0000_us.jpg', height=42, width=820, alt='You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today.' )
+
+		.page.text-center
+			// Page Head
+			header.page-head.slider-menu-position
+				//- RD Navbar
+				+rd-navbar-default(
+					'rd-navbar-default rd-navbar-transparent',
+					{
+						'data-lg-auto-height': 'true',
+						'data-md-layout': 'rd-navbar-fixed',
+						'data-lg-layout': 'rd-navbar-static',
+						'data-lg-stick-up': 'true'
+					},
+					'<img class="img-fluid" width="246" height="32" src="images/childs/green-space-logo-light-246x32.png" alt=""/>',
+					cfg.nav.home,
+					cfg.nav
+				)
+
+				// Welcome to Intense
+				+material-parallax({
+					img: 'images/backgrounds/background-42-1920x1024.jpg',
+					Class: 'context-dark'
+				}).bg-black
+					.container
+						.row.align-items-sm-center.justify-content-sm-center.section-cover.section-98.section-sm-110.text-lg-left.context-dark
+							.col-sm-12
+								div
+									h2.font-default.font-italic.text-regular Welcome to
+								div.offset-top-4.offset-xl-top-0
+									h1.text-capitalize
+										span.big
+											| Intense
+								.row.offset-top-4.offset-xl-top-30
+									.col-xl-6
+										h6.font-default.text-regular The smartest and most flexible bootstrap template by TemplateMonster you've ever seen. Create exactly what you need with our powerful bootstrap toolkit.
+								.group.group-xl.offset-top-30
+									a( href= cfg.buyLink, target='_blank' ).btn.btn-lg.btn-warning buy intense now
+									a( href='#', data-waypoint-to='#welcome' ).btn.btn-lg.btn-default start a journey
+
+
+			// Welcome
+			section.section-top-98.section-sm-top-110#welcome
+				.container
+					h1 Intense is the most complex Bootstrap theme on Template Monster
+					hr.divider.divider-lg.bg-primary
+					.row.justify-content-sm-center
+						.col-md-9.col-xl-8
+							p Join the 205,000+ Satified Customers Today at TemplateMonster.com. Created by the industry leaders Intense is a comprehensive set of tools which are super easy to pick up and run. It gives you a huge leg up to create your own beautiful site. Powerful options & tools, unlimited designs, responsive framework and amazing support are the reasons for our customers to fall in love.
+
+				// Mock Up
+				.offset-top-50( style='overflow: hidden;' )
+					.mock-up-wrapper.d-none.d-md-inline-block
+						.mock-up-desktop-wrapper.wow.fadeInUpBig( data-wow-duration='1s', data-wow-delay='0s' )
+							img( src='images/moqups/moqup-home-desktop.png', width='615', height='508', alt='' ).mock-up-desktop.img-fluid
+						.mock-up-circle.d-none.d-lg-block.wow.zoomIn( data-wow-delay='1.6s' )
+							img( src='images/moqups/moqup-home-ellipse.png', width='309', height='315', alt='' )
+						.mock-up-mobile-wrapper.wow.fadeInUp( data-wow-delay='0.9s' )
+							img( src='images/moqups/moqup-home-mobile.png', width='247', height='470', alt='' ).mock-up-mobile
+
+			// Take Full Control of Your Site
+			section.section-98.section-sm-110.bg-white-lilac
+				.container
+					h1 Take Full Control of Your Site
+					hr.divider.divider-lg.bg-mantis
+					.row.justify-content-sm-center
+						.col-md-9.col-xl-8
+							p Check out an incredible set of features provided by Intense. We collected all common required features in one theme. That makes Intense one of the most awesome themes on the market. Intense allows you to take control of almost every element and section of the site.
+
+					.row.justify-content-sm-center.offset-top-66
+						.col-md-8.col-lg-4
+							+box-icon-type-2( 'icon mdi mdi-cube-outline icon-mantis-filled icon-circle', 'Extended Toolkit', 'offset-top-20', 'Intense provides a poweful and flexible exntended toolkit in addition to basic Bootsrap. If you’ve used Bootstrap itself, you’ll find this all super familiar and easy-to-use.' )
+						.col-md-8.col-lg-4.offset-top-66.offset-lg-top-0
+							+box-icon-type-2( 'icon mdi mdi-image-filter-none icon-mantis-filled icon-circle', 'Parallax Effects', 'offset-top-20', 'Everyone loves parallax scrolling effects, they are simply beautiful. Intense has advanced parallax options & controls based on flexible and easy-to-use RD Parallax plugin.' )
+						.col-md-8.col-lg-4.offset-top-66.offset-lg-top-0
+							+box-icon-type-2( 'icon mdi mdi-share-variant icon-mantis-filled icon-circle', 'Social Integration', 'offset-top-20', 'Intense has full set of social icons and styling options which allow you to share any content the way you wish.' )
+						.col-md-8.col-lg-4.offset-top-66
+							+box-icon-type-2( 'icon mdi mdi-spellcheck icon-mantis-filled icon-circle', 'Made For Speed', 'offset-top-20', 'We know how embarassing and time-consuming can be content loading, so we took care of pages optimization for your smooth expirience.' )
+						.col-md-8.col-lg-4.offset-top-66
+							+box-icon-type-2( 'icon mdi mdi-magnify icon-mantis-filled icon-circle', 'SEO Optimized', 'offset-top-20', 'Intense was built with care allowing search engines to index the pages of your site correctly to achieve higher rankings in search results.' )
+						.col-md-8.col-lg-4.offset-top-66
+							+box-icon-type-2( 'icon mdi mdi-brush icon-mantis-filled icon-circle', 'Advanced UI Kit', 'offset-top-20', 'Intense has dozens of new components and elements built on the same level of quality as Bootstrap elements and highlighted with several example pages.' )
+
+					.row.justify-content-sm-center.offset-top-66
+						.col-xl-4
+							.inset-xl-left-50.inset-xl-right-50
+								a( href=cfg.nav.features.submenu.uiKit.href ).btn.btn-primary.btn-lg.d-xl-block explore more
+
+			// About
+			section.section-98.section-md-110
+				.container
+					.row.text-xl-left
+						.offset-md-2.col-md-8.offset-xl-0.col-xl-6
+							.shadow-drop-xl
+								+media-elements({
+									type: 'rd-video-player',
+									ratio: '16by9',
+									href: 'video/intense/intense',
+									title: 'What can we say about Intense ?',
+									preview: 'video/intense/intense-preview.jpg',
+									classes: 'play-on-scroll',
+									muted: 'true',
+									preload: 'false'
+								})
+
+						.offset-md-2.col-md-8.offset-xl-0.col-xl-6.offset-top-30.offset-xl-top-0
+							.inset-xl-left-50
+								h1 About
+								hr.divider.divider-lg.hr-lg-left-0.bg-mantis.offset-top-0
+								p.offset-top-20.offset-xl-top-50 TemplateMonster is an A-size depot of website templates - more than 46,000 designs to choose from. Since coming up in May 2002, we've gone partners with Magento, Drupal, WordPress, PrestaShop, Joomla, WooCommerce, and many more. 1 million clients were served during this time. Web templates + installation + hosting + customization + Search Engine Optimization + copywriting — all these services you can always get at TemplateMonster.com. If you're thirsty for knowledge, TemplateMonster blog provides you with the most recent web design news, infographics, freebies, discounts & promos.
+
+			// Skills
+			+material-parallax({
+				img: 'images/backgrounds/background-45-1920-950.jpg',
+				Class: 'section-98'
+			})
+				.container
+					.row
+						.col-md-8.offset-md-2.col-lg-12.offset-lg-0
+							.row
+								.col-md-6.col-lg-3.offset-lg-0
+									+counter-type-1('Templates', 'font-weight-bold text-white', {
+										'dataTo': '58249',
+										'dataSpeed': '3000',
+										'attr': 'text-uppercase font-default text-white text-regular text-spacing-60 offset-top-20'
+									}, 'divider bg-warning', 'h2')
+								.col-md-6.col-lg-3.offset-top-66.offset-md-top-0
+									+counter-type-1('Happy Clients', 'font-weight-bold text-white', {
+										'dataTo': '246',
+										'dataSpeed': '2500',
+										'preffix': 'K',
+										'attr': 'text-uppercase font-default text-white text-regular text-spacing-60 offset-top-20'
+									}, 'divider bg-warning', 'h2')
+								.col-md-6.col-lg-3.offset-top-66.offset-lg-top-0
+									+counter-type-1('Hours of Coding', 'font-weight-bold text-white', {
+										'dataTo': '1200',
+										'dataSpeed': '1500',
+										'attr': 'text-uppercase font-default text-white text-regular text-spacing-60 offset-top-20'
+									}, 'divider bg-warning', 'h2')
+								.col-md-6.col-lg-3.offset-top-66.offset-lg-top-0
+									+counter-type-1('Lines of Code', 'font-weight-bold text-white', {
+										'dataTo': '834',
+										'dataSpeed': '1300',
+										'preffix': 'K',
+										'attr': 'text-uppercase font-default text-white text-regular text-spacing-60 offset-top-20'
+									}, 'divider bg-warning', 'h2')
+
+			// Still Not Sure?
+			section.section-98.section-md-110
+				.container-fluid
+					h1 Still Not Sure?
+					div.offset-top-0
+						hr.divider.divider-lg.bg-mantis
+					p.offset-top-50.offset-xl-top-66 Check out other themes based on Intense
+					.offset-top-41
+						+isotope(['All', 'Infrastructure', 'Portfolio', 'Blog', 'Agency', 'Creative'],{
+							'group': 'gallery',
+							'layout': 'fitRows',
+							'alignClass': 'isotope-filters-horizontal'
+						}, 'isotope-1')
+							// Isotope
+							.row.grid-group-sm
+								- for ( var key in cfg.themes )
+									.col-12.col-md-6.col-xl-4.isotope-item( data-filter=cfg.themes[key].category )
+										.shadow-variant-2
+											+thumbnail-classic({
+												type:        "thumbnail",
+												title:       cfg.themes[ key ].title,
+												description: cfg.themes[ key ].desc,
+												thumb:       cfg.themes[ key ].image,
+												target:      { href: cfg.themes[ key ].href },
+												targetBlank: true,
+												titleAttrs: 'text-uppercase text-darkest'
+											})
+
+			// Meet Our Team
+			section.section-66.section-lg-top-110.section-lg-bottom-0.bg-white-lilac.section-team-custom-effects.section-custom-effects
+				.container.section-relative
+					h1 Meet Our Team
+					div.offset-top-0
+						hr.divider.divider-lg.bg-mantis
+					.row.justify-content-sm-center
+						.col-xl-8
+							p We are a team of developers, designers and leads who love what they do.
+
+					// Simple quote Slider
+					.owl-carousel.owl-carousel-classic.owl-carousel-class-light.veil-owl-nav.offset-top-41.offset-lg-top-0( data-items='1', data-nav='false', data-dots='false', data-nav-custom='.owl-custom-navigation' )
+						div
+							.row.flex-lg-row-reverse.justify-content-sm-center.align-items-sm-center.text-lg-left
+								.col-md-10.col-lg-6
+									div
+										h2.text-primary.font-default John Doe
+									div.offset-top-4
+										h6.font-default.text-regular Founder
+									.offset-top-30
+										p Intense is an International Financial Planning company with offices in multiple jurisdictions over the world. Working with Intense gives me the ability to advise international expatriates living in the middle east from where I live in USA.
+									blockquote.quote.quote-variant-2.offset-top-20
+										.h3.font-italic.font-default
+											.inset-lg-left-30.inset-xl-left-0
+												q I am John Doe, a senior advisor for an independently owned financial planning company called Intense.
+
+								.col-lg-6
+									img.img-fluid.d-none.d-lg-inline-block( src='images/users/user-john-doe-598x624.png', width='598', height='624', alt='' )
+
+						div
+							.row.flex-lg-row-reverse.justify-content-sm-center.align-items-sm-center.text-lg-left
+								.col-lg-6
+									div
+										h2.text-primary.font-default Paul Howell
+									div.offset-top-4
+										h6.font-default.text-regular Manager
+									.offset-top-30
+										p Intense is an International Financial Planning company with offices in multiple jurisdictions over the world. Working with Intense gives me the ability to advise international expatriates living in the middle east from where I live in USA.
+									blockquote.quote.quote-variant-2.offset-top-20
+										.h3.font-italic.font-default
+											.inset-lg-left-30.inset-xl-left-0
+												q I am Paul Howell, a senior advisor for an independently owned financial planning company called Intense.
+
+								.col-lg-6
+									img.img-fluid.d-none.d-lg-inline-block( src='images/users/user-paul-howell-598x624.png', width='598', height='624', alt='' )
+
+						div
+							.row.flex-lg-row-reverse.justify-content-sm-center.align-items-sm-center.text-lg-left
+								.col-lg-6
+									div
+										h2.text-primary.font-default Gregory Tucker
+									div.offset-top-4
+										h6.font-default.text-regular Developer
+									.offset-top-30
+										p Intense is an International Financial Planning company with offices in multiple jurisdictions over the world. Working with Intense gives me the ability to advise international expatriates living in the middle east from where I live in USA.
+									blockquote.quote.quote-variant-2.offset-top-20
+										.h3.font-italic.font-default
+											.inset-lg-left-30.inset-xl-left-0
+												q I am Gregory Tucker, a senior advisor for an independently owned financial planning company called Intense.
+
+								.col-lg-6
+									img.img-fluid.d-none.d-lg-inline-block( src='images/users/user-gregory-tucker-598x624.png', width='598', height='624', alt='' )
+
+					.owl-custom-navigation.owl-customer-navigation.text-lg-left
+						.owl-nav
+							.owl-prev.mdi.mdi-chevron-left( data-owl-prev )
+							.owl-next.mdi.mdi-chevron-right( data-owl-next )
+
+			// Testimonials
+			section.section-98.section-sm-110
+				.container
+					h1 Testimonials
+					hr.divider.divider-lg.bg-mantis
+					.row.justify-content-sm-center.offset-top-41.offset-lg-top-66
+						.col-md-8.col-lg-4
+							+testimonials-type-3(
+							{
+								'width': 80,
+								'height': 80,
+								'src': 'images/users/user-steven-carpenter-80x80.jpg',
+								'alt': ''
+							},
+							'Johnson.M.J.',
+							'Director of "Financial Times"',
+							'It is not every day that you come across a passionate and trustworthy financial advisor. John Doe is true professional who does his work really well. Thanks John!',
+							{
+								'title': 'h6 font-default text-primary',
+								'cite': 'text-normal',
+								'desc': 'font-default font-italic'
+							}
+							)
+						.col-md-8.col-lg-4.offset-top-41.offset-lg-top-0
+							+testimonials-type-3(
+							{
+								'width': 80,
+								'height': 80,
+								'src': 'images/users/user-carol-harper-80x80.jpg',
+								'alt': ''
+							},
+							'Carol Harper',
+							'Director at Risktec Solutions Ltd',
+							'In just 2 very short meetings with John he managed to find the solution personally catered to my situation and expectations. Punctual, well informed and very reliable.',
+							{
+								'title': 'h6 font-default text-primary',
+								'cite': 'text-normal',
+								'desc': 'font-default font-italic'
+							}
+							)
+						.col-md-8.col-lg-4.offset-top-41.offset-lg-top-0
+							+testimonials-type-3(
+							{
+								'width': 80,
+								'height': 80,
+								'src': 'images/users/user-andrew-wilson-80x80.jpg',
+								'alt': ''
+							},
+							'Snow.J.R.',
+							'Managing Director of BPW Global',
+							'A very professional financial advisor, who is true to his word. John has demonstrated a high amount of integrity in the time I have known him, and he is fast to respond to my concerns.',
+							{
+								'title': 'h6 font-default text-primary',
+								'cite': 'text-normal',
+								'desc': 'font-default font-italic'
+							}
+							)
+
+			// Our Partners
+			+material-parallax({
+				img: 'images/backgrounds/background-46-1920-950.jpg',
+				Class: 'section-98 section-sm-110 context-dark'
+			}).bg-black
+				.container
+					div
+						h2
+							span.big Our Partners
+					hr.divider.divider-lg.bg-warning
+					.row.justify-content-sm-center.offset-top-24
+						.col-sm-10.col-xl-8
+							p.
+								Join TemplateMonster Affiliate Program. Earn up to 50% commissions with TemplateMonster affiliate program. Anyone Can Become an Affiliate. We want you to earn more!
+						.col-sm-12
+							.offset-top-50.offset-xl-top-66
+								+partners-carousel([
+									{
+										'link': {'href': cfg.nav.pages.submenu.clients.href},
+										'image': {
+											'src': 'images/clients/partner-01-181x101.png',
+											'width': 181,
+											'height': 101,
+											'alt': ''
+										}
+									},
+									{
+										'link': {'href': cfg.nav.pages.submenu.clients.href},
+										'image': {
+											'src': 'images/clients/partner-02-181x101.png',
+											'width': 181,
+											'height': 101,
+											'alt': ''
+										}
+									},
+									{
+										'link': {'href': cfg.nav.pages.submenu.clients.href},
+										'image': {
+											'src': 'images/clients/partner-03-181x101.png',
+											'width': 181,
+											'height': 101,
+											'alt': ''
+										}
+									},
+									{
+										'link': {'href': cfg.nav.pages.submenu.clients.href},
+										'image': {
+											'src': 'images/clients/partner-04-181x101.png',
+											'width': 181,
+											'height': 101,
+											'alt': ''
+										}
+									},
+									{
+										'link': {'href': cfg.nav.pages.submenu.clients.href},
+										'image': {
+											'src': 'images/clients/partner-04-181x101.png',
+											'width': 181,
+											'height': 101,
+											'alt': ''
+										}
+									},
+									{
+										'link': {'href': cfg.nav.pages.submenu.clients.href},
+										'image': {
+											'src': 'images/clients/partner-03-181x101.png',
+											'width': 181,
+											'height': 101,
+											'alt': ''
+										}
+									},
+									{
+										'link': {'href': cfg.nav.pages.submenu.clients.href},
+										'image': {
+											'src': 'images/clients/partner-02-181x101.png',
+											'width': 181,
+											'height': 101,
+											'alt': ''
+										}
+									},
+									{
+										'link': {'href': cfg.nav.pages.submenu.clients.href},
+										'image': {
+											'src': 'images/clients/partner-01-181x101.png',
+											'width': 181,
+											'height': 101,
+											'alt': ''
+										}
+									}
+								])
+
+			// Page Footer
+			footer.section.novi-background.section-relative.section-top-66.section-bottom-34.page-footer.bg-gray-base.context-dark
+				.container
+					.row.justify-content-md-center.text-xl-left
+						.col-md-8.col-lg-12
+							.row.justify-content-sm-center
+								.col-sm-10.col-md-8.text-sm-left.col-lg-5.col-xl-4.order-xl-3
+									h6.text-uppercase.text-spacing-60.text-center.text-lg-left Contact us
+
+									+widget-form-contact()
+
+								.col-sm-10.col-md-8.offset-top-66.col-lg-5.offset-lg-1.offset-lg-top-0.text-lg-left.col-xl-4.order-xl-2.offset-xl-0
+									h6.text-uppercase.text-spacing-60.text-center.text-lg-left Latest from the blog
+
+									.offset-top-30
+										+widget-post(
+										cfg.nav.blog.submenu.classic.submenu.singlePost.href,
+										'05/14/2018',
+										'Let’s Change the world',
+										{
+											'src': 'images/blog/post-thumb-04-60x60.jpg',
+											'w': '60',
+											'h': '60',
+											'alt': ''
+										},
+										'',
+										'text-primary'
+										)
+										+widget-post(
+										cfg.nav.blog.submenu.classic.submenu.singlePost.href,
+										'05/14/2018',
+										'The meaning of Web Design',
+										{
+											'src': 'images/blog/post-thumb-05-60x60.jpg',
+											'w': '60',
+											'h': '60',
+											'alt': ''
+										},
+										'',
+										'text-primary'
+										)
+										+widget-post(
+										cfg.nav.blog.submenu.classic.submenu.singlePost.href,
+										'05/14/2018',
+										'Get Started with TemplateMonster',
+										{
+											'src': 'images/blog/post-thumb-06-60x60.jpg',
+											'w': '60',
+											'h': '60',
+											'alt': ''
+										},
+										'',
+										'text-primary'
+										)
+
+
+								.col-sm-12.offset-top-66.col-xl-4.order-xl-1.offset-xl-top-0
+									// Footer brand
+									.footer-brand
+										a( href=cfg.nav.home.href )
+											img.img-fluid.d-inline-block( src='images/childs/green-space-logo-138x31.png', width='138', height='31', alt='' )
+									p.text-darker.font-italic.offset-top-4 Financial Advisor
+
+									.row.justify-content-sm-center.offset-top-30.text-sm-left
+										.col-sm-4.offset-sm-1.col-lg-3.offset-lg-3.col-xl-6.offset-xl-0
+											address.contact-info
+												dl
+													dt.text-white.font-weight-bold Address:
+													dd.text-dark.d-xl-block
+														| 28 Jackson Blvd Ste
+														br
+														| 1020 Chicago
+														br
+														| IL 60604-2340.
+										.col-sm-4.offset-sm-2.col-lg-4.offset-lg-0.col-xl-6.offset-xl-0.offset-top-10.offset-sm-top-0
+											address.contact-info.p
+												dl
+													dt.text-white.font-weight-bold Phone
+													dd.text-dark
+														a( href='tel:#' ) +1 800 559 6580
+													dt.text-white.font-weight-bold.offset-top-10 E-mail:
+													dd.text-dark
+														a( href='mailto:#' ) mail@demolink.org
+
+									.offset-top-30
+										+widget-list-social([
+											{
+												'icon': 'fa fa-facebook',
+												'href': '#'
+											},
+											{
+												'icon': 'fa fa-twitter',
+												'href': '#'
+											},
+											{
+												'icon': 'fa fa-google-plus',
+												'href': '#'
+											},
+											{
+												'icon': 'fa fa-linkedin',
+												'href': '#'
+											}
+										])
+
+				.container.offset-top-50
+					p.small.text-darker
+						| #{cfg.brand.name} &copy; #[span.copyright-year] . #[a(href='privacy.html') Privacy Policy]
+						| . Design&nbsp;by&nbsp;#[a(href="https://zemez.io/") Zemez]
+
+		// Global Mailform Output
+		#form-output-global.snackbars
+
+		// Java script
+		script( src='js/core.min.js' )
+		script( src='js/script.js' )

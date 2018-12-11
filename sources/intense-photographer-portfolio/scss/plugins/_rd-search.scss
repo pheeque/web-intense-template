@@ -1,0 +1,49 @@
+//
+// Search Results
+// --------------------------------------------------
+
+// Base styles
+// -------------------------
+.search_list{
+  text-align: left;
+  padding-left: 0;
+  font-size: 18px;
+  list-style-type: none;
+}
+
+.result-item{
+  margin-left: 20px;
+  padding-left: 20px;
+  list-style-type: decimal;
+
+  color: $gray-700;
+  >*{
+    color: $gray-800;
+  }
+
+  +.result-item{
+    margin-top: 41px;
+  }
+  @include media-breakpoint-up(md) {
+    padding-left: 40px;
+  }
+}
+
+.search_title{
+  color: $black;
+
+}
+
+.match{
+  color: $picton-blue;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: $font-size-sm;
+  em{
+    font-style: normal;
+  }
+}
+
+.search{
+  background: $success;
+}

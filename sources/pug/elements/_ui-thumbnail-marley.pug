@@ -1,0 +1,10 @@
+//- thumbnail - {thumbnail} object
+mixin thumbnail-marley(thumbnail)
+  // Thumbnail Marley
+  figure.thumbnail-marley
+    a(href=thumbnail.large, data-lightgallery='item')
+      img(width=thumbnail.width, height=thumbnail.height, src=thumbnail.small, alt=thumbnail.title)
+    figcaption.text-left
+      span.novi-icon.icon.icon-xxs(class= thumbnail.iconClass).pull-right
+      div
+        h6.thumbnail-marley-title.text-bold= thumbnail.title

@@ -1,0 +1,9 @@
+//
+// Pull Responsive
+// --------------------------------------------------
+
+@each $alias, $resolution in $grid-breakpoints {
+  @media ( min-width: $resolution ) {
+    @include make-pull-alignment( $alias );
+  }
+}

@@ -1,0 +1,51 @@
+extends  ../_skeleton
+
+include ../elements/_ui-pagination-bootstrap
+include ../elements/_ui-material-parallax
+
+block title
+  title Search Results
+
+block page
+  //Page Head
+  header.section.page-head
+    +rd-navbar-default(
+      'rd-navbar-default rd-navbar-light',
+      {
+        'data-lg-auto-height': 'true',
+        'data-md-layout': 'rd-navbar-fixed',
+        'data-lg-layout': 'rd-navbar-static',
+        'data-lg-stick-up': 'true'
+      },
+      cfg.brand.logoInverse,
+      '',
+      cfg.nav
+    )
+
+
+  //Breadcrumbs
+  +material-parallax({
+    img: 'images/background-03-1920x447.jpg',
+    Class: 'section-41 section-md-50 section-lg-66 context-dark'
+  }).section
+    .container
+      div
+        h1.text-capitalize
+          span.big
+            | Search Results
+      .offset-top-10
+        ul.list-inline.list-inline-dashed.font-italic.p
+          li.list-inline-item
+            a( href='index.html' ) Home
+          li.list-inline-item
+            | Search Results
+
+
+  //Search results
+  section.section.novi-background.section-98.section-md-124
+    .container
+      +widget-form-search( 'input-sm', 'form-label-sm', 'search-results' )
+      .rd-search-results.offset-top-66
+
+
+  include ../sections/_section-footer-default

@@ -1,0 +1,579 @@
+/*
+* Fixed Layout
+*/
+.rd-navbar-fixed {
+  display: block;
+
+  // RD Navbar Brand
+  .rd-navbar-brand {
+    display: block;
+    text-align: center;
+    position: fixed;
+    top: 8px;
+    left: 56px;
+    right: 56px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 22px;
+    line-height: 46px;
+    z-index: 17;
+
+    .brand-name {
+      color: $gray-base;
+    }
+  }
+
+  // RD Navbar Panel
+  .rd-navbar-panel {
+    @include display-flex();
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    padding: ($rd-navbar-fixed-height - $rd-navbar-fixed-line-height) / 2;
+    height: $rd-navbar-fixed-height;
+    color: $rd-navbar-fixed-panel-color;
+    z-index: 999;
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      box-shadow: $rd-navbar-fixed-shadow;
+      background: $rd-navbar-fixed-panel-background;
+    }
+  }
+
+  // RD Navbar Toggle
+  .rd-navbar-toggle {
+    display: inline-block;
+    position: fixed;
+    top: 4px;
+    left: 3px;
+    padding: 0;
+  }
+
+  .rd-navbar-nav-wrap {
+    @extend %rd-navbar-transition;
+    position: fixed;
+    top: -56px;
+    left: 0;
+    width: 232px;
+    padding: 112px 0 56px;
+    bottom: -56px;
+    color: $white;
+    background: $rd-navbar-background;
+    z-index: 15;
+    @include transform(translateX(-120%));
+
+    &.active {
+      @include transform(translateX(0));
+    }
+  }
+
+  .rd-navbar-nav {
+    display: block;
+    height: 100%;
+    overflow: auto;
+    font-size: 16px;
+    line-height: 26px;
+    text-align: left;
+
+    &:before, &:after {
+      content: '';
+      display: block;
+      height: 8px;
+    }
+
+    li {
+      > a {
+        display: block;
+        padding: 11px 56px 11px 16px;
+        color: $rd-navbar-fixed-panel-color;
+      }
+
+      &.opened > a, a:hover {
+        color: $white;
+        background: $brand-primary;
+      }
+
+      &.active {
+        &:hover {
+          > a {
+            color: $white;
+            background: $brand-primary;
+          }
+        }
+
+        &:focus {
+          outline: none;
+        }
+
+        .rd-navbar-submenu-toggle {
+          &:after {
+            color: $white;
+          }
+        }
+
+        > a {
+          color: $white;
+          background: $brand-primary;
+        }
+      }
+    }
+  }
+
+  .rd-navbar-dropdown,
+  .rd-navbar-megamenu {
+    display: none;
+  }
+
+  .rd-navbar-megamenu {
+    margin-top: 4px;
+  }
+
+  .rd-navbar-submenu {
+    position: relative;
+    @extend %rd-navbar-transition;
+
+    .rd-navbar-dropdown > li > a {
+      padding-left: 30px;
+    }
+
+    .rd-navbar-dropdown li li > a,
+    .rd-navbar-megamenu ul li li > a {
+      padding-left: 48px;
+    }
+
+    &.opened {
+      > .rd-navbar-dropdown,
+      > .rd-navbar-megamenu {
+        display: block;
+      }
+    }
+  }
+
+  // RD Navbar Search
+  .rd-navbar-search {
+    display: block;
+
+    form {
+      button[type="submit"] {
+        display: none;
+      }
+    }
+
+    &.active {
+      .form-group {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    &-form,
+    &-toggle {
+      right: 4px;
+    }
+
+    &-toggle {
+      display: block;
+      position: fixed;
+      top: 4px;
+      right: 56px;
+      font-family: 'Material Icons';
+      width: 48px;
+      height: 48px;
+      z-index: 18;
+      color: $rd-navbar-color;
+    }
+
+    .form-group {
+      position: fixed;
+      top: 0;
+      padding-top: 4px;
+      left: 56px;
+      right: 112px;
+      height: 56px;
+      background: $rd-navbar-background;
+      z-index: 17;
+      @extend %rd-navbar-transition;
+      visibility: hidden;
+      opacity: 0;
+
+      input {
+        width: 100%;
+        height: 46px;
+        display: block;
+        font-size: 22px;
+        line-height: 46px;
+      }
+    }
+
+    &-form, .rd-navbar-live-search-results {
+      position: fixed;
+      margin-right: 0;
+      margin-left: auto;
+    }
+
+    .rd-navbar-live-search-results {
+      top: $rd-navbar-fixed-height;
+    }
+
+    &-form {
+      top: 0;
+      z-index: 1000;
+      left: 50px;
+      right: 0;
+      height: $rd-navbar-fixed-height;
+      label {
+        display: none;
+      }
+
+      &-input {
+        padding: 8px 40px 8px 10px;
+        visibility: hidden;
+        opacity: 0;
+        height: $rd-navbar-fixed-height - 16px;
+        border: 1px solid #C3C3C3;
+        position: relative;
+        top: 8px;
+        background: #EAEAEA;
+        transition: .3s all ease;
+        z-index: 1;
+        width: 100%;
+
+        input {
+          display: block;
+          width: 100%;
+          padding: 0 $rd-navbar-fixed-line-height 0 20px;
+          height: $rd-navbar-fixed-line-height - 8;
+          font-size: 16px;
+          line-height: 34px;
+          color: $rd-navbar-fixed-panel-color;
+          background: darken($rd-navbar-fixed-panel-background, 5%);
+        }
+      }
+
+      &-submit {
+        position: absolute;
+        top: ($rd-navbar-fixed-height - $rd-navbar-fixed-line-height) / 2;
+        right: 4px;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 9;
+        background-color: transparent;
+        border: none;
+        &:focus {
+          outline: none;
+        }
+
+      }
+    }
+
+    &-toggle {
+      &.active {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+
+    &.active {
+      .rd-navbar-search-form-input,
+      .rd-navbar-search-form-submit {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    @media (min-width: $screen-md-min) {
+      &-form, .rd-navbar-live-search-results {
+        max-width: 340px;
+      }
+
+      .rd-navbar-live-search-results {
+        right: 4px;
+      }
+    }
+
+    @media (min-width: $screen-xs-min) {
+      .rd-navbar-brand {
+        .brand-name {
+          font-size: $rd-navbar-fixed-font-size;
+        }
+      }
+    }
+  }
+
+  // RD Navbar Nav
+  .rd-navbar-nav {
+    li {
+      &:hover,
+      &.focus {
+        > a, > a:hover {
+          color: $white;
+          background: $brand-primary;
+        }
+        > .rd-navbar-submenu-toggle {
+          &:after {
+            color: #fff;
+          }
+          &:hover {
+            cursor: pointer;
+            color: #fff;
+          }
+        }
+      }
+
+      .rd-navbar-dropdown,
+      .rd-navbar-megamenu {
+        transition: opacity 0.3s, height 0.4s ease;
+        opacity: 0;
+        height: 0;
+        overflow: hidden;
+      }
+
+      .rd-navbar-dropdown .rd-navbar-submenu-toggle {
+        &:after {
+          //color: $gray-base;
+        }
+      }
+
+      .rd-navbar-dropdown .rd-navbar-submenu {
+        .rd-navbar-submenu-toggle {
+          &:after {
+            color: $gray-base;
+          }
+        }
+
+        &.opened {
+          .rd-navbar-submenu-toggle {
+            &:after {
+              color: $white;
+            }
+          }
+        }
+
+        &:hover {
+          .rd-navbar-submenu-toggle:after {
+            color: $white;
+          }
+        }
+      }
+
+      &.opened {
+        > .rd-navbar-dropdown,
+        > .rd-navbar-megamenu {
+          opacity: 1;
+          height: auto;
+        }
+        > a {
+          color: $white;
+          background: $brand-primary;
+        }
+        > .rd-navbar-submenu-toggle {
+          color: #fff;
+          &:after {
+            color: $white;
+            @include transform (rotate(180deg));
+          }
+        }
+      }
+
+    }
+
+    .rd-navbar-submenu-toggle {
+      &::after {
+        content: '\f078';
+        position: absolute;
+        top: 22px;
+        right: 0;
+        margin-top: -22px;
+        width: 65px;
+        height: 48px;
+        font: 400 14px "FontAwesome";
+        line-height: 48px;
+        text-align: center;
+        transition: 0.4s all ease;
+        z-index: 2;
+        color: $rd-navbar-fixed-panel-color;
+      }
+    }
+  }
+
+  // Hybrid Styles
+  .rd-navbar-collapse,
+  .rd-navbar-search-toggle {
+    position: fixed;
+    top: ($rd-navbar-fixed-height - $rd-navbar-fixed-line-height) / 2;
+    height: $rd-navbar-fixed-line-height;
+    z-index: 1000;
+
+    background-color: transparent;
+    border: none;
+    &:focus {
+      outline: none;
+    }
+
+  }
+
+  // RD Navbar States
+  &.active {
+    .rd-navbar-nav {
+      @include transform(translateX(0));
+    }
+  }
+
+  &.rd-navbar--on-search {
+    @media (max-width: 1199px) {
+      .brand-name {
+        opacity: 0;
+        visibility: hidden;
+        @include transform(scale(0.7));
+      }
+    }
+  }
+
+  &.rd-navbar--is-clone {
+    display: none;
+
+    .rd-navbar-panel {
+      @include transform(translateY(-110%));
+    }
+
+    &.rd-navbar--is-stuck {
+      .rd-navbar-panel {
+        @include transform(translateY(0));
+      }
+    }
+  }
+
+  .rd-navbar-fixed--visible {
+    display: block;
+  }
+
+  .rd-navbar-fixed--hidden {
+    display: none;
+  }
+
+  &.rd-navbar-panel {
+    .rd-navbar-collapse-wrap {
+      padding: 15px;
+      width: 200px;
+
+      li {
+        display: inline-block;
+      }
+    }
+  }
+
+  &.rd-navbar-hamburger {
+    @media (min-width: $screen-lg-min) {
+      .rd-navbar-panel {
+        &:before {
+          box-shadow: none;
+          background: transparent;
+        }
+      }
+
+      .rd-navbar-inner {
+        > .rd-navbar-inner-top {
+          position: relative;
+          z-index: 9999;
+          max-width: 1200px;
+          margin-left: auto;
+          margin-right: auto;
+
+
+          > .rd-navbar-brand,
+          > .list-inline {
+            position: absolute;
+          }
+
+          > .rd-navbar-brand {
+            top: 20px;
+            right: auto;
+            left: 22px;
+          }
+
+          > .list-inline {
+            top: 28px;
+            right: 22px;
+
+            @media (min-width: $screen-xl-min) {
+              right: -12px;
+            }
+          }
+        }
+      }
+
+      .rd-navbar-nav-wrap {
+        right: 0;
+        left: auto;
+        z-index: 9999;
+        padding-top: 55px;
+        @include transform(translateX(120%));
+
+        &.active {
+          @include transform(translateX(-15%));
+        }
+      }
+
+      .rd-navbar-toggle {
+        top: 17px;
+        left: auto;
+        right: calc(50% - 460px);
+
+        &.active {
+          @media (max-width: 1499px) {
+            right: 290px;
+          }
+        }
+
+        &.rd-navbar-toggle-inverse {
+          right: calc(40% - 460px);
+          border-radius: 30px;
+          background: $white;
+
+          &.active {
+            right: 290px;
+          }
+
+          span {
+            &, &:before, &:after {
+              background-color: $brand-chathams-blue;
+            }
+          }
+
+          @media (min-width: $screen-xl-min) {
+            right: calc(27% - 460px);
+          }
+        }
+
+        span {
+          &, &:before, &:after {
+            height: 2px;
+            background-color: $white;
+          }
+        }
+
+        @media (min-width: $screen-xl-min) {
+          right: calc(50% - 500px);
+        }
+      }
+    }
+  }
+}
+
+html.rd-navbar-fixed-linked {
+  body {
+    padding-top: 55px;
+
+    @media (min-width: $screen-lg-min) {
+      padding-top: 0;
+    }
+  }
+}

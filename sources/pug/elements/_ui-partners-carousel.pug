@@ -1,0 +1,8 @@
+//- partners - object{partners}
+mixin partners-carousel(partners)
+  // owl carousel
+  .owl-carousel.owl-carousel-default.owl-carousel-class-light.veil-owl-nav(data-loop="false" data-items="1" data-sm-items="2" data-dots="true" data-mouse-drag="false" data-lg-items="4" data-nav="false")
+    each partner in partners
+      a(href= partner.link.href)
+        img.img-fluid.d-inline-block.img-semi-transparent(src=partner.image.src width=partner.image.width height=partner.image.height alt=partner.image.alt)
+

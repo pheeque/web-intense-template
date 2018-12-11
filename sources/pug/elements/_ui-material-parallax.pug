@@ -1,0 +1,5 @@
+//- Material parallax
+mixin material-parallax( obj )
+  section.section.parallax-container( data-parallax-img= obj.img )&attributes( attributes )
+    .parallax-content( class= obj.Class )&attributes( obj.innerAttrs )
+      block

@@ -1,0 +1,19 @@
+extends  ../_skeleton
+
+include ../elements/_ui-breadcrumb-classic
+
+block title
+  title= cfg.nav.pages.submenu.coomingSoon.title
+
+block page
+  section.section.novi-background.one-page(style="background: url(images/backgrounds/background-17-1920x955.jpg) 0/cover no-repeat")
+    .one-page-header
+      //Navbar Brand
+      .rd-navbar-brand
+        a(href= cfg.nav.home.href)!=cfg.brand.logoInverse
+
+    include ../sections/_section-coming-soon
+
+    .one-page-footer
+      p.small(style="color: rgba(255,255,255, 0.3)")
+        | #{cfg.brand.name} &copy; #[span.copyright-year] . #[a(href="privacy.html") Privacy Policy]

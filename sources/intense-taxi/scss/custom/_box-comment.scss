@@ -1,0 +1,87 @@
+//
+// Box Comment
+// --------------------------------------------------
+
+// Base styles
+// -------------------------
+
+.box-comment {
+  &-meta {
+    margin-bottom: $box-comment-meta-offset-top;
+    font-size: $box-comment-meta-size;
+    font-weight: 700;
+
+    a, time {
+      color: $brand-silver;
+    }
+
+    a:hover {
+      color: $box-comment-meta-link-hover;
+    }
+  }
+
+  &-icon {
+    font-size: $box-comment-meta-icon-size;
+    color: $brand-turquoise;
+  }
+
+  &-title {
+    margin-top: $box-comment-title-offset-top;
+  }
+}
+
+
+// Boxed Comments
+// -------------------------
+
+.box-comment-boxed {
+  .box-comment-img{
+    margin-right: $box-comment-boxed-img-offset-right;
+  }
+
+  @media (max-width: $screen-xs-min - 1) {
+    .media-left, .media > .pull-left {
+      padding-right: 50px;
+    }
+
+    .box-comment-img{
+      width: 60px;
+      height: 60px;
+    }
+  }
+
+  .box-comment-body{
+    margin-top: $box-comment-boxed-body-offset-top;
+  }
+
+  .media {
+    padding: $box-comment-boxed-media-body-padding;
+    border: $box-comment-boxed-media-body-border;
+  }
+
+  @media (min-width: $screen-xs-min) {
+    .box-comment-img{
+      margin-right: $box-comment-boxed-img-xs-offset-right;
+      margin-top: 5px;
+    }
+    .media-body{
+      padding: $box-comment-boxed-media-body-xs-padding;
+    }
+  }
+  @media (min-width: $screen-lg-min) {
+    > .box-comment-boxed{
+      margin-left: $box-comment-boxed-lg-offset-left;
+    }
+    .box-comment-meta{
+      float: right;
+    }
+    > .box-comment-outboxed{
+      margin-left: $box-comment-outboxed-lg-offset-left;
+    }
+  }
+}
+
+.box-comment-boxed + .box-comment-boxed,
+.box-comment-boxed > .box-comment {
+  margin-top: $box-comment-boxed-offset-top;
+}

@@ -1,0 +1,265 @@
+/*
+* Navbar components
+*/
+
+// RD Navbar
+.rd-navbar {
+  background: $rd-navbar-background;
+}
+
+// RD Navbar Toggle
+.rd-navbar-toggle {
+  @include make-toggle(
+      $rd-navbar-toggle-preset,
+      $rd-navbar-min-line-height,
+      $rd-navbar-min-font-size,
+      $rd-navbar-fixed-toggle-color
+  );
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: none;
+}
+
+// RD Navbar Brand
+.rd-navbar-brand {
+  .brand-name {
+
+  }
+
+  .brand-slogan {
+  }
+}
+
+.rd-navbar {
+  .rd-search {
+    .form-input {
+      padding-right: 50px;
+    }
+
+    .form-label {
+      left: 10px;
+    }
+
+    .form-input,
+    .form-label {
+      font-size: 16px;
+      font-weight: 400;
+      color: $white;
+    }
+  }
+}
+
+.rd-navbar-search {
+  .rd-navbar-static & {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    bottom: 0;
+    right: 0;
+    z-index: 9;
+    display: flex;
+    align-items: center;
+    //overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s ease-in;
+    
+    &.active {
+      left: 0;
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .rd-navbar-search-inner {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      overflow: hidden;
+      
+      &:before{
+        background: $gray-3;
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        z-index: -1;
+        transform-origin: bottom left;
+        transform: skew(-30deg, 0deg);
+      }
+    }
+    
+    .rd-search {
+      padding-left: 55px;
+      flex-grow: 1;
+    }
+
+    .form-input {
+      font-size: 22px;
+      padding-right: 60px;
+    }
+
+    .form-label {
+      font-size: 22px;
+    }
+  }  
+  
+  .rd-navbar-fixed & {
+    .rd-search-results-live {
+      display: none;
+    }
+  }
+
+  .rd-search {
+    position: relative;
+
+    .form-input {
+      width: 100%;
+      padding-left: 10px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      min-height: 48px;
+      background-color: $gray-3;
+      border: 0;
+    }
+  }
+
+  .rd-search__submit {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10px;
+    z-index: 10;
+
+    $size: 22px;
+    width: 36px;
+    height: $size;
+    line-height: $size;
+    color: $white;
+
+    &:hover {
+      color: $primary;
+    }
+
+    &::before {
+      content: '\e09c';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: inherit;
+      height: inherit;
+      font: 400 22px 'fl-bigmug-line';
+      line-height: inherit;
+      text-align: center;
+      color: inherit;
+    }
+  }
+}
+
+.rd-navbar .rd-navbar-search__toggle {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  color: $white;
+
+  width: 26px;
+  height: 26px;
+  transition: .33s all ease;
+
+  &::before{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: inline-block;
+    padding: 2px;
+    font-family: 'fl-bigmug-line';
+    font-weight: 400;
+    line-height: 24px;
+    text-align: center;
+    will-change: transform;
+  }
+
+  &::before {
+    margin-right: -2px;
+    content: '\e09c';
+    font-size: 22px;
+  }
+
+  .desktop & {
+    &:hover {
+      color: $primary;
+    }
+  }
+}
+
+.rd-search-results-live {
+  position: absolute;
+  top: 101%;
+  left: 0;
+  right: 0;
+}
+
+.result-item {
+  * + p {
+    margin-top: 5px;
+  }
+}
+
+.rd-navbar-nav-wrap__shop {
+  white-space: nowrap;
+  
+  .icon {
+    font-size: 18px;
+    &:before{
+      padding-right: 5px;
+      font-size: 22px;
+    }
+  }
+}
+
+
+.rd-navbar {
+  button.rd-search__submit,
+  button.rd-navbar-search__toggle {
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+}
+
+.rd-navbar-items-list {
+  .rd-navbar-static & {
+    display: flex;
+    align-items: center;
+  }
+  
+  > li {
+    color: $white;  
+    line-height: 1;
+    padding: 0 10px;
+    
+    & + li {
+      position: relative;
+      &:before{
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        border-left: 1px solid;
+        content: "";
+        opacity: .2;
+      }
+    }
+    @include media-breakpoint-up(xl) {
+      padding: 0 15px;
+    }
+  }
+}

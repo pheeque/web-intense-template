@@ -1,0 +1,14 @@
+mixin google-map( map, markers )
+  -
+    map = map || {};
+    map.center = map.center || '9870 St Vincent Place, Glasgow, DC 45 Fr 45.';
+    map.styles = map.styles || '[{"featureType":"landscape","stylers":[{"saturation":-100},{"lightness":60}]},{"featureType":"road.local","stylers":[{"saturation":-100},{"lightness":40},{"visibility":"on"}]},{"featureType":"transit","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"administrative.province","stylers":[{"visibility":"off"}]},{"featureType":"water","stylers":[{"visibility":"on"},{"lightness":30}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#ef8c25"},{"lightness":40}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"visibility":"off"}]},{"featureType":"poi.park","elementType":"geometry.fill","stylers":[{"color":"#b6c54c"},{"lightness":40},{"saturation":-40}]},{}]';
+  .google-map-container( data-key= cfg.googleApi, data-center= map.center, data-styles= map.styles )&attributes( attributes )
+    .google-map
+    if ( markers )
+      ul.google-map-markers
+        each marker in markers
+          -
+            marker.icon = marker.icon || 'images/gmap_marker.png';
+            marker.iconActive = marker.iconActive || 'images/gmap_marker_active.png';
+          li( data-location= marker.location, data-description= marker.description, data-icon= marker.icon, data-icon-active= marker.iconActive )

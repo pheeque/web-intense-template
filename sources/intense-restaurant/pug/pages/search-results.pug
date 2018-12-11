@@ -1,0 +1,50 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-material-parallax
+
+//- Title
+block title
+  title Search Results
+
+//- Page
+block page
+  // Page Header
+  header.page-head.slider-menu-position
+    //- RD Navbar
+    +rd-navbar-default(
+    'rd-navbar-default rd-navbar-transparent',
+    {
+      "data-lg-auto-height": "true",
+      "data-md-layout": 'rd-navbar-fixed',
+      "data-lg-layout": 'rd-navbar-static',
+      "data-lg-stick-up": 'true'
+    },
+    cfg.brand.logo,
+    cfg.nav,
+    cfg.nav
+    )
+
+  section.context-dark
+    +material-parallax({ img: 'images/intro-01-1920x955.jpg' })
+      .container
+        .section-110.row.justify-content-sm-center.align-items-sm-center
+          .col-lg-8
+            img(src='images/intro-logo-175x173.png' alt="" width=175 height=173)
+
+            h1.font-accent
+              span.big Search Results
+
+  // Page Content
+  main.page-content.section-98.section-md-124
+    // Section Intro
+
+
+    .container
+
+      +widget-form-search("input-sm", "form-label-sm", "search-results")
+
+      .rd-navbar-search-results.offset-top-66
+
+        // Page Footers
+  include ../sections/_section-footer-variant-2

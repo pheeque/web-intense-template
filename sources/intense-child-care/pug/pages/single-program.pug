@@ -1,0 +1,214 @@
+extends  ../_skeleton
+
+//- Includes
+include  ../elements/_ui-material-parallax
+include  ../elements/_ui-box-icon-type-4
+include ../elements/_ui-vacation
+include ../elements/_ui-thumbnail-terry
+include ../elements/_ui-box-planning-type-2
+//-Title
+block title
+  title= cfg.nav.programs.title
+
+//- Page
+block page
+
+  // Page Head
+  header.section.page-head
+    //- RD Navbar
+    +rd-navbar-top-panel(
+    'rd-navbar-light',
+    {
+      "data-lg-auto-height": "true",
+      "data-md-layout": 'rd-navbar-fixed',
+      "data-lg-layout": 'rd-navbar-static',
+      "data-lg-stick-up": 'true'
+    },
+    cfg.brand.logo,
+    cfg.nav.programs,
+    cfg.nav
+    )
+
+
+  // Breadcrumbs
+  +material-parallax({
+    img: 'images/bg-01-1920x718.jpg',
+    Class: 'section-34 section-md-66 text-lg-left context-dark bg-overlay-info'
+  }).section
+    .container.section-34.section-md-66.text-lg-left
+      div.d-none.d-md-block.d-lg-inline-block
+        h1.font-weight-bold
+          span.big Early Preschool
+      div.pull-lg-right.offset-md-top-10.offset-lg-top-41
+        ul.p.list-inline.list-inline-dashed
+          li.list-inline-item.text-safety-orange
+            a(href= cfg.nav.home.href) Home
+          li.list-inline-item.text-safety-orange
+            a(href= cfg.nav.programs.href) Programs
+          li.list-inline-item Early Preschool
+
+  // Welcome to Intense
+  section.section.novi-background.section-lg-bottom-0.section-66
+    .container
+      .row.justify-content-sm-center.align-items-lg-center
+        .col-sm-10.col-lg-6.text-lg-left
+          h1.font-weight-bold.text-primary We channel energy into learning and fun
+
+          .offset-top-30.offset-lg-top-50
+            p Toddler classrooms feature our exclusive, milestone-focused approach, Learn from the Start™. This curriculum was developed by our educational experts to focus on the key developmental milestones specific to infants and toddlers.
+            p We emphasize your child’s development, rather than specific age, because all children grow and learn at their own pace, and in their own unique way. Learning experiences are designed to address the individual needs of each child, in each classroom.
+          .offset-top-20.offset-lg-top-30
+            a(href=cfg.nav.contacts.href).btn.btn-safety-orange Get in Touch
+        .col-sm-10.col-lg-6
+          img.img-fluid.d-none.d-lg-inline-block.offset-top-10(src="images/single-program-01-573x517.jpg" width=573 height=517 alt="")
+
+  // Our Teachers
+  section.section.novi-background.section-98.section-md-110.section-bottom-66.bg-lightest
+    .container
+      h1.font-weight-bold.text-primary Teachers
+      +svg-divider("bg-primary", "71", "13")
+      .row.justify-content-sm-center
+        .col-sm-10.col-md-8
+          p Our teachers are highly qualified specialists that know what modern children need. We hire teachers with experience from 5 or more years, making sure their qualification is enough for teaching children aged at 2 and up.
+      .offset-md-top-66.text-center.text-lg-left
+        .row.justify-content-sm-center.section-34
+
+          .col-md-6.col-lg-3
+            img.img-fluid.d-inline-block(src="images/about-08-270x270.jpg" width=270 height=270 alt="")
+            .text-lg-left.offset-top-14
+              div
+                h5.font-weight-bold.text-safety-orange.font-default
+                  a(href="#") Olivia Marshall
+            address.contact-info.text-lg-left.post-meta.offset-top-10
+              ul.list-unstyled.p
+                li.d-block
+                  span.novi-icon.icon.icon-xxs.mdi.mdi-phone.text-middle.text-dark
+                  a.d-inline-block.text-middle.inset-left-10(href="tel:1-800-7650-986") 1-800-7650-986
+                li.d-block
+                  span.novi-icon.icon.icon-xxs.mdi.mdi-email-open.text-middle.text-dark
+                  a.d-inline-block.text-middle.inset-left-10(href="mailto:olivia@demolink.org") olivia@demolink.org
+
+          .col-md-6.col-lg-3.offset-top-50.offset-md-top-0
+            img.img-fluid.d-inline-block(src="images/about-04-270x270.jpg" width=270 height=270 alt="")
+            .text-lg-left.offset-top-14
+              div
+                h5.font-weight-bold.text-safety-orange.font-default
+                  a(href="#") Alisa Myers
+            address.contact-info.text-lg-left.post-meta.offset-top-10
+              ul.list-unstyled.p
+                li.d-block
+                  span.novi-icon.icon.icon-xxs.mdi.mdi-phone.text-middle.text-dark
+                  a.d-inline-block.text-middle.inset-left-10(href="tel:1-800-7650-986") 1-800-7650-986
+                li.d-block
+                  span.novi-icon.icon.icon-xxs.mdi.mdi-email-open.text-middle.text-dark
+                  a.d-inline-block.text-middle.inset-left-10(href="mailto:alisa@demolink.org") alisa@demolink.org
+
+          .col-md-6.col-lg-3.offset-top-50.offset-lg-top-0
+            img.img-fluid.d-inline-block(src="images/about-09-270x270.jpg" width=270 height=270 alt="")
+            .text-lg-left.offset-top-14
+              div
+                h5.font-weight-bold.text-safety-orange.font-default
+                  a(href="#") Alex Nelson
+            address.contact-info.text-lg-left.post-meta.offset-top-10
+              ul.list-unstyled.p
+                li.d-block
+                  span.novi-icon.icon.icon-xxs.mdi.mdi-phone.text-middle.text-dark
+                  a.d-inline-block.text-middle.inset-left-10(href="tel:1-800-7650-986") 1-800-7650-986
+                li.d-block
+                  span.novi-icon.icon.icon-xxs.mdi.mdi-email-open.text-middle.text-dark
+                  a.d-inline-block.text-middle.inset-left-10(href="mailto:alex@demolink.org") alex@demolink.org
+
+          .col-md-6.col-lg-3.offset-top-50.offset-lg-top-0
+            img.img-fluid.d-inline-block(src="images/about-06-270x270.jpg" width=270 height=270 alt="")
+            .text-lg-left.offset-top-14
+              div
+                h5.font-weight-bold.text-safety-orange.font-default
+                  a(href="#") Terry Sandoval
+            address.contact-info.text-lg-left.post-meta.offset-top-10
+              ul.list-unstyled.p
+                li.d-block
+                  span.novi-icon.icon.icon-xxs.mdi.mdi-phone.text-middle.text-dark
+                  a.d-inline-block.text-middle.inset-left-10(href="tel:1-800-7650-986") 1-800-7650-986
+                li.d-block
+                  span.novi-icon.icon.icon-xxs.mdi.mdi-email-open.text-middle.text-dark
+                  a.d-inline-block.text-middle.inset-left-10(href="mailto:terry@demolink.org") terry@demolink.org
+
+  // Choose your Plan
+  section.section.novi-background.section-98.section-md-110
+    .container
+      h1.font-weight-bold.text-primary Choose your Plan
+      +svg-divider("bg-primary", "71", "13")
+      .row.justify-content-sm-center.offset-top-34.offset-md-top-66
+        .col-sm-10.col-md-8
+          p The pricing plans listed below fully reflect the variety of our learning programs and all included activities. If you would like to find out more about any of these plans, feel free to contact our managers using our website.
+    .container-fluid.offset-top-66
+      .row.no-gutters.justify-content-lg-center
+        .col-sm-8.offset-md-2.col-lg-4.offset-xl-0.col-xl-3.col-xxl-2
+          +box-planning-2("Starter", "19", "month", null , "bg-deluge", null, "Buy now", "btn-default")
+            p.text-light
+              small This plan is a perfect option for parents looking for affordable child care.
+            ul.list-separated.list-unstyled
+              li
+                span 8 am - 12 Noon Care
+              li
+                span Without Meals
+              li
+                span Science Classes
+              li
+                span 1 Educators
+              li
+                span.text-dark Personal Program
+
+        .col-sm-8.offset-md-2.col-lg-4.offset-xl-0.col-xl-3.col-xxl-2.offset-top-50.offset-lg-top-0
+          +box-planning-2("Basic", "59", "month", "text-safety-orange", "bg-safety-orange", "bg-safety-orange", "Buy now", "btn-safety-orange", "active")
+            p.text-light
+              small The Basic plan gives your kid everything necessary for his/her learning.
+            ul.list-separated.list-unstyled
+              li
+                span 8 am - 12 Noon Care
+              li
+                span 3 Meals a Day
+              li
+                span Science Classes
+              li
+                span 2 Educators
+              li
+                span.text-dark Personal Program
+
+        .col-sm-8.offset-md-2.col-lg-4.offset-xl-0.col-xl-3.col-xxl-2.offset-top-50.offset-lg-top-0
+          +box-planning-2("Pro", "99", "month", null, "bg-deluge", null, "Buy now", "btn-default")
+            p.text-light
+              small The Pro plan includes all activities necessary for your child’s upbringing.
+            ul.list-separated.list-unstyled
+              li
+                span 8 am - 12 Noon Care
+              li
+                span 4 Meals a Day
+              li
+                span Science Classes
+              li
+                span 3 Educators
+              li
+                span.text-dark Personal Program
+
+
+  // First Lesson - Free
+  +material-parallax({
+    img: 'images/bg-02-1920x748.jpg',
+    Class: 'section-66 context-dark'
+  }).section
+    .container
+      h1.font-weight-bold Have a question?
+      .row.justify-content-sm-center.offset-top-20
+        .col-sm-10.col-sm-8
+          div
+            p If you would like to discuss details of a certain plan or program, email us and we will gladly answer all your questions.
+          .offset-top-30
+            a(href=cfg.nav.contacts.href).btn.btn-icon.btn-icon-left.btn-default
+              span.novi-icon.icon.mdi-email-outline.mdi
+              span Send us a letter
+
+  // Page Footer
+  include ../sections/_section-footer-default
+
+

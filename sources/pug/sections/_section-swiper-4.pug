@@ -1,0 +1,77 @@
+include ../elements/_ui-bg-vide
+//Swiper
+.swiper-container.swiper-slider(data-loop="true" data-autoplay='true' data-height="100vh" data-dragable="false" data-min-height="480px")
+  .swiper-wrapper.text-center
+    #page-loader.swiper-slide(data-slide-bg="images/intros/intro-04-1920x955.jpg" data-preview-bg="images/intros/intro-04-1920x955.jpg")
+      .swiper-caption.swiper-parallax
+        .swiper-slide-caption
+          .container
+            .row.justify-content-xl-center
+              .col-xl-12
+                h1
+                  span.big.text-uppercase(data-caption-animate="fadeIn" data-caption-delay="700") Welcome to Intense
+              .col-xl-10.offset-top-30
+                h4.d-none.d-md-block.text-light(data-caption-animate="fadeIn" data-caption-delay="900")
+                  | The smartest and most flexible bootstrap template by TemplateMonster you've ever seen.
+                  | Create exactly what you need with our powerful bootstrap toolkit.
+
+                .group.group-xl.offset-top-20.offset-sm-top-50
+                  a.btn.btn-primary.btn-lg.btn-anis-effect( href=cfg.builderLink, target='_blank', data-caption-animate="fadeIn", data-caption-delay="1200" )
+                    span.btn-text Try builder now
+
+                  a.btn.btn-default.btn-lg.btn-anis-effect( href=cfg.buyLink, target='_blank', data-caption-animate="fadeIn", data-caption-delay="1200" )
+                    span.btn-text Buy intense now
+
+    .swiper-slide(data-preview-bg="video/intro-video/intro-video-lg.jpg")
+      +bg-vide({
+        src: 'video/intro-video/intro-video-lg',
+        options: 'posterType: jpg'
+      })
+        .swiper-caption.swiper-parallax
+          .swiper-slide-caption
+            .container
+              .row.justify-content-xl-center
+                .col-xl-12
+                  h1
+                    span.big.text-uppercase(data-caption-animate="fadeIn" data-caption-delay="700") Built as a framework
+                .col-xl-10.offset-top-30
+                  h4.d-none.d-md-block.text-light(data-caption-animate="fadeIn" data-caption-delay="900")
+                    | Intense was designed as extended version of bootstrap, built as a complex
+                    | and flexible solution with a dozen of completely new
+                    | utilities, components and plugins.
+
+                  .group.group-xl.offset-top-20.offset-sm-top-50
+                    a.btn.btn-icon.btn-icon-left.btn-default.btn-lg.btn-anis-effect(href=cfg.nav.features.submenu.uiKit.href data-caption-animate="fadeIn" data-caption-delay="1200")
+                      span.btn-text See it in action
+
+    .swiper-slide(data-slide-bg="images/intros/intro-06-1920x955.jpg" data-preview-bg="images/intros/intro-06-1920x955.jpg")
+      .swiper-caption.swiper-parallax
+        .swiper-slide-caption
+          .container
+            .row.justify-content-xl-center
+              .col-xl-12
+                h1
+                  span.big.text-uppercase(data-caption-animate="fadeIn" data-caption-delay="700") ULTRA sharp & RESPONSIVE
+              .col-xl-10.offset-top-30
+                h4.d-none.d-md-block.text-light.offset-bottom-0(data-caption-animate="fadeIn" data-caption-delay="900")
+                  | Beautiful and clean designs are optimized for all screen sizes
+                  | and types. Taste a new meaning of Retina Ready.
+
+                .group.group-xl.offset-top-20.offset-sm-top-50
+                  a.btn.btn-icon.btn-icon-left.btn-primary.btn-lg.btn-anis-effect(href=cfg.buyLink target='_blank' data-caption-animate="fadeIn" data-caption-delay="1200")
+                    span.novi-icon.icon.mdi.mdi-cart-outline
+                    span.btn-text Buy intense now
+
+  .swiper-button.swiper-button-prev.swiper-parallax
+    .preview
+      .preview__img.preview__img-3
+      .preview__img.preview__img-2
+      .preview__img.preview__img-1
+
+  .swiper-button.swiper-button-next.swiper-parallax
+    .preview
+      .preview__img.preview__img-1
+      .preview__img.preview__img-2
+      .preview__img.preview__img-3
+
+  .swiper-pagination

@@ -1,0 +1,68 @@
+//
+// Links
+// --------------------------------------------------
+.link {
+  display: inline-block;
+}
+
+.link-inline {
+  display: inline;
+  padding: 0 .25em;
+  @include link(inherit, $tan-hide);
+}
+
+.link-sm {
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+.link-md {
+  font-size: 18px;
+  line-height: 1.2;
+
+  @include media-breakpoint-between(lg, lg) {
+    font-size: 16px;
+  }
+}
+
+// Link styles
+//
+.page {
+  .link-default {
+    &,
+    &.active,
+    &:active,
+    &:focus {
+      color: $primary;
+    }
+
+    &.hover,
+    &:hover {
+      color: $puerto-rico;
+    }
+  }
+
+  .link-primary {
+    @include link($primary, $black);
+  }
+
+  .link-white {
+    @include link($white, $primary);
+  }
+}
+
+.link-gray {
+  @include link($gray, $primary);
+}
+
+.link-gray-darker {
+  @include link($gray-darker, $primary);
+}
+
+.link-underline {
+  text-decoration: underline;
+
+  &:hover {
+    text-decoration: none;
+  }
+}

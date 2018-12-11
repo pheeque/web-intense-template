@@ -1,0 +1,22 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-breadcrumb-classic
+
+//-Title
+block title
+  title= cfg.nav.pages.submenu.register.title
+
+//- Page
+block page
+  section.section.novi-background.one-page.bg-shark-radio
+    .one-page-header
+      //Navbar Brand
+      .rd-navbar-brand
+        a(href= cfg.nav.home.href)!=cfg.brand.logoInverse
+
+    include ../sections/_section-register
+
+    .one-page-footer
+      p.small(style="color: rgba(255,255,255, 0.3)")
+        | #{cfg.brand.name} &copy; #[span.copyright-year] . #[a(href="privacy.html") Privacy Policy]

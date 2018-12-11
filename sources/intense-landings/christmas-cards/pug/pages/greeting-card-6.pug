@@ -1,0 +1,76 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-rd-navbar-default-transparent-center
+
+//- Title
+block title
+	title Gifter Card 6
+
+//- Page
+block page
+	// Page Head
+	section.slider-menu-position.context-dark.section-card-6
+		canvas#canv.snow-effect
+		+rd-navbar-default-center(
+		'rd-navbar-default rd-atata rd-navbar-transparent rd-navbar-light navbar-center',
+		{
+			"data-lg-auto-height": "true",
+			"data-md-layout": 'rd-navbar-fixed',
+			"data-lg-layout": 'rd-navbar-static',
+			"data-lg-stick-up": 'true'
+		},
+		cfg.brand.logo,
+		cfg.nav.features,
+		cfg.nav
+		)
+
+		
+		.parallax-scene.block-animation
+			.layer-1
+				img(src="images/card-6-bg-2.png",  alt="") 
+			
+
+
+		.container
+			.row.section-cover.section-110.align-items-center.justify-content-center
+				.col-lg-4.offset-top-50.offset-lg-top-0
+					.quote-decorate-classic.quote-decorate-simple
+						.quote-decorate-header
+							h2.text-accent Merry 
+								br
+								| Christmas
+							h6.text-accent-classic.offset-top-24 & happy new year
+						
+						.quote-decorate-body.offset-top-24
+							p.text-light May the magic and the wonder of the holiday stay with you throughout the coming year!
+							p.quote-decorate-author.offset-top-24 John Doe, CEO
+				
+					
+	// Modal
+	#contact.modal.fade(tabindex='-1', role='dialog')
+		.modal-dialog.modal-dialog-centered(role='document')
+			.modal-content.bg-lightest
+				.modal-header
+					h4.modal-title.mt-0 Contact Us
+					button.close(type='button', data-dismiss='modal', aria-label='Close')
+						span(aria-hidden='true') &times;
+					
+				.modal-body.py-4
+					form.rd-mailform.text-left(data-form-output="form-output-global", data-form-type='contact', method='post', action='bat/rd-mailform.php')
+						.row.justify-content-sm-center
+							.col-md-12
+								.form-group
+									label.form-label(for="git-3-mailform-email") E-mail
+									input#git-3-mailform-email.form-control.bg-default(type="text" name="email" data-constraints="@Required @Email")
+							.col-md-12
+								.form-group.offset-md-top-14
+									label.form-label(for="git-3-mailform-phone") Phone
+									input#git-3-mailform-phone.form-control.bg-default(type="text" name="phone" data-constraints="@Required @Numeric")
+							
+							.col-md-12
+								.form-group.offset-md-top-14
+									label.form-label(for="git-3-mailform-message") Message
+									textarea#git-3-mailform-message.form-control.bg-default(name="message" data-constraints="@Required")
+						.offset-top-20.text-center
+							button(type="submit").btn.btn-primary.btn-ellipse send message

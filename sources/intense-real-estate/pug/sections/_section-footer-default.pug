@@ -1,0 +1,71 @@
+include ../elements/_widget-post
+include ../elements/_widget-form-subscribe
+include ../elements/_widget-list-social
+
+// Default footer
+footer.section-relative.section-top-66.section-bottom-34.page-footer.bg-gray-base.context-dark
+  .container
+    .row.justify-content-md-center.text-xl-left
+      .col-md-8.col-lg-12
+        .row.justify-content-sm-center
+          .col-sm-7.text-sm-left.col-lg-4.col-xl-3.order-xl-4
+            h6.text-uppercase.text-spacing-60 Latest news
+
+            +widget-post("#", "05/14/2018", "Top 10 Apartments in LA", null)
+            +widget-post("#", "05/14/2018", "Choosing a Rental Property", null)
+            +widget-post("#", "05/14/2018", "Features of Mortgage Loans", null)
+
+          .col-sm-5.offset-top-41.offset-sm-top-0.text-sm-left.col-lg-3.col-xl-2.order-xl-3
+            h6.text-uppercase.text-spacing-60 Useful Links
+            .d-block
+              .d-inline-block
+                ul.list.list-marked
+                  li
+                    a(href="#") Properties
+                  li
+                    a(href="#") Amenities
+                  li
+                    a(href="#") Rentals
+                  li
+                    a(href="#") Mortgages
+                  li
+                    a(href="#") Agents
+
+          .col-sm-12.offset-top-41.col-lg-5.offset-lg-top-0.text-lg-left.col-xl-4.order-xl-2
+            h6.text-uppercase.text-spacing-60 Newsletter
+
+            p Keep up with the latest company news and events. Enter your e-mail and subscribe to our newsletter.
+
+            .offset-top-30
+              +widget-form-subscribe("Type your E-Mail", "form-subscribe-footer")
+
+          .col-sm-12.offset-top-66.col-xl-3.order-xl-1.offset-xl-top-0
+            // Footer brand
+            .footer-brand
+              a(href=cfg.nav.home.href)
+                != cfg.brand.logoInverse
+            p.text-darker.offset-top-4.inset-right-15.inset-xl-right-0.inset-xl-left-15 Real Estate
+
+            +widget-list-social([
+              {
+                "icon": "fa fa-facebook",
+                "href": "#"
+              },
+              {
+                "icon": "fa fa-twitter",
+                "href": "#"
+              },
+              {
+                "icon": "fa fa-google-plus",
+                "href": "#"
+              },
+              {
+                "icon": "fa fa-linkedin",
+                "href": "#"
+              }
+            ])
+
+  .container.offset-top-50
+    p.small.text-darker
+      | #{cfg.brand.name} &copy; #[span(id="copyright-year")] . #[a(href="privacy.html") Privacy Policy]
+      | . Design&nbsp;by&nbsp;#[a(href="https://zemez.io/") Zemez]

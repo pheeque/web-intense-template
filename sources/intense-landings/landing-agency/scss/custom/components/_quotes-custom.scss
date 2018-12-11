@@ -1,0 +1,799 @@
+// Quotes custom
+
+// Reset styles
+blockquote {
+  font: inherit;
+  padding: 0;
+  margin: 0;
+  border: 0;
+
+  q {
+    &:before,
+    &:after {
+      content: none;
+    }
+  }
+  cite {
+    font-style: normal;
+  }
+
+  small,
+  .small {
+    &:before {
+      display: none;
+    }
+  }
+}
+
+// Quote primary
+//
+.quote-primary {
+  text-align: left;
+  cite {
+    @include header-base-styles;
+    @include header-h5;
+  }
+
+  q {
+    color: $gray-darker;
+    
+    &:before,
+    &:after {
+      content: none;
+    }
+  }
+  
+  svg {
+    max-width: 40px;
+  }
+  
+  .quote-primary-text {
+    position: relative;
+    padding-left: 40px;
+    &:before{
+      position: absolute;
+      top: 15px;
+      left: 10px;
+      bottom: 5px;
+      border-left: 1px solid $gray-2;
+      content: "";
+      display: inline-block;
+    }
+  }
+  @include media-breakpoint-up(sm) {
+    svg {
+      max-width: 100%;
+    }
+    .quote-primary-text{
+      padding-left: 55px;
+      &:before {
+        left: 25px;
+      }
+    }
+  }
+  &__mod-1 {
+    .quote-primary-body{
+      padding-right: 0;
+    }   
+    .quote-primary-text {
+      font-size: 24px;
+    }
+  }
+}
+
+
+.quote-primary-mark {
+  position: relative;
+  top: 6px;
+  display: block;
+  width: 37px;
+  height: 27px;
+  fill: $primary;
+  flex-shrink: 0;
+}
+
+.quote-primary-body {
+  position: relative;
+}
+
+.quote-primary-text {
+  font-size: 20px;
+  line-height: 1.4;
+  font-weight: 300;
+  @include media-breakpoint-up(sm) {
+    font-size: 26px;
+  }
+  @include media-breakpoint-up(md) {
+    font-size: 36px;
+  }
+}
+
+.quote-primary-footer {
+  padding-left: 5px;
+}
+
+* + .quote-primary-footer {
+  margin-top: 8px;
+}
+
+@include media-breakpoint-up(sm) {
+  .quote-primary-body {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding: 0 20px 0 0;
+  }
+
+  .quote-primary-footer {
+    padding-left: 30px;
+  }
+}
+
+
+@include media-breakpoint-up(lg) {
+  .quote-primary-body {
+    //padding-right: 80px;
+  }
+}
+
+// Quote boxed
+//
+.quote-boxed {
+
+  cite {
+    @include header-base-styles;
+    @include header-h4;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: .05em;
+  }
+
+  q {
+    font-style: italic;
+    letter-spacing: 0;
+    color: $gray;
+  }
+
+  .caption {
+    margin-top: 0;
+    font-weight: 700;
+    font-size: 14px;
+    color: $primary;
+  }
+  
+  time {
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  &__mod-1{
+    cite {
+      font-style: normal;
+    }
+    p.caption {
+      display: inline;
+    }
+    q {
+      font-style: normal;
+      font-size: 16px;
+      color: $gray-darker;  
+      quotes: none;
+    }
+    time {
+      color: $gray;
+    }
+    .quote-boxed-body {
+      &:before{
+        content: none;
+      }
+    }
+
+    @include media-breakpoint-up(md) {
+      .quote-boxed-left {
+        max-width: 180px;
+      }
+    }
+  }
+}
+
+.quote-boxed-image {
+  width: 100%;
+  height: auto;
+}
+
+.quote-boxed-body {
+  position: relative;
+  padding: 25px 15px 30px 15px;
+  background: $gray-light;
+  text-align: left;
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: -10px;
+    transform: translateX(-50%) rotate(-45deg);
+    width: 20px;
+    height: 20px;
+    background: $gray-light;
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  > * {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+.quote-boxed-meta {
+  color: $gray-darker;
+}
+
+.quote-boxed-meta-list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  > li {
+    min-width: 70px;
+  }
+
+  > li + li {
+    position: relative;
+    margin-left: 20px;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 4px;
+      left: -20px;
+      height: 16px;
+      width: 1px;
+      background: #e5e7e9;
+    }
+  }
+
+  li:nth-child(2) {
+    top: 2px;
+  }
+}
+
+* + .quote-boxed-meta {
+  margin-top: 20px;
+}
+
+.quote-boxed + .quote-boxed {
+  margin-top: 30px;
+}
+
+@include media-breakpoint-down(sm) {
+  .quote-boxed {
+    max-width: 370px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@include media-breakpoint-up(sm) {
+  .quote-boxed-body {
+    padding: 30px 40px 40px 40px;
+    margin-top: -200px;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .quote-boxed {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    justify-content: space-between;
+  }
+
+  .quote-boxed-left {
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+    width: calc(50% - 5px);
+  }
+
+  .quote-boxed-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: auto;
+    width: auto;
+    min-width: 101%;
+    max-width: none;
+    min-height: 101%;
+  }
+
+  .quote-boxed-body {
+    padding: 40px 40px 50px 40px;
+    margin-top: 0;
+    flex-grow: 1;
+
+    &:before {
+      top: 50%;
+      transform: translateY(-50%) rotate(-45deg);
+      left: -10px;
+    }
+  }
+}
+
+@include media-breakpoint-between(lg, lg) {
+  .quote-boxed-body {
+    padding: 20px 25px 20px 20px;
+  }
+}
+
+// Quote preview
+//
+.quote-preview {
+  position: relative;
+  max-width: 331px;
+  padding: 10px 17px 14px 17px;
+  margin-bottom: 11px;
+  background: rgba($white, .5);
+
+  q {
+    font: 400 18px/30px $font-family-sec;
+    color: $gray-dark;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    left: 75px;
+    bottom: -13px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 13px 13.5px 0 13.5px;
+    border-color: rgba($white, .5) transparent transparent transparent;
+    pointer-events: none;
+  }
+}
+
+* + .quote-preview {
+  margin-top: 15px;
+}
+
+@include media-breakpoint-up(md) {
+  .quote-preview {
+    background: $white;
+
+    &:after {
+      border-color: $white transparent transparent transparent;
+    }
+  }
+}
+
+// Quote circle
+//
+.quote-circle {
+  width: 100%;
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+
+  cite {
+    @include header-h5;
+    font-style: normal;
+  }
+
+  small {
+    font-size: 14px;
+    color: $brand-success;
+  }
+}
+
+.quote-circle-header {
+  > * {
+    display: inline-block;
+    vertical-align: baseline;
+  }
+
+  > * + * {
+    margin-left: 10px;
+  }
+  
+  * + & {
+    margin-top: 30px;
+  }
+}
+
+.quote-circle-image {
+  display: inline-block;
+  position: relative;
+}
+
+.quote-boxed-meta {
+  color: $gray-darker;
+}
+
+.quote-circle-meta-list {
+  vertical-align: middle;
+
+  > li {
+    display: inline-block;
+    min-width: 70px;
+  }
+
+  > li + li {
+    position: relative;
+    margin-left: 40px;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 4px;
+      left: -30px;
+      height: 16px;
+      width: 1px;
+      background: #e5e7e9;
+    }
+  }
+
+  li:nth-child(2) {
+    top: 2px;
+  }
+}
+
+.quote-circle-text {
+  font-size: 16px;
+  line-height: (30 / 16);
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+* + .quote-circle-text {
+  margin-top: 12px;
+}
+
+* + .quote-circle-meta {
+  margin-top: 20px;
+}
+
+@include media-breakpoint-up(sm) {
+}
+
+@include media-breakpoint-up(md) {
+  .quote-circle-body {
+    padding: 16px 11px;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .quote-circle-header {
+    padding-left: 12px;
+  }
+}
+
+// Quote classic
+//
+.quote-classic {
+  background-color: $white;
+  background-image: url('../images/bg-quote-1.jpg');
+  background-size: cover;
+  text-align: left;
+
+  padding: 35px 15px;
+}
+
+.quote-classic {
+  q {
+    display: block;
+    font-style: italic;
+    
+    & + * {
+      margin-top: 20px;
+    }
+  }
+}
+
+.quote-classic-header {
+  @include spacing(10px);
+  > * {
+    display: inline-block;
+    vertical-align: baseline;
+  }
+}
+
+.quote-classic-image {
+  width: 100%;
+  height: auto;
+}
+
+.quote-classic-subcite {
+  font-weight: 700;
+  color: $primary;
+  
+  * + & {
+    margin-top: 5px;
+  }
+}
+
+.quote-classic-body {
+  position: relative;
+  padding: 25px 15px 30px 15px;
+  background: $gray-light;
+  text-align: left;
+
+  > * {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+.quote-classic-meta {
+  color: $gray-darker;
+}
+
+.quote-classic-meta-list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: $gray;
+
+  > li {
+    min-width: 70px;
+  }
+
+  > li + li {
+    position: relative;
+    margin-left: 20px;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 4px;
+      left: -20px;
+      height: 16px;
+      width: 1px;
+      background: $gray;
+    }
+  }
+
+  li:nth-child(2) {
+    top: 2px;
+  }
+}
+
+* + .quote-classic-text {
+  margin-top: 14px;
+}
+
+* + .quote-classic-meta {
+  margin-top: 20px;
+}
+
+.quote-classic + .quote-classic {
+  margin-top: 30px;
+}
+
+@include media-breakpoint-up(sm) {
+  .quote-classic-body {
+    padding: 30px 40px 40px 40px;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .quote-classic {
+    padding: 65px 35px 55px;
+  }
+}
+
+//@include media-breakpoint-up(md) {
+//  .quote-classic {
+//    display: flex;
+//    flex-direction: row;
+//    flex-wrap: nowrap;
+//    align-items: stretch;
+//    justify-content: space-between;
+//
+//    .caption {
+//      font-size: 18px;
+//    }
+//  }
+//
+//  .quote-classic-left {
+//    position: relative;
+//    overflow: hidden;
+//    flex-shrink: 0;
+//    width: 185px;
+//  }
+//
+//  .quote-classic-image {
+//    position: absolute;
+//    top: 50%;
+//    left: 70%;
+//    transform: translate(-70%, -50%);
+//    height: 101%;
+//    width: auto;
+//    min-width: 101%;
+//    max-width: none;
+//    min-height: 101%;
+//  }
+//
+//  .quote-classic-body {
+//    padding: 40px 40px 50px 40px;
+//    flex-grow: 1;
+//
+//    &:before {
+//      top: 50%;
+//      transform: translateY(-50%) rotate(-45deg);
+//      left: -10px;
+//    }
+//  }
+//}
+
+@include media-breakpoint-between(lg, lg) {
+  .quote-classic-body {
+    padding: 30px 25px 30px 30px;
+  }
+}
+
+@include media-breakpoint-up(xl) {
+  .quote-classic-body {
+    padding: 50px 40px 50px 50px;
+  }
+}
+
+// Quote classic preview
+//
+.quote-classic-preview {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: center;
+  min-width: 300px;
+  background: $white;
+  transition: .33s all ease;
+
+  cite {
+    color: $gray-darker;  
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .caption {
+    font: 400 12px/20px $font-family-sec;
+    color: $gray;
+    letter-spacing: 0;
+  }
+
+  * + .caption {
+    margin-top: 0;
+  }
+}
+
+.quote-classic-preview-left {
+  display: none;
+}
+
+.quote-classic-preview-body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  flex-grow: 1;
+  padding: 8px 20px;
+  border: 1px solid #e5e7e9;
+  border-width: 1px 0 1px 0;
+  transition: .33s all ease;
+  
+  cite {
+    font-style: normal;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .quote-classic-preview {
+    cite {
+      font-size: $h5-font-size;
+      line-height: $h5-line-height;
+    }
+
+    .caption {
+      font-size: 14px;
+    }
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .quote-classic-preview {
+    min-height: 107px;
+  }
+
+  .ie-10,
+  .ie-11 {
+    .quote-classic-preview {
+      &:after {
+        content: '';
+        display: inline-block;
+        min-height: inherit;
+      }
+    }
+  }
+
+  .quote-classic-preview-left {
+    display: block;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    width: 96px;
+    flex-shrink: 0;
+
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      min-height: 101%;
+      min-width: 101%;
+      width: auto;
+      height: auto;
+      max-height: 120%;
+    }
+  }
+
+  .quote-classic-preview-body {
+    padding: 15px 30px;
+  }
+}
+
+
+// quote center img
+//
+
+.quote-center {
+  text-align: center;
+  overflow: hidden;
+  max-width: 370px;
+  margin-left: auto;
+  margin-right: auto;
+  
+  figure {
+    position: relative;
+  }
+  
+  svg {
+    position: absolute;
+    top: 55px;
+    left: 50%;
+    transform: translateX(-50%);
+    fill:$white;  
+  }
+}
+
+.quote-center-img {
+  
+}
+
+.quote-center-body {
+  position: relative;
+  background-color: $white;
+  margin-top: 25px;
+  padding: 0 15px 20px;
+}
+
+.quote-center-cite {
+  > * {
+    display: inline-block;
+  }
+  * + & {
+    margin-top: 15px;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .quote-center-body { padding:0 40px 35px; }
+}

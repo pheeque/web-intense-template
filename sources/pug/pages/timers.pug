@@ -1,0 +1,96 @@
+extends  ../_skeleton
+
+//- Page includes
+include ../elements/_ui-breadcrumb-classic
+include ../elements/_ui-timers
+
+//- Title
+block title
+  title= cfg.nav.components.submenu.toolkitComponents.submenu.timers.title
+
+//- Page
+block page
+  // Page Header
+  header.page-head
+    //- RD Navbar
+    +rd-navbar-default(
+      'rd-navbar-default rd-navbar-light',
+      {
+        "data-lg-auto-height": "true",
+        "data-md-layout": 'rd-navbar-fixed',
+        "data-lg-layout": 'rd-navbar-static',
+        "data-lg-stick-up": 'true'
+      },
+      cfg.brand.logo,
+      cfg.nav.home,
+      cfg.nav
+    )
+
+  +breadcrumb-classic(
+    cfg.nav.components.submenu.toolkitComponents.submenu.timers.title,
+    "icon-lg " + cfg.nav.components.submenu.toolkitComponents.submenu.timers.icon,
+    {
+    0: {
+      "title": cfg.nav.home.title,
+      "href": cfg.nav.home.href
+    },
+    1: {
+      "title": cfg.nav.components.title,
+      "href": cfg.nav.components.href
+    },
+    2: {
+      "title": cfg.nav.components.submenu.toolkitComponents.submenu.timers.title,
+      "href": cfg.nav.components.submenu.toolkitComponents.submenu.timers.href
+    }
+  })
+
+  // Timers Type 1
+  section.section.novi-background.section-66.section-md-top-110
+    .container
+      h1 Timers Type 1
+      hr.divider.bg-mantis
+      .offset-md-top-66
+        +timer({
+          "dataTypeattr": "until",
+          "dataTime": "25 Apr 2018",
+          "dataFormat": "wdhms"
+        }, 'countdown-custom countdown-ellipse')
+
+  // Timers Type 2
+  section.section.novi-background.section-66
+    .container
+      h1 Timers Type 2
+      hr.divider.bg-mantis
+      +timer({
+        "dataTypeattr": "until",
+        "dataTime": "25 Apr 2018",
+        "dataFormat": "wdhms"
+      }, 'countdown-custom')
+
+  //Timers Type 3
+  section.section.novi-background.section-66
+    .container
+      h1 Timers Type 3
+      hr.divider.bg-mantis
+      +timer({
+        "dataTypeattr": "until",
+        "dataTime": "25 Apr 2018",
+        "dataFormat": "wdhms"
+      }, 'countdown-custom countdown-modern')
+
+  // Inline Timers
+  section.section.novi-background.section-66.section-md-bottom-124
+    .container
+      h1 Inline Timers
+      hr.divider.bg-mantis
+      .offset-md-top-66
+        p.d-md-inline-block We are launching by
+        .d-md-inline-block
+          +timer({
+            "dataTypeattr": "until",
+            "dataTime": "25 Apr 2018",
+            "dataFormat": "wdhms"
+          }, 'countdown-inline')
+
+  // Page Footers
+  include ../sections/_section-footer-default

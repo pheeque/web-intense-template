@@ -1,0 +1,72 @@
+//
+// Pagination Custom
+// --------------------------------------------------
+
+
+.pagination-classic {
+  @include list-unstyled();
+
+  > li {
+    display: inline-block;
+    vertical-align: middle;
+    font-weight: 700;
+    font-family: $font-family-sec;
+    letter-spacing: -.025em;
+
+    a {
+      color: $brand-turquoise;
+
+      &:hover, &:focus {
+        color: $brand-silver-chalice;
+      }
+    }
+
+    & + li {
+      margin-left: 4px;
+    }
+
+    &.active, &:first-child {
+      a {
+        pointer-events: none;
+        color: $brand-silver-chalice;
+
+        &:hover, &:focus {
+          color: $brand-silver-chalice;
+        }
+      }
+    }
+
+    &:nth-child(2), &:last-child {
+      padding-left: 0;
+
+      &:before {
+        display: none;
+      }
+    }
+
+    &:nth-last-child(2), &:nth-last-child(3) {
+      display: none;
+    }
+  }
+
+  &.list-marked-type-2-dot-1 li:before {
+    left: 2px;
+  }
+
+  @media (min-width: $screen-xs-min) {
+    li {
+      &:nth-last-child(2), &:nth-last-child(3) {
+        display: inline-block;
+      }
+    }
+  }
+}
+
+
+.ie-11 {
+  .pagination-classic {
+    li:nth-child(2) {
+      pointer-events: none;
+    }
+  }
+}

@@ -1,0 +1,53 @@
+extends  ../_skeleton
+//- Includes
+include ../elements/_ui-material-parallax
+include ../elements/_widget-form-search
+
+//- Title
+block title
+  title Search Results
+
+//- Page
+block page
+  // Page Head
+  header.section.page-head
+    //- RD Navbar
+    +rd-navbar-top-panel(
+    'rd-navbar-light',
+    {
+      "data-lg-auto-height": "true",
+      "data-md-layout": 'rd-navbar-fixed',
+      "data-lg-layout": 'rd-navbar-static',
+      "data-lg-stick-up": 'true'
+    },
+    cfg.brand.logo,
+    "",
+    cfg.nav
+    )
+
+
+  // Breadcrumbs
+  +material-parallax({
+    img: 'images/bg-01-1920x718.jpg',
+    Class: 'section-34 section-md-66 text-lg-left context-dark bg-overlay-info'
+  }).section
+    .container
+      div.d-none.d-md-block.d-lg-inline-block
+        h1.font-weight-bold
+          span.big Search results
+      div.pull-lg-right.offset-md-top-10.offset-lg-top-41
+        ul.p.list-inline.list-inline-dashed
+          li.list-inline-item.text-safety-orange
+            a(href= cfg.nav.home.href) Home
+          li.list-inline-item Search results
+
+  section.section.novi-background.section-98
+    .container
+      +widget-form-search("input-sm", "form-label-sm", "search-results")
+      .rd-search-results.offset-top-66
+
+  section.section.novi-background.section-34
+    hr.hr.bg-gray
+
+  // Page Footers
+  include ../sections/_section-footer-default

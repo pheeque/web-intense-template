@@ -1,0 +1,79 @@
+//- Includes
+include ../elements/_widget-form-subscribe
+
+// Default footer
+footer.section-relative.section-top-66.section-bottom-34.page-footer.bg-gray-darkest
+  .container
+    .row.justify-content-md-center.text-lg-left
+      .col-md-8.col-lg-12
+        .row.justify-content-sm-center
+          .col-sm-10.col-lg-5.order-lg-2
+            h6.text-uppercase.text-spacing-60.font-default.text-white Newsletter
+            .inset-xl-right-80
+              p.text-muted Keep up with our always upcoming  news and updates. Enter your e-mail and subscribe to our newsletter.
+            .offset-top-30
+              .inset-xl-right-93
+                +widget-form-subscribe("Type your E-Mail", "form-subscribe-footer")
+
+          .col-sm-4.col-lg-2.offset-top-50.offset-lg-top-0.order-lg-3.text-sm-left
+            h6.text-uppercase.text-spacing-60.font-default.text-white Cities
+            .d-block
+              .d-inline-block
+                ul.list.list-unstyled.list-inline-primary
+                  li.list-inline-item.text-primary
+                    a(href="#") New York
+                  li.list-inline-item.text-primary
+                    a(href="#") San Diego
+                  li.list-inline-item.text-primary
+                    a(href="#") Los Angeles
+                  li.list-inline-item.text-primary
+                    a(href="#") Boston
+                  li.list-inline-item.text-primary
+                    a(href="#") Washington
+                  li.list-inline-item.text-primary
+                    a(href="#") Chicago
+
+          .col-sm-4.col-lg-2.offset-top-50.offset-lg-top-0.order-lg-3.text-sm-left
+            h6.text-uppercase.text-spacing-60.font-default.text-white Categories
+            .d-block
+              .d-inline-block
+                ul.list.list-unstyled.list-inline-primary
+                  li.list-inline-item.text-primary
+                    a(href="#") Healthcare
+                  li.list-inline-item.text-primary
+                    a(href="#") Automobile Jobs
+                  li.list-inline-item.text-primary
+                    a(href="#") Food Services
+                  li.list-inline-item.text-primary
+                    a(href="#") Construction
+                  li.list-inline-item.text-primary
+                    a(href="#") Logistics
+                  li.list-inline-item.text-primary
+                    a(href="#") Finance
+
+
+          .col-lg-3.offset-top-50.offset-lg-top-0.order-lg-1
+            // Footer brand
+            .footer-brand
+              a(href="index.html")
+                != cfg.brand.logo
+            ul.list-inline.list-inline-sm.d-inline-block.offset-top-34.post-meta.text-dark.list-inline-primary
+              li.list-inline-item
+                a(href="#")
+                  span.icon.icon-xxs.fa-facebook
+              li.list-inline-item
+                a(href="#")
+                  span.icon.icon-xxs.fa-twitter
+              li.list-inline-item
+                a(href="#")
+                  span.icon.icon-xxs.fa-google-plus
+              li.list-inline-item
+                a(href="#")
+                  span.icon.icon-xxs.fa-youtube-play
+              li.list-inline-item
+                a(href="#")
+                  span.icon.icon-xxs.fa-instagram
+
+            p.text-dark.offset-top-10
+              | Intense JB &copy; #[span(id="copyright-year")] . #[a(href="#") Privacy Policy]
+              | . Design&nbsp;by&nbsp;#[a(href="https://zemez.io/") Zemez]

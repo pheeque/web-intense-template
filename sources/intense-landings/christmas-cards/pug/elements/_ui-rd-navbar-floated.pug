@@ -1,0 +1,38 @@
+
+//- RD Navbar Transparent
+//- skin - rd navbar skin (transparent, inverse, default)
+//- attrs - additional HTML attributes of rd navbar
+//- logo - logo markup (<img/> or text)
+//- links - nav links object
+mixin rd-navbar-floated(skin, attrs, logo, activeLink, links)
+  .rd-navbar-wrap
+    nav.rd-navbar.container.rd-navbar-floated&attributes(attrs)(class=skin data-md-device-layout="rd-navbar-fixed" data-lg-device-layout="rd-navbar-static")
+      .rd-navbar-inner
+        // RD Navbar Panel
+        .rd-navbar-panel
+          // RD Navbar Toggle
+          button.rd-navbar-toggle(data-rd-navbar-toggle=".rd-navbar, .rd-navbar-nav-wrap")
+            span
+
+          //Navbar Brand
+          .rd-navbar-brand
+            a(href="index.html")!=logo
+
+        .rd-navbar-menu-wrap
+          .rd-navbar-nav-wrap
+
+            .rd-navbar-mobile-scroll
+              //Navbar Brand Mobile
+              .rd-navbar-mobile-brand
+                a(href="index.html")!= logo
+
+              // RD Navbar Nav
+              ul.rd-navbar-nav
+                li: a(href='index.html') Go to our website
+                li: a(href='#contact') Contact us
+                li: a(href='#') Buy now
+
+            ul.navbar-soc-list.list-inline
+              li.list-inline-item: a.icon.icon-xxs.icon-insta.mdi.icon-circle.mdi-instagram(href='#')
+              li.list-inline-item: a.icon.icon-xxs.icon-youtube.mdi.icon-circle.mdi-youtube-play(href='#')
+              li.list-inline-item: a.icon.icon-xxs.icon-facebook.mdi.icon-circle.mdi-facebook(href='#')

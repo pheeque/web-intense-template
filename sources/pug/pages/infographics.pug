@@ -1,0 +1,163 @@
+extends  ../_skeleton
+
+//- Page includes
+include ../elements/_ui-breadcrumb-classic
+include ../elements/_ui-progress-bar-bootstrap
+include ../elements/_ui-progress-bar-circle
+include ../elements/_ui-progress-bar-linear
+
+//- Title
+block title
+  title= cfg.nav.components.submenu.toolkitComponents.submenu.infographics.title
+
+//- Page
+block page
+  // Page Header
+  header.page-head
+    //- RD Navbar
+    +rd-navbar-default(
+    'rd-navbar-default rd-navbar-light',
+    {
+      "data-lg-auto-height": "true",
+      "data-md-layout": 'rd-navbar-fixed',
+      "data-lg-layout": 'rd-navbar-static',
+      "data-lg-stick-up": 'true'
+    },
+    cfg.brand.logo,
+    cfg.nav.components,
+    cfg.nav
+    )
+
+  +breadcrumb-classic(
+  cfg.nav.components.submenu.toolkitComponents.submenu.infographics.title,
+  "icon-lg " + cfg.nav.components.submenu.toolkitComponents.submenu.infographics.icon,
+  {
+    0: {
+      "title": cfg.nav.home.title,
+      "href": cfg.nav.home.href
+    },
+    1: {
+      "title": cfg.nav.components.title,
+      "href": cfg.nav.components.href
+    },
+    2: {
+      "title": cfg.nav.components.submenu.toolkitComponents.submenu.infographics.title,
+      "href": cfg.nav.components.submenu.toolkitComponents.submenu.infographics.href
+    }
+  })
+
+  // Section Linear Bars
+  section.section.novi-background.section-50.section-sm-top-110
+    .container
+      h1 Linear Bars
+      hr.divider.bg-mantis
+      .row.justify-content-sm-center.offset-top-66
+        .col-sm-8
+          +progress-bar-linear({
+            "title": "HTML/CSS",
+            "apClass": "bg-success",
+            "valueTo": "70"
+          })
+          .offset-top-50
+            +progress-bar-linear({
+              "title": "Java Script",
+              "apClass": "bg-info",
+              "valueTo": "54"
+            })
+          .offset-top-50
+            +progress-bar-linear({
+              "title": "PHP",
+              "apClass": "bg-warning",
+              "valueTo": "87"
+            })
+          .offset-top-50
+            +progress-bar-linear({
+              "title": "UI/UX Design",
+              "apClass": "bg-danger",
+              "valueTo": "65"
+            })
+
+
+  // Section Pie Charts
+  section.section.novi-background.section-50
+    .container
+      h1 Pie Charts
+      hr.divider.bg-mantis
+      .row.justify-content-md-center.offset-top-66
+        .col-md-8.col-lg-12
+          .row
+            .col-md-6.col-lg-3
+              +progress-bar-circle({
+                "value": "0.87",
+                "colorFill": "#5aba67, #78c157",
+                "colorEmpty": "rgb(245,245,245)",
+                "colorSize": "175"
+              })
+
+            .col-md-6.col-lg-3
+              +progress-bar-circle({
+                "value": "0.75",
+                "colorFill": "#f5bf2f, #f3a43d",
+                "colorEmpty": "rgb(245,245,245)",
+                "colorSize": "175"
+              })
+
+            .col-md-6.offset-md-top-30.col-lg-3.offset-lg-top-0
+              +progress-bar-circle({
+                "value": "0.42",
+                "colorFill": "#64aae1, #79ccf2",
+                "colorEmpty": "rgb(245,245,245)",
+                "colorSize": "175"
+              })
+
+            .col-md-6.offset-md-top-30.col-lg-3.offset-lg-top-0
+              +progress-bar-circle({
+                "value": "0.65",
+                "colorFill": "#f54b0f, #e50a0a",
+                "colorEmpty": "rgb(245,245,245)",
+                "colorSize": "175"
+              })
+
+  // Section Bootstrap Bars
+  section.section.novi-background.section-50
+    .container
+      h1 Bootstrap Bars
+      hr.divider.bg-mantis
+      .row.justify-content-sm-center.offset-top-66
+        .col-sm-10
+          +progress-bar-bootstrap({
+            "apClass": "bg-dark",
+            "valueTo": "72"
+          }).offset-top-24
+          +progress-bar-bootstrap({
+            "apClass": "bg-success",
+            "valueTo": "95"
+          }).offset-top-24
+          +progress-bar-bootstrap({
+            "apClass": "bg-info",
+            "valueTo": "65"
+          }).offset-top-24
+          +progress-bar-bootstrap({
+            "apClass": "bg-warning",
+            "valueTo": "48"
+          }).offset-top-24
+          +progress-bar-bootstrap({
+            "apClass": "bg-danger",
+            "valueTo": "89"
+          }).offset-top-24
+          +progress-bar-bootstrap([
+            {
+              "apClass": "bg-success",
+              "valueTo": "47"
+            },
+            {
+              "apClass": "bg-warning",
+              "valueTo": "18"
+            },
+            {
+              "apClass": "bg-danger",
+              "valueTo": "7"
+            }]).offset-top-24
+
+  // Page Footers
+  include ../sections/_section-footer-default

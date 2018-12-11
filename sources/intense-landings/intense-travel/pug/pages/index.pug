@@ -1,0 +1,307 @@
+extends  ../_skeleton
+
+//-Includes
+include ../elements/_widget-post
+include ../elements/_widget-form-subscribe
+include ../elements/_widget-list-social
+include ../elements/_ui-box-planning-type-3
+include ../elements/_ui-material-parallax
+
+//-Title
+block title
+  title Intense Travel Agency
+
+//- Page
+block page
+
+  // Page Head
+  header.page-head.slider-menu-position
+    // RD Navbar Transparent
+    .rd-navbar-wrap
+      nav.rd-navbar.rd-navbar-default( data-sm-layout='rd-navbar-static', data-sm-device-layout='rd-navbar-static', data-sm-auto-height='true', data-sm-stick-up='true' )
+        .rd-navbar-inner
+          // RD Navbar Panel
+          .rd-navbar-panel
+            // RD Navbar Toggle
+            .rd-navbar-toggle(data-rd-navbar-toggle='.rd-navbar, .rd-navbar-nav-wrap')
+              span
+            // Navbar Brand
+            .rd-navbar-brand
+              a(href='index.html')
+                img(width='220', height='32', src='images/logo-light-220x32.png', alt='')
+          .rd-navbar-menu-wrap
+            .rd-navbar-nav-wrap
+              .rd-navbar-mobile-scroll
+                // RD Navbar Nav
+                ul.rd-navbar-nav
+                  li
+                    span.mdi.mdi-phone.text-middle
+                    a.d-inline-block.text-middle.inset-left-10.text-middle(href='tel:+1234567890') +1 234 567 890
+                  li
+                    span.mdi.mdi-email-outline.text-middle
+                    a.d-inline-block.text-middle.inset-left-10.text-middle(href='mailto:mail@demolink.org') mail@demolink.org
+                  li
+                    a.btn.btn-primary.btn-icon.btn-icon-left.btn-sm.btn-ellipse(href="//www.templatemonster.com/intense-multipurpose-html-template.html?utm_source=livedemo&utm_medium=themebutton&utm_campaign=intense")
+                      span.icon.mdi.mdi-telegram
+                      | BOOK NOW
+
+  // Page Contents
+  main.page-content
+    section
+      // Swiper
+      .swiper-container.swiper-slider
+        .swiper-wrapper
+          .swiper-slide.swiper-slide-overlay-disable(data-slide-bg='images/slide-01-1920x1000.jpg')
+            .swiper-slide-caption
+              .container
+                .row.justify-content-sm-center.justify-content-xl-start
+                  .col-sm-10.col-xl-6.text-xl-left
+                    h1(data-caption-animate="fadeInUp" data-caption-delay="400") Experience The Best Trip Ever
+                    p(data-caption-animate="fadeInUp" data-caption-delay="500") We are committed to offering travel services of the highest quality, combining our energy and enthusiasm with years of experience.
+                    .offset-top-30.offset-xl-top-60(data-caption-animate="fadeInUp" data-caption-delay="600")
+                      a.btn.btn-primary.btn-icon.btn-icon-left.btn-sm.btn-ellipse(href="#")
+                        span.icon.mdi.mdi-telegram
+                        | BOOK a TOUR
+          .swiper-slide(data-slide-bg='images/slide-02-1920x1000.jpg')
+            .swiper-slide-caption
+              .container
+                .row.justify-content-sm-center.justify-content-xl-start
+                  .col-sm-10.col-xl-6.text-xl-left
+                    h1(data-caption-animate="fadeInUp" data-caption-delay="400") Let`s Make Your Best Trip Ever
+                    p(data-caption-animate="fadeInUp" data-caption-delay="500") We are committed to offering travel services of the highest quality, combining our energy and enthusiasm, with our years of experience.
+                    .offset-top-30.offset-xl-top-60(data-caption-animate="fadeInUp" data-caption-delay="600")
+                      a.btn.btn-primary.btn-icon.btn-icon-left.btn-sm.btn-ellipse(href="#")
+                        span.icon.mdi.mdi-telegram
+                        | BOOK a TOUR
+          .swiper-slide(data-slide-bg='images/slide-03-1920x1000.jpg')
+            .swiper-slide-caption
+              .container
+                .row.justify-content-sm-center.justify-content-xl-start
+                  .col-sm-10.col-xl-6.text-xl-left
+                    h1(data-caption-animate="fadeInUp" data-caption-delay="400") Let`&nbsp;s Make Your Best Trip Ever
+                    p(data-caption-animate="fadeInUp" data-caption-delay="500") We are committed to offering travel services of the highest quality, combining our energy and enthusiasm, with our years of experience.
+                    .offset-top-30.offset-xl-top-60(data-caption-animate="fadeInUp" data-caption-delay="600")
+                      a.btn.btn-primary.btn-icon.btn-icon-left.btn-sm.btn-ellipse(href="#")
+                        span.icon.mdi.mdi-telegram
+                        | BOOK a TOUR
+        // Swiper Pagination
+        .swiper-pagination
+
+    //Top Travel Tours
+    section.section-relative.section-90
+      .container
+        h2 Featured Tours
+        .row.justify-content-sm-center.offset-top-30
+          .col-sm-10.col-lg-8
+            p Explore the world with Intense! We offer you a vast variety of tours of all types featuring both exotic and already well-known destinations, some of which are listed below.
+        .row.justify-content-sm-center
+          .col-sm-10.col-md-6.col-lg-3
+            .product
+              span.badge.badge-puerto-rico Sale
+              img.img-fluid(src="images/home-01-270x360.jpg", width="270", height="360", alt="")
+              .offset-lg-top-38.offset-top-20
+                ul.list-inline.list-inline-sm
+                  li.list-inline-item.icon.icon-sm.mdi.mdi-star.text-primary
+                  li.list-inline-item.icon.icon-sm.mdi.mdi-star.text-primary
+                  li.list-inline-item.icon.icon-sm.mdi.mdi-star.text-primary
+                  li.list-inline-item.icon.icon-sm.mdi.mdi-star.text-primary
+                  li.list-inline-item.icon.icon-sm.mdi.mdi-star-half.text-primary
+              .offset-top-10
+                h5
+                  a(href="#") Kamalame Cay Resort
+              p.small Kamalame Cay, The Bahamas
+              ul.list-inline
+                li.list-inline-item
+                  p.small.text-strike $1500
+                li.list-inline-item
+                  h6.font-weight-bold.text-darker $1000
+
+          .col-sm-10.col-md-6.col-lg-3.offset-top-50.offset-md-top-0
+            .product
+              span.badge.badge-primary New
+              img.img-fluid(src="images/home-02-270x360.jpg", width="270", height="360", alt="")
+              .offset-lg-top-38.offset-top-20
+                ul.list-inline.list-inline-sm
+                  li.list-inline-item.icon.icon-sm.mdi.mdi-star.text-primary
+                  li.list-inline-item.icon.icon-sm.mdi.mdi-star.text-primary
+                  li.list-inline-item.icon.icon-sm.mdi.mdi-star.text-primary
+                  li.list-inline-item.icon.icon-sm.mdi.mdi-star.text-primary
+              .offset-top-10
+                h5
+                  a(href="#") Explora Atacama
+              p.small Atacama Desert, Chile
+              ul.list-inline
+                li.list-inline-item
+                  h6.font-weight-bold.text-darker $1250
+
+          .col-sm-10.col-md-6.col-lg-3.offset-top-50.offset-lg-top-0
+            .product
+              img.img-fluid(src="images/home-03-270x360.jpg", width="270", height="360", alt="")
+              .offset-lg-top-38.offset-top-20
+                ul.list-inline.list-inline-sm
+                  li.list-inline-item.icon.icon-sm.mdi.mdi-star.text-primary
+                  li.list-inline-item.icon.icon-sm.mdi.mdi-star.text-primary
+                  li.list-inline-item.icon.icon-sm.mdi.mdi-star.text-primary
+                  li.list-inline-item.icon.icon-sm.mdi.mdi-star.text-primary
+                  li.list-inline-item.icon.icon-sm.mdi.mdi-star.text-primary
+              .offset-top-10
+                h5
+                  a(href="#") Yosemite National Park
+              p.small Yosemite, CA, USA
+              ul.list-inline
+                li.list-inline-item
+                  h6.font-weight-bold.text-darker $3120
+
+          .col-sm-10.col-md-6.col-lg-3.offset-top-50.offset-lg-top-0
+            .product
+              img.img-fluid(src="images/home-04-270x360.jpg", width="270", height="360", alt="")
+              .offset-lg-top-38.offset-top-20
+                ul.list-inline.list-inline-sm
+                  li.list-inline-item.icon.icon-sm.mdi.mdi-star.text-primary
+                  li.list-inline-item.icon.icon-sm.mdi.mdi-star.text-primary
+                  li.list-inline-item.icon.icon-sm.mdi.mdi-star.text-primary
+                  li.list-inline-item.icon.icon-sm.mdi.mdi-star.text-primary
+              .offset-top-10
+                h5
+                  a(href="#") Château d'Ouchy
+              p.small Lausanne, Switzerland
+              ul.list-inline
+                li.list-inline-item
+                  h6.font-weight-bold.text-darker $800
+
+    //We Provide Only the Best Tours
+    +material-parallax({ img: 'images/bg-01-1920x643.jpg' }).context-dark
+      .container.section-90.section-lg-110
+        .row.justify-content-sm-center
+          .cell-sx-10.col-lg-8
+            h2 We Provide Only the Best Tours
+            p With more than 230 trips to worldwide destinations, including Europe, North & Central, South America, Asia, Australia & New Zealand, we continue to offer new ways and the best tours for traveling every year.
+            .offset-top-40
+             a(href="#").btn.btn-default.btn-sm.btn-icon.btn-icon-left.btn-ellipse
+              span.icon.mdi.mdi-telegram
+              | get in touch
+
+    //Why Us?
+    section.section-90.section-lg-120
+      .container
+        h2 Why Us?
+        .row.justify-content-sm-center.offset-md-top-75
+          .col-sm-10.col-md-4
+            span.icon.icon-circle.icon-outlined.icon-primary-filled.mdi.mdi-certificate
+            .offset-top-28
+              h4 The Best Service
+            p.
+              Our aim is to provide you with the tour
+              service of the top quality, and we'll do our
+              best to find the suitable tour for you.
+          .col-sm-10.col-md-4.offset-top-50.offset-md-top-0
+            span.icon.icon-circle.icon-outlined.icon-primary-filled.mdi.mdi-silverware-variant
+            .offset-top-28
+              h4 Everything is Included
+            p.
+              There are dozens of aspects to pay attention to,
+              while organizing a trip, and we’ll make sure
+              your tour includes everything you need.
+          .col-sm-10.col-md-4.offset-top-50.offset-md-top-0
+            span.icon.icon-circle.icon-outlined.icon-primary-filled.mdi.mdi-database
+            .offset-top-28
+              h4 Great Prices
+            p.
+              All our tours and excursions are
+              available at really affordable prices so you
+              can always pick a great destination.
+
+    //Our Partners
+    section.bg-gray-lighter.section-65
+      .container
+        h4 Our Partners
+        .row.offset-top-40
+          .col-md-6.col-lg-4.col-xl-2
+            img.img-fluid.d-inline-block(src="images/client-01-144x63.png", width="144", height="63", alt="")
+          .col-md-6.col-lg-4.col-xl-2.offset-top-30.offset-md-top-0
+            img.img-fluid.d-inline-block(src="images/client-02-144x63.png", width="144", height="63", alt="")
+          .col-md-6.col-lg-4.col-xl-2.offset-top-30.offset-lg-top-0
+            img.img-fluid.d-inline-block(src="images/client-03-144x63.png", width="144", height="63", alt="")
+          .col-md-6.col-lg-4.col-xl-2.offset-top-30.offset-xl-top-0
+            img.img-fluid.d-inline-block(src="images/client-04-144x63.png", width="144", height="63", alt="")
+          .col-md-6.col-lg-4.col-xl-2.offset-top-30.offset-xl-top-0
+            img.img-fluid.d-inline-block(src="images/client-05-144x63.png", width="144", height="63", alt="")
+          .col-md-6.col-lg-4.col-xl-2.offset-top-30.offset-xl-top-0
+            img.img-fluid.d-inline-block(src="images/client-06-144x63.png", width="144", height="63", alt="")
+
+    //What Our Clients Say
+    section.section-90.section-lg-120
+      .container
+        h2 What Our Clients Say
+        .row.justify-content-sm-center
+          .col-sm-10.col-md-4
+            .quote.quote-classic
+              .unit.unit-md.flex-lg-row
+                .unit-left
+                  img.img-fluid.rounded-circle(src="images/user-lisa-evans-80x80.jpg", width="80", height="80", alt="" style="margin-top: 10px")
+                .unit-body.text-md-left
+                  q.quote-desc Disney in December was absolutely delightful! From our 1 day at Magic Kingdom & 2 days at Animal Kingdom, our family was filled with excitement and magical memories.
+                  cite.quote-author Lisa Evans
+
+          .col-sm-10.col-md-4.offset-top-50.offset-md-top-0
+            .quote.quote-classic
+              .unit.unit-md.flex-lg-row
+                .unit-left
+                  img.img-fluid.rounded-circle(src="images/user-nicholas-lane-80x80.jpg", width="80", height="80", alt="" style="margin-top: 10px")
+                .unit-body.text-md-left
+                  q.quote-desc You were an excellent Travel Agency for us! You considered our unique needs while planning our itinerary. Every suggestion you made was excellent!
+                  cite.quote-author Nicholas Lane
+
+          .col-sm-10.col-md-4.offset-top-50.offset-md-top-0
+            .quote.quote-classic
+              .unit.unit-md.flex-lg-row
+                .unit-left
+                  img.img-fluid.rounded-circle(src="images/user-ethan-dean-80x80.jpg", width="80", height="80", alt="" style="margin-top: 10px")
+                .unit-body.text-md-left
+                  q.quote-desc I’m sending you a sincere "thank you" for all of your assistance during my recent trip to Colorado.  It was invaluable to me and I realize and appreciate it greatly.
+                  cite.quote-author Ethan Dean
+      .offset-top-60
+        a(href="#").btn.btn-primary.btn-sm.btn-icon.btn-icon-left.btn-ellipse
+          span.icon.mdi.mdi-telegram
+          | get in touch
+        
+    +material-parallax({ img: 'images/bg-02-1920x643.jpg' }).context-dark
+      .container.section-90.section-lg-110
+        h2 Explore the Distant Corners of the World
+        p For over 30 years we have been creating inspirational tailor-made holidays and are proud of our reputation as one of #[br.d-none.d-xl-inline-block] the leading tour operators. With us you can reach even the most distant corners of the world!
+        .offset-top-40
+          a(href="#").btn.btn-default.btn-sm.btn-icon.btn-icon-left.btn-ellipse
+            span.icon.mdi.mdi-telegram
+            | get in touch
+
+  // Default footer
+  footer.section-50.section-md-30.page-footer.bg-gray-base.context-dark
+    // Default footer
+    .container.text-md-left
+      .row.justify-content-between.align-items-center.grid-group-sm
+        .col-md-6
+          // Footer brand
+          .footer-brand.d-inline-block
+            a(href="../../index.html")
+              img.img-fluid.d-inline-block(src="images/logo-footer-138x55.png", width="138", height="55", alt="")
+        .col-md-6.text-md-right
+          +widget-list-social([
+            {
+              "icon": "fa fa-facebook",
+              "href": "#"
+            },
+            {
+              "icon": "fa fa-twitter",
+              "href": "#"
+            },
+            {
+              "icon": "fa fa-google-plus",
+              "href": "#"
+            },
+            {
+              "icon": "fa fa-linkedin",
+              "href": "#"
+            }
+          ])
+    .container.text-darker.offset-top-15
+      p Design&nbsp;by&nbsp;#[a(href="https://zemez.io/") Zemez]

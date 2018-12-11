@@ -1,0 +1,108 @@
+//
+// Page loaders
+// --------------------------------------------------
+
+.page-loader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  float: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  z-index: 9999999;
+  background: $white;
+  transition: .3s all ease;
+
+  &.loaded {
+    opacity: 0;
+    visibility: hidden;
+    z-index: -1;
+  }
+
+  &.ending {
+    display: none;
+  }
+
+  > * {
+    position: relative;
+    top: -20px;
+  }
+  
+  [data-x-mode] & {
+    display: none;
+  }
+}
+
+.page-loader-image {
+  display: block;
+  text-align: center;
+}
+
+.page-loader-body {
+  margin-top: 35px;
+  text-align: center;
+}
+
+.cssload-jumping {
+  position: relative;
+  display: block;
+  width: 300px;
+}
+
+.cssload-jumping,
+.cssload-jumping * {
+  box-sizing: border-box;
+}
+
+.cssload-jumping span {
+  display: inline-block;
+  height: 11px;
+  width: 11px;
+  margin: 0 13px;
+  background: $primary;
+  border-radius: 487px;
+  background-clip: padding-box;
+}
+
+.cssload-jumping span:nth-child(1) {
+  animation: scale 1.15s 0.12s infinite cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+
+.cssload-jumping span:nth-child(2) {
+  animation: scale 1.15s 0.23s infinite cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+
+.cssload-jumping span:nth-child(3) {
+  animation: scale 1.15s 0.35s infinite cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+
+.cssload-jumping span:nth-child(4) {
+  animation: scale 1.15s 0.46s infinite cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+
+.cssload-jumping span:nth-child(5) {
+  animation: scale 1.15s 0.58s infinite cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+
+@include keyframes(scale) {
+  0% {
+    -o-transform: scale(0);
+  }
+  25% {
+    -o-transform: scale(0.9, 0.9);
+    background: darken($primary, 15%);
+  }
+  50% {
+    -o-transform: scale(1, 1);
+    margin: 0 5px;
+    background: darken($primary, 25%);
+  }
+  100% {
+    -o-transform: scale(0);
+  }
+}

@@ -1,0 +1,14 @@
+//- thumbnail - {thumbnail} object
+mixin thumbnail-winston( thumbnail )
+  // Thumbnail Winston
+  a.thumbnail-winston( href= thumbnail.large, data-lightgallery='item' )
+    figure
+      img(width=thumbnail.width, height=thumbnail.height, src=thumbnail.small, alt=thumbnail.title)
+      figcaption.text-left
+        h3.thumbnail-winston-title= thumbnail.title
+        .offset-top-50.veil.reveal-lg-inline-block
+          p= thumbnail.description[0]
+          br
+          p= thumbnail.description[1]
+          br
+          p= thumbnail.description[2]

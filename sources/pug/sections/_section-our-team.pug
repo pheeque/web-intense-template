@@ -1,0 +1,61 @@
+//- Includes
+include ../elements/_ui-member-block.pug
+include ../elements/_widget-list-social.pug
+
+// section our team
+section.section.novi-background.section-top-66.section-bottom-110
+  .container
+    h2
+      span.big Meet Our Team
+    p We are a team of developers, designers and leads who love what they do.
+    hr.divider.bg-mantis
+    .row.justify-content-sm-center.offset-top-66
+      .col-md-8.col-xl-12
+        .row
+          .col-md-6.col-xl-3
+            +member-block(
+              {"title": "John Doe", "href": cfg.nav.pages.submenu.teamMember.href},
+              {"src": "images/users/user-john-doe-140x140.jpg", "width": 140, "height": 140, "alt": ""},
+              "Software Developer",
+              [
+                { "icon": "fa fa-facebook", "href": "#" },
+                { "icon": "fa fa-twitter", "href": "#" },
+                { "icon": "fa fa-google-plus", "href": "#" }
+              ]
+            )
+
+          .col-md-6.col-xl-3.offset-top-66.offset-md-top-0
+            +member-block(
+              {"title": "July Mao", "href": cfg.nav.pages.submenu.teamMember.href},
+              {"src": "images/users/user-july-mao-140x140.jpg", "width": 140, "height": 140, "alt": ""},
+              "Support Operator",
+              [
+                {"icon": "fa fa-facebook", "href": "#"},
+                {"icon": "fa fa-twitter", "href": "#"},
+                {"icon": "fa fa-google-plus", "href": "#"}
+              ]
+            )
+
+          .col-md-6.col-xl-3.offset-top-66.offset-xl-top-0
+            +member-block(
+              {"title": "Bernard Show", "href": cfg.nav.pages.submenu.teamMember.href},
+              {"src": "images/users/user-bernard-show-140x140.jpg", "width": 140, "height": 140, "alt": ""},
+              "Creative Director",
+              [
+                {"icon": "fa fa-facebook", "href": "#"},
+                {"icon": "fa fa-twitter", "href": "#"},
+                {"icon": "fa fa-google-plus", "href": "#"}
+              ]
+            )
+
+          .col-md-6.col-xl-3.offset-top-66.offset-xl-top-0
+            +member-block(
+              {"title": "Ronald Oswald", "href": cfg.nav.pages.submenu.teamMember.href},
+              {"src": "images/users/user-ronald-oswald-140x140.jpg", "width": 140, "height": 140, "alt": ""},
+              "Founder, Sales",
+              [
+                {"icon": "fa fa-facebook", "href": "#"},
+                {"icon": "fa fa-twitter", "href": "#"},
+                {"icon": "fa fa-google-plus", "href": "#"}
+              ]
+            )

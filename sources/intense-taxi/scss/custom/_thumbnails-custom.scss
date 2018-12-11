@@ -1,0 +1,149 @@
+//
+// Custom Thumbnails
+// --------------------------------------------------
+
+
+%thumbnail {
+  &,
+  > figure, .figure {
+    position: relative;
+    display: block;
+  }
+
+  img,
+  figure img,
+  .figure img {
+    width: 100%;
+    height: auto;
+    transition: .35s;
+    will-change: transform;
+  }
+
+  figure figcaption,
+  figcaption,
+  .figure .figcaption,
+  .figcaption {
+    position: absolute;
+  }
+}
+
+
+.thumbnail{
+  padding: 0;
+  margin: 0;
+  border: none;
+  border-radius: 0;
+
+  .caption{
+    padding: 0;
+    color: $gray-base;
+  }
+}
+
+.img-thumbnail,
+.thumbnail{
+  box-shadow: none;
+}
+
+// Make thumbnails to fit entire container width
+.thumbnail-block {
+  display: block;
+
+  > img,
+  a > img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+
+// Thumbnail Rayen
+// -------------------------
+
+.thumbnail-rayen {
+  @extend %thumbnail;
+  position: relative;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: .5;
+    background: #2f6890;
+    @include transition (0.35s all ease);
+    z-index: 1;
+  }
+
+  &.thumbnail-bordered {
+    &:before, img {
+      border-radius: $border-radius-base;
+    }
+  }
+
+  .figcaption {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    color: $white;
+    @include transform(translate(-50%, -50%) scale(1));
+    @include transition (0.35s all ease);
+    z-index: 2;
+    will-change: content;
+  }
+
+  @media (min-width: $screen-lg-min) {
+    &:before {
+      opacity: 0;
+    }
+
+    .figcaption {
+      opacity: 0;
+      @include transform(translate(-50%, 100%) scale(0));
+    }
+
+    &:hover {
+      &:before {
+        opacity: 0.5;
+      }
+
+      .figcaption {
+        opacity: 1;
+        @include transform(translate(-50%, -50%) scale(1));
+      }
+    }
+  }
+}
+.tablet .thumbnail-rayen,
+.mobile .thumbnail-rayen{
+  .figcaption {
+    left: 50%;
+    top: 50%;
+    opacity: 1;
+    visibility: visible;
+    @include transform(translate(-50%, -50%) scale(1));
+
+    .icon{
+      font-size: 26px;
+      line-height: 26px;
+    }
+  }
+  &:before {
+    opacity: 0.25;
+  }
+}
+
+
+// Flickr Thumbnails
+// --------------------------------------------------
+
+.flickr-item.thumbnail-classic {
+  will-change: transform;
+  transition: .3s all ease;
+
+  &:hover {
+    @include transform(scale(1.08));
+  }
+}

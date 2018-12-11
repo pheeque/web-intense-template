@@ -1,0 +1,26 @@
+//- Comment Box
+//- type - comment box type
+//- image - {image} object
+//- date - comment date
+//- title - comment author
+//- body - comment body
+mixin box-comment(type, image, date, title, body)
+  // Box Comment
+  .box-comment.text-left(class=type)
+    .media
+      .media-left
+        img.rounded-circle.box-comment-img(src= image.src alt= image.alt width= image.width height= image.height)
+      .media-body
+        header.box-comment-header.unit.flex-column.unit-spacing-xxs.unit-md.flex-lg-row.flex-lg-row-reverse.align-items-lg-center.justify-content-lg-end
+          .unit-left(class= type ==="box-comment-outboxed" ? "unit-grow-1": "")
+            ul.box-comment-meta.list-inline.list-inline-sm.text-light
+              li.list-inline-item
+                span.box-comment-icon.mdi.mdi-clock
+                time(datetime="2018-01-01")= date
+          .unit-body
+            h6.box-comment-title=  title
+
+        section.box-comment-body
+          p= body
+    block
+

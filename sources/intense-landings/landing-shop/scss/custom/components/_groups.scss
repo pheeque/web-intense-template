@@ -1,0 +1,88 @@
+// Element groups
+// --------------------------------------------------
+
+html .page {
+  [class*='group-'] {
+    &:before,
+    &:after {
+      content: '';
+      display: table;
+    }
+  }
+
+  .group {
+    @include group(15px, 15px);
+  }
+
+  .group-xs {
+    @include group(5px, 5px);
+  }
+
+  .group-sm {
+    @include group(16px, 10px);
+  }
+
+  .group-md {
+    @include group(20px, 20px);
+  }
+
+  .group-lg {
+    @include group(35px, 15px);
+  }
+
+  .group-xl {
+    @include group(15px, 15px);
+
+    @include media-breakpoint-up(lg) {
+      @include group-media(40px, 25px);
+    }
+    @include media-breakpoint-up(xl) {
+      @include group-media(90px, 30px);
+    }
+  }
+
+  .group-top {
+    > *, > *:first-child {
+      vertical-align: top;
+    }
+  }
+
+  .group-middle {
+    > *, > *:first-child {
+      vertical-align: middle;
+    }
+  }
+
+  .group-bottom {
+    > *, > *:first-child {
+      vertical-align: bottom;
+    }
+  }
+
+  .group-sm-justify {
+    .btn {
+      min-width: 200px;
+    }
+    @include media-breakpoint-up(md) {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+
+      > * {
+        flex-grow: 1;
+        flex-shrink: 0;
+      }
+
+      .btn {
+        min-width: 130px;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+    }
+  }
+
+  .group-md-1 {
+    @include group(20px, 10px);
+  }
+}

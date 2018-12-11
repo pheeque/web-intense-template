@@ -1,0 +1,17 @@
+//- thumbnail - {thumbnail} object
+mixin thumbnail-josip( options )
+  -
+    var lightgallery = ( typeof( options.target.href ) !== 'undefined' )
+      ? { "href": options.target.href }
+      : { "data-lightgallery": "item", "href": options.target.src };
+
+  // Thumbnail Josip
+  figure.thumbnail-josip
+    a&attributes( lightgallery )
+      img(width=options.thumb.width, height=options.thumb.height, src=options.thumb.src, alt=options.thumb.alt)
+    figcaption
+      a.btn.btn-xs(class= options.btnClass href= options.btnLink).offset-top-10.pull-right= options.btnText
+      div.offset-top-14.offset-md-top-0
+        h6.thumbnail-josip-title= options.title
+
+      p.veil.reveal-md-block.offset-top-0= options.description

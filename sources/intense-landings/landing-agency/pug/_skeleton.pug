@@ -1,0 +1,134 @@
+- var fonts = "//fonts.googleapis.com/css?family=Lato:300,400,700,900,400italic"
+- var html_class = "wide wow-animation"
+
+include _mixins
+include _config
+
+block variables
+
+doctype html
+
+html(lang="en" class=html_class)
+	head
+		// Site Title
+		block title
+			title Home
+
+		meta(name="format-detection" content="telephone=no")
+		meta(name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0")
+		meta(http-equiv="X-UA-Compatible" content="IE=edge")
+		meta(charset='utf-8')
+
+		link(rel="icon" href="images/favicon.ico" type="image/x-icon")
+		link(rel="stylesheet" type="text/css" href=fonts)
+		link(rel="stylesheet" href="css/style.css")
+
+		= "\n\t\t"
+		<!--[if lt IE 10]>
+		div(style='background: #212121; padding: 10px 0; box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3); clear: both; text-align:center; position: relative; z-index:1;')
+			a(href="http://windows.microsoft.com/en-US/internet-explorer/")
+				img(src="images/ie8-panel/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today.")
+		script(src="js/html5shiv.min.js")
+		= "\n\t\t"
+		<![endif]-->
+
+	body( class=bodyClass )
+
+		.page-loader
+			.brand-name
+				+png(logoInverse)
+			.page-loader-body
+				.cssload-jumping
+					span
+					span
+					span
+					span
+					span
+		// Page
+		.page
+			block page
+
+			if (layoutPanel)
+				.layout-panel-wrap
+					.layout-panel
+						button.layout-panel-toggle(data-custom-toggle='.layout-panel-wrap' data-custom-toggle-disable-on-blur='true')
+							span
+
+						.layout-panel-content.scroll-wrap
+							.layout-panel-inner.isotope-wrap
+								.layout-panel-header
+									a.btn.btn-block.btn-effect-ujarak.btn-success.btn-square(href=getTemplateLink) Get Teamplate
+									a.btn.btn-block.btn-effect-ujarak.btn-success.btn-square(href=tryBuilderLink target='_blank') Try Builder
+									h4.layout-panel-title Layouts
+
+								// Isotope Content
+								.layout-panel-main
+									.row.row-10.gutters-10.isotope
+										.col-6.isotope-item
+											a.thumbnail-small(href='landing-shop.html')
+												.thumbnail-small-image
+													+jpg('layout-1-380x280')
+												.thumbnail-small-hover-image
+													+jpg('layout-1-380x280')
+
+												.thumbnail-small-caption
+													p.thumbnail-small-header Shop
+
+										.col-6.isotope-item
+											a.thumbnail-small(href='landing-personal.html')
+												.thumbnail-small-image
+													+jpg('layout-2-380x280')
+												.thumbnail-small-hover-image
+													+jpg('layout-2-380x280')
+
+												.thumbnail-small-caption
+													p.thumbnail-small-header  Personal
+
+										.col-6.isotope-item
+											a.thumbnail-small(href='landing-corporate.html')
+												.thumbnail-small-image
+													+jpg('layout-3-380x280')
+												.thumbnail-small-hover-image
+													+jpg('layout-3-380x280')
+
+												.thumbnail-small-caption
+													p.thumbnail-small-header Corporate
+
+										.col-6.isotope-item
+											a.thumbnail-small(href='landing-business.html')
+												.thumbnail-small-image
+													+jpg('layout-4-380x280')
+												.thumbnail-small-hover-image
+													+jpg('layout-4-380x280')
+
+												.thumbnail-small-caption
+													p.thumbnail-small-header Business
+
+										.col-6.isotope-item
+											a.thumbnail-small(href='landing-startup.html')
+												.thumbnail-small-image
+													+jpg('layout-5-380x280')
+												.thumbnail-small-hover-image
+													+jpg('layout-5-380x280')
+
+												.thumbnail-small-caption
+													p.thumbnail-small-header Startup
+
+										.col-6.isotope-item
+											a.thumbnail-small(href='landing-agency.html')
+												.thumbnail-small-image
+													+jpg('layout-6-380x280')
+												.thumbnail-small-hover-image
+													+jpg('layout-6-380x280')
+
+												.thumbnail-small-caption
+													p.thumbnail-small-header Agency
+
+		// Global Mailform Output
+		#form-output-global.snackbars
+
+		// Javascript
+		script(src="js/core.min.js")
+		script(src="js/script.js")
+
+		// coded by jeremyluis

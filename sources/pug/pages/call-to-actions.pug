@@ -1,0 +1,123 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-breadcrumb-classic
+include ../elements/_ui-call-to-action-type-1
+include ../elements/_ui-call-to-action-type-2
+include ../elements/_ui-call-to-action-type-3
+include ../elements/_ui-call-to-action-type-4
+include ../elements/_ui-jumbotron-bootstrap
+
+//- Title
+block title
+  title= cfg.nav.components.submenu.toolkitComponents.submenu.callToActions.title
+
+//- Page
+block page
+  // Page Header
+  header.page-head
+    //- RD Navbar
+    +rd-navbar-default(
+      'rd-navbar-default rd-navbar-light',
+      {
+        "data-lg-auto-height": "true",
+        "data-md-layout": 'rd-navbar-fixed',
+        "data-lg-layout": 'rd-navbar-static',
+        "data-lg-stick-up": 'true'
+      },
+      cfg.brand.logo,
+      cfg.nav.components,
+      cfg.nav
+      )
+  +breadcrumb-classic(
+    cfg.nav.components.submenu.toolkitComponents.submenu.callToActions.title,
+    "icon-lg " + cfg.nav.components.submenu.toolkitComponents.submenu.callToActions.icon,
+    {
+      0: {
+        "title": cfg.nav.home.title,
+        "href": cfg.nav.home.href
+      },
+      1: {
+        "title": cfg.nav.components.title,
+        "href": cfg.nav.components.href
+      },
+      2: {
+        "title": cfg.nav.components.submenu.toolkitComponents.submenu.callToActions.title,
+        "href": cfg.nav.components.submenu.toolkitComponents.submenu.callToActions.href
+      }
+    })
+
+  // Section call to action type 1
+  section.section.parallax-container.context-light( data-parallax-img= 'images/backgrounds/background-05-1920x960.jpg' )
+    .parallax-content.section-98.section-md-110.bg-overlay-white
+      .container
+        h1 Call To Action Type 1
+        hr.divider.bg-mantis
+        .row.justify-content-sm-center.offset-top-20
+          .col-sm-10.col-xl-6
+            p Our website is under construction, we are working very hard to give you the best experience on our new web site.
+            +call-to-action-type-1( "label-1", "370px", "163px", "Enter Your Email:", "text", "@Required @Email", "form-control-impressed", "btn-info", "Subscribe now" )
+
+  // Section call to action type 2
+  section.section.novi-background.section-top-50.section-lg-top-124
+    h1 Call To Action Type 2
+    hr.divider.bg-mantis
+    .offset-top-66
+      +call-to-action-type-2( "Intense is exactly what you need", cfg.buyLink, "btn-lg btn-default", "mdi mdi-cart-outline", "left", "Buy intense now", "", '', '_blank' )
+
+  // Section call to action type 3
+  section.section.novi-background.bg-black-haze.section-top-124
+    .container
+      h1 Call To Action Type 3
+      hr.divider.bg-mantis
+      .row.justify-content-sm-center.justify-content-lg-start.align-items-lg-end.offset-top-66
+        .col-lg-7.col-xl-6.offset-xxl-1.d-none.d-lg-block
+          img.img-fluid( src="images/pages/call-to-action-01-566x548.png" alt="" width=566 height=548 )
+        .col-sm-10.col-md-8.col-lg-5.col-xl-4
+          .section-bottom-66.section-md-bottom-41
+            h1 Get Started Now!
+            +call-to-action-type-3([{
+              label: "call-to-action-label-group-1",
+              placeholder: "Full Name:",
+              inputType: "text",
+              constrains: "@Required"
+            },
+            {
+              label: "call-to-action-label-group-2",
+              placeholder: "E-Mail:",
+              inputType: "text",
+              constrains: "@Required @Email"
+            },
+            {
+              label: "call-to-action-label-group-3",
+              placeholder: "Phone:",
+              inputType: "text",
+              constrains: "@Required"
+            }], "btn-primary", "Buy intense Now", "Start your business with us by creating your first account.")
+              | I am: &nbsp;
+              .group-sm.d-inline
+                .custom-control.custom-radio.d-inline.offset-top-10
+                  input#customRadio3.custom-control-input( name="input-group-1", value="user", type="radio" )
+                  label.custom-control-label( for='customRadio3' ) User
+                .custom-control.custom-radio.d-inline.offset-top-10
+                  input#customRadio4.custom-control-input( name="input-group-1", value="developer", type="radio" )
+                  label.custom-control-label( for='customRadio4' ) Developer
+
+  // Section call to action type 4
+  section.section.novi-background.section-top-124
+    h1 Call To Action Type 4
+    hr.divider.bg-mantis
+    .offset-top-66
+      +call-to-action-type-4("Intense is exactly what you need", cfg.buyLink, "btn-lg btn-default", "mdi mdi-cart-outline", "left", "Buy intense now", "", '_blank')
+
+  // Section Bootstrap Jumbotron
+  section.section.novi-background.section-50.section-top-124.section-bottom-110
+    .container
+      h1 Bootstrap Jumbotron
+      hr.divider.bg-mantis
+      .row.justify-content-sm-center.offset-top-66
+        .col-sm-10
+          +jumbotron-bootstrap("Intense is exactly what you need", "btn-primary", cfg.buyLink, "mdi mdi-cart-outline", "left", "Buy intense now" ,"Intense is an independent web design studio with a rich history. It started as a small family-owned business in Oakville, and has grown enough to successfully occupy two large buildings in two different cities.", '_blank')
+
+  // Page Footer
+  include ../sections/_section-footer-default

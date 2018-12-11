@@ -1,0 +1,452 @@
+include ../_config
+include ../_mixins
+include ../elements/_ui-rd-navbar-default-transparent
+include ../elements/_ui-page-loader-variant-1
+include ../elements/_ui-box-icon-type-1
+include ../elements/_ui-box-icon-type-3
+include ../elements/_ui-rd-parallax
+include ../elements/_widget-post
+include ../elements/_widget-form-subscribe
+include ../elements/_widget-list-social
+include ../elements/_ui-media-elements
+include ../elements/_ui-counter-type-1
+include ../elements/_ui-thumbnail-classic
+include ../elements/_ui-isotope
+include ../elements/_ui-box-member
+include ../elements/_ui-partners-carousel
+
+doctype html
+
+html.wide.wow-animation.scrollTo( lang='en' )
+  head
+    title= cfg.nav.home.submenu.skins.submenu.sunset.title
+
+    meta( charset='utf-8' )
+    meta( name='format-detection' content='telephone=no' )
+    meta( name='viewport' content='width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' )
+    meta( http-equiv='X-UA-Compatible' content='IE=Edge' )
+    block search-meta
+      meta( name='keywords' content='intense web design multipurpose template' )
+      meta( name='date' content='Dec 26' )
+
+    link( rel='icon' href='images/favicon.ico' type='image/x-icon' )
+    link( rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Dancing+Script:700%7CRaleway:300,400,600,700,900' )
+    link( rel='stylesheet' href='css/style-sunset.css' )
+
+    style .ie-panel{display: none;background: #212121;padding: 10px 0;box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3);clear: both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: block;}
+
+  body
+    +page-loader-1('<img class="img-fluid" style="margin-top: -20px;margin-left: -18px;" width="330" height="67" src="images/childs/restaurant-logo-big.png" alt=""/>')
+
+    .ie-panel
+      a( href='http://windows.microsoft.com/en-US/internet-explorer/' )
+        img( src='images/ie8-panel/warning_bar_0000_us.jpg', height=42, width=820, alt='You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today.' )
+
+    .page.text-center
+      // Page Head
+      header.page-head.slider-menu-position
+        //- RD Navbar
+        +rd-navbar-default(
+          'rd-navbar-default rd-navbar-transparent',
+          {
+            'data-lg-auto-height': 'true',
+            'data-md-layout': 'rd-navbar-fixed',
+            'data-lg-layout': 'rd-navbar-static',
+            'data-lg-stick-up': 'true'
+          },
+          '<img style="margin-top: -5px;margin-left: -15px;" width="138" height="31" src="images/childs/restaurant-logo-light.png" alt=""/>',
+          cfg.nav.home,
+          cfg.nav
+        )
+
+        .bg-black.context-dark.parallax-container( data-parallax-img= 'images/intros/intro-05-1920x955.jpg' )
+          .parallax-content
+            .bg-overlay-gray-darkest
+              .container
+                .row
+                  .section-110.section-cover.row.justify-content-sm-center.align-items-sm-center
+                    .col-xl-12
+                      h1
+                        span.text-spacing-60.big.font-weight-bold.text-uppercase(data-caption-animate='fadeInUp' data-caption-delay='700') Welcome to Intense
+
+                      h4.offset-top-34.d-none.d-md-block.text-light(data-caption-animate='fadeInUp' data-caption-delay='900')
+                        | The smartest and most flexible bootstrap template by TemplateMonster you've ever seen.
+                        | Create exactly what you need with our powerful bootstrap toolkit.
+
+                      .group.group-xl.offset-top-20.offset-sm-top-50
+                        a.btn.btn-primary.btn-lg.btn-anis-effect(href=cfg.buyLink target='_blank' data-caption-animate='fadeInUp' data-caption-delay='1200')
+                          span.btn-text Buy intense now
+
+                        a.btn.btn-default.btn-lg.btn-anis-effect(href='#' data-custom-scroll-to='home-section-welcome' data-caption-animate='fadeInUp' data-caption-delay='1200')
+                          span.btn-text Start a journey
+
+
+      section.section-top-98.section-sm-top-110.section-sm-bottom-110.section-lg-top-66.section-bottom-98.section-lg-bottom-0(id='home-section-welcome')
+        .container
+          .row.justify-content-md-center.align-items-lg-center
+            .col-xl-5.d-none.d-xl-inline-block
+              img.center-block.d-block.mx-auto(width='470', height='540', src='images/childs/restaurant-01-470x540.png', alt='')
+            .col-md-10.offset-xl-1.col-xl-5.section-lg-bottom-66.text-xl-left
+              h1.font-weight-bold Welcome to Intense. Multipurpose Theme.
+              hr.divider.bg-mantis.hr-lg-left-0
+              .offset-top-41
+                p Join the 205,000+ Satified Customers Today at TemplateMonster.com. Created by the industry leaders Intense is a comprehensive set of tools which are super easy to pick up and run. It gives you a huge leg up to create your own beautiful site. Powerful options & tools, unlimited designs, responsive framework and amazing support are the reasons for our customers to fall in love.
+
+      section.section-98.section-sm-110.bg-lightest
+        .container
+          .row.text-lg-left
+            .col-lg-4
+              +box-icon-type-1('icon-sm icon-primary mdi mdi-code-tags', 'BASED ON BOOTSTRAP 3', 'Flexible & Customizable.', 'Intense is based on the one of the most popular and flexible CSS Frameworks - Bootstrap. It gives you confidence in quality and flexibility of the product you buy.')
+            .col-lg-4
+              +box-icon-type-1('icon-sm icon-primary mdi mdi-cube-outline', 'EXTENDED TOOLKIT', 'Powerful extension', 'Intense provides a powerful and flexible extended toolkit in addition to basic Bootsrap. If you’ve used Bootstrap itself, you’ll find this all super familiar and easy-to-use.')
+            .col-lg-4
+              +box-icon-type-1('icon-sm icon-primary mdi mdi-monitor', 'ADVANCED UI KIT', 'For Developers', 'Intense has dozens of new components and elements built on the same level of quality as Bootstrap elements and highlighted with several example pages.')
+
+      section.section-98.section-sm-110
+        .container
+          h2.font-weight-bold Even More Features Available
+          hr.divider.bg-mantis
+          .row.align-items-lg-center.offset-top-66.justify-content-lg-center
+            .col-lg-3.order-lg-1
+              img.center-block.img-fluid(src='images/moqups/moqup-home-mobile.png' alt='' width=247 height=470)
+            .col-md-8.offset-md-2.col-lg-4.offset-lg-0.text-lg-right
+              .unit.unit-spacing-sm.flex-row-reverse.unit-md.flex-lg-row
+                .unit-body
+                  h4.text-uppercase.font-weight-bold.offset-lg-top-20 Social Integration
+                  p The information should be not only well-organized and easy to read. thus making the process enjoyable.
+                .unit-right
+                  span.novi-icon.icon.icon-circle.icon-md.icon-pink-filled.mdi.mdi-message-text-outline
+
+              .unit.unit-spacing-sm.flex-row-reverse.unit-md.flex-lg-row.offset-top-50.offset-lg-top-30
+                .unit-body
+                  h4.text-uppercase.font-weight-bold.offset-lg-top-20 All images Included
+                  p The information should be not only well-organized and easy to read. thus making the process enjoyable.
+                .unit-right
+                  span.novi-icon.icon.icon-circle.icon-md.icon-pink-filled.mdi.mdi-image-filter
+
+              .unit.unit-spacing-sm.flex-row-reverse.unit-md.flex-lg-row.offset-top-50.offset-lg-top-30
+                .unit-body
+                  h4.text-uppercase.font-weight-bold.offset-lg-top-20 2000+ #[br.d-none.d-md-inline.d-lg-none] icons
+                  p The information should be not only well-organized and easy to read. thus making the process enjoyable.
+                .unit-right
+                  span.novi-icon.icon.icon-circle.icon-md.icon-pink-filled.mdi.mdi-emoticon-happy
+
+            .col-md-8.offset-md-2.col-lg-4.offset-lg-0.text-lg-left.order-lg-1.offset-top-50.offset-lg-top-0
+              .unit.unit-spacing-sm.unit-md.flex-lg-row
+                .unit-left
+                  span.novi-icon.icon.icon-circle.icon-md.icon-pink-filled.mdi.mdi-cellphone-link
+                .unit-body
+                  h4.text-uppercase.font-weight-bold.offset-lg-top-20 Responsive & Retina
+                  p.
+                    The information should be not only well-organized and easy to read. thus making the process enjoyable.
+              .unit.unit-spacing-sm.unit-md.flex-lg-row.offset-top-50.offset-lg-top-30
+                .unit-left
+                  span.novi-icon.icon.icon-circle.icon-md.icon-pink-filled.mdi.mdi-television-guide
+                .unit-body
+                  h4.text-uppercase.font-weight-bold.offset-lg-top-20 Extensive docs
+                  p.
+                    The information should be not only well-organized and easy to read. thus making the process enjoyable.
+              .unit.unit-spacing-sm.unit-md.flex-lg-row.offset-top-50.offset-lg-top-30
+                .unit-left
+                  span.novi-icon.icon.icon-circle.icon-md.icon-pink-filled.mdi.mdi-play-box-outline
+                .unit-body
+                  h4.text-uppercase.font-weight-bold.offset-lg-top-20 Video backgrounds
+                  p.
+                    The information should be not only well-organized and easy to read. thus making the process enjoyable.
+
+      section
+        .row.no-gutters
+          .col-lg-6.bg-image(style='background-image: url(images/backgrounds/background-24-1920x1080.jpg)')
+          .col-lg-6
+            .bg-lightest
+              .inset-left-11p.inset-right-11p.section-98.section-sm-110
+                .small.text-uppercase.text-spacing-60.text-primary Video Walkthrough
+
+                h2.font-weight-bold.offset-top-14 A few words about Intense
+
+                .offset-top-41
+                  +media-elements({
+                    'type': 'rd-video-player',
+                    'ratio': '16by9',
+                    'href': 'video/intense/intense',
+                    'title': 'What can we say about Intense ?',
+                    'preview': 'video/intense/intense-preview.jpg',
+                    'classes': 'play-on-scroll',
+                    'muted': 'true'
+                  })
+
+
+
+      //include ../sections/_section-buy-now
+
+      section.section-98.section-md-110.context-dark.bg-gray-darkest
+        .container-fluid
+          .row
+            .col-md-8.offset-md-2.col-lg-12.offset-lg-0
+              .row
+                .col-md-6.col-lg-3.offset-lg-0
+                  +counter-type-1('Templates', 'font-weight-bold text-blue-gray', {
+                    'dataTo': '58249',
+                    'dataSpeed': '3000',
+                    'attr': 'text-uppercase font-weight-bold text-spacing-60 offset-top-20'
+                  }, 'divider bg-default', 'h1')
+                .col-md-6.col-lg-3.offset-top-66.offset-md-top-0
+                  +counter-type-1('Happy Clients', 'font-weight-bold text-blue-gray', {
+                    'dataTo': '246',
+                    'dataSpeed': '2500',
+                    'preffix': 'K',
+                    'attr': 'text-uppercase font-weight-bold text-spacing-60 offset-top-20'
+                  }, 'divider bg-default', 'h1')
+                .col-md-6.col-lg-3.offset-top-66.offset-lg-top-0
+                  +counter-type-1('Hours of Coding', 'font-weight-bold text-blue-gray', {
+                    'dataTo': '1200',
+                    'dataSpeed': '1500',
+                    'attr': 'text-uppercase font-weight-bold text-spacing-60 offset-top-20'
+                  }, 'divider bg-default', 'h1')
+                .col-md-6.col-lg-3.offset-top-66.offset-lg-top-0
+                  +counter-type-1('Lines of Code', 'font-weight-bold text-blue-gray', {
+                    'dataTo': '834',
+                    'dataSpeed': '1300',
+                    'preffix': 'K',
+                    'attr': 'text-uppercase font-weight-bold text-spacing-60 offset-top-20'
+                  }, 'divider bg-default', 'h1')
+      section.section-98.section-110
+        .container
+          .row.text-lg-left
+            .col-md-8.offset-md-2.col-lg-4.offset-lg-0
+              +box-icon-type-3('icon-sm text-success mdi mdi-clock', 'Clean & nice code', 'text-uppercase font-weight-bold', 'Intense was made with love and attention to details . The code meets the official standard of Bootstrap Code Style Guide and other specifications.')
+            .col-md-8.offset-md-2.col-lg-4.offset-lg-0.offset-top-50.offset-lg-top-0
+              +box-icon-type-3('icon-sm text-success mdi mdi-television-guide', 'Extensive Docs', 'text-uppercase font-weight-bold', 'Intense has online and easily accesible documentation. Our documentation contains detailed instructions for further template customization and self adaptation.')
+            .col-md-8.offset-md-2.col-lg-4.offset-lg-0.offset-top-50.offset-lg-top-0
+              +box-icon-type-3('icon-sm text-success mdi mdi-menu', 'Powerful Navigation', 'text-uppercase font-weight-bold', 'Powerful and really flexible RD Navbar plugin is included too. Create any type of navigation with our ready-to-go examples and adapt to your needs.')
+
+          .row.text-lg-left.offset-top-50
+            .col-md-8.offset-md-2.col-lg-4.offset-lg-0
+              +box-icon-type-3('icon-sm text-success mdi mdi-message-text-outline', 'Social Plugins', 'text-uppercase font-weight-bold', 'Feel the power of social integration as you never did before. Integrate facebook blog, twitter, instagram and flickr feeds as a part of your design - styled and optimized.')
+            .col-md-8.offset-md-2.col-lg-4.offset-lg-0.offset-top-50.offset-lg-top-0
+              +box-icon-type-3('icon-sm text-success mdi mdi-bulletin-board','Photo Gallery', 'text-uppercase font-weight-bold', 'Intense includes a powerful and touch focused powerful and flexible photo gallery. Manage your photos and share them with friends.')
+            .col-md-8.offset-md-2.col-lg-4.offset-lg-0.offset-top-50.offset-lg-top-0
+              +box-icon-type-3('icon-sm text-success mdi mdi-vibrate','Flex Grid system', 'text-uppercase font-weight-bold', 'Feel the advantages of our custom powerful and flexible CSS Flex Grid System in addition to default Bootstrap Grid. Creating layouts have never been so easy.')
+
+
+      .bg-lightest
+        // Our Works
+        section.section-98.section-110(id='home-section-childs')
+          .container-fluid
+            h2.font-weight-bold
+              span.big Still Not Sure?
+            h3 Check out other themes based on
+              span.text-uppercase.text-ubold.text-mantis= ' Intense'
+            .offset-top-41
+              +isotope(['All', 'Infrastructure', 'Portfolio', 'Blog', 'Agency', 'Creative'],{
+                'group': 'gallery',
+                'layout': 'fitRows',
+                'alignClass': 'isotope-filters-horizontal'
+              }, 'isotope-1')
+                // Isotope
+                .row.grid-group-sm
+                  - for ( var key in cfg.themes )
+                    .col-12.col-md-6.col-xl-4.isotope-item( data-filter=cfg.themes[key].category )
+                      .shadow-variant-2
+                        +thumbnail-classic({
+                          type:        "thumbnail",
+                          title:       cfg.themes[ key ].title,
+                          description: cfg.themes[ key ].desc,
+                          thumb:       cfg.themes[ key ].image,
+                          target:      { href: cfg.themes[ key ].href },
+                          targetBlank: true,
+                          titleAttrs: 'ttext-darkest'
+                        })
+
+      section.section-98.section-110
+        .container
+          h2.font-weight-bold Meet our team
+
+          hr.divider.bg-mantis
+
+          .row.justify-content-sm-center.offset-md-top-66
+            .col-md-10.col-xl-12
+              .row
+                .col-md-6.col-xl-3.offset-top-66.offset-sm-top-0
+                  +box-member('images/users/user-john-doe-270x270.jpg', 'John Doe', 'Founder', 'text-primary', cfg.nav.pages.submenu.teamMember.href)
+                    +widget-list-social([
+                      {
+                        'icon': 'fa fa-facebook',
+                        'href': '#'
+                      },
+                      {
+                        'icon': 'fa fa-twitter',
+                        'href': '#'
+                      },
+                      {
+                        'icon': 'fa fa-google-plus',
+                        'href': '#'
+                      }
+                    ], 'icon-xs icon-circle icon-darker-filled', 'list-inline-xs')
+                .col-md-6.col-xl-3.offset-top-66.offset-md-top-0.offset-xl-top-0
+                  +box-member('images/users/user-july-mao-270x270.jpg', 'July Mao', 'Web Designer', 'text-primary', cfg.nav.pages.submenu.teamMember.href)
+                    +widget-list-social([
+                      {
+                        'icon': 'fa fa-facebook',
+                        'href': '#'
+                      },
+                      {
+                        'icon': 'fa fa-twitter',
+                        'href': '#'
+                      },
+                      {
+                        'icon': 'fa fa-google-plus',
+                        'href': '#'
+                      }
+                    ], 'icon-xs icon-circle icon-darker-filled', 'list-inline-xs')
+
+                .col-md-6.col-xl-3.offset-top-66.offset-md-top-30.offset-xl-top-0
+                  +box-member('images/users/user-bernard-show-270x270.jpg', 'Bernard Show', 'Co-Founder', 'text-primary', cfg.nav.pages.submenu.teamMember.href)
+                    +widget-list-social([
+                      {
+                        'icon': 'fa fa-facebook',
+                        'href': '#'
+                      },
+                      {
+                        'icon': 'fa fa-twitter',
+                        'href': '#'
+                      },
+                      {
+                        'icon': 'fa fa-google-plus',
+                        'href': '#'
+                      }
+                    ], 'icon-xs icon-circle icon-darker-filled', 'list-inline-xs')
+                .col-md-6.col-xl-3.offset-top-66.offset-md-top-30.offset-xl-top-0
+                  +box-member('images/users/user-ronald-oswald-270x270.jpg', 'Ronald Oswald', 'Developer', 'text-primary', cfg.nav.pages.submenu.teamMember.href)
+                    +widget-list-social([
+                      {
+                        'icon': 'fa fa-facebook',
+                        'href': '#'
+                      },
+                      {
+                        'icon': 'fa fa-twitter',
+                        'href': '#'
+                      },
+                      {
+                        'icon': 'fa fa-google-plus',
+                        'href': '#'
+                      }
+                    ], 'icon-xs icon-circle icon-darker-filled', 'list-inline-xs')
+
+      // Section Our Partners
+      section.section-top-124.section-bottom-98.bg-gray-darkest.context-dark
+        .container
+          div
+            h2.font-weight-bold Our Partners
+            hr.divider.bg-mantis
+            .row.justify-content-sm-center.offset-top-24
+              .col-sm-10
+                p.
+                  Join TemplateMonster Affiliate Program. Earn up to 50% commissions with TemplateMonster affiliate program. Anyone Can Become an Affiliate. We want you to earn more!
+              .col-sm-12
+                .offset-top-66
+                  +partners-carousel([
+                {
+                  'link': {'href': cfg.nav.pages.submenu.clients.href},
+                  'image': {'src': 'images/clients/partner-01-181x101.png', 'width': 181, 'height': 101, 'alt': ''}
+                },
+                {
+                  'link': {'href': cfg.nav.pages.submenu.clients.href},
+                  'image': {'src': 'images/clients/partner-02-181x101.png', 'width': 181, 'height': 101, 'alt': ''}
+                },
+                {
+                  'link': {'href': cfg.nav.pages.submenu.clients.href},
+                  'image': {'src': 'images/clients/partner-03-181x101.png', 'width': 181, 'height': 101, 'alt': ''}
+                },
+                {
+                  'link': {'href': cfg.nav.pages.submenu.clients.href},
+                  'image': {'src': 'images/clients/partner-04-181x101.png', 'width': 181, 'height': 101, 'alt': ''}
+                },
+                {
+                  'link': {'href': cfg.nav.pages.submenu.clients.href},
+                  'image': {'src': 'images/clients/partner-04-181x101.png', 'width': 181, 'height': 101, 'alt': ''}
+                },
+                {
+                  'link': {'href': cfg.nav.pages.submenu.clients.href},
+                  'image': {'src': 'images/clients/partner-03-181x101.png', 'width': 181, 'height': 101, 'alt': ''}
+                },
+                {
+                  'link': {'href': cfg.nav.pages.submenu.clients.href},
+                  'image': {'src': 'images/clients/partner-02-181x101.png', 'width': 181, 'height': 101, 'alt': ''}
+                },
+                {
+                  'link': {'href': cfg.nav.pages.submenu.clients.href},
+                  'image': {'src': 'images/clients/partner-01-181x101.png', 'width': 181, 'height': 101, 'alt': ''}
+                }
+              ])
+
+      // Page Footer
+      footer.section.novi-background.section-relative.section-top-66.section-bottom-34.page-footer.bg-black.context-dark
+        .container
+          .row.justify-content-md-center.text-xl-left
+            .col-md-8.col-lg-12
+              .row.justify-content-sm-center
+                .col-sm-7.text-sm-left.col-lg-4.col-xl-3.order-xl-4
+                  h6.text-uppercase.text-spacing-60 Latest news
+
+                  +widget-post(cfg.nav.blog.submenu.classic.submenu.singlePost.href, '05/14/2018', 'Let’s Change the world', null)
+                  +widget-post(cfg.nav.blog.submenu.classic.submenu.singlePost.href, '05/14/2018', 'The meaning of Web Design', null)
+                  +widget-post(cfg.nav.blog.submenu.classic.submenu.singlePost.href, '05/14/2018', 'Get Started with TemplateMonster', null)
+
+                .col-sm-5.offset-top-41.offset-sm-top-0.text-sm-left.col-lg-3.col-xl-2.order-xl-3
+                  h6.text-uppercase.text-spacing-60 Useful Links
+                  .d-block
+                    .d-inline-block
+                      ul.list.list-marked
+                        li
+                          a(href=cfg.nav.pages.submenu.aboutUs.href)= cfg.nav.pages.submenu.aboutUs.title
+                        li
+                          a(href=cfg.nav.pages.submenu.contactUs.href)= cfg.nav.pages.submenu.contactUs.title
+                        li
+                          a(href=cfg.nav.pages.submenu.services.href)= cfg.nav.pages.submenu.services.title
+                        li
+                          a(href=cfg.nav.pages.submenu.pricing.href)= cfg.nav.pages.submenu.pricing.title
+                        li
+                          a(href=cfg.nav.pages.submenu.clients.href)= cfg.nav.pages.submenu.clients.title
+
+                .col-sm-12.offset-top-41.col-lg-5.offset-lg-top-0.text-lg-left.col-xl-4.order-xl-2
+                  h6.text-uppercase.text-spacing-60 Newsletter
+
+                  p Keep up with our always upcoming  product features  and technologies. Enter your e-mail and subscribe to  our newsletter.
+
+                  .offset-top-30
+                    +widget-form-subscribe('Type your E-Mail', 'form-subscribe-footer')
+
+                .col-sm-12.offset-top-66.col-xl-3.order-xl-1.offset-xl-top-0
+                  a( href=cfg.nav.home.href )!= '<img style="margin-top: -5px;margin-left: -15px;" width="138" height="31" src="images/childs/restaurant-logo-light.png" alt=""/>'
+                  p.text-darker.offset-top-4 Feel the power of future
+
+                  +widget-list-social([
+                    {
+                      'icon': 'fa fa-facebook',
+                      'href': '#'
+                    },
+                    {
+                      'icon': 'fa fa-twitter',
+                      'href': '#'
+                    },
+                    {
+                      'icon': 'fa fa-google-plus',
+                      'href': '#'
+                    },
+                    {
+                      'icon': 'fa fa-linkedin',
+                      'href': '#'
+                    }
+                  ])
+
+        .container.offset-top-50
+          p.small.text-darker
+            | #{cfg.brand.name} &copy; #[span.copyright-year] . #[a(href='privacy.html') Privacy Policy]
+
+    // Global Mailform Output
+    #form-output-global.snackbars
+
+    // Java script
+    script(src='js/core.min.js')
+    script(src='js/script.js')

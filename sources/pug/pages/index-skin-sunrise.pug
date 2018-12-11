@@ -1,0 +1,528 @@
+include ../_config
+include ../_mixins
+include ../elements/_ui-rd-navbar-top-panel
+include ../elements/_ui-box-icon-type-4
+include ../elements/_ui-material-parallax
+include ../elements/_widget-post
+include ../elements/_widget-form-subscribe
+include ../elements/_widget-list-social
+include ../elements/_ui-counter-type-1
+include ../elements/_ui-thumbnail-classic
+include ../elements/_ui-isotope
+include ../elements/_ui-thumbnail-terry
+include ../elements/_ui-page-loader-variant-1
+include ../elements/_ui-testimonials-slider-4
+
+doctype html
+html.wide.wow-animation.scrollTo( lang='en' )
+  head
+    title= cfg.nav.home.submenu.skins.submenu.sunrise.title
+
+    meta( charset='utf-8' )
+    meta( name='format-detection' content='telephone=no' )
+    meta( name='viewport' content='width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' )
+    meta( http-equiv='X-UA-Compatible' content='IE=Edge' )
+    block search-meta
+      meta( name='keywords' content='intense web design multipurpose template' )
+      meta( name='date' content='Dec 26' )
+
+    link( rel='icon' href='images/favicon.ico' type='image/x-icon' )
+    link( rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Montserrat:400,700%7CLato:400,700' )
+    link( rel='stylesheet' href='intense-real-estate/css/style.css' )
+
+    style .ie-panel{display: none;background: #212121;padding: 10px 0;box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3);clear: both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: block;}
+
+  body
+    +page-loader-1( '<img class="img-fluid" width="330" height="67" src="images/childs/real-estate-logo-big-330x67.png" alt=""/>' )
+
+    .ie-panel
+      a( href='http://windows.microsoft.com/en-US/internet-explorer/' )
+        img( src='images/ie8-panel/warning_bar_0000_us.jpg', height=42, width=820, alt='You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today.' )
+
+    .page.text-center
+      // Page Head
+      header.page-head
+        //- RD Navbar
+        +rd-navbar-top-panel(
+          'rd-navbar-light',
+          {
+            'data-lg-auto-height': 'true',
+            'data-md-layout': 'rd-navbar-fixed',
+            'data-lg-layout': 'rd-navbar-static',
+            'data-lg-stick-up': 'true'
+          },
+          '<img class="img-fluid" width="232" height="34" src="images/childs/real-estate-logo-dark-232x34.png" alt=""/>',
+          cfg.nav.home,
+          cfg.nav
+        )
+
+        +material-parallax({
+          img: 'images/backgrounds/background-10-1920x1062.jpg',
+          Class: 'bg-overlay-gray-darkest context-dark'
+        }).bg-black
+          .container
+            .row.align-items-sm-center.justify-content-sm-center.section-cover.section-110
+              .col-sm-10.col-md-8.col-lg-6
+                h1 Welcome to Intense
+                p
+                  span.big The smartest and most flexible bootstrap template by TemplateMonster you've ever seen. Create exactly what you need with our powerful bootstrap toolkit.
+                .offset-top-34
+                  .group
+                    a(href= cfg.buyLink target='_blank').btn.btn-primary buy intense now
+                    a(href= '#' data-waypoint-to='#section-terry').btn.btn-default start a journey
+
+      // Thumbnails terry
+      section.section-34#section-terry
+        .container-fluid
+          .row.justify-content-sm-center
+            .col-sm-8.col-md-6.col-xl-3
+              +thumbnail-terry({
+                'type': 'thumbnail',
+                'title': 'Infrastructure Themes',
+                'description': '12 properties',
+                'thumb': {'src': 'images/skins/skin-sunrise-01-442x280.jpg', 'width': 442, 'height': 280, 'alt': ''},
+                'target': {'href': '#'},
+                'btnLink': '#',
+                'btnClass': 'btn-primary',
+                'btnText': 'view all'
+              })
+
+            .col-sm-8.col-md-6.col-xl-3.offset-top-30.offset-md-top-0
+              +thumbnail-terry({
+                'type': 'thumbnail',
+                'title': 'Blog Themes',
+                'description': '87 properties',
+                'thumb': {'src': 'images/skins/skin-sunrise-02-442x280.jpg', 'width': 442, 'height': 280, 'alt': ''},
+                'target': {'href': '#'},
+                'btnLink': '#',
+                'btnClass': 'btn-primary',
+                'btnText': 'view all'
+              })
+
+            .col-sm-8.col-md-6.col-xl-3.offset-top-30.offset-xl-top-0
+              +thumbnail-terry({
+                'type': 'thumbnail',
+                'title': 'Portfolio Themes',
+                'description': '54 properties',
+                'thumb': {'src': 'images/skins/skin-sunrise-03-442x280.jpg', 'width': 442, 'height': 280, 'alt': ''},
+                'target': {'href': '#'},
+                'btnLink': '#',
+                'btnClass': 'btn-primary',
+                'btnText': 'view all'
+              })
+
+            .col-sm-8.col-md-6.col-xl-3.offset-top-30.offset-xl-top-0
+              +thumbnail-terry({
+                'type': 'thumbnail',
+                'title': 'Business Themes',
+                'description': '19 properties',
+                'thumb': {'src': 'images/skins/skin-sunrise-04-442x280.jpg', 'width': 442, 'height': 280, 'alt': ''},
+                'target': {'href': '#'},
+                'btnLink': '#',
+                'btnClass': 'btn-primary',
+                'btnText': 'view all'
+              })
+
+      // Intense Is The Most Flexible Bootstrap Theme
+      section.section-bottom-98.section-top-34.section-md-124
+        .container
+          .row.justify-content-sm-center
+            .col-sm-10
+              h2.font-weight-bold Intense Is The Most Flexible Bootstrap Theme on TemplateMonster
+              hr.divider.bg-saffron
+            .col-sm-8.offset-top-50.offset-md-top-66
+              p Join the 205,000+ Satified Customers Today at TemplateMonster.com. Created by the industry leaders Intense is a comprehensive set of tools which are super easy to pick up and run. It gives you a huge leg up to create your own beautiful site. Powerful options & tools, unlimited designs, responsive framework and amazing support are the reasons for our customers to fall in love.
+          .row.align-items-lg-center.offset-top-98
+            .col-lg-4.order-lg-1
+              img.img-fluid.d-block.mx-auto(src='images/moqups/moqup-home-mobile.png' alt='' width=247 height=470)
+            .col-md-8.offset-md-2.col-lg-4.offset-lg-0.text-lg-right.offset-top-34.offset-lg-top-0
+              .unit.unit-spacing-sm.flex-row-reverse.unit-md.flex-lg-row
+                .unit-body
+                  h4.offset-lg-top-20 Social Integration
+                  p The information should be not only well-organized and easy to read. thus making the process enjoyable.
+                .unit-right
+                  span.icon.novi-icon.icon-circle.icon-lg.icon-bordered.icon-primary.mdi.mdi-message-text-outline
+              .unit.unit-spacing-sm.flex-row-reverse.unit-md.flex-lg-row.offset-top-50.offset-lg-top-30
+                .unit-body
+                  h4.offset-lg-top-20 All images Included
+                  p The information should be not only well-organized and easy to read. thus making the process enjoyable.
+                .unit-right
+                  span.icon.novi-icon.icon-circle.icon-lg.icon-bordered.icon-primary.mdi.mdi-image-filter
+              .unit.unit-spacing-sm.flex-row-reverse.unit-md.flex-lg-row.offset-top-50.offset-lg-top-30
+                .unit-body
+                  h4.offset-lg-top-20 2000+ #[br.d-none.d-md-inline.d-lg-none] icons
+                  p The information should be not only well-organized and easy to read. thus making the process enjoyable.
+                .unit-right
+                  span.icon.novi-icon.icon-circle.icon-lg.icon-bordered.icon-primary.mdi.mdi-emoticon-happy
+            .col-md-8.offset-md-2.col-lg-4.offset-lg-0.text-lg-left.order-lg-1.offset-top-50.offset-lg-top-0
+
+              .unit.unit-spacing-sm.unit-md.flex-lg-row
+                .unit-left
+                  span.icon.novi-icon.icon-circle.icon-lg.icon-bordered.icon-primary.mdi.mdi-cellphone-link
+                .unit-body
+                  h4.offset-lg-top-20 Responsive & Retina
+                  p.
+                    The information should be not only well-organized and easy to read. thus making the process enjoyable.
+              .unit.unit-spacing-sm.unit-md.flex-lg-row.offset-top-50.offset-lg-top-30
+                .unit-left
+                  span.icon.novi-icon.icon-circle.icon-lg.icon-bordered.icon-primary.mdi.mdi-television-guide
+                .unit-body
+                  h4.offset-lg-top-20 Extensive docs
+                  p.
+                    The information should be not only well-organized and easy to read. thus making the process enjoyable.
+              .unit.unit-spacing-sm.unit-md.flex-lg-row.offset-top-50.offset-lg-top-30
+                .unit-left
+                  span.icon.novi-icon.icon-circle.icon-lg.icon-bordered.icon-primary.mdi.mdi-play-box-outline
+                .unit-body
+                  h4.offset-lg-top-20 Video backgrounds
+                  p.
+                    The information should be not only well-organized and easy to read. thus making the process enjoyable.
+
+
+      // Take Full Control of Your Site
+      section
+        +material-parallax({ img: 'images/backgrounds/background-32-1920x1033.jpg' })
+          .bg-overlay-gray-darkest
+            .container.section-98.section-md-124.context-dark
+              h2.font-weight-bold.
+                Take Full Control of Your Site
+              hr.divider.bg-saffron
+              .row.offset-top-66
+                .col-md-8.offset-md-2.col-lg-4.offset-lg-0
+                  +box-icon-type-4(' icon-carrot-filled mdi mdi-cube-outline')
+                    .offset-top-34
+                      h5.font-weight-bold.text-spacing-60 EXTENDED TOOLKIT
+                    .offset-top-10
+                      p Intense provides a poweful and flexible exntended toolkit in addition to basic Bootsrap. If you’ve used Bootstrap itself, you’ll find this all super familiar and easy-to-use.
+                .col-md-8.offset-md-2.col-lg-4.offset-lg-0.offset-top-66.offset-lg-top-0
+                  +box-icon-type-4('icon-carrot-filled mdi mdi-palette')
+                    .offset-top-34
+                      h5.font-weight-bold.text-spacing-60 UNLIMITED SKINS & COLORS
+                    .offset-top-10
+                      p Theme components inherit much of their style from variables, exactly like Bootstrap. Change a few values and the theme adapts.
+
+                .col-md-8.offset-md-2.col-lg-4.offset-lg-0.offset-top-66.offset-lg-top-0
+                  +box-icon-type-4('icon-carrot-filled mdi mdi-vector-arrange-above')
+                    .offset-top-34
+                      h5.font-weight-bold.text-spacing-60 PARALLAX EFFECTS
+                    .offset-top-10
+                      p Everyone loves parallax scrolling effects, they are simply beautiful. Intense has advanced parallax options & controls based on flexible and easy-to-use RD Parallax plugin.'
+                .col-md-8.offset-md-2.col-lg-4.offset-lg-0.offset-top-66
+                  +box-icon-type-4('icon-carrot-filled mdi mdi-share-variant')
+                    .offset-top-34
+                      h5.font-weight-bold.text-spacing-60 SOCIAL INTEGRATION
+                    .offset-top-10
+                      p Intense has full set of social icons and styling options which allow you to share any content the way you wish.
+                .col-md-8.offset-md-2.col-lg-4.offset-lg-0.offset-top-66
+                  +box-icon-type-4('icon-carrot-filled mdi mdi-spellcheck')
+                    .offset-top-34
+                      h5.font-weight-bold.text-spacing-60 MADE FOR SPEED
+                    .offset-top-10
+                      p We know how embarassing and time-consuming can be content loading, so we took care of pages optimization for your smooth expirience.
+                .col-md-8.offset-md-2.col-lg-4.offset-lg-0.offset-top-66
+                  +box-icon-type-4('icon-carrot-filled mdi mdi-magnify')
+                    .offset-top-34
+                      h5.font-weight-bold.text-spacing-60 SEO OPTIMIZED
+                    .offset-top-10
+                      p Intense was built with care allowing search engines to index the pages of your site correctly to achieve higher rankings in search results.
+
+      // Intense is exactly what you need
+      section.section-66.bg-saffron.context-dark
+        .container
+          .row.justify-content-sm-center.align-items-sm-center
+            .col-xl-7
+              h2.font-weight-bold Intense is exactly what you need
+            .col-xl-3
+              a(href= cfg.buyLink target='_blank').btn.btn-default.btn-icon.btn-icon-left
+                span.novi-icon.icon.mdi.mdi-cart-outline
+                span buy intense now
+
+
+      // About the Service
+      section.section-98.section-sm-110
+        .container
+          h2.font-weight-bold About Us
+          hr.divider.bg-saffron
+          .row.justify-content-sm-center.offset-top-34.offset-lg-top-66
+            .col-lg-6
+              img(src='images/skins/skin-sunrise-05-570x310.jpg' width='570' height='310' alt='').img-fluid.d-inline-block
+
+            .col-lg-6.text-lg-left.inset-lg-left-50
+              p TemplateMonster is an A-size depot of website templates - more than 46,000 designs to choose from. Since coming up in May 2002, we've gone partners with Magento, Drupal, WordPress, PrestaShop, Joomla, WooCommerce, and many more. 1 million clients were served during this time. Web templates + installation + hosting + customization + Search Engine Optimization + copywriting — all these services you can always get at TemplateMonster.com. If you're thirsty for knowledge, TemplateMonster blog provides you with the most recent web design news, infographics, freebies, discounts & promos.
+
+
+      // Counters
+      section
+        +material-parallax({ img: 'images/backgrounds/background-33-1920x474.jpg' })
+          .section-66.section-sm-98.bg-overlay-gray-darkest.context-dark
+            .container-fluid
+              .row
+                .col-md-6.col-lg-3.offset-lg-0
+                  +counter-type-1('Templates', 'font-weight-bold text-carrot', {
+                    'dataTo': '58249',
+                    'dataSpeed': '3000',
+                    'attr': 'text-uppercase text-spacing-60 font-default'
+                  }, 'divider', 'h1')
+                .col-md-6.col-lg-3.offset-top-66.offset-md-top-0
+                  +counter-type-1('Happy Clients', 'font-weight-bold text-carrot', {
+                    'dataTo': '246',
+                    'dataSpeed': '2500',
+                    'preffix': 'K',
+                    'attr': 'text-uppercase text-spacing-60 font-default'
+                  }, 'divider', 'h1')
+                .col-md-6.col-lg-3.offset-top-66.offset-lg-top-0
+                  +counter-type-1('Hours of Coding', 'font-weight-bold text-carrot', {
+                    'dataTo': '1200',
+                    'dataSpeed': '1500',
+                    'attr': 'text-uppercase text-spacing-60 font-default'
+                  }, 'divider', 'h1')
+                .col-md-6.col-lg-3.offset-top-66.offset-lg-top-0
+                  +counter-type-1('Lines of Code', 'font-weight-bold text-carrot', {
+                    'dataTo': '834',
+                    'dataSpeed': '1300',
+                    'preffix': 'K',
+                    'attr': 'text-uppercase text-spacing-60 font-default'
+                  }, 'divider', 'h1')
+
+      // Our Team
+      section.section-98.section-md-124.bg-lighter
+        .container
+          h2 Our Team
+          hr.divider.bg-saffron
+          .row.justify-content-sm-center.offset-top-66
+            .col-md-6.col-lg-3
+              img.img-fluid.d-inline-block(src='images/users/user-ashley-mason-270x270.jpg' width=270 height=270 alt='')
+              .text-lg-left.offset-top-20
+                div
+                  h5.font-weight-bold.text-primary
+                    a(href='team-member.html') Ashley Mason
+              address.contact-info.text-lg-left
+                ul.list-unstyled.p
+                  li.d-block
+                    span.novi-icon.icon.icon-xxs.mdi.mdi-phone.text-middle
+                    = ' '
+                    a.d-inline-block.text-middle(href='tel:#') 1-800-7650-986
+                  li.d-block
+                    span.novi-icon.icon.icon-xxs.mdi.mdi-email-open.text-middle
+                    = ' '
+                    a.d-inline-block.text-middle(href='mailto:#') ashley@demolink.org
+
+            .col-md-6.col-lg-3.offset-top-50.offset-md-top-0
+              img.img-fluid.d-inline-block(src='images/users/user-russel-myers-270x270.jpg' width=270 height=270 alt='')
+              .text-lg-left.offset-top-20
+                div
+                  h5.font-weight-bold.text-primary
+                    a(href='team-member.html') Russell Myers
+              address.contact-info.text-lg-left
+                ul.list-unstyled.p
+                  li.d-block
+                    span.novi-icon.icon.icon-xxs.mdi.mdi-phone.text-middle
+                    = ' '
+                    a.d-inline-block.text-middle(href='tel:#') 1-800-7650-986
+                  li.d-block
+                    span.novi-icon.icon.icon-xxs.mdi.mdi-email-open.text-middle
+                    = ' '
+                    a.d-inline-block.text-middle(href='mailto:#') russell@demolink.org
+
+            .col-md-6.col-lg-3.offset-top-50.offset-lg-top-0
+              img.img-fluid.d-inline-block(src='images/users/user-shirley-vasques-270x270.jpg' width=270 height=270 alt='')
+              .text-lg-left.offset-top-20
+                div
+                  h5.font-weight-bold.text-primary
+                    a(href='team-member.html') Shirley Vasquez
+              address.contact-info.text-lg-left
+                ul.list-unstyled.p
+                  li.d-block
+                    span.novi-icon.icon.icon-xxs.mdi.mdi-phone.text-middle
+                    = ' '
+                    a.d-inline-block.text-middle(href='tel:#') 1-800-7650-986
+                  li.d-block
+                    span.novi-icon.icon.icon-xxs.mdi.mdi-email-open.text-middle
+                    = ' '
+                    a.d-inline-block.text-middle(href='mailto:#') shirley@demolink.org
+
+            .col-md-6.col-lg-3.offset-top-50.offset-lg-top-0
+              img.img-fluid.d-inline-block(src='images/users/user-terry-sandoval-270x270.jpg' width=270 height=270 alt='')
+              .text-lg-left.offset-top-20
+                div
+                  h5.font-weight-bold.text-primary
+                    a(href='team-member.html') Terry Sandoval
+              address.contact-info.text-lg-left
+                ul.list-unstyled.p
+                  li
+                    span.novi-icon.icon.icon-xxs.mdi.mdi-phone.text-middle
+                    = ' '
+                    a.d-inline-block.text-middle(href='tel:#') 1-800-7650-986
+                  li
+                    span.novi-icon.icon.icon-xxs.mdi.mdi-email-open.text-middle
+                    = ' '
+                    a.d-inline-block.text-middle(href='mailto:#') terry@demolink.org
+          .offset-top-66
+            a(href= cfg.nav.pages.submenu.ourTeam.href).btn.btn-primary view all information
+
+      // Still Not Sure?
+      section.section-98.section-md-124
+        .container-fluid
+          h2.font-weight-bold Still Not Sure?
+          .offset-top-41
+            +isotope(['All', 'Infrastructure', 'Portfolio', 'Blog', 'Agency', 'Creative'],{
+              'group': 'gallery',
+              'layout': 'fitRows',
+              'alignClass': 'isotope-filters-horizontal'
+            }, 'isotope-1')
+              // Isotope
+              .row.grid-group-sm
+                - for ( var key in cfg.themes )
+                  .col-12.col-md-6.col-xl-4.isotope-item( data-filter=cfg.themes[key].category )
+                    .shadow-variant-2
+                      +thumbnail-classic({
+                        type:        "thumbnail",
+                        title:       cfg.themes[ key ].title,
+                        description: cfg.themes[ key ].desc,
+                        thumb:       cfg.themes[ key ].image,
+                        target:      { href: cfg.themes[ key ].href },
+                        targetBlank: true,
+                        titleAttrs: 'text-darkest'
+                      })
+
+
+      //- Testimonials Slider
+      section.section-98.section-top-110.bg-lighter
+        .container
+          h2.font-weight-bold Testimonials
+          hr.divider.bg-saffron
+          .offset-top-50
+            +testimonials-slider-4([{
+              'image': {
+                'width': 80,
+                'height': 80,
+                'src': 'images/users/user-diana-russo-80x80.jpg',
+                'alt': 'Lisa Evans'
+              },
+              'title': 'Lisa Evans',
+              'q': 'Thank you for your prompt response and the help that you gave me. You always have a quick solution to any problem. What an excellent level of customer service!'
+            },
+              {
+                'image': {
+                  'width': 80,
+                  'height': 80,
+                  'src': 'images/users/user-john-doe-80x80.jpg',
+                  'alt': 'Nicholas Lane'
+                },
+                'title': 'Nicholas Lane',
+                'q': 'I just want to thank you for your help. I was so pleased and grateful. Keep up the excellent work. Your site provides the best support I have ever encountered.'
+              },
+              {
+                'image': {
+                  'width': 80,
+                  'height': 80,
+                  'src': 'images/users/user-bernard-show-80x80.jpg',
+                  'alt': 'Ethan Dean'
+                },
+                'title': 'Ethan Dean',
+                'q': 'Thank you very much for your rapid response. It\'s no doubt that your company is worth admiring! I have experienced the fastest support ever.Thank you a thousand'
+              },
+              {
+                'image': {
+                  'width': 80,
+                  'height': 80,
+                  'src': 'images/users/user-alex-merphy-80x80.jpg',
+                  'alt': 'Alex Merphy'
+                },
+                'title': 'Alex Merphy',
+                'q': 'Thank you for your prompt response and the help that you gave me. You always have a quick solution to any problem. What an excellent level of customer service!'
+              },
+              {
+                'image': {
+                  'width': 80,
+                  'height': 80,
+                  'src': 'images/users/user-july-mao-80x80.jpg',
+                  'alt': 'July Mao'
+                },
+                'title': 'July Mao',
+                'q': 'I just want to thank you for your help. I was so pleased and grateful. Keep up the excellent work. Your site provides the best support I have ever encountered.'
+              },
+              {
+                'image': {
+                  'width': 80,
+                  'height': 80,
+                  'src': 'images/users/user-amanda-smith-80x80.jpg',
+                  'alt': 'Amanda Smith'
+                },
+                'title': 'Amanda Smith',
+                'q': 'Thank you very much for your rapid response. It\'s no doubt that your company is worth admiring! I have experienced the fastest support ever.Thank you a thousand '
+              }])
+
+      // Page Footer
+      footer.section.novi-background.section-relative.section-top-66.section-bottom-34.page-footer.bg-gray-base.context-dark
+        .container
+          .row.justify-content-md-center.text-xl-left
+            .col-md-8.col-lg-12
+              .row.justify-content-sm-center
+                .col-sm-7.text-sm-left.col-lg-4.col-xl-3.order-xl-4
+                  h6.text-uppercase.text-spacing-60 Latest news
+
+                  +widget-post(cfg.nav.blog.submenu.classic.submenu.singlePost.href, '05/14/2018', 'Let’s Change the world', null, '', 'text-primary')
+                  +widget-post(cfg.nav.blog.submenu.classic.submenu.singlePost.href, '05/14/2018', 'The meaning of Web Design', null, '', 'text-primary')
+                  +widget-post(cfg.nav.blog.submenu.classic.submenu.singlePost.href, '05/14/2018', 'Get Started with TemplateMonster', null, '', 'text-primary')
+
+                .col-sm-5.offset-top-41.offset-sm-top-0.text-sm-left.col-lg-3.col-xl-2.order-xl-3
+                  h6.text-uppercase.text-spacing-60 Useful Links
+                  .d-block
+                    .d-inline-block
+                      ul.list.list-marked
+                        li
+                          a(href=cfg.nav.pages.submenu.aboutUs.href)= cfg.nav.pages.submenu.aboutUs.title
+                        li
+                          a(href=cfg.nav.pages.submenu.contactUs.href)= cfg.nav.pages.submenu.contactUs.title
+                        li
+                          a(href=cfg.nav.pages.submenu.services.href)= cfg.nav.pages.submenu.services.title
+                        li
+                          a(href=cfg.nav.pages.submenu.pricing.href)= cfg.nav.pages.submenu.pricing.title
+                        li
+                          a(href=cfg.nav.pages.submenu.clients.href)= cfg.nav.pages.submenu.clients.title
+
+                .col-sm-12.offset-top-41.col-lg-5.offset-lg-top-0.text-lg-left.col-xl-4.order-xl-2
+                  h6.text-uppercase.text-spacing-60 Newsletter
+
+                  p Keep up with our always upcoming  product features  and technologies. Enter your e-mail and subscribe to  our newsletter.
+
+                  .offset-top-30
+                    +widget-form-subscribe('Type your E-Mail', 'form-subscribe-footer')
+
+                .col-sm-12.offset-top-66.col-xl-3.order-xl-1.offset-xl-top-0
+                  // Footer brand
+                  .footer-brand
+                    a(href=cfg.nav.home.href)
+                      != '<img width="172" height="55" src="images/childs/real-estate-logo-light-172x55.png" alt=""/>'
+                  .offset-top-20
+                    +widget-list-social([
+                      {
+                        'icon': 'fa fa-facebook',
+                        'href': '#'
+                      },
+                      {
+                        'icon': 'fa fa-twitter',
+                        'href': '#'
+                      },
+                      {
+                        'icon': 'fa fa-google-plus',
+                        'href': '#'
+                      },
+                      {
+                        'icon': 'fa fa-linkedin',
+                        'href': '#'
+                      }
+                    ])
+
+        .container.offset-top-50
+          p.small.text-darker
+            | #{cfg.brand.name} &copy; #[span.copyright-year] . #[a(href='privacy.html') Privacy Policy]
+            | . Design&nbsp;by&nbsp;#[a(href="https://zemez.io/") Zemez]
+
+    // Global Mailform Output
+    #form-output-global.snackbars
+
+    // Java script
+    script( src='js/core.min.js' )
+    script( src='js/script.js' )

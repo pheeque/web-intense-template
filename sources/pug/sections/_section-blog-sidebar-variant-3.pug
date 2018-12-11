@@ -1,0 +1,32 @@
+//- Includes
+include ../elements/_widget-form-search
+include ../elements/_widget-flickrfeed
+include ../elements/_widget-twitter
+
+// Section Blog Modern
+aside.text-left
+  // Search Form
+  h6.text-uppercase.text-spacing-60 Search
+  div.text-subline
+
+  .offset-top-34
+    +widget-form-search("input-sm", "form-label-sm", "blog-sidebar-3-form-search-widget")
+
+  // Flickr Feed
+  .row.offset-top-41
+    .col-md-6.col-xl-12
+      h6.text-uppercase.text-spacing-60 Flickr Feed
+      div.text-subline
+
+      .offset-top-41
+        +widget-flickrfeed('tm58888_landscapes', {"data-image_q": "src"}, 9)
+
+    .col-md-6.offset-top-41.offset-md-top-0.col-xl-12.offset-xl-top-41
+      // Twitter Feed
+      h6.text-uppercase.text-spacing-60 Twitter Feed
+      div.text-subline
+
+      .offset-top-30
+        +widget-twitter({
+          "dataTwitterUsername": "templatemonster"
+        })

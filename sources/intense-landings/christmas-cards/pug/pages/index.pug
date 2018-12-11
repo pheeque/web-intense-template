@@ -1,0 +1,140 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-rd-navbar-simple
+include ../elements/_ui-page-loader-variant-1
+include ../elements/_ui-thumbnail-simple
+include ../elements/_ui-box-icon-type-3
+
+
+//- Title
+block title
+	title Gifter
+
+//- Page
+block page
+	// Page Head
+	section.section-110.bg-default.slider-menu-position.section-two-parts.section-xl-top-124
+		//- RD Navbar
+		+rd-navbar-simple(
+		'rd-navbar-default rd-navbar-transparent',
+		{
+			"data-lg-auto-height": "true",
+			"data-md-layout": 'rd-navbar-static',
+			"data-lg-layout": 'rd-navbar-static',
+			"data-lg-stick-up": 'true'
+		},
+		cfg.brand.logoWhite
+		)
+		
+		
+		.section-inner-decorate.bg-dark-gradient
+			
+			.block-animation
+				.layer-1
+					.layer(data-depth="0.35")
+						img(src="images/parallax-img-1.png",  alt="")
+				.layer-2
+					.layer(data-depth="-0.35")
+						img(src="images/parallax-img-2.png",  alt="")
+				.layer-4
+					.layer(data-depth="-0.1")
+						img(src="images/parallax-img-4.png",  alt="")
+				.layer-5
+					.layer(data-depth="0.12")
+						img(src="images/parallax-img-5.png",  alt="")
+				.layer-6
+					.layer(data-depth="-0.1")
+						img(src="images/parallax-img-4.png",  alt="")
+				.layer-7
+					.layer(data-depth="0.12")
+						img(src="images/parallax-img-5.png",  alt="")
+			.parallax-scene.parallax-scene-js(data-scalar-x="5" data-scalar-y="10")
+				
+				.layer-3
+					.layer(data-depth="-0.2")
+						img(src="images/parallax-img-3.png",  alt="")
+				
+			.box-img
+				img(src="images/section-img-1.png", alt="")
+		.container.offset-lg-top-30
+			.section-title
+				h2.text-accent.text-white Welcome
+				h4.text-accent-classic.text-white.text-opacity-80 6 animated greeting card templates
+			.row.offset-top-50
+				.col-sm-6
+					+thumbnail-simple({
+						src: 'images/landing-img-1.jpg',
+						href: 'greeting-card-1.html'
+					})
+					
+				.col-sm-6.offset-top-50.offset-sm-top-0 
+					+thumbnail-simple({
+						src: 'images/landing-img-2.jpg',
+						href: 'greeting-card-2.html'
+					})
+				.col-sm-6.offset-top-50
+					+thumbnail-simple({
+						src: 'images/landing-img-3.jpg',
+						href: 'greeting-card-3.html'
+					})
+
+				.col-sm-6.offset-top-50
+					+thumbnail-simple({
+						src: 'images/landing-img-4.jpg',
+						href: 'greeting-card-4.html'
+					})
+				.col-sm-6.offset-top-50
+					+thumbnail-simple({
+						src: 'images/landing-img-5.jpg',
+						href: 'greeting-card-5.html'
+					})
+
+				.col-sm-6.offset-top-50
+					+thumbnail-simple({
+						src: 'images/landing-img-6.jpg',
+						href: 'greeting-card-6.html'
+					})
+
+
+
+	section.section-34.section-bottom-170.section-relative
+		.container
+			.row.justify-content-center
+				.col-sm-8.col-md-7.col-lg-4.box-animate
+					.wow.fadeInUp
+						+box-icon-type-3({
+							modClass: 'box-icon-green',
+							icon: 'linearicons-3d-rotate',
+							title: 'Various Layouts',
+							text: 'We offer you 6 different layouts to congratulate your clients.'
+						})
+				.col-sm-8.col-md-7.col-lg-4.offset-top-50.offset-lg-top-0.box-animate 
+					.wow.fadeInUp(data-wow-delay='.3s')
+						+box-icon-type-3({
+							modClass: 'box-icon-orange',
+							icon: 'linearicons-quote-open', 
+							title: '24\\7 Support ',
+							text: 'Our professional customer support is available 24/7 to all our clients.'
+						})
+				.col-sm-8.col-md-7.col-lg-4.offset-top-50.offset-lg-top-0.box-animate
+					.wow.fadeInUp(data-wow-delay='.6s')
+						+box-icon-type-3({
+							modClass: 'box-icon-red',
+							icon: 'linearicons-mouse-left',
+							title: 'Easy editing',
+							text: 'This template can be easily configured and edited in a few clicks.'
+						})
+	
+		.section-34.footer-section.context-dark
+			.conainer 
+				p
+					span &copy;&nbsp; 
+					span.copyright-year
+					span &nbsp;
+					span= cfg.brand.name
+					span .
+					span &nbsp;
+					span  All Rights Reserved.
+					span &nbsp;
+					span  Design&nbsp;by&nbsp;#[a(href="https://zemez.io/") Zemez]

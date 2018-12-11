@@ -1,0 +1,36 @@
+//- Includes
+include  ../elements/_ui-box-icon-type-4
+
+// Login
+section
+  .container
+    .section-110.section-cover.row.justify-content-sm-center.align-items-sm-center
+      .col-sm-8.col-md-6.col-lg-4
+        .card.text-center.section-34.section-sm-41.inset-left-20.inset-right-20.inset-md-left-20.inset-md-right-20.inset-xl-left-30.inset-xl-right-30.bg-default.shadow-drop-md
+
+          .text-center
+            +box-icon-type-4("icon-lg icon-default mdi mdi-account-multiple-outline")
+              .offset-top-24.text-darker.big.font-weight-bold Login to your account
+              p.text-extra-small.text-dark.offset-top-4 Enter your credentials below
+
+          // RD Mailform
+          form.text-left.offset-top-30( data-form-output="form-output-global", data-form-type='contact', method='post' )
+
+            .form-group
+              .input-group.input-group-sm
+                span.input-group-prepend
+                  span.input-group-text.input-group-icon.input-group-addon-inverse
+                    span.novi-icon.mdi.mdi-account-outline
+                input#login-your-login.form-control( placeholder="Your Login" type="text" name="login" data-constraints="@Required" )
+
+            .form-group.offset-top-20
+              .input-group.input-group-sm
+                span.input-group-prepend
+                  span.input-group-text.input-group-icon.input-group-addon-inverse
+                    span.novi-icon.mdi.mdi-lock-open-outline
+                input#login-your-password.form-control( placeholder="Your Password" type="password" name="password" data-constraints="@Required" )
+
+            button( type="submit" ).btn.btn-sm.btn-icon.btn-block.btn-primary.offset-top-20 Sign In #[span.icon.novi-icon.mdi.mdi-arrow-right-bold-circle-outline]
+          .offset-top-30.text-md-left.text-dark.text-extra-small
+            a.text-picton-blue(href="#") Forgot your password?
+            .offset-top-0 Haven’t an account? #[a.text-picton-blue(href=cfg.nav.pages.submenu.register.href) Sign up here].

@@ -1,0 +1,21 @@
+//- title - page title
+//- breacrumbs - an array of {link} object
+//- url - address of bg-parallax img
+
+include ../elements/_ui-material-parallax
+
+mixin breadcrumb(title, breadcrumbs, url)
+	// Modern Breadcrumbs
+	+material-parallax({ img: url }).section-height-800.breadcrumb-modern.context-dark
+		.shell.section-top-34.section-bottom-34.section-md-top-175.section-md-bottom-75.section-lg-top-158.section-lg-bottom-125.section-md-tablet-75
+			.veil.reveal-md-block
+				.text-primary.text-extra-big.font-accent.text-bold.text-spacing-inverse-50= title
+			.offset-top-5
+				ul.list-inline.list-inline-dashed.h5.text-uppercase
+					each link, index in breadcrumbs
+						if breadcrumbs[parseInt(index) + 1]
+							li.text-spacing-75
+								a(href=link.href)= link.title
+						else
+							li.text-spacing-75
+								= link.title

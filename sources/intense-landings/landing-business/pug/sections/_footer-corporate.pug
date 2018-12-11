@@ -1,0 +1,68 @@
+footer.section.page-footer-corporate.object-wrap.object-wrap-md-left.object-wrap-map.bg-gray-dark
+  .object-wrap-body.object-wrap-map.sizing-1
+    .google-map-container(data-center='9870 St Vincent Place, Glasgow, DC 45 Fr 45.' data-style='[{"featureType":"administrative.neighborhood","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"saturation":"100"}]},{"featureType":"landscape.natural.landcover","elementType":"geometry.fill","stylers":[{"visibility":"on"}]},{"featureType":"poi.park","elementType":"geometry.stroke","stylers":[{"visibility":"on"}]},{"featureType":"poi.park","elementType":"labels.icon","stylers":[{"visibility":"on"}]},{"featureType":"water","elementType":"labels.icon","stylers":[{"visibility":"on"}]}]')
+      .google-map.rd-google-map__model
+      ul.google-map-markers
+        li(data-location='9870 St Vincent Place, Glasgow, DC 45 Fr 45.', data-description='9870 St Vincent Place, Glasgow', data-icon='images/gmap_marker.png', data-icon-active='images/gmap_marker_active.png')
+
+  .container
+    .row.justify-content-md-end
+      .col-lg-6.col-xl-7
+        .page-footer-corporate-inner
+          .page-footer-corporate-top
+            h3 Get in Touch
+            // RD Mailform
+            form.rd-mailform(data-form-output="form-output-global", data-form-type='contact', method='post', action='bat/rd-mailform.php')
+              .row.align-items-md-end.row-20
+                .col-md-6
+                  .form-wrap
+                    input#footer-contact-first-name.form-input(type="text" name="name" data-constraints='@Required')
+                    label.form-label(for="footer-contact-first-name") Your Name
+
+                .col-md-6
+                  .form-wrap
+                    input#footer-contact-last-name.form-input(type="text" name="phone" data-constraints='@Numeric')
+                    label.form-label(for="footer-contact-last-name") Phone
+
+                .col-sm-12
+                  .form-wrap
+                    textarea#footer-contact-message.form-input(name="message" data-constraints="@Required")
+                    label.form-label(for="footer-contact-message") Your Message
+
+                .col-md-6
+                  .form-wrap
+                    input#footer-contact-email.form-input(type="email" name="email" data-constraints="@Email @Required")
+                    label.form-label(for="footer-contact-email") E-mail
+
+                .col-md-6
+                  button(type="submit").btn.btn-primary.btn-block.btn-effect-ujarak send message
+
+            h3 Contacts
+            .contacts-list
+              dl.terms-list-uppercase.terms-list-uppercase-2
+                dt address
+                dd Washington, USA 6036 Richmond  hwy., Alexandria, VA, 2230
+
+              dl.terms-list-uppercase.terms-list-uppercase-2
+                dt Phone
+                dd: a.link.link-md(href='tel:#') +1 (409) 987–5874
+
+              dl.terms-list-uppercase.terms-list-uppercase-2
+                dt e-mail
+                dd: a.link(href='mailto:#') info@demolink.org
+          hr.gray
+          .page-footer-corporate-bottom
+            ul.inline-list-xxs
+              li: a.icon.novi-icon.icon-xs.icon-circle.icon-mako.fa.fa-instagram(href='#')
+              li: a.icon.novi-icon.icon-xs.icon-circle.icon-mako.fa.fa-facebook(href='#')
+              li: a.icon.novi-icon.icon-xs.icon-circle.icon-mako.fa.fa-twitter(href='#')
+              li: a.icon.novi-icon.icon-xs.icon-circle.icon-mako.fa.fa-google-plus(href='#')
+
+            p.rights
+              =brandName
+              | &nbsp;&copy;&nbsp;
+              span.copyright-year
+              | .&nbsp;
+              br.d-md-none
+              a.link-underline(href="#") Privacy Policy
+              | . Design&nbsp;by&nbsp;#[a(href="https://zemez.io/") Zemez]

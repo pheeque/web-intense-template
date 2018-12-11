@@ -1,0 +1,45 @@
+//- Default Post
+
+include ../elements/_ui-thumbnail-classic
+
+mixin post-default(url, date, title, author, category, tags, comments, media)
+  //Post Wide
+  article.post.post-default.text-left
+    //Post Header
+    .header.post-header
+      //Post Meta
+      h1.post-title
+        = title
+
+      //Post Meta
+      p.offset-top-0
+        | Post by:
+        = ' John Doe'
+
+        ='on '
+        time(datetime="2018-01-01")= date
+        br.d-md-none
+        =' in '
+        = category
+
+        if tags
+          span.text-middle.icon-xxs.text-picton-blue.mdi.mdi-folder-outline &nbsp;
+          each tag, i in tags
+            a.text-middle(href= tag.href)= tag.title
+            - if (i !== (tags.length - 1))
+            = ", "
+        if comments
+          span.text-middle.icon-xxs.text-picton-blue.mdi.mdi-comment-multiple-outline &nbsp;
+          a(href= url + "comments").text-middle.small= comments
+          span &nbsp;Comments
+
+      //Post Media
+      if media
+        .post-media.offset-top-34
+          header.post-media
+            div( data-lightgallery='group' )
+              +thumbnail-classic( media )
+
+    //PostContent
+    section.post-content.offset-top-41
+      block

@@ -1,0 +1,67 @@
+//
+// Breadcrumbs
+// --------------------------------------------------
+.breadcrumbs-custom {
+  position: relative;
+  vertical-align: middle;
+  padding-top: 10px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid $gray-1;
+  text-align: center;
+
+  a {
+    display: inline;
+    vertical-align: middle;
+    &, &:active, &:focus {
+      color: $breadcrumb-color;
+    }
+  }
+
+  li {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    padding-right: 36px;
+    font-size: 16px;
+  }
+
+  li:after {
+    content: $breadcrumb-separator;
+    position: absolute;
+    top: 55%;
+    right: 9px;
+    display: inline-block;
+    color: $gray;
+    font: 400 18px/16px 'FontAwesome';
+    transform: translateY(-50%);
+  }
+
+  li:last-child {
+    padding-right: 0;
+    &:after {
+      display: none;
+    }
+  }
+
+  a:hover,
+  li.active {
+    color: $breadcrumb-active-color;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  
+  .breadcrumbs-custom {
+      padding-top: 13px;
+      padding-bottom: 18px;
+
+    li {
+      padding-right: 44px;
+    }
+
+    li:after {
+      right: 13px;
+      font-size: 18px;
+    }
+  }
+}

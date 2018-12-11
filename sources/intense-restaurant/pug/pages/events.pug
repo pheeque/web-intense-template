@@ -1,0 +1,60 @@
+extends  ../_skeleton
+
+include ../elements/_ui-material-parallax
+include ../elements/_ui-isotope
+include ../elements/_ui-thumbnail-classic
+
+//-Title
+block title
+  title= cfg.nav.events.title
+
+//- Page
+block page
+
+  // Page Head
+  header.page-head.slider-menu-position
+    //- RD Navbar
+    +rd-navbar-default(
+    'rd-navbar-default rd-navbar-transparent',
+    {
+      "data-lg-auto-height": "true",
+      "data-md-layout": 'rd-navbar-fixed',
+      "data-lg-layout": 'rd-navbar-static',
+      "data-lg-stick-up": 'true'
+    },
+    cfg.brand.logo,
+    cfg.nav.events,
+    cfg.nav
+    )
+
+  // Page Contents
+  main.page-content
+    // Section Intro
+    section.context-dark
+      +material-parallax({ img: 'images/intro-01-1920x955.jpg' })
+        .container
+          .section-110.row.justify-content-sm-center.align-items-sm-center
+            .col-lg-8
+              img(src='images/intro-logo-175x173.png' alt="" width=175 height=173)
+
+              h1.font-accent
+                span.big= cfg.nav.events.title
+
+              ul.list-inline.list-inline-dashed.p
+                li.list-inline-item
+                  a(href=cfg.nav.home.href)= cfg.nav.home.title
+                li.list-inline-item
+                  = cfg.nav.events.title
+
+    // Section Menu
+    section.section-98.section-110
+      .container
+        .row.justify-content-md-center.justify-content-xl-start
+          .col-lg-8.cel-lg-9
+            .inset-lg-right-20
+               include ../sections/_section-blog-events
+          .col-lg-4.offset-top-66.offset-lg-top-0.col-xl-3
+            include ../sections/_section-blog-sidebar-variant-5
+
+  // Page Footer
+  include ../sections/_section-footer-variant-2

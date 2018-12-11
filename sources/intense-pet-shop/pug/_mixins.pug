@@ -1,0 +1,44 @@
+//- Img-set-dimensions
+
+//- imgPath - path to image
+//- imgClass - class for image
+
+mixin img-set-dimensions(imgPath, imgClass)
+  -
+    var pos = 0,
+        imgWidth,
+        imgHeight,
+        defPos,
+        xPos,
+        dotPos;
+
+    while(true) {
+      var tpmPos = imgPath.indexOf("-", pos);
+      if(tpmPos == -1) break;
+      defPos = tpmPos;
+      pos = defPos + 1;
+    }
+
+    xPos = imgPath.indexOf('x');
+    dotPos = imgPath.indexOf('.');
+
+    imgWidth = imgPath.substring(defPos + 1, xPos);
+    imgHeight = imgPath.substring(xPos + 1, dotPos);
+
+  img(src= imgPath, width= imgWidth, height= imgHeight, alt="", class= imgClass)
+
+
+mixin google-map( map, markers )
+  -
+    map = map || {};
+    map.center = map.center || '9870 St Vincent Place, Glasgow, DC 45 Fr 45.';
+    map.styles = map.styles || '[{"featureType":"administrative.locality","elementType":"all","stylers":[{"hue":"#2c2e33"},{"saturation":7},{"lightness":19},{"visibility":"on"}]},{"featureType":"landscape","elementType":"all","stylers":[{"hue":"#ffffff"},{"saturation":-100},{"lightness":100},{"visibility":"simplified"}]},{"featureType":"poi","elementType":"all","stylers":[{"hue":"#ffffff"},{"saturation":-100},{"lightness":100},{"visibility":"off"}]},{"featureType":"road","elementType":"geometry","stylers":[{"hue":"#bbc0c4"},{"saturation":-93},{"lightness":31},{"visibility":"simplified"}]},{"featureType":"road","elementType":"labels","stylers":[{"hue":"#bbc0c4"},{"saturation":-93},{"lightness":31},{"visibility":"on"}]},{"featureType":"road.arterial","elementType":"labels","stylers":[{"hue":"#bbc0c4"},{"saturation":-93},{"lightness":-2},{"visibility":"simplified"}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"hue":"#e9ebed"},{"saturation":-90},{"lightness":-8},{"visibility":"simplified"}]},{"featureType":"transit","elementType":"all","stylers":[{"hue":"#e9ebed"},{"saturation":10},{"lightness":69},{"visibility":"on"}]},{"featureType":"water","elementType":"all","stylers":[{"hue":"#e9ebed"},{"saturation":-78},{"lightness":67},{"visibility":"simplified"}]}]';
+  .google-map-container( data-key= map.key, data-center= map.center, data-styles= map.styles )&attributes( attributes )
+    .google-map
+    if ( markers )
+      ul.google-map-markers
+        each marker in markers
+          -
+            marker.icon = marker.icon || 'images/gmap_marker.png';
+            marker.iconActive = marker.iconActive || 'images/gmap_marker_active.png';
+          li( data-location= marker.location, data-description= marker.description, data-icon= marker.icon, data-icon-active= marker.iconActive )

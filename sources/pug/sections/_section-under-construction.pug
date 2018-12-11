@@ -1,0 +1,32 @@
+//- Includes
+include  ../elements/_ui-timers
+// Coming Soon
+section
+  #particles-container
+  .container
+    .row.justify-content-sm-center.align-items-sm-center.section-110.section-cover
+      .col-sm-12
+        h3.text-center We're getting ready to launch in
+
+        hr.divider.divider-md.bg-mantis
+
+        .offset-top-34
+          +timer({
+            "dataTypeattr": "until",
+            "dataTime": "25 Sep 2019",
+            "dataFormat": "dhms"
+          }, 'countdown-custom countdown-ellipse')
+
+        p.offset-top-30.offset-md-top-66 Our website is under construction, we are working very hard to give you the best #[<br class="veil reveal-sm-inline-block">] experience on our new web site.
+        .row.justify-content-sm-center.offset-top-24
+          .col-md-8.col-lg-6.col-xl-4
+            small Stay ready, we`re launching soon
+          .col-sm-10.offset-top-20
+            form.rd-mailform(data-form-output='form-output-global-1', data-form-type='subscribe', method='post', action='bat/rd-mailform.php')
+              .row.justify-content-sm-center
+                .col-md-6.col-xl-5
+                  .form-group.text-md-right
+                    input#input-styles-1.form-control(placeholder="Type your E-Mail", type="email", name="email", data-constraints="@Required @Email")
+                    .form-output#form-output-global-1
+                .col-md-3.col-xl-2.text-md-left.offset-top-20.offset-md-top-0
+                  button(type="submit").btn.btn-primary.btn-block Suscribe

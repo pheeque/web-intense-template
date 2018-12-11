@@ -1,0 +1,115 @@
+//
+// Text styling
+// --------------------------------------------------
+
+.page {
+  // Text style
+  //
+  .text-italic {
+    font-style: italic;
+  }
+
+  .text-normal {
+    font-style: normal;
+  }
+
+  // Text decoration
+  //
+  .text-underline {
+    text-decoration: underline;
+  }
+
+  .text-strike {
+    text-decoration: line-through;
+  }
+
+  // Text weight
+  //
+  .text-thin {
+    font-weight: 100;
+  }
+
+  .text-light {
+    font-weight: 300;
+  }
+
+  .text-regular {
+    font-weight: 400;
+  }
+
+  .text-medium {
+    font-weight: 500;
+  }
+
+  .text-sbold {
+    font-weight: 600;
+  }
+
+  .text-bold, strong {
+    font-weight: 700;
+  }
+
+  .text-ubold {
+    font-weight: 900;
+  }
+
+  // Text spacing
+  //
+  .text-spacing-0 {
+    letter-spacing: 0;
+  }
+
+  .text-spacing-20 {
+    letter-spacing: 0.02em;
+  }
+
+  .text-spacing-40 {
+    letter-spacing: 0.04em;
+  }
+
+  .text-spacing-60 {
+    letter-spacing: 0.06em;
+  }
+
+  .text-spacing-120 {
+    letter-spacing: 0.12em;
+  }
+}
+
+.title-block {
+  max-width: 520px;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+
+  &.title-block-modern {
+
+    padding-bottom: 25px;
+    .title-custom {
+      text-transform: uppercase;
+      font-weight: 800;
+      font-style: italic;
+      background: linear-gradient(to right, $primary 20%, $blue);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      [class*='ie-'] &{
+        background: transparent;
+        color: $primary;
+      }
+    }
+    @include media-breakpoint-up(md) {
+      background: url("../images/title-block-bg.png") center;
+      background-size: cover;
+    }
+  }
+}
+
+.block-text-img {
+  svg {
+    width: 100%;  
+    height: auto;
+    font-weight: 900;
+    font-size: 200px;
+    text-transform: uppercase;
+  }
+}

@@ -1,0 +1,110 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-breadcrumb-classic
+include ../elements/_widget-form-search
+
+//-Title
+block title
+  title= cfg.nav.components.submenu.toolkitComponents.submenu.navigation.title
+
+//- Page
+block page
+  // Page Header
+  header.page-head
+    //- RD Navbar
+    +rd-navbar-default(
+    'rd-navbar-default rd-navbar-light',
+    {
+      "data-lg-auto-height": "true",
+      "data-md-layout": 'rd-navbar-fixed',
+      "data-lg-layout": 'rd-navbar-static',
+      "data-lg-stick-up": 'true'
+    },
+    cfg.brand.logo,
+    cfg.nav.components,
+    cfg.nav
+    )
+
+  +breadcrumb-classic(
+  cfg.nav.components.submenu.toolkitComponents.submenu.navigation.title,
+  cfg.nav.components.submenu.toolkitComponents.submenu.navigation.href,
+  {
+    0: {
+      "title": cfg.nav.home.title,
+      "href": cfg.nav.home.href
+    },
+    1: {
+      "title": cfg.nav.components.title,
+      "href": cfg.nav.components.href
+    },
+    2: {
+      "title": cfg.nav.components.submenu.toolkitComponents.submenu.navigation.title,
+      "href": cfg.nav.components.submenu.toolkitComponents.submenu.navigation.href
+    }
+  })
+
+  section.section.novi-background.section-98.section-sm-124
+    .container
+      h1 Bootstrap Navbar
+      hr.divider.divider-md.bg-mantis
+
+      .section-code.offset-top-66
+        nav.navbar.navbar-expand-lg.navbar-light.bg-light
+          a.navbar-brand(href='#')!= cfg.brand.logo
+          button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+            span.navbar-toggler-icon
+          #navbarSupportedContent.collapse.navbar-collapse
+            ul.navbar-nav.mr-auto
+              li.nav-item.active
+                a.nav-link(href='#')
+                  | Home
+                  span.sr-only (current)
+              li.nav-item
+                a.nav-link(href='#') Link
+              li.nav-item.dropdown
+                a#navbarDropdown.nav-link.dropdown-toggle(href='#', role='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                  | Dropdown
+                .dropdown-menu(aria-labelledby='navbarDropdown')
+                  a.dropdown-item(href='#') Action
+                  a.dropdown-item(href='#') Another action
+                  .dropdown-divider
+                  a.dropdown-item(href='#') Something else here
+              li.nav-item
+                a.nav-link.disabled(href='#') Disabled
+            form
+              .input-group.input-group-sm.ml-auto
+                input.form-control(type='search', placeholder='Search', aria-label='Search')
+                .input-group-append
+                  button.btn.btn-sm.btn-dark(type='submit'): span.novi-icon.mdi.mdi-magnify
+
+        nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.offset-top-30
+          a.navbar-brand(href='#')!= cfg.brand.logoInverse
+          button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent2', aria-controls='navbarSupportedContent2', aria-expanded='false', aria-label='Toggle navigation')
+            span.navbar-toggler-icon
+          #navbarSupportedContent2.collapse.navbar-collapse
+            ul.navbar-nav.mr-auto
+              li.nav-item.active
+                a.nav-link(href='#')
+                  | Home
+                  span.sr-only (current)
+              li.nav-item
+                a.nav-link(href='#') Link
+              li.nav-item.dropdown
+                a#navbarDropdown2.nav-link.dropdown-toggle(href='#', role='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                  | Dropdown
+                .dropdown-menu(aria-labelledby='navbarDropdown2')
+                  a.dropdown-item(href='#') Action
+                  a.dropdown-item(href='#') Another action
+                  .dropdown-divider
+                  a.dropdown-item(href='#') Something else here
+              li.nav-item
+                a.nav-link.disabled(href='#') Disabled
+            form
+              .input-group.input-group-sm.ml-auto
+                input.form-control(type='search', placeholder='Search', aria-label='Search')
+                .input-group-append
+                  button.btn.btn-sm.btn-primary(type='submit'): span.novi-icon.mdi.mdi-magnify
+
+  // Page Footers
+  include ../sections/_section-footer-default

@@ -1,0 +1,18 @@
+//- RD Navbar Transparent
+//- skin - rd navbar skin (transparent, inverse, default)
+//- attrs - additional HTML attributes of rd navbar
+//- logo - logo markup (<img/> or text)
+//- links - nav links object
+mixin rd-navbar-simple(skin, attrs, logo)
+  // RD Navbar Transparent
+  .rd-navbar-wrap
+    nav&attributes(attrs).rd-navbar.rd-navabar-simple(class=skin data-md-device-layout="rd-navbar-fixed" data-lg-device-layout="rd-navbar-static")
+      .rd-navbar-inner
+        .container
+          // RD Navbar Panel
+          .rd-navbar-panel
+            //Navbar Brand
+            .rd-navbar-brand
+              a(href="index.html")!= logo
+            .rd-navbar-simple-block
+              a.btn.btn-primary.btn-ellipse(href='#') buy now

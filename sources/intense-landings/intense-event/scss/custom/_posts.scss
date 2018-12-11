@@ -1,0 +1,239 @@
+//
+// Posts
+// --------------------------------------------------
+
+// Post Common Styles
+// --------------------------------------------------
+
+.post {
+  &-meta {
+    .icon-xxs {
+      font-size: 18px;
+    }
+  }
+
+  &-title + &-meta {
+    margin-top: 8px;
+  }
+}
+
+
+// Post Event
+// --------------------------------------------------
+
+.post-event {
+  position: relative;
+
+  .post-meta {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    z-index: 2;
+    width: 50px;
+    text-align: center;
+
+    &-day {
+      background: $post-event-meta-day-background;
+      display: block;
+      height: $post-event-meta-day-height;
+      font-size: $post-event-meta-day-size;
+      line-height: $post-event-meta-day-line-height;
+      border-radius: $post-event-meta-day-border-radius;
+      box-shadow: $post-event-meta-day-box-shadow;
+    }
+
+    &-month {
+      display: block;
+      height: $post-event-meta-month-height;
+      margin-top: 5px;
+      font-size: $post-event-meta-month-size;
+      line-height: $post-event-meta-month-line-height;
+      background: $post-event-meta-month-background;
+      border-radius: $border-radius-small;
+      box-shadow: $post-event-meta-month-box-shadow;
+    }
+  }
+
+  &.post-event-right {
+    .post-meta {
+      left: auto;
+      top: 10px;
+      right: 10px;
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    padding-left: 100px;
+
+    .post-meta {
+      width: $post-event-meta-month-sm-width;
+      left: 0;
+      top: 0;
+      right: auto;
+
+      &-day {
+        height: $post-event-meta-day-sm-height;
+        line-height: $post-event-meta-day-sm-line-height;
+      }
+
+      &-month {
+        font-size: $post-event-meta-month-sm-size;
+        height: $post-event-meta-month-sm-height;
+        line-height: $post-event-meta-month-sm-line-height;
+      }
+    }
+
+    &.post-event-right {
+      padding-left: 0;
+      padding-right: 100px;
+
+      .post-meta {
+        left: auto;
+        top: 0;
+        right: 0;
+      }
+    }
+  }
+}
+
+
+// Post Event Type 3
+// --------------------------------------------------
+
+.post-event-type-3 {
+  position: relative;
+
+  .post-event-item{
+    .resp-tabs-container{
+      background: #fff;
+    }
+
+    .responsive-tabs .resp-accordion{
+      font-weight: 400;
+      text-transform: none;
+      color: $black;
+      overflow: visible;
+
+      &:before,
+      &:after{
+        @include media-breakpoint-up(lg) {
+          content: '';
+        }
+        position: absolute;
+        left: 0;
+        top: 50%;
+
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 10px 10px 10px 0;
+
+        transform: translate(-100%, -50%);
+      }
+
+      &:before{
+        border-color: transparent #d9d9d9 transparent transparent;
+        border-width: 12px 12px 12px 0;
+      }
+
+      &:after{
+        border-color: transparent #fff transparent transparent;
+      }
+
+      @include media-breakpoint-up(lg) {
+        padding: 32px 20px 32px 58px;
+        font-size: 24px;
+      }
+    }
+
+    .responsive-tabs-boxed .resp-accordion .resp-arrow{
+      @include media-breakpoint-up(lg) {
+        right: 53px;
+        top: 38px;
+      }
+    }
+
+    .responsive-tabs-boxed .resp-tab-content {
+
+      @include media-breakpoint-up(lg) {
+        margin-top: -20px;
+        padding-right: 100px;
+        padding-left: 60px;
+        padding-bottom:37px;
+      }
+    }
+
+    .tabs-group-default,
+    .responsive-tabs-boxed .resp-tab-content{
+      border-radius: 0;
+    }
+
+    .post-event-inset{
+      @include media-breakpoint-up(lg) {
+        padding-right: 30px;
+        padding-top: 30px;
+      }
+    }
+
+    .post-event-info{
+      position: relative;
+
+      text-align: left;
+
+      @include media-breakpoint-up(lg) {
+        padding-left: 67px;
+      }
+
+      &:before{
+        @include media-breakpoint-up(lg) {
+          content: '';
+        }
+        width: 1px;
+
+        position: absolute;
+        top: 56px;
+        bottom: -102px;
+        left: 0;
+
+        background: #d9d9d9;
+      }
+
+      &:after{
+        @include media-breakpoint-up(lg) {
+          content: '';
+        }
+
+        position: absolute;
+        top: 47px;
+        left: -4px;
+
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: $primary;
+      }
+    }
+
+    .post-event-author{
+      letter-spacing: 8px;
+      text-transform: uppercase;
+      color: $black;
+      font-size: 10px;
+      margin: 0;
+    }
+
+    .post-event-time{
+      font-weight: 900;
+      letter-spacing: .12em;
+      margin-bottom: 10px;
+    }
+
+    &:last-child{
+      .post-event-info{
+        &:before{
+          content: none;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+//
+// Quotes
+// --------------------------------------------------
+
+.quote-classic {
+  font-size: inherit;
+  padding: 20px 15px 28px;
+  border-radius: 11px;
+  border-left: none;
+  @include bg-variant-custom(linear-gradient(180deg, #fbc318 20%, #ddac15 80%));
+
+  .icon-white {
+    color: #fff;
+  }
+
+  @media (min-width: $screen-sm-min) {
+    padding: 27px 55px 32px;
+  }
+}

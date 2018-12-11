@@ -1,0 +1,461 @@
+/*
+* @subsection   RD Navbar
+*
+* @description  Describes style declarations for RD Navbar extension
+*
+* @author       Evgeniy Gusarov
+* @link         https://ua.linkedin.com/pub/evgeniy-gusarov/8a/a40/54a
+*/
+@import "rd-navbar_includes/_rd-navbar-mixins.scss";
+
+/*
+* @subsection General Styles
+*/
+
+// RD Navbar Basics
+%rd-navbar-transition {
+  transition: .32s all cubic-bezier(0.785, 0.135, 0.150, 0.860);
+}
+
+%rd-navbar-hidden {
+  display: none;
+}
+
+%rd-navbar-visible {
+  display: block;
+}
+
+.rd-navbar--no-transition {
+  &, * {
+    transition: none !important;
+  }
+}
+
+.rd-navbar-wrap {
+  @extend %rd-navbar-transition;
+}
+
+.rd-navbar, .rd-navbar.rd-navbar--is-clone {
+  @extend %rd-navbar-hidden;
+}
+
+.rd-navbar-fixed,
+.rd-navbar-static,
+.rd-navbar-fullwidth,
+.rd-navbar-sidebar {
+  @extend %rd-navbar-visible;
+}
+
+.rd-navbar-wrap,
+.rd-navbar,
+.rd-navbar-brand,
+.rd-navbar-slogan,
+.rd-navbar-dropdown,
+.rd-navbar-megamenu,
+.rd-navbar-collapse-items,
+.brand-name,
+.rd-navbar-nav,
+.rd-navbar-panel,
+.rd-navbar-search-form-input,
+.rd-navbar-search-form-submit,
+.rd-navbar-search-toggle,
+.rd-navbar-live-search-results,
+.rd-navbar-search-form {
+  transition: .3s all ease;
+}
+
+// RD Navbar Collapse
+.rd-navbar-collapse {
+  &-toggle {
+    @include make-toggle(
+                    $rd-navbar-collapse-toggle-preset,
+                    $rd-navbar-min-line-height,
+                    $rd-navbar-min-font-size,
+                    $rd-navbar-panel-color
+    );
+    display: none;
+  }
+}
+
+@import "rd-navbar_includes/_rd-navbar-components.scss";
+
+/*
+* @subsection   Hybrid  Styles
+*/
+.rd-navbar.rd-navbar-fixed + .rd-navbar.rd-navbar--is-clone,
+.rd-navbar.rd-navbar-sidebar + .rd-navbar.rd-navbar--is-clone {
+  display: none;
+}
+
+.rd-navbar-wrap {
+  position: relative;
+}
+
+.rd-navbar-sidebar-linked,
+.rd-navbar-fullwidth-linked,
+.rd-navbar-static-linked {
+  .rd-navbar-wrap {
+    z-index: 1072;
+  }
+}
+
+.rd-navbar-fullwidth,
+.rd-navbar-static,
+.rd-navbar-sidebar {
+  .rd-navbar-nav {
+    // RD Navbar Submenu
+    .rd-navbar-submenu {
+      > .rd-navbar-dropdown,
+      > .rd-navbar-megamenu {
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      &.focus {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    > .rd-navbar-submenu {
+      > .rd-navbar-dropdown,
+      > .rd-navbar-megamenu {
+        transform: translateY(30px);
+        pointer-events: none;
+      }
+
+      &.opened,
+      &.focus {
+        > .rd-navbar-dropdown,
+        > .rd-navbar-megamenu {
+          transform: translateY(0);
+          pointer-events: auto;
+        }
+      }
+
+      .rd-navbar-submenu {
+        > .rd-navbar-dropdown {
+          transform: translateX(-20px);
+        }
+
+        &.focus,
+        &.opened {
+          > .rd-navbar-dropdown {
+            transform: translateX(0);
+          }
+        }
+      }
+
+      .rd-navbar-submenu.focus > .rd-navbar-dropdown,
+      .rd-navbar-submenu.opened > .rd-navbar-dropdown {
+        display: block;
+      }
+    }
+  }
+
+  .rd-navbar-nav {
+    > li {
+      display: inline-block;
+      
+
+      > a {
+        font: 700 13px/18px $font-family-base;
+        text-transform: uppercase;
+        font-weight: 900;
+        letter-spacing: 0.1em;
+        @include link($rd-navbar-nav-color, $primary);
+      }
+
+      &.focus > a,
+      &.opened > a,
+      &.active > a {
+        color: $primary;
+      }
+    }
+
+    li.focus,
+    li.opened {
+      > .rd-navbar-dropdown,
+      > .rd-navbar-megamenu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+    }
+
+    .rd-navbar--has-dropdown {
+      position: relative;
+    }
+
+    > li > .rd-navbar-dropdown {
+      position: absolute;
+      left: 0;
+      z-index: 5;
+      display: block;
+      text-align: left;
+    }
+  }
+
+  .rd-navbar-nav {
+    .rd-navbar-submenu {
+      > .rd-navbar-dropdown,
+      > .rd-navbar-megamenu {
+        font-size: $font-size-body;
+        box-shadow: -1px 4px 5px 0px rgba(#444953, 0.12);
+      }
+    }
+  }
+
+  // RD Navbar List
+  .rd-navbar-dropdown,
+  .rd-megamenu-list {
+    > li > a {
+      position: relative;
+      display: block;
+      width: 100%;
+      padding-left: 0;
+      padding-right: 14px;
+      font: 400 14px/24px $font-family-base;
+      letter-spacing: .06em;
+      transition: .33s all ease;
+      @include link(#2b2c2f, $rd-navbar-dropdown-item-hover-color);
+
+      &,
+      &:before {
+        transition: .33s all ease;
+      }
+
+      &:before {
+        position: absolute;
+        top: 0;
+        left: -6px;
+        content: '\f105';
+        font-family: 'FontAwesome';
+        font-size: 16px;
+        line-height: inherit;
+        color: $rd-navbar-dropdown-item-hover-color;
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      &:hover {
+        padding-left: 14px;
+        padding-right: 0;
+
+        &:before {
+          left: 0;
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+
+    > li > a {
+      &,
+      &:focus,
+      &:active {
+        color: $rd-navbar-megamenu-item-color;
+        background: $rd-navbar-dropdown-item-background;
+      }
+    }
+
+    > li > a:hover {
+      color: $rd-navbar-megamenu-item-hover-color;
+      background: $rd-navbar-dropdown-item-hover-background;
+    }
+    
+
+    @media (min-width: 1200px) and (min-height: 800px) {
+      > li > a {
+      }
+    }
+  }
+
+  // RD Navbar Dropdown
+  .rd-navbar-dropdown {
+    width: $rd-navbar-dropdown-width * .8;
+    margin-left: -32px;
+    background: $rd-navbar-dropdown-background;
+
+    @include media-breakpoint-up(xl) {
+      width: $rd-navbar-dropdown-width;
+    }
+
+    .rd-navbar-dropdown {
+      position: absolute;
+      left: 100%;
+      margin-left: 45px;
+      top: -25px;
+    }
+
+    > li {
+      padding: 13px 30px;
+      border-bottom:1px solid $gray-1;
+    }
+    
+    > li > a {
+      display: block;
+      width: 100%;
+      &,
+      &:focus,
+      &:active {
+        color: $rd-navbar-dropdown-item-color;
+        background: $rd-navbar-dropdown-item-background;
+      }
+    }
+
+    > li > a:hover {
+      color: $rd-navbar-dropdown-item-hover-color;
+      background: $rd-navbar-dropdown-item-hover-background;
+    }
+
+    > li.focus > a,
+    > li.opened > a {
+      color: $rd-navbar-dropdown-item-active-color;
+      background: $rd-navbar-dropdown-item-active-background;
+    }
+  }
+
+  // RD Navbar Megamenu
+  .rd-navbar-megamenu {
+    position: absolute;
+    right: 15px;
+    left: 15px;
+    z-index: 1000;
+    display: table;
+    width: calc(100% - 30px);
+    table-layout: fixed;
+    max-width: $rd-navbar-width - 30px;
+    margin-top: 28px;
+    text-align: left;
+    background: $rd-navbar-megamenu-background;
+
+    > li {
+      position: relative;
+      display: table-cell;
+      padding: 28px 20px 30px 35px;
+
+      &:first-child {
+        width: 29%;
+      }
+    }
+
+    .rd-megamenu-list { 
+      li + li {
+        margin-top: 17px;
+      }
+    }
+
+    // Offsets
+    * + .rd-megamenu-header {
+      margin-top: 40px;
+    }
+
+    * + .rd-megamenu-list {
+      margin-top: 22px;
+    }
+  }
+
+  .rd-megamenu-header {
+    position: relative;
+    font: 700 13px/26px $font-family-base;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 900;
+    color: $primary;
+    padding-bottom: 9px;
+
+    
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 40px;
+      bottom: 0;
+      border-top: 1px solid #e5e7e9;
+    }
+  }
+
+  // RD Navbar Submenu Toggle
+  .rd-navbar-nav > li {
+    > .rd-navbar-submenu-toggle {
+      display: inline-block;
+      width: 17px;
+      text-align: center;
+      cursor: pointer;
+
+      &::after {
+        content: '\f107';
+        position: relative;
+        display: inline-block;
+        font: 400 14px "FontAwesome";
+        text-align: center;
+        transition: 0.4s all ease;
+        z-index: 2;
+        color: $rd-navbar-nav-color;
+        will-change: transform;
+        -webkit-filter: blur(0);
+      }
+    }
+
+    &.focus > .rd-navbar-submenu-toggle,
+    &.opened > .rd-navbar-submenu-toggle,
+    & > a:hover + .rd-navbar-submenu-toggle {
+      &::after {
+        transform: scale(1, -1);
+      }
+    }
+
+    &.active > .rd-navbar-submenu-toggle,
+    &.focus > .rd-navbar-submenu-toggle,
+    &.opened > .rd-navbar-submenu-toggle,
+    & > a:hover + .rd-navbar-submenu-toggle {
+      &::after {
+        color: $rd-navbar-nav-hover-color;
+      }
+    }
+  }
+}
+
+.rd-navbar-static-linked .rd-navbar-absolute-linked,
+.rd-navbar-sidebar-linked .rd-navbar-absolute-linked {
+  .rd-navbar-wrap {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 100;
+  }
+}
+
+.rd-navbar-dark {
+  .rd-navbar-nav-wrap__shop {
+    .link-primary {
+      color: $white;  
+      &.icon:before {
+        color: $primary;  
+      }
+      
+      &:hover{
+        color: $primary;   
+      }
+    }
+  }
+}
+
+@import "rd-navbar_includes/_rd-navbar-static.scss";
+@import "rd-navbar_includes/_rd-navbar-fullwidth.scss";
+@import "rd-navbar_includes/_rd-navbar-fixed.scss";
+@import "rd-navbar_includes/_rd-navbar-sidebar.scss";
+
+/*
+* @subsection   Page boxed layout style redeclaration
+**/
+
+html.boxed {
+  .rd-navbar--is-clone {
+    max-width: $layout-boxed-width;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

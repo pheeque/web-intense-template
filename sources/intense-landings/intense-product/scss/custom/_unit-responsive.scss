@@ -1,0 +1,20 @@
+//
+// Responsive unit
+// --------------------------------------------------
+
+@include unit-responsive( 15px, 15px );
+
+.unit-spacing-xxs{
+  @include unit-spacing( 0px, 10px );
+}
+
+.unit-spacing-xs{
+  @include unit-spacing( 7px, 15px );
+}
+.unit-spacing-sm{
+  @include unit-spacing( 5px, 15px );
+}
+
+.unit-spacing-lg{
+  @include unit-spacing( 40px );
+}

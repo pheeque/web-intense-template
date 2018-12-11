@@ -1,0 +1,14 @@
+mixin google-map( map, markers )
+  -
+    map = map || {};
+    map.center = map.center || '9870 St Vincent Place, Glasgow, DC 45 Fr 45.';
+    map.styles = map.styles || '[{"featureType":"all","elementType":"labels.text.fill","stylers":[{"saturation":36},{"color":"#000000"},{"lightness":40}]},{"featureType":"all","elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#000000"},{"lightness":16}]},{"featureType":"all","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":17},{"weight":1.2}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":21}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":17}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":29},{"weight":0.2}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":18}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":16}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":19}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":17}]}]';
+  .google-map-container( data-center= map.center, data-styles= map.styles )&attributes( attributes )
+    .google-map
+    if ( markers )
+      ul.google-map-markers
+        each marker in markers
+          -
+            marker.icon = marker.icon || 'images/gmap_marker.png';
+            marker.iconActive = marker.iconActive || 'images/gmap_marker_active.png';
+          li( data-location= marker.location, data-description= marker.description, data-icon= marker.icon, data-icon-active= marker.iconActive )

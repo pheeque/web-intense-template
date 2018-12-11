@@ -1,0 +1,207 @@
+//
+// Panels custom styles
+// --------------------------------------------------
+
+// Primary (corporate)
+$accordion-corporate-color: $gray-darker;
+$accordion-corporate-background: $white;
+$accordion-corporate-border: #dedede;
+$accordion-corporate-content-color: $body-color;
+$accordion-corporate-arrow-color: $white;
+$accordion-corporate-arrow-background: $primary;
+$accordion-corporate-shadow: $shadow-area-sm;
+$accordion-corporate-border-radius: 0;
+$accordion-corporate-header-padding: 21px 82px 21px 32px;
+$accordion-corporate-content-padding: 25px 44px 25px nth($accordion-corporate-header-padding, 4);
+
+// Panel groups
+.panel-group.panel-group-custom {
+  margin-bottom: 0;
+
+  .panel-heading + .panel-collapse > .panel-body,
+  .panel-heading + .panel-collapse > .list-group {
+    border-top: 0;
+  }
+
+  .panel + .panel {
+    margin-top: 0;
+  }
+}
+
+.panel-group.panel-group-corporate {
+  .panel + .panel {
+    margin-top: 30px;
+  }
+}
+
+.panel-custom {
+  margin: 0;
+  background: inherit;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+
+  a {
+    display: block;
+  }
+
+  // Panel heading
+  .panel-heading {
+    padding: 0;
+    border-bottom: 0;
+    @include border-top-radius(0);
+  }
+
+  // Panel contents
+  .panel-body {
+    padding: 0;
+    border: 0;
+  }
+}
+
+* + .panel-group-custom {
+  margin-top: 30px;
+}
+
+// Panel corporate
+.panel-corporate {
+  text-align: left;
+  box-shadow: $accordion-corporate-shadow;
+  .panel-title a,
+  .panel-collapse {
+    background: $accordion-corporate-background;
+  }
+
+  .panel-title a {
+    position: relative;
+    z-index: 1;
+    padding: $accordion-corporate-header-padding;
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 0;
+    color: $accordion-corporate-color;
+    transition: 1.3s all ease;
+    border-radius: $accordion-corporate-border-radius $accordion-corporate-border-radius 0 0;
+    border-bottom: 1px solid $accordion-corporate-border;
+
+    // Open state
+    .panel-arrow {
+      &:after {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+
+    // Collapsed state
+    &.collapsed {
+      border-radius: $accordion-corporate-border-radius;
+      border-bottom: 0;
+      border-color: $accordion-corporate-border;
+
+      .panel-arrow {
+        border-radius: 50%;
+        &:after {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+  }
+
+  // Panel arrow
+  .panel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 14px;
+    z-index: 2;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $accordion-corporate-arrow-background;
+    border-radius: 50%;
+    transition: .33s all ease;
+
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      z-index: 4;
+      transform: translate(50%, -50%);
+      background: $accordion-corporate-arrow-color;
+    }
+
+    &:before {
+      width: 14px;
+      height: 2px;
+      right: 50%;
+    }
+
+    &:after {
+      width: 2px;
+      height: 14px;
+      right: 50%;
+    }
+  }
+
+  .panel-collapse {
+    position: relative;
+    z-index: 1;
+    color: $accordion-corporate-content-color;
+    border-radius: 0 0 $accordion-corporate-border-radius $accordion-corporate-border-radius;
+  }
+
+  .panel-body {
+    padding: $accordion-corporate-content-padding;
+  }
+
+  // Media queries
+  @include media-breakpoint-down(sm) {
+    .panel-title a,
+    .panel-body {
+      padding-left: 25px;
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    .panel-title a {
+      font-size: 18px;
+    }
+  }
+}
+
+//panel shop
+.panel-group.panel-group-product-shop {
+  .panel-arrow {
+    background: transparent;
+
+    &:before,
+    &:after {
+      background: $primary;
+    }
+  }
+  
+  .panel + .panel {
+    margin-top: -1px;
+  }
+
+  .panel-title a {
+    font-size: 16px;
+    padding: 21px 3px 21px 10px;
+  }
+  
+  .panel-corporate {
+    box-shadow: none;
+    border-top: 1px solid $gray-1;
+    border-bottom: 1px solid $gray-1;
+  }
+
+  @include media-breakpoint-up(lg) {
+    .panel-title a {
+      padding: 21px 13px 21px 32px;
+    }
+  }
+}

@@ -1,0 +1,50 @@
+include ../elements/_widget-form-search
+include ../elements/_widget-tags
+
+//Sidebar
+aside.text-left
+  .inset-lg-left-30.inset-xl-left-74
+    .row.grid-group-lg
+      .col-12.col-md-6.col-lg-12
+        //Search Form
+        .font-weight-bold.text-darker Search
+        div.text-subline.offset-top-10
+
+        .offset-top-34
+          +widget-form-search( 'input-sm', 'form-label-sm', 'blog-sidebar-2-form-search-widget' )
+
+      .col-12.col-md-6.col-lg-12
+        //Archive
+        .font-weight-bold.text-darker Archive
+        div.text-subline.offset-top-10
+
+        ul.list.list-marked.offset-top-30
+          li: a(href='#') January 2018 #[span.text-dark (17)]
+          li: a(href='#') December 2017 #[span.text-dark (121)]
+          li: a(href='#') November 2017 #[span.text-dark (19)]
+          li: a(href='#') October 2017 #[span.text-dark (9)]
+          li: a(href='#') September 2017 #[span.text-dark (25)]
+
+      .col-12.col-md-6.col-lg-12
+        //Tags
+        .font-weight-bold.text-darker Tags
+        div.text-subline.offset-top-10
+
+        .offset-top-34
+          +widget-tags('btn btn-xs btn-default', [
+            { 'title': 'Financial planning', 'href': '#' },
+            { 'title': 'Economics', 'href': '#' },
+            { 'title': 'business philosophy', 'href': '#' }
+          ])
+
+      .col-12.col-md-6.col-lg-12
+        //Categories
+        .font-weight-bold.text-darker Categories
+        div.text-subline.offset-top-10
+
+        ul.list.list-marked.offset-top-30
+          li: a(href='#') Financial #[span.text-dark (17)]
+          li: a(href='#') Prediction #[span.text-dark (121)]
+          li: a(href='#') Advice #[span.text-dark (19)]
+          li: a(href='#') Investment #[span.text-dark (9)]
+          li: a(href='#') Help #[span.text-dark (25)]

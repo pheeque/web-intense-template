@@ -1,0 +1,184 @@
+/*
+* Fullwidth Layout
+*/
+
+.rd-navbar-fullwidth {
+  display: block;
+
+  .rd-navbar-inner {
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+
+  .rd-navbar-right-side {
+    margin-top: 20px;
+  }
+
+  .rd-navbar-collapse {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 2;
+
+    span, span:before, span:after {
+      background: $white;
+    }
+  }
+
+  // RD Navbar Nav
+  .rd-navbar-nav {
+    width: 100%;
+
+    > li + li {
+      margin-left: $navbar-fullwidth-nav-indent;
+    }
+  }
+
+  // RD Navbar States
+  &.rd-navbar--is-stuck {
+    .rd-navbar-panel {
+      display: none;
+    }
+
+    .rd-navbar-inner {
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+
+    .rd-navbar-right-side {
+      margin-top: 0;
+    }
+  }
+
+  &.rd-navbar-panel {
+    .rd-navbar-collapse-wrap {
+      padding: 15px;
+      width: 200px;
+
+      li {
+        display: inline-block;
+      }
+    }
+  }
+  @media (min-width: $screen-md-min) {
+    &.rd-navbar-panel {
+      a {
+        .icon.text-white, span.text-white {
+          transition: .3s all ease;
+        }
+
+        &:hover {
+          .icon.text-white, span.text-white {
+            color: $brand-chathams-blue;
+          }
+        }
+      }
+
+      .rd-navbar-nav {
+        > li {
+          &.active, &:hover,
+          &.focus, &:focus {
+            > a {
+              color: $white;
+              background: $brand-primary;
+            }
+          }
+
+          & + li {
+            a {
+              &:before {
+                background: $white;
+              }
+            }
+          }
+
+          > .rd-navbar-dropdown {
+            margin-top: 17px;
+          }
+        }
+      }
+
+      .rd-navbar-inner {
+        z-index: 2;
+        padding: 0;
+        background: $white;
+
+        > .rd-navbar-panel {
+          padding-top: 25px;
+        }
+      }
+
+     .rd-navbar-collapse {
+       span, span:before, span:after {
+         background: $brand-mine-shaft;
+       }
+     }
+
+      .rd-navbar-right-side {
+        position: relative;
+        padding: 17px 20px;
+        margin-top: 24px;
+        background: $gray-base;
+
+        &:before, &:after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          width: 1000%;
+        }
+
+        &:before {
+          left: 100%;
+        }
+
+        &:after {
+          right: 100%;
+        }
+      }
+
+      &.rd-navbar--is-stuck {
+        .rd-navbar-right-side {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+  @media (min-width: $screen-md-min) {
+    &.rd-navbar-panel {
+     .rd-navbar-right-side {
+       > .pull-md-left {
+         margin-top: -1px;
+       }
+     }
+    }
+  }
+  @media (min-width: $screen-lg-min) {
+    &.rd-navbar-panel {
+      .rd-navbar-collapse {
+        display: none;
+      }
+
+      .rd-navbar-collapse-wrap {
+        position: static;
+        padding: 0;
+        width: auto;
+        margin-top: -5px;
+        opacity: 1;
+        visibility: visible;
+        @include transform(translateY(0));
+        background: transparent;
+        box-shadow: none;
+
+        li {
+          a {
+            color: $white;
+
+            &:hover {
+              color: $brand-chathams-blue;
+            }
+          }
+        }
+      }
+    }
+  }
+}

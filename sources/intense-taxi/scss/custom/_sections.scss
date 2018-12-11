@@ -1,0 +1,245 @@
+//
+// Sections
+// --------------------------------------------------
+
+.section-relative {
+  position: relative;
+}
+
+.slider-menu-position {
+  position: relative;
+  z-index: 2;
+
+  .rd-navbar-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+  }
+}
+
+// Section Aside
+// -------------------------------------------------
+
+@media (min-width: $screen-xl-min) {
+  .section-aside-xl {
+    position: relative;
+
+    &-right {
+      position: absolute;
+      top: 0;
+      right: -122px;
+
+      * {
+        white-space: nowrap;
+      }
+    }
+  }
+}
+
+// Section Custom Height (for Mac)
+// --------------------------------------------------
+
+.page .section-height-800 {
+  @media (min-width: $screen-lg-min) and (max-height: $screen-md-min - 193) {
+    [class*="section-"] {
+      padding-top: 105px;
+      padding-bottom: 90px;
+    }
+  }
+}
+
+
+// Section Grid Demonstration
+// --------------------------------------------------
+
+// Section Fluid Grid Demonstration
+// -------------------------------
+
+.section-fluid-grid-demonstration {
+  [class*="col-"] {
+    padding: 20px;
+    border: 1px solid $brand-gallery;
+
+    & + [class*="col-"] {
+      border-top: none;
+      border-left: none;
+    }
+
+    @media (max-width: $screen-lg-min - 1) {
+      p {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 100%;
+      }
+    }
+    @media (max-width: $screen-xs-min - 1) {
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+
+    @media (min-width: $screen-md-min) {
+      padding: 27px 30px 47px;
+    }
+    @media (min-width: $screen-xl-min) {
+      padding-left: 32px;
+      padding-right: 32px;
+    }
+  }
+}
+
+// Section Boxed Grid Demonstration
+// -------------------------------
+
+.section-boxed-grid-demonstration {
+  [class*="col-"] {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top: 1px solid $brand-gallery;
+
+    @media (max-width: $screen-lg-min - 1) {
+      p {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 100%;
+      }
+    }
+    @media (max-width: $screen-xs-min - 1) {
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+
+    @media (min-width: $screen-lg-min) {
+      padding-top: 28px;
+      padding-bottom: 28px;
+    }
+  }
+}
+
+// Section Fullwidth Images
+// -------------------------------
+
+.section-fullwidth-images {
+  img {
+    @media (max-width: $screen-xs-min - 1) {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 100%;
+      height: auto;
+    }
+    @media (min-width: $screen-xs-min) {
+      width: 100%;
+      max-height: 170px;
+    }
+    @media (min-width: $screen-sm-min) {
+      max-height: 235px;
+    }
+    @media (min-width: $screen-md-min) {
+      max-height: 320px;
+    }
+    @media (min-width: $screen-lg-min) {
+      max-height: none;
+    }
+  }
+}
+
+
+// Section Owl Custom Carousel
+// -------------------------------
+
+.section-owl-custom-carousel {
+  .owl-dot-custom {
+    > div {
+      min-width: 325px;
+      min-height: 271px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center center;
+    }
+  }
+
+  @media (min-width: $screen-md-min) {
+    .owl-dot-custom {
+      > div {
+        background-position: -30px center;
+      }
+    }
+  }
+  @media (min-width: $screen-lg-min) {
+    .owl-dot-custom {
+      > div {
+        background-position: -45px center;
+      }
+    }
+  }
+  @media (min-width: $screen-lg-min + 300) {
+    .owl-dot-custom {
+      > div {
+        background-position: center center;
+      }
+    }
+  }
+  @media (min-width: $screen-lg-min) and (max-width: $screen-lg-min + 299) {
+    .owl-dot-custom {
+      &:nth-child(2) > div,  &:nth-child(5) > div {
+        background-position: -80px center;
+      }
+    }
+  }
+  @media (min-width: $screen-lg-min + 300) and (max-width: $screen-lg-min + 499) {
+    .owl-dot-custom {
+      &:nth-child(2) > div,  &:nth-child(5) > div {
+        background-position: -45px center;
+      }
+    }
+  }
+  @media (min-width: $screen-lg-min + 500) and (max-width: $screen-xl-min - 1) {
+    .owl-dot-custom {
+      &:nth-child(2) > div,  &:nth-child(5) > div {
+        background-position: -30px center;
+      }
+    }
+  }
+}
+
+
+// Section Tablets
+// -------------------------
+
+.tablet .section-md-tablet-75 {
+  @media (min-width: $screen-md-min) {
+    padding-top: 75px;
+  }
+}
+
+
+// Section Column Left
+// -------------------------
+
+.section-column-left {
+  @media (min-width: $screen-lg-min) {
+    position: absolute;
+    top: 50%;
+    left: calc(50% - 660px);
+    width: 600px;
+    @include transform(translateY(-50%));
+  }
+  @media (min-width: $screen-xl-min) {
+    left: calc(50% - 995px);
+    width: 940px;
+  }
+}
+
+
+// Section Spacing
+// -------------------------
+
+$insets: (0, 20px, 34px, 40px, 50px, 55px, 60px, 70px, 75px, 80px, 90px, 95px, 103px, 110px, 115px, 125px, 140px, 158px, 165px, 175px);
+
+@include indent-responsive(section, '', (padding-top, padding-bottom), $medias, $insets);
+@include indent-responsive(section, top, padding-top, $medias, $insets);
+@include indent-responsive(section, bottom, padding-bottom, $medias, $insets);

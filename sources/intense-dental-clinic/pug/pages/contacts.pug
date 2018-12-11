@@ -1,0 +1,126 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-material-parallax
+include  ../elements/_ui-google-map
+
+//-Title
+block title
+  title= cfg.nav.contacts.title
+
+//- Page
+block page
+
+  // Page Head
+  header.page-head
+    //- RD Navbar
+    +rd-navbar-top-panel(
+    'rd-navbar-light',
+    {
+      "data-lg-auto-height": "true",
+      "data-md-layout": 'rd-navbar-fixed',
+      "data-lg-layout": 'rd-navbar-static',
+      "data-lg-stick-up": 'true'
+    },
+    cfg.brand.logoInverse,
+    cfg.nav.contacts,
+    cfg.nav
+    )
+
+  // Page Contents
+  main.page-content
+    // Breadcrumbs
+    section.context-dark
+      +material-parallax({ img: 'images/background-03-1920x640.jpg' })
+        .bg-overlay-info
+          .container.section-34.section-md-85.text-lg-left
+            div.d-none.d-md-block.d-lg-inline-block
+              h1 Contacts
+            div.pull-md-right.offset-md-top-10.offset-lg-top-20
+              ul.p.list-inline.list-inline-dashed
+                li.list-inline-item
+                  a(href= cfg.nav.home.href) Home
+                li.list-inline-item Contacts
+    // Get In Touch
+    section.section-top-98.section-md-top-110
+      .container
+        .row.justify-content-sm-center
+          .col-md-9.col-lg-8.col-xl-12
+            .row
+              .col-xl-8.text-left
+                h1 Get In Touch
+                // RD Mailform
+                form.rd-mailform.text-left.offset-top-50(data-form-output="form-output-global", data-form-type='contact', method='post', action='bat/rd-mailform.php')
+                  .row
+                    .col-xl-6
+                      .form-group
+                        label.form-label.form-label-outside(for="contacts-first-name") First Name
+                        input#contacts-first-name.form-control(type="text" name="first name" data-constraints="@Required")
+
+                    .col-xl-6.offset-top-20.offset-xl-top-0
+                      .form-group
+                        label.form-label.form-label-outside(for="contacts-second-name") Second Name
+                        input#contacts-second-name.form-control(type="text" name="last name" data-constraints="@Required")
+
+                    .col-xl-6.offset-top-20
+                      .form-group
+                        label.form-label.form-label-outside(for="contacts-email") E-mail
+                        input#contacts-email.form-control(type="email" name="email" data-constraints="@Required @Email")
+
+                    .col-xl-6.offset-top-20
+                      .form-group
+                        label.form-label.form-label-outside(for="contacts-phone") Phone
+                        input#contacts-phone.form-control(type="text" name="phone" data-constraints="@Required")
+
+                    .col-xl-12.offset-top-20
+                      .form-group
+                        label.form-label.form-label-outside(for="contact-me-message") Message
+                        textarea#contact-me-message.form-control(name="message" data-constraints="@Required" style="height: 160px;")
+                  .row.justify-content-sm-center.justify-content-xl-start.offset-top-30
+                    .col-sm-5.col-md-4
+                      .inset-left-50.inset-right-50.inset-sm-left-0.inset-sm-right-0.inset-xl-right-50
+                        button(type="submit").btn.btn-block.btn-primary Send
+              .col-xl-4.text-left.offset-top-66.offset-xl-top-0.inset-xl-left-80
+                div
+                  h5 Phone
+                div.offset-top-14.text-subline.offset-top-10
+                div.offset-top-20
+                  span.icon.icon-xxs.mdi.mdi-cellphone-android.text-middle.text-info.inset-right-10
+                  a.text-middle.p(href="tel:#") 1-800-1234-567
+
+                div.offset-top-66
+                  h5 Address
+                div.offset-top-14.text-subline.offset-top-10
+                .unit.flex-row.unit-spacing-xxs.offset-top-20
+                  .unit-left
+                    span.icon.icon-xxs.mdi.mdi-map-marker.text-middle.text-info.inset-right-10
+                  .unit-body
+                    a(href="#").text-middle.p 4578 Marmora St, San Francisco D04 89GR
+
+                div.offset-top-66
+                  h5 Open hours
+                div.offset-top-14.text-subline.offset-top-10
+                .unit.flex-row.unit-spacing-xxs.offset-top-20
+                  .unit-left
+                    span.icon.icon-xxs.mdi.mdi-clock.text-middle.text-info.inset-right-10
+                  .unit-body
+                    div
+                      p Monday–Friday: 9:00am–6:00pm
+                    div
+                      p Saturday: 10:00am–4:00pm
+                    div
+                      p Sunday: 10:00am–1:00pm
+                .text-center.offset-top-66.inset-xl-right-50
+                  a.btn.d-xl-block.btn-primary(href=cfg.nav.schedule.href) BOOK AN APPOINTMENT
+
+      .offset-top-124
+        +google-map({
+          center: '9870 St Vincent Place, Glasgow, DC 45 Fr 45.'
+        }, [{
+          location: '9870 St Vincent Place, Glasgow, DC 45 Fr 45.',
+          description: '9870 St Vincent Place, Glasgow'
+        }])
+
+
+  // Page Footer
+  include ../sections/_section-footer

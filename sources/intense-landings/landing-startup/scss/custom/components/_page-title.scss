@@ -1,0 +1,50 @@
+//
+// Page title
+// --------------------------------------------------
+.page-title {
+  position: relative;
+  z-index: 1;
+  padding: 40px 15px;
+  text-align: center;
+
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: center center;
+  background-color: #1b181d;
+  background-image: url(../images/bg-image-1.jpg); 
+}
+
+.page-title-text {
+  @include header-base-styles;
+  font-size: 28px;
+  line-height: 1.2;
+  color: $white;
+}
+
+@include media-breakpoint-up(md) {
+  .page-title {
+    padding: 60px 15px;
+  }
+
+  .page-title-text {
+    font-size: 42px;
+  }
+}
+
+.desktop{
+  @include media-breakpoint-up(lg) {
+    .page-title {
+      padding: 220px 15px 60px;
+    }
+    .page-title-text {
+      font-size: 48px;
+    }
+  }
+}
+
+
+@include media-breakpoint-up(xl) {
+  .page-title {
+    padding: 250px 15px 85px;
+  }
+}

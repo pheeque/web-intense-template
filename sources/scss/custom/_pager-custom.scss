@@ -1,0 +1,125 @@
+//
+// Pager pagination
+// --------------------------------------------------
+
+.pager {
+  padding-left: 0;
+  margin: $line-height-computed 0;
+  list-style: none;
+  text-align: center;
+  @include clearfix;
+
+  li {
+    display: inline;
+
+    > a,
+    > span {
+      display: inline-block;
+      padding: $padding-small-vertical $padding-small-horizontal;
+      border-radius: $pager-border-radius;
+      border: 1px solid $pager-border;
+      font-weight: $btn-font-weight-small;
+      font-size: $btn-font-size-small;
+      line-height: $btn-lh-size-small;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      transition: .3s;
+      background-color: $pager-bg;
+    }
+
+    > a:hover,
+    > a:focus,
+    > a:active,
+    > a:active:focus{
+      text-decoration: none;
+      border-color: $pager-hover-border;
+      background-color: $pager-hover-bg;
+      color: $pager-hover-color;
+    }
+  }
+
+  .next {
+    > a,
+    > span {
+      float: right;
+    }
+  }
+
+  .previous {
+    > a,
+    > span {
+      float: left;
+    }
+  }
+
+  .disabled {
+    > a,
+    > a:hover,
+    > a:focus,
+    > span {
+      border-color: $pager-disabled-border;
+      background-color: $pager-disabled-bg;
+      color: $pager-disabled-color;
+      cursor: $cursor-disabled;
+    }
+  }
+
+  .icon-left,
+  .icon-right {
+    font-size: 16px;
+    line-height: $btn-lh-size-small;
+  }
+
+  .icon-left {
+    float: left;
+    padding-right: 10px;
+  }
+
+  .icon-right {
+    float: right;
+    padding-left: 10px;
+  }
+}
+
+.pager-sm {
+  li {
+    > a,
+    > span {
+      padding: $padding-xs-vertical $padding-xs-horizontal/2;
+      font-weight: $btn-font-weight-xs;
+      font-size: $btn-font-size-xs;
+      line-height: $btn-lh-size-xs;
+    }
+  }
+
+  .icon-left,
+  .icon-right {
+    line-height: $btn-lh-size-xs;
+  }
+}
+
+.pager-lg {
+  li {
+    > a,
+    > span {
+      padding: $padding-base-vertical $padding-base-horizontal;
+      font-weight: $btn-font-weight;
+      font-size: $btn-font-size;
+      line-height: $btn-lh-size;
+    }
+  }
+
+  .icon-left,
+  .icon-right {
+    font-size: $btn-font-size;
+    line-height: $btn-lh-size;
+  }
+}
+
+.pagination {
+  .page-link {
+    &:focus {
+      box-shadow: inherit;
+    }
+  }
+}

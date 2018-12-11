@@ -1,0 +1,128 @@
+//
+// Custom Buttons Effects
+// --------------------------------------------------
+
+//Anis
+.btn-anis-effect {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  background-color: transparent;
+  transition: .2s;
+  transition-delay: .1s;
+  &:hover{
+    transition-delay: .45s;
+  }
+  &:before, &:after {
+    position: absolute;
+    top: 50%;
+    content: '';
+    width: 20px;
+    height: 20px;
+    background: $gray-800;
+    border-radius: 50%;
+    transition: 0.5s;
+    z-index: -1;
+  }
+
+  &:before {
+    left: -20px;
+    transform: translate(-50%, -50%);
+  }
+
+  &:after {
+    right: -20px;
+    transform: translate(50%, -50%);
+  }
+
+  &:hover {
+    &:before {
+      -webkit-animation: criss-cross-left 0.8s;
+      animation: criss-cross-left 0.8s;
+    }
+
+    &:after {
+      -webkit-animation: criss-cross-right 0.8s;
+      animation: criss-cross-right 0.8s;
+    }
+  }
+  &.btn-primary{
+    color: $white;
+    background-color: $primary;
+    &:before, &:after {
+      background: $macaroni;
+    }
+    &:hover{
+      color: $white;
+      border-color: $macaroni;
+      background: $macaroni;
+    }
+  }
+  &.btn-default{
+    color: $caribbean-green;
+    background-color: $white;
+    &:before, &:after {
+      background: $primary;
+    }
+    &:hover{
+      color: $white;
+      border-color: $primary;
+      background: $primary;
+    }
+  }
+  &.btn-deluge{
+    color: $deluge;
+    &:before, &:after {
+      background: $deluge;
+    }
+    &:hover{
+      color: $white;
+      border-color: $deluge;
+      background: $deluge;
+    }
+  }
+  &.btn-success{
+    color: $success;
+    &:before, &:after {
+      background: $success;
+    }
+    &:hover{
+      color: $white;
+      border-color: $success;
+      background: $success;
+    }
+  }
+  &.btn-warning{
+    color: $warning;
+    &:before, &:after {
+      background: $warning;
+    }
+    &:hover{
+      color: $white;
+      border-color: $warning;
+      background: $warning;
+    }
+  }
+  &.btn-danger{
+    color: $danger;
+    &:before, &:after {
+      background: $danger;
+    }
+    &:hover{
+      color: $white;
+      border-color: $danger;
+      background: $danger;
+    }
+  }
+  &.btn-info{
+    color: $info;
+    &:before, &:after {
+      background: $info;
+    }
+    &:hover{
+      color: $white;
+      border-color: $info;
+      background: $info;
+    }
+  }
+}

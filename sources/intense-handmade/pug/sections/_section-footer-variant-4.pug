@@ -1,0 +1,57 @@
+//- Includes
+include ../elements/_widget-twitter
+include ../elements/_widget-form-contact
+include ../elements/_widget-list-social
+include ../elements/_widget-form-subscribe-type-2
+
+// Footer variant 4
+footer.section-relative.section-34.page-footer.bg-gray-base.context-dark
+  .container
+    .row.justify-content-md-center.text-xl-left
+      .col-md-12
+        .row.justify-content-sm-center
+
+          .col-sm-12.col-lg-8.order-lg-2.text-lg-right
+            div
+              ul.list-inline.list-inline-dashed.p.text-darker.list-inline-md.list-inline-dashed-wide
+                li.list-inline-item
+                  a(href="#") Documentation
+                li.list-inline-item
+                  a(href="#") Plugins
+                li.list-inline-item
+                  a(href="#") Themes
+                li.list-inline-item
+                  a(href="#") Support
+                li.list-inline-item
+                  a(href="#") GitHub
+
+            ul.list-inline.list-inline-white.offset-top-10.text-darker
+              li.list-inline-item
+                a(href="#" class="fa fa-facebook")
+              li.list-inline-item
+                a(href="#" class="fa fa-twitter")
+              li.list-inline-item
+                a(href="#" class="fa fa-google-plus")
+              li.list-inline-item
+                a(href="#" class="fa fa-pinterest")
+              li.list-inline-item
+                a(href="#" class="fa fa-vimeo")
+              li.list-inline-item
+                a(href="#" class="fa fa-youtube")
+              li.list-inline-item
+                a(href="#" class="fa fa-linkedin")
+              li.list-inline-item
+                a(href="#" class="fa fa-github")
+              li.list-inline-item
+                a(href="#" class="fa fa-yahoo")
+
+          .col-sm-12.col-lg-4.order-lg-1.offset-top-34.offset-lg-top-0
+            // Footer brand
+            .footer-brand
+              a(href="index.html")
+                != cfg.brand.logoInverse
+            p.small.text-darker.offset-top-4
+              | &copy; #[span(id="copyright-year")] . #[a(href="privacy.html") Privacy Policy]
+              | . Design&nbsp;by&nbsp;#[a(href="https://zemez.io/") Zemez]
+
+

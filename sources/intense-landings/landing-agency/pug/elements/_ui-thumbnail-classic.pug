@@ -1,0 +1,13 @@
+//- Original image naming format: pagename-{X}-1200x600_original.jpg
+mixin thumbnail-classic(obj)
+  a.thumbnail-classic(href='images/' + obj.original + '.jpg', data-lightgallery='item')
+    figure
+      +jpg(obj.img)
+    .caption
+      p.caption-title=obj.title
+      p.caption-text=obj.text
+
+mixin thumbnail-creative(obj)
+  a.thumbnail-creative(href='images/' + obj.original + '.jpg', data-lightgallery='item')
+    figure
+      +jpg(obj.img)

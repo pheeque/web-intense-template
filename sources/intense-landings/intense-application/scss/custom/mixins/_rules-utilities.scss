@@ -1,0 +1,27 @@
+//
+// Rules Utilities
+// --------------------------------------------------
+
+@mixin rules-responsive($preffix, $grid-breakpoints, $postfix) {
+  @if ($preffix != '' and $preffix != null) {
+    $preffix: #{$preffix}-;
+  }
+
+  @each $resolution, $alias in $grid-breakpoints {
+    @if ($resolution == 0) {
+      @each $offset in $offsets {
+        .#{$preffix}#{$postfix} {
+          @content;
+        }
+      }
+    } @else {
+      @media (min-width: $resolution) {
+        @each $offset in $offsets {
+          .#{$preffix}#{$alias}-#{$postfix} {
+            @content;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,144 @@
+//-
+//- Common usage mixins
+//- --------------------------------------------------
+
+//- Img image
+mixin img(name, className)
+  - var size = name.match('[0-9]+(x)[0-9]+')[0].split('x');
+  - var ext = name.split('.')[1];
+
+  img(src='images/' + name, alt='', width=size[0], height=size[1], class=className)
+
+//- Jpg image
+mixin jpg(name, className)
+  - var size = name.match('[0-9]+(x)[0-9]+')[0].split('x');
+  img(src='images/' + name + '.jpg', alt='', width=size[0], height=size[1], class=className)
+
+//- Png image
+mixin png(name, className)
+  - var size = name.match('[0-9]+(x)[0-9]+')[0].split('x');
+  img(src='images/' + name + '.png', alt='', width=size[0], height=size[1], class=className)
+
+//- Thumbnail
+//- Original image naming format: pagename-{X}-1200x600_original.jpg
+mixin img-thumbnail(obj)
+  - var originalSize = obj.original.split('_')[0].split('-').pop();
+  a(href='images/' + obj.original + '.jpg', class='img-thumbnail-variant-' + obj.number, data-photo-swipe-item='', data-size=originalSize)
+    figure
+      +jpg(obj.img)
+    .caption
+      span.icon.icon-md.fl-bigmug-line-search74.icon-default
+      
+//- Pagination
+mixin pagination
+  ul.pagination-custom
+    li.disabled: a(href='#', aria-label="Previous")
+    li.active: a(href='#') 1
+    li: a(href='#') 2
+    li: a(href='#') 3
+    li: a(href='#') 4
+    li: a(href='#', aria-label="Next")
+
+//- Table
+mixin table(classes, modClasses)
+  .table-custom-responsive(class=modClasses)
+    table.table-custom(class=classes)
+      thead
+        tr
+          th Column 1
+          th Column 2
+          th Column 3
+          th Column 4
+
+      tbody
+        tr
+          td Item #1
+          td Description
+          td Subtotal
+          td $3.00
+        tr
+          td Item #2
+          td Description
+          td Discount
+          td $3.00
+        tr
+          td Item #3
+          td Description
+          td Shipping
+          td $3.00
+
+        tr
+          td Item #4
+          td Description
+          td Tax
+          td $4.00
+
+      tfoot
+        tr
+          td All Items
+          td Description
+          td Your Total
+          td $13.00
+
+mixin photoswipe()
+  // PhotoSwipe Gallery
+  .pswp(tabindex="-1" role="dialog" aria-hidden="true")
+    .pswp__bg
+    .pswp__scroll-wrap
+      .pswp__container
+        .pswp__item
+        .pswp__item
+        .pswp__item
+      .pswp__ui.pswp__ui--hidden
+        .pswp__top-bar
+          .pswp__counter
+
+          button.pswp__button.pswp__button--close(title="Close (Esc)")
+          button.pswp__button.pswp__button--share(title="Share")
+          button.pswp__button.pswp__button--fs(title="Toggle fullscreen")
+          button.pswp__button.pswp__button--zoom(title="Zoom in/out")
+          .pswp__preloader
+            .pswp__preloader__icn
+              .pswp__preloader__cut
+                .pswp__preloader__donut
+        .pswp__share-modal.pswp__share-modal--hidden.pswp__single-tap
+          .pswp__share-tooltip
+
+        button.pswp__button.pswp__button--arrow--left(title="Previous (arrow left)")
+
+        button.pswp__button.pswp__button--arrow--right(title="Next (arrow right)")
+        .pswp__caption
+          .pswp__caption__cent
+
+
+mixin svg-decoration(obj)
+  case obj.orientation
+    when 'top'
+      svg(version='1.0', xmlns='http://www.w3.org/2000/svg', width='1919.000000px', height='24.000000px', viewbox='0 0 1919.000000 24.000000', preserveaspectratio='none')
+        g(transform='translate(0.000000,24.000000) scale(0.100000,-0.100000)', stroke='none')
+          path(d='M8725 224 c-515 -17 -1068 -50 -1682 -99 -887 -70 -1083 -80 -1418\
+          -71 -239 5 -446 25 -840 81 -263 36 -346 45 -555 56 -332 19 -567 3 -1200 -79\
+          -537 -69 -850 -77 -1395 -32 -325 26 -613 26 -1090 0 -598 -33 -545 -28 -545\
+          -56 l0 -24 9595 0 9595 0 0 24 c0 29 24 26 -430 52 -491 28 -865 30 -1180 4\
+          -552 -44 -867 -37 -1400 32 -631 82 -866 98 -1198 79 -211 -11 -294 -20 -557\
+          -56 -394 -56 -601 -76 -840 -81 -336 -9 -493 -1 -1480 76 -1071 83 -1280 91\
+          -2360 94 -511 2 -970 2 -1020 0z')
+
+    when 'bottom'
+      svg(version='1.0', xmlns='http://www.w3.org/2000/svg', width='1918.000000px', height='26.000000px', viewbox='0 0 1918.000000 26.000000', preserveaspectratio='none')
+        g(transform='translate(0.000000,26.000000) scale(0.100000,-0.100000)', stroke='none')
+          path(d='M0 144 l0 -117 48 7 c26 3 196 9 377 12 287 5 362 3 575 -15 332 -29\
+          631 -37 811 -22 79 7 333 37 563 67 552 72 755 84 1017 61 107 -10 221 -22\
+          254 -28 33 -5 87 -14 120 -19 33 -5 89 -14 125 -20 276 -46 393 -59 595 -66\
+          209 -7 421 3 670 32 143 17 218 26 685 87 925 120 1519 142 2685 101 302 -10\
+          717 -17 1080 -17 363 0 778 7 1080 17 1165 41 1767 19 2685 -101 675 -88 777\
+          -100 990 -114 98 -7 246 -9 365 -5 201 7 317 19 595 66 36 6 92 15 125 20 33\
+          5 87 14 120 19 33 6 147 18 254 28 262 23 465 11 1017 -61 230 -30 484 -60\
+          563 -67 180 -15 479 -7 811 22 214 18 287 20 580 15 184 -3 347 -9 363 -12\
+          l27 -6 0 116 0 116 -9590 0 -9590 0 0 -116z')
+
+//- Parallax Section
+mixin parallax(obj)
+  section.section.parallax-container(data-parallax-img='images/' + obj.img + '.jpg')
+    .parallax-content(class=obj.addClass)
+      block

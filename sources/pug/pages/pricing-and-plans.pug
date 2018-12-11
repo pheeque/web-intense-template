@@ -1,0 +1,380 @@
+extends  ../_skeleton
+
+//- Includes
+include  ../elements/_ui-breadcrumb-classic
+include  ../elements/_ui-box-planning-type-1
+include  ../elements/_ui-box-planning-type-2
+include  ../elements/_ui-box-planning-type-3
+include  ../elements/_ui-box-planning-type-4
+include  ../elements/_ui-box-pricing-type-1
+
+
+//- Title
+block title
+  title= cfg.nav.components.submenu.toolkitComponents.submenu.pricing.title
+
+//- Page
+block page
+  // Page Header
+  header.page-head
+    //- RD Navbar
+    +rd-navbar-default(
+      'rd-navbar-default rd-navbar-light',
+      {
+        "data-lg-auto-height": "true",
+        "data-md-layout": 'rd-navbar-fixed',
+        "data-lg-layout": 'rd-navbar-static',
+        "data-lg-stick-up": 'true'
+      },
+      cfg.brand.logo,
+      cfg.nav.components,
+      cfg.nav
+    )
+
+  +breadcrumb-classic(
+  cfg.nav.components.submenu.toolkitComponents.submenu.pricing.title,
+  "icon-lg " + cfg.nav.components.submenu.toolkitComponents.submenu.pricing.icon,
+  {
+    0: {
+      "title": cfg.nav.home.title,
+      "href": cfg.nav.home.href
+    },
+    1: {
+      "title": cfg.nav.components.title,
+      "href": cfg.nav.components.href
+    },
+    2: {
+      "title": cfg.nav.components.submenu.toolkitComponents.submenu.pricing.title,
+      "href": cfg.nav.components.submenu.toolkitComponents.submenu.pricing.href
+    }
+  })
+
+  // Section Plans Type 1
+  section.section.novi-background.section-66.section-md-top-110
+    .container-wide
+      h1 Plans Type 1
+      .divider.bg-mantis
+      .row.no-gutters.justify-content-lg-center
+        .col-sm-8.offset-sm-2.col-lg-3.offset-lg-0.col-xxl-2
+          +box-planning-1("Personal", "$19", "per month", "Sign up")
+            ul.list.list-unstyled
+              li
+                span.font-weight-bold 1
+                span.text-dark Hosting
+              li
+                span.font-weight-bold 0
+                span.text-dark E-Mail Marketing
+              li
+                span.font-weight-bold 1
+                span.text-dark Databases
+              li
+                span.font-weight-bold 0
+                span.text-dark Design packs
+              li
+                span.font-weight-bold 1
+                span.text-dark Website layouts
+
+        .col-sm-8.offset-sm-2.col-lg-3.offset-lg-0.col-xxl-2.offset-top-50.offset-lg-top-0
+          +box-planning-1("Team", "$59", "per month", "Sign up", "true")
+            ul.list.list-unstyled
+              li
+                span.font-weight-bold 1
+                span.text-dark Hosting
+              li
+                span.font-weight-bold 2
+                span.text-dark E-Mail Marketing
+              li
+                span.font-weight-bold 5
+                span.text-dark Databases
+              li
+                span.font-weight-bold 2
+                span.text-dark Design packs
+              li
+                span.font-weight-bold 3
+                span.text-dark Website layouts
+
+        .col-sm-8.offset-sm-2.col-lg-3.offset-lg-0.col-xxl-2.offset-top-50.offset-lg-top-0
+          +box-planning-1("Studio", "$89", "per month", "Sign up")
+            ul.list.list-unstyled
+              li
+                span.font-weight-bold 1
+                span.text-dark Hosting
+              li
+                span.font-weight-bold 0
+                span.text-dark E-Mail Marketing
+              li
+                span.font-weight-bold 1
+                span.text-dark Databases
+              li
+                span.font-weight-bold 0
+                span.text-dark Design packs
+              li
+                span.font-weight-bold 1
+                span.text-dark Website layouts
+
+        .col-sm-8.offset-sm-2.col-lg-3.offset-lg-0.col-xxl-2.offset-top-50.offset-lg-top-0
+          +box-planning-1("Business", "$129", "per month", "Sign up")
+            ul.list.list-unstyled
+              li
+                span.font-weight-bold 1
+                span.text-dark Hosting
+              li
+                span.font-weight-bold 0
+                span.text-dark E-Mail Marketing
+              li
+                span.font-weight-bold 1
+                span.text-dark Databases
+              li
+                span.font-weight-bold 0
+                span.text-dark Design packs
+              li
+                span.font-weight-bold 1
+                span.text-dark Website layouts
+
+  // Section Plans Type 2
+  section.section.novi-background.section-66
+    .container-wide
+      h1 Plans Type 2
+      .divider.bg-mantis
+      .row.no-gutters.justify-content-lg-center
+        .col-sm-8.offset-sm-2.col-lg-4.offset-lg-0.col-xl-3.col-xxl-2
+          +box-planning-2("Starter", "19", "month", null , "bg-deluge", null, "Sign up", "btn-deluge")
+            p.text-light
+              small The plan is mainly intended for startups and small businesses.
+            ul.list-separated.list-unstyled
+              li
+                span.font-weight-bold 5GB
+                span.text-dark Space amount
+              li
+                span.font-weight-bold 20
+                span.text-dark Users
+              li
+                span.font-weight-bold 10GB
+                span.text-dark Bandwidth
+              li
+                span.text-dark No support
+              li
+                span.font-weight-bold 1
+                span.text-dark Database
+
+        .col-sm-8.offset-sm-2.col-lg-4.offset-lg-0.col-xl-3.col-xxl-2.offset-top-50.offset-lg-top-0
+          +box-planning-2("Business", "59", "month", "text-deluge", "bg-deluge", "bg-deluge", "Sign up", "btn-deluge", "active")
+            p.text-light
+              small Perfect for Medium-to-large sized businesses.
+            ul.list-separated.list-unstyled
+              li
+                span.font-weight-bold 10GB
+                span.text-dark Space amount
+              li
+                span.font-weight-bold Unlimited
+                span.text-dark  users
+              li
+                span.font-weight-bold 30GB
+                span.text-dark Bandwidth
+              li
+                span.text-dark Free support
+              li
+                span.font-weight-bold 20
+                span.text-dark Databases
+
+        .col-sm-8.offset-sm-2.col-lg-4.offset-lg-0.col-xl-3.col-xxl-2.offset-top-50.offset-lg-top-0
+          +box-planning-2("Ultimate", "99", "month", null, "bg-deluge", null, "Sign up", "btn-deluge")
+            p.text-light
+              small The plan is best suited for large corporate websites.
+            ul.list-separated.list-unstyled
+              li
+                span.font-weight-bold 100GB
+                span.text-dark Space amount
+              li
+                span.font-weight-bold Unlimited
+                span.text-dark  users
+              li
+                span.font-weight-bold 60GB
+                span.text-dark Bandwidth
+              li
+                span.text-dark Free support
+              li
+                span.font-weight-bold Unlimited
+                span.text-dark Databases
+
+  // Section Plans Type 3
+  section.section.novi-background.section-66
+    .container.container-wide
+      h1 Plans Type 3
+      .divider.bg-mantis
+      .row.no-gutters.justify-content-xl-center.align-items-sm-end
+        .col-sm-0.col-xl-2.text-right.d-none.d-xl-block
+          .inset-right-30.section-lg-bottom-110
+            h4.text-picton-blue.font-weight-bold Available <br> Options
+            ul.list-separated.list-unstyled
+              li Space amount
+              li Users Count
+              li Bandwidth Amount
+              li Support included
+              li Database Count
+
+        .col-lg-4.col-xl-3.col-xxl-2.offset-top-50.offset-xl-top-0
+          +box-planning-3("Starter", "59", "month", "Sign up")
+            ul.list-separated.list-unstyled
+              li
+                span.font-weight-bold 5GB
+                span.text-dark Space amount
+              li
+                span.font-weight-bold 20
+                span.text-dark users
+              li
+                span.font-weight-bold 10GB
+                span.text-dark Bandwidth
+              li
+                span.text-middle.icon.novi-icon.icon-xxs.mdi.mdi-close.icon-text-ku-crimson
+              li
+                span.font-weight-bold 1
+                span.text-dark Databases
+
+        .col-lg-4.col-xl-3.col-xxl-2.offset-top-50.offset-xl-top-0
+          +box-planning-3("Business", "59", "month", "Sign up", "active")
+            ul.list-separated.list-unstyled
+              li
+                span.font-weight-bold 10GB
+                span.text-dark Space amount
+              li
+                span.font-weight-bold Unlimited
+                span.text-dark users
+              li
+                span.font-weight-bold 30GB
+                span.text-dark Bandwidth
+              li
+                span.text-middle.icon.novi-icon.icon-xxs.mdi.mdi-check.text-dollar-bill
+              li
+                span.font-weight-bold 20
+                span.text-dark Databases
+
+        .col-lg-4.col-xl-3.col-xxl-2.offset-top-50.offset-xl-top-0
+          +box-planning-3("Business", "59", "month", "Sign up")
+            ul.list-separated.list-unstyled
+              li
+                span.font-weight-bold 10GB
+                span.text-dark Space amount
+              li
+                span.font-weight-bold Unlimited
+                span.text-dark users
+              li
+                span.font-weight-bold 60GB
+                span.text-dark Bandwidth
+              li
+                span.text-middle.icon.novi-icon.icon-xxs.mdi.mdi-check.text-dollar-bill
+              li
+                span.font-weight-bold Unlimited
+                span.text-dark Databases
+
+  // Section Plans Type 4
+  section.section.novi-background.section-66
+    .container
+      h1 Plans Type 4
+      .divider.bg-mantis
+      .row.align-items-sm-end.justify-content-md-center
+        .col-lg-3
+            +box-planning-4("Free", "59", "month", "Sign up", "bg-mantis context-dark")
+              ul.list-separated.list-unstyled
+                li
+                  span.font-weight-bold 1GB
+                  span.text-dark Space amount
+                li
+                  span.font-weight-bold 5
+                  span.text-dark users
+                li
+                  span.font-weight-bold 5GB
+                  span.text-dark Bandwidth
+                li
+                  span.text-dark No Support
+                li
+                  span.font-weight-bold 1
+                  span.text-dark Databases
+
+        .col-lg-3.offset-top-50.offset-lg-top-0
+          +box-planning-4("Starter", "59", "month", "Sign up", "bg-malibu context-dark")
+            ul.list-separated.list-unstyled
+              li
+                span.font-weight-bold 5GB
+                span.text-dark Space amount
+              li
+                span.font-weight-bold 20
+                span.text-dark users
+              li
+                span.font-weight-bold 10GB
+                span.text-dark Bandwidth
+              li
+                span.text-dark No Support
+              li
+                span.font-weight-bold 1
+                span.text-dark Databases
+
+        .col-lg-3.offset-top-50.offset-lg-top-0
+          +box-planning-4("Business", "59", "month", "Sign up", "bg-saffron context-dark", "active")
+            ul.list-separated.list-unstyled
+              li
+                span.font-weight-bold 10GB
+                span.text-dark Space amount
+              li
+                span.font-weight-bold Unlimited
+                span.text-dark users
+              li
+                span.font-weight-bold 30GB
+                span.text-dark Bandwidth
+              li
+                span.text-dark Free Support
+              li
+                span.font-weight-bold 20
+                span.text-dark Databases
+
+        .col-lg-3.offset-top-50.offset-lg-top-0
+          +box-planning-4("Ultimate", "59", "month", "Sign up", "bg-red context-dark")
+            ul.list-separated.list-unstyled
+              li
+                span.font-weight-bold 100GB
+                span.text-dark Space amount
+              li
+                span.font-weight-bold Unlimited
+                span.text-dark users
+              li
+                span.font-weight-bold 60GB
+                span.text-dark Bandwidth
+              li
+                span.text-dark Free support
+              li
+                span.font-weight-bold Unlimited
+                span.text-dark Databases
+
+
+  // Section Pricing Type 1
+  section.section.novi-background.section-66.section-md-bottom-124
+    .container
+      h1 Pricing Type 1
+      .divider.bg-mantis
+      .row.justify-content-sm-center.align-items-sm-end.offset-top-66
+        .col-lg-6.text-left
+          +box-pricing-type-1([{
+            "title": "OLD TIMER'S BREAKFAST",
+            "price": "$22.00",
+            "desc": "( Two eggs cooked to order with grits, sawmill gravy, homemade buttermilk biscuits & real butter )"
+          },
+          {
+            "title": "FRESH START SAMPLER",
+            "price": "$37.00",
+            "desc": "( Start your day with a mix of low fat vanilla yogurt, fresh seasonal fruit topped with our honey mix )"
+          },
+          {
+            "title": "DOUBLE MEAT BREAKFAST",
+            "price": "$42.00",
+            "desc": "( Three eggs cooked to order with a full order of bacon and sausage patties )"
+          },
+          {
+            "title": "CRAB & AVOCADO BRUSCHETTA",
+            "price": "$19.00",
+            "desc": "( Fresh white&brown crab, crunchy fennel, smashed avocado, yoghurt & chilli )"
+          }])
+
+  // Page Footer
+  include ../sections/_section-footer-default
+
+

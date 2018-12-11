@@ -1,0 +1,72 @@
+
+include ../mixins/_rd-navbar-submenu-simple
+
+//- RD Navbar Transparent
+//- skin - rd navbar skin (transparent, inverse, default) 
+//- attrs - additional HTML attributes of rd navbar
+//- logo - logo markup (<img/> or text)
+//- links - nav links object
+mixin rd-navbar-top-panel(skin, attrs, logo, activeLink, links)
+	// RD Navbar Transparent
+	.rd-navbar-wrap
+		nav&attributes(attrs).rd-navbar.rd-navbar-top-panel(class!=skin data-lg-stick-up-offset="79px" data-md-device-layout="rd-navbar-fixed" data-lg-device-layout="rd-navbar-static")
+
+			.rd-navbar-inner
+
+				.rd-navbar-top-panel
+					.container
+						.left-side
+							address.contact-info.text-left
+								span.p
+									span.novi-icon.icon.mdi.mdi-cellphone-android
+									a(href="tel:#") 1-800-1234-567
+								span.p
+									span.novi-icon.icon.mdi.mdi-email-outline
+									a(href="mailto:#") info@demolink.org
+
+
+
+						.right-side.mt-3.mt-lg-0
+							ul.rd-navbar-top-links.list-unstyled
+								li
+									a.novi-icon.icon.mdi.mdi-facebook-messenger(href="#")
+								li
+									a.novi-icon.icon.mdi.mdi-whatsapp(href="#")
+								li
+									a.novi-icon.icon.mdi.mdi-telegram(href="#")
+
+				.container.d-flex.justify-content-lg-between 
+
+					// RD Navbar Panel
+					.rd-navbar-panel
+						// RD Navbar Toggle
+						button.rd-navbar-toggle(data-rd-navbar-toggle=".rd-navbar, .rd-navbar-nav-wrap")
+							span
+						// RD Navbar Top Panel Toggle
+						button.rd-navbar-top-panel-toggle(data-rd-navbar-toggle=".rd-navbar, .rd-navbar-top-panel")
+							span
+
+						//Navbar Brand
+						.rd-navbar-brand
+							a(href="index.html")!= logo
+
+					.rd-navbar-menu-wrap
+						.rd-navbar-nav-wrap
+							
+
+							.rd-navbar-mobile-scroll
+								//Navbar Brand Mobile
+								.rd-navbar-mobile-brand
+									a(href="index.html")!= logo
+
+								// RD Navbar Nav
+								ul.rd-navbar-nav
+									li.active: a(href='#benefit') benefits
+									li: a(href='#deals')  top deals
+									li: a(href='#partners')  Partners
+									li: a(href='#faq') faq
+									li: a(href='#contacts') contacts
+							.nav-button-block
+								a.btn.btn-xs.btn-secondary(href='#') Get started
+					.nav-button-block
+						a.btn.btn-xs.btn-secondary(href='#') Get started

@@ -1,0 +1,499 @@
+//
+// Custom form styles
+// --------------------------------------------------
+
+.rd-mailform {
+  position: relative;
+}
+
+[data-x-mode] {
+  .form-label {
+    pointer-events: auto;
+  }
+}
+
+// Normalize non-controls
+// --------------------------------------------------
+
+label {
+  margin-bottom: 0;
+}
+
+// Common form styles
+// --------------------------------------------------
+.form-label,
+.form-label-outside,
+.form-input {
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0;
+
+  @include media-breakpoint-up(md) {
+    font-size: $form-input-font-size;
+  }
+}
+
+input:-webkit-autofill ~ label,
+input:-webkit-autofill ~ .form-validation {
+  color: $black !important;
+}
+
+// Common form controls
+// --------------------------------------------------
+
+.input-sm,
+.input-lg,
+.form-input {
+  &, &:focus {
+    box-shadow: none;
+  }
+}
+
+textarea.form-input {
+  height: $form-textarea-default-height;
+  min-height: $form-textarea-default-min-height;
+  max-height: $form-textarea-default-max-height;
+  resize: vertical;
+}
+
+.form-input {
+  width: 100%;
+  height: auto;
+  min-height: $form-input-height;
+  padding: $input-padding;
+  border-radius: 0;
+  -webkit-appearance: none;
+  line-height: $input-line-height;
+  background: $form-input-background;
+  border: 0;
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+// Form groups
+// -------------------------
+
+.form-wrap {
+  position: relative;
+  margin-bottom: 0;
+
+  & + .form-wrap {
+    margin-top: 20px;
+  }
+  
+  & + .btn {
+    margin-top: 35px;
+  }
+}
+
+// Form labels
+// -------------------------
+
+.form-label {
+  position: absolute;
+  top: $form-input-height / 2;
+  left: $input-padding-horizontal;
+  font-size: $form-input-font-size;
+  color: $form-input-color-placeholder;
+  line-height: 1.2;
+  pointer-events: none;
+  letter-spacing: .05em;
+  z-index: 9;
+  transition: .3s;
+  transform: translateY(-50%);
+  will-change: transform;
+
+  &.focus {
+    opacity: 0;
+  }
+
+  &.auto-fill {
+    color: $form-input-color;
+  }
+}
+
+.form-label-outside {
+  margin-bottom: 9px;
+  font-size: $font-size-body;
+  text-transform: uppercase;
+  letter-spacing: 0;
+  @include media-breakpoint-up(md) {
+    position: static;
+
+    &,
+    &.focus,
+    &.auto-fill {
+      transform: none;
+    }
+  }
+}
+
+// Form validation
+// -------------------------
+.form-validation {
+  position: absolute;
+  right: 6px;
+  top: 4px;
+  font-size: 10px;
+  line-height: 12px;
+  letter-spacing: 0;
+  font-weight: 400;
+  color: rgba($brand-danger, .9);
+  transition: .3s;
+}
+
+.form-wrap-validation-left{
+  .form-validation{
+    right: inherit;
+    left: 6px;
+  }
+}
+
+.form-label-outside ~ .form-validation {
+  top: 35px;
+  right: 4px;
+}
+
+// Error Styling
+//
+.has-error {
+  @include form-input-validation-custom($state-danger-text, $state-danger-border, $state-danger-bg);
+}
+
+// Success Styling
+//
+.has-success {
+  @include form-input-validation-custom($state-success-text, $state-success-bg, $state-success-bg);
+}
+
+// Warning Styling
+//
+.has-warning {
+  @include form-input-validation-custom($state-warning-text, $state-warning-bg, $state-warning-bg);
+}
+
+// Info Styling
+//
+.has-info {
+  @include form-input-validation-custom($state-info-text, $state-info-bg, $state-info-bg);
+}
+
+// Form output
+// -------------------------
+
+#form-output-global {
+  position: fixed;
+  bottom: 30px;
+  left: 15px;
+  visibility: hidden;
+  transform: translateX(-500px);
+  transition: .3s all ease;
+  z-index: 9999999;
+
+  &.active {
+    transform: translateX(0);
+    visibility: visible;
+  }
+
+  @include media-breakpoint-up(sm) {
+    left: 30px;
+  }
+}
+
+.form-output {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  margin-top: 2px;
+  transition: .3s;
+  opacity: 0;
+  visibility: hidden;
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+  &.error {
+    color: $brand-danger;
+  }
+  &.success {
+    color: $brand-success;
+  }
+}
+
+// Radio and Checkbox Custom
+// -------------------------
+
+// Base Styles
+//
+.checkbox {
+ cursor: pointer;
+}
+
+.radio .radio-custom,
+.radio-inline .radio-custom,
+.checkbox .checkbox-custom,
+.checkbox-inline .checkbox-custom {
+  opacity: 0;
+
+  &,
+  &-dummy {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    margin-left: -20px;
+    margin-top: 2px;
+    outline: none;
+    cursor: pointer;
+  }
+
+  &-dummy {
+    pointer-events: none;
+    background: $gray-lighter;
+    border: 1px solid $form-input-border-color;
+    border-radius: 1px;
+    background: $form-input-background;
+
+    &:after {
+      position: absolute;
+      opacity: 0;
+      transition: .15s;
+    }
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.radio, .radio-inline,
+.checkbox, .checkbox-inline {
+  color: $gray;
+}
+
+.radio-custom:checked + .radio-custom-dummy:after,
+.checkbox-custom:checked + .checkbox-custom-dummy:after {
+  opacity: 1;
+}
+
+// Custom Radio Styles
+//
+.radio,
+.radio-inline {
+  padding-left: 30px;
+  .radio-custom,
+  .radio-custom-dummy {
+    height: 20px;
+    width: 20px;
+  }
+
+  .radio-custom-dummy {
+    margin-top: 5px;
+    margin-left: -30px;
+    border: 2px solid $gray-darker;
+    border-radius: 50%;
+    background-color: transparent;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 3px;
+      right: 3px;
+      bottom: 3px;
+      left: 3px;
+      background: $gray-darker;
+      border-radius: 50%;
+      opacity: 0;
+      transition: .15s;
+    }
+  }
+}
+
+// Custom Checkbox Styles
+//
+.checkbox,
+.checkbox-inline {
+  padding-left: 30px;
+
+  .checkbox-custom-dummy {
+    pointer-events: none;
+    border-radius: 0;
+    border: 2px solid #ccc;
+    margin-left: 0;
+    left: 0;
+    background: $white;
+
+    &:after {
+      content: '\f00c';
+      font-family: $fa;
+      font-size: 12px;
+      line-height: 12px;
+      position: absolute;
+      top: 1px;
+      left: 1px;
+      color: $gray-darker;
+    }
+  }
+}
+
+// Custom styles
+.rd-mailform {
+  text-align: left;
+
+  > * + * {
+    margin-top: 30px;
+  }
+
+  [class*='group'] {
+    .select2-container--bootstrap .select2-selection {
+      min-width: 220px;
+    }
+  }
+
+  .btn {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+
+.page .form-inline {
+  text-align: center;
+  display: block;
+
+  > * + * {
+    margin-top: 20px;
+  }
+
+  @include media-breakpoint-up(md) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    justify-content: center;
+    width: 100%;
+
+    > * + * {
+      margin-top: 0;
+      margin-left: 30px;
+    }
+
+    .form-wrap {
+      flex-grow: 1;
+    }
+
+    .form-input {
+      width: 100%;
+    }
+
+    button {
+      display: inline-block;
+      flex-shrink: 0;
+    }
+  }
+}
+
+.form-centered {
+  text-align: center;
+  label,
+  .form-input {
+    text-align: center;
+  }
+
+  .form-label {
+    right: $input-padding-horizontal;
+  }
+
+  textarea.form-input {
+    text-align: left;
+  }
+}
+
+.form-label-centered {
+  .form-label-outside {
+    display: block;
+    text-align: center;
+  }
+}
+
+.form-bordered {
+  .form-input {
+    padding-top: ($form-input-height - $input-line-height - 4) / 2;
+    padding-bottom: ($form-input-height - $input-line-height - 4) / 2;
+    border: 2px solid $gray-lighter;
+    background-color: transparent;
+  }
+
+  .form-label {
+    top: $form-input-height / 2 - 1px;
+  }
+}
+
+.form-style-classic {
+  .form-label-outside {
+    font-size: 16px;
+    line-height: 1.2;
+    letter-spacing: 0;
+    text-transform: none;
+    color: $gray-darker;
+  }
+}
+
+.recaptcha {
+  transform: scale(.9);
+  transform-origin: 0 0;
+}
+
+.recaptcha div div {
+  line-height: 0;
+}
+.form-recaptcha {
+  .form-wrap-recaptcha {
+    width: auto;
+    max-width: 304px;
+  }
+
+  
+
+  .recaptcha ~ .form-validation {
+    top: auto;
+    right: auto;
+    bottom: -12px;
+    left: 3px;
+  }
+}
+
+.form-wide {
+  textarea.form-input {
+    min-height: 198px;
+    max-height: 260px;
+  }
+}
+
+.form-btn-group {
+  
+  > * {
+    flex-grow: 1;
+  }
+}
+
+.form-button {
+  display: flex;
+  align-items: stretch;
+  max-height: 70px;
+}
+
+.form-register-wrap {
+  background-color: $white;
+  padding: 20px 15px;
+
+  @include media-breakpoint-up(lg) {
+    padding: 30px;
+  }
+  @include media-breakpoint-up(xl) {
+    padding: 40px;
+  }
+}

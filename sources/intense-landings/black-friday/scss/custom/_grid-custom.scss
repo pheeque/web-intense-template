@@ -1,0 +1,57 @@
+//
+// Custom grid styles
+// --------------------------------------------------
+
+.row-spacer {
+  flex-basis: 100%;
+}
+
+* + .row {
+  margin-top: 50px;
+}
+
+* + [class*='col-'] {
+  margin-top: 30px;
+}
+
+@each $alias, $breakpoint in $grid-breakpoints {
+  @include media-breakpoint-up( $alias ) {
+    * + [class*='col-#{$alias}-'] {
+      margin-top: 0;
+    }
+  }
+}
+
+// Row gutter reset
+.row-condensed{
+  margin-left: 0;
+  margin-right: 0;
+
+  > [class*="col"]{
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+.row-offset-20 {
+  margin-left: -10px;
+  margin-right: -10px;
+  > [class*="col"]{
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 20px;
+  } 
+}
+
+// Wide container
+.container-wide {
+  max-width: 1800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// Demo
+.grid-demo {
+  * + .row {
+    margin-top: 30px;
+  }
+}

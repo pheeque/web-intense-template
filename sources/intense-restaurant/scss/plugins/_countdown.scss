@@ -1,0 +1,154 @@
+//
+// Custom Countdown
+// --------------------------------------------------
+
+
+// Base styles
+// --------------------------------------------------
+
+.countdown-custom {
+  .countdown {
+    &:before { 
+      content: '';
+      display: inline-block;
+      height: 100%;
+      vertical-align: middle;
+    }
+    &-section {
+      display: inline-block;
+      padding-top: 10px;
+      text-align: center;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+
+      &:nth-child(5) {
+        display: none;
+      }
+
+      @include media-breakpoint-up(xl) {
+        &:nth-child(5) {
+          display: inline-block;
+        }
+      }
+    }
+    &-row {
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .countdown-section + .countdown-section {
+      margin-left: 5px;
+    }
+    &-amount {
+      display: block;
+      text-transform: uppercase;
+      font-weight: 900;
+      font-size: 22px;
+      line-height: 1;
+      color: $gray-800;
+    }
+    &-period {
+      display: block;
+      font-size: 10px;
+      line-height: 1;
+      color: $gray-700;
+    }
+    @include media-breakpoint-up(sm) {
+      &-section {
+        padding-top: 25px;
+        width: 92px;
+        height: 92px;
+        border-width: 3px;
+      }
+      .countdown-section + .countdown-section {
+        margin-left: 10px;
+      }
+    }
+    @include media-breakpoint-up(md) {
+      &-section {
+        padding-top: 40px;
+        width: 155px;
+        height: 155px;
+      }
+      .countdown-section + .countdown-section {
+        margin-left: 22px;
+      }
+      &-amount {
+        font-size: 45px;
+      }
+      &-period {
+        font-size: 16px;
+      }
+    }
+    @include media-breakpoint-up(lg) {
+      .countdown-section + .countdown-section {
+        margin-left: 44px;
+      }
+    }
+  }
+
+  // Countdown Modern
+  &.countdown-modern {
+    .countdown-section {
+      position: relative;
+      z-index: 1;
+
+      .countdown-period{
+        display: none;
+      }
+
+      .countdown-letter {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: -1;
+        color: rgba($gray-800, .2);
+        text-align: center;
+        font-size: 44px;
+        text-transform: uppercase;
+        @include media-breakpoint-up(md) {
+          font-size: 72px;
+          top: 8px;
+        }
+      }
+
+    }
+  }
+
+  // Countdown Ellipse
+  @include media-breakpoint-up(sm) {
+    &.countdown-ellipse .countdown-section {
+      border: 3px solid $gray-100;
+    }
+  }
+}
+
+
+// Countdown Inline
+// --------------------------------------------------
+
+.countdown-inline {
+  font-size: 13px;
+
+  .countdown-section {
+    .countdown-amount, .countdown-period {
+      margin-right: 2px;
+    }
+    .countdown-amount {
+      font-weight: 700;
+      margin-left: 4px;
+    }
+  }
+
+  @include media-breakpoint-up(sm) {
+    font-size: 16px;
+    .countdown-amount, .countdown-period {
+      margin-right: 4px;
+    }
+    .countdown-amount {
+      margin-left: 7px;
+    }
+  }
+}
+

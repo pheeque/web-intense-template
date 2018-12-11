@@ -1,0 +1,124 @@
+//- Include
+include ../elements/_ui-rd-twitter
+include ../elements/_ui-material-parallax
+
+// See It In Action
++material-parallax({
+  img: "images/backgrounds/background-07-1920x1998.jpg",
+  Class: 'section-98 section-sm-110'
+})#twitter-widget
+  .container-fluid
+    h1 See It In Action
+    hr.divider.bg-mantis
+    .row.offset-top-66.justify-content-md-center.text-md-left
+      .col-md-8.col-xl-12
+        +rd-twitter({
+          "dataBoxTwitterUserName": "templatemonster",
+          "dataBoxTwitterDateFormat": "%d %b %Y",
+          "dataBoxTwitterDateHoursr": " hours ago",
+          "dataBoxTwitterDateMinutes": " minutes ago"
+        })
+          .row.justify-content-md-center
+            .col-xl-4
+              a.rd-twitter.shadow-drop-sm(data-twitter-type='tweet', href='#')
+                .unit.unit-sm.flex-md-row.twitter-unit
+                  .unit-left
+                    .rd-twitter-avatar
+                      img(data-avatar='src', src='images/_blank.png', alt='')
+                  .unit-body
+                    .rd-twitter-meta
+                      .p.big.font-weight-bold(data-user_name='text')
+                    .p.small.text-dark.offset-top-4(data-screen_name='text')
+                .rd-twitter-tweet(data-tweet='text')
+                .rd-twitter-img-wrap
+                  img.rd-twitter-media(data-media_url='src', src='images/_blank.png', alt='')
+                .rd-twitter-time-wrap
+                  .time.p.small.text-dark(data-date='text', data-datetime='datetime')
+              .offset-top-30
+                a.rd-twitter.shadow-drop-sm(data-twitter-type='tweet', href='#')
+                  .unit.unit-sm.flex-md-row.twitter-unit
+                    .unit-left
+                      .rd-twitter-avatar
+                        img(data-avatar='src', src='images/_blank.png', alt='')
+                    .unit-body
+                      .rd-twitter-meta
+                        .p.big.font-weight-bold(data-user_name='text')
+                      .p.small.text-dark.offset-top-4(data-screen_name='text')
+                  .rd-twitter-tweet(data-tweet='text')
+                  .rd-twitter-img-wrap
+                    img.rd-twitter-media(data-media_url='src', src='images/_blank.png', alt='')
+                  .rd-twitter-time-wrap
+                    .time.p.small.text-dark(data-date='text', data-datetime='datetime')
+            .col-xl-4
+              a.rd-twitter.rd-twitter-compact.shadow-drop-sm(data-twitter-type='tweet', href='#')
+                .unit.unit-sm.flex-md-row.twitter-unit
+                  .unit-left
+                    .rd-twitter-avatar
+                      img(data-avatar='src', src='images/_blank.png', alt='')
+                  .unit-body
+                    .rd-twitter-meta
+                      .p.big.font-weight-bold(data-user_name='text')
+                    .p.small.text-dark.offset-top-4(data-screen_name='text')
+                .rd-twitter-tweet(data-tweet='text')
+                .rd-twitter-time-wrap
+                  .time.p.small.text-dark(data-date='text', data-datetime='datetime')
+              .offset-top-30
+                a.rd-twitter.shadow-drop-sm(data-twitter-type='tweet', href='#')
+                  .unit.unit-sm.flex-md-row.twitter-unit
+                    .unit-left
+                      .rd-twitter-avatar
+                        img(data-avatar='src', src='images/_blank.png', alt='')
+                    .unit-body
+                      .rd-twitter-meta
+                        .p.big.font-weight-bold(data-user_name='text')
+                      .p.small.text-dark.offset-top-4(data-screen_name='text')
+                  .rd-twitter-tweet(data-tweet='text')
+                  .rd-twitter-img-wrap
+                    img.rd-twitter-media(data-media_url='src', src='images/_blank.png', alt='')
+                  .rd-twitter-time-wrap
+                    .time.p.small.text-dark(data-date='text', data-datetime='datetime')
+              .offset-top-30
+                a.rd-twitter.shadow-drop-sm(data-twitter-type='tweet', href='#')
+                  .unit.unit-sm.flex-md-row.twitter-unit
+                    .unit-left
+                      .rd-twitter-avatar
+                        img(data-avatar='src', src='images/_blank.png', alt='')
+                    .unit-body
+                      .rd-twitter-meta
+                        .p.big.font-weight-bold(data-user_name='text')
+                      .p.small.text-dark.offset-top-4(data-screen_name='text')
+                  .rd-twitter-tweet(data-tweet='text')
+                  .rd-twitter-img-wrap
+                    img.rd-twitter-media(data-media_url='src', src='images/_blank.png', alt='')
+                  .rd-twitter-time-wrap
+                    .time.p.small.text-dark(data-date='text', data-datetime='datetime')
+            .col-xl-4
+              a.rd-twitter.shadow-drop-sm(data-twitter-type='tweet', href='#')
+                .unit.unit-sm.flex-md-row.twitter-unit
+                  .unit-left
+                    .rd-twitter-avatar
+                      img(data-avatar='src', src='images/_blank.png', alt='')
+                  .unit-body
+                    .rd-twitter-meta
+                      .p.big.font-weight-bold(data-user_name='text')
+                    .p.small.text-dark.offset-top-4(data-screen_name='text')
+                .rd-twitter-tweet(data-tweet='text')
+                .rd-twitter-img-wrap
+                  img.rd-twitter-media(data-media_url='src', src='images/_blank.png', alt='')
+                .rd-twitter-time-wrap
+                  .time.p.small.text-dark(data-date='text', data-datetime='datetime')
+              .offset-top-30
+                a.rd-twitter.shadow-drop-sm(data-twitter-type='tweet', href='#')
+                  .unit.unit-sm.flex-md-row.twitter-unit
+                    .unit-left
+                      .rd-twitter-avatar
+                        img(data-avatar='src', src='images/_blank.png', alt='')
+                    .unit-body
+                      .rd-twitter-meta
+                        .p.big.font-weight-bold(data-user_name='text')
+                      .p.small.text-dark.offset-top-4(data-screen_name='text')
+                  .rd-twitter-tweet(data-tweet='text')
+                  .rd-twitter-img-wrap
+                    img.rd-twitter-media(data-media_url='src', src='images/_blank.png', alt='')
+                  .rd-twitter-time-wrap
+                    .time.p.small.text-dark(data-date='text', data-datetime='datetime')

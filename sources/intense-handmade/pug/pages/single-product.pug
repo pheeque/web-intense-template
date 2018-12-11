@@ -1,0 +1,100 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-rd-navbar-logo-center
+include  ../elements/_ui-breadcrumb-modern
+
+//-Title
+block title
+  title= cfg.nav.shop.submenu.singleProduct.title
+
+//- Page
+block page
+  // Page Header
+  header.page-head
+    //- RD Navbar
+    +rd-navbar-logo-center(
+      'rd-navbar-light',
+      {
+        "data-lg-auto-height": "true",
+        "data-md-layout": 'rd-navbar-fixed',
+        "data-lg-layout": 'rd-navbar-static',
+        "data-lg-stick-up": 'true'
+      },
+      cfg.brand.logo,
+      cfg.nav.shop,
+      cfg.nav
+    )
+
+  +breadcrumb-modern("Shop", {
+    0: {
+      "type": "link",
+      "title": cfg.nav.home.title,
+      "href": cfg.nav.home.href
+    },
+    1: {
+      "type": "link",
+      "title": cfg.nav.shop.title,
+      "href": cfg.nav.shop.href
+    },
+    2: {
+      "type": "link",
+      "title": cfg.nav.shop.submenu.singleProduct.title,
+      "href": cfg.nav.shop.submenu.singleProduct.href
+    }
+  }, "images/background-1-1920x651.jpg")
+
+
+  // Page Content
+  main.page-content.section-98.section-md-124
+    section
+      .container
+        .row
+          .col-lg-9
+            include ../sections/_section-shop-single-product-no-sidebar
+          .col-lg-3.offset-top-66.offset-lg-top-0.inset-xl-left-50
+            // Section Shop Sidebar
+            aside.text-left
+              .row
+                .col-sm-6.col-lg-12
+                  // Categories
+                  h6.text-uppercase.text-spacing-60 Categories
+                  div.text-subline
+                  .custom-control.custom-checkbox.offset-top-20
+                    input#customCheck1.custom-control-input( name="input-group-category", value="woman", type="checkbox" )
+                    label.custom-control-label( for='customCheck1' ) Handmade #[span.text-dark (37)]
+                  .custom-control.custom-checkbox.offset-top-4
+                    input#customCheck2.custom-control-input( name="input-group-category", value="dresses", type="checkbox" )
+                    label.custom-control-label( for='customCheck2' ) Scrapbooking #[span.text-dark (211)]
+                  .custom-control.custom-checkbox.offset-top-4
+                    input#customCheck3.custom-control-input( name="input-group-category", value="skirts", type="checkbox" )
+                    label.custom-control-label( for='customCheck3' ) Woodwork #[span.text-dark (12)]
+                  .custom-control.custom-checkbox.offset-top-4
+                    input#customCheck4.custom-control-input( name="input-group-category", value="coats", type="checkbox" )
+                    label.custom-control-label( for='customCheck4' ) Textile #[span.text-dark (7)]
+                  .custom-control.custom-checkbox.offset-top-4
+                    input#customCheck5.custom-control-input( name="input-group-category", value="top", type="checkbox" )
+                    label.custom-control-label( for='customCheck5' ) Tools and Materials #[span.text-dark (15)]
+              
+                .col-sm-6.col-lg-12
+                  // Brands
+                  h6.offset-top-41.offset-sm-top-0.offset-lg-top-41.text-uppercase.text-spacing-60 Brands
+                  div.text-subline
+                  .custom-control.custom-checkbox.offset-top-20
+                    input#customCheck6.custom-control-input( name="input-group-brands", value="apc", type="checkbox" )
+                    label.custom-control-label( for='customCheck6' ) Koh-i-Noor #[span.text-dark (37)]
+                  .custom-control.custom-checkbox.offset-top-4
+                    input#customCheck7.custom-control-input( name="input-group-brands", value="armani", type="checkbox" )
+                    label.custom-control-label( for='customCheck7' ) Pilot #[span.text-dark (211)]
+                  .custom-control.custom-checkbox.offset-top-4
+                    input#customCheck8.custom-control-input( name="input-group-brands", value="loro", type="checkbox" )
+                    label.custom-control-label( for='customCheck8' ) Pentel #[span.text-dark (12)]
+                  .custom-control.custom-checkbox.offset-top-4
+                    input#customCheck9.custom-control-input( name="input-group-brands", value="coat", type="checkbox" )
+                    label.custom-control-label( for='customCheck9' ) Platinum #[span.text-dark (7)]
+                  .custom-control.custom-checkbox.offset-top-4
+                    input#customCheck10.custom-control-input( name="input-group-brands", value="topiro", type="checkbox" )
+                    label.custom-control-label( for='customCheck10' ) Sakura #[span.text-dark (15)]
+
+  // Page Footers
+  include ../sections/_section-footer-variant-4

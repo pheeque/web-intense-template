@@ -1,0 +1,110 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-rd-navbar-floated
+
+//- Title
+block title
+	title Gifter Card 3
+
+//- Page
+block page
+	
+	// Page Head
+	section.section-cover.section-card-3.section-110.section-lg-top-34
+		canvas#canv.snow-effect
+		+rd-navbar-floated(
+		'rd-navbar-light',
+		{
+			"data-lg-auto-height": "true",
+			"data-md-layout": 'rd-navbar-fixed',
+			"data-lg-layout": 'rd-navbar-static',
+			"data-lg-stick-up": 'true'
+		},
+		cfg.brand.logo
+		)
+		.container
+			.block-card-3-content
+				.block-content-item.block-lg
+					.inner-block
+						img(src="images/card-3-user-1.jpg",  alt="")
+						.inner-text
+							h2.text-accent-modern happy
+								br
+								| holidays
+							p Sam Smith
+				.block-content-item.block-lg
+					.inner-block
+						img(src="images/card-3-user-2.jpg",  alt="")
+						.inner-text
+							p.big.pt-2 Warmest 
+								br
+								| greetings and 
+								br
+								| best wishes for 
+								br
+								| the New Year! 
+							p Peter Wilson
+				.block-content-item.block-xl 
+					.inner-block
+						img(src="images/card-3-user-3.jpg",  alt="")
+						.inner-text
+							h2.text-accent-modern Merry 
+								br
+								| christmas!
+							p John Doe
+				.block-content-item.block-lg
+					.inner-block
+						img(src="images/card-3-user-4.jpg",  alt="")
+						.inner-text
+							h2.text-accent-modern happy 
+								br 
+								|2019!
+							p Jane McMillan
+				.block-content-item.block-xl
+					.inner-block
+						img(src="images/card-3-user-5.jpg",  alt="")
+						.inner-text
+							p.big May your Christmas 
+								br 
+								| be filled with the true
+								br 
+								| miracles!
+							p Kate Smith
+	section.section-66.bg-lightest#contact
+		.container
+			.row.justify-content-center
+				.col-lg-7.col-xl-6
+					h4.text-sbold  Contact us
+					p.text-opacity-60  Feel free to get in touch with us to find out more about us or how we can answer your questions about what we do and what we offer. Don’t forget to include your e-mail if you want to receive a reply from us. Our team is always ready to help you!
+				.col-lg-9.col-xl-8.offset-top-50
+					form.rd-mailform.text-left(data-form-output="form-output-global", data-form-type='contact', method='post', action='bat/rd-mailform.php')
+						.row.justify-content-sm-center
+							.col-md-12
+								.form-group
+									label.form-label(for="git-3-mailform-email") E-mail
+									input#git-3-mailform-email.form-control.bg-default(type="text" name="email" data-constraints="@Required @Email")
+							.col-md-12
+								.form-group.offset-md-top-14
+									label.form-label(for="git-3-mailform-phone") Phone
+									input#git-3-mailform-phone.form-control.bg-default(type="text" name="phone" data-constraints="@Required @Numeric")
+
+							.col-md-12
+								.form-group.offset-md-top-14
+									label.form-label(for="git-3-mailform-message") Message
+									textarea#git-3-mailform-message.form-control.bg-default(name="message" data-constraints="@Required")
+						.offset-top-30.text-center
+							button(type="submit").btn.btn-primary.btn-ellipse send message
+			
+				.col-12.offset-top-50
+					p
+						span &copy;&nbsp; 
+						span.copyright-year
+						span &nbsp;
+						span= cfg.brand.name
+						span .
+						span &nbsp;
+						span  All Rights Reserved.
+						span &nbsp;
+						span  Design&nbsp;by&nbsp;#[a(href="https://zemez.io/") Zemez]
+		
